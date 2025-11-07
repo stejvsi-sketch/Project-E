@@ -4,48 +4,276 @@
   align-items: center;
   justify-content: center;
   padding: 0 1.5rem;
-  background: radial-gradient(circle at top, #e0f4ff 0%, #ffffff 55%, #f0f4f8 100%);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
   color: #0f172a;
   font-family: var(--font-geist-sans);
+  position: relative;
+  overflow: hidden;
 }
 
+/* Animated scooter container */
+.scooterContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.scooter {
+  position: absolute;
+  font-size: 3rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.scooter1 {
+  top: 20%;
+  animation: rideAcross 12s linear infinite;
+  animation-delay: 0s;
+}
+
+.scooter2 {
+  top: 50%;
+  animation: rideAcross 15s linear infinite;
+  animation-delay: 5s;
+  font-size: 2.5rem;
+}
+
+.scooter3 {
+  top: 75%;
+  animation: rideAcross 10s linear infinite;
+  animation-delay: 2s;
+  font-size: 3.5rem;
+}
+
+@keyframes rideAcross {
+  0% {
+    left: -10%;
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  100% {
+    left: 110%;
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+/* Road lines animation */
+.roadLines {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.roadLine {
+  position: absolute;
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  animation: roadMove 3s linear infinite;
+}
+
+.roadLine:nth-child(1) {
+  top: 22%;
+  animation-delay: 0s;
+}
+
+.roadLine:nth-child(2) {
+  top: 52%;
+  animation-delay: 1s;
+}
+
+.roadLine:nth-child(3) {
+  top: 77%;
+  animation-delay: 2s;
+}
+
+@keyframes roadMove {
+  0% {
+    left: -100px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    left: 100%;
+    opacity: 0;
+  }
+}
+
+/* Content card */
 .content {
-  max-width: 560px;
+  max-width: 600px;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(6px);
-  border-radius: 1.5rem;
-  padding: 3rem 2rem;
-  box-shadow: 0 20px 65px -25px rgba(15, 23, 42, 0.3);
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 25px 80px -25px rgba(0, 0, 0, 0.4),
+              0 0 0 1px rgba(255, 255, 255, 0.2);
+  z-index: 10;
+  position: relative;
+  animation: fadeInUp 0.8s ease-out;
 }
 
-.content h1 {
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Icon wrapper with pulse */
+.iconWrapper {
+  display: inline-flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.mainIcon {
+  font-size: 4rem;
+  display: inline-block;
+  animation: pulse 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(234, 179, 8, 0.6));
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Title styling */
+.title {
   font-size: clamp(2rem, 5vw, 2.75rem);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: -0.04em;
+  line-height: 1.2;
+  margin: 0;
 }
 
-.content p {
-  font-size: 1rem;
+.titleGradient {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+/* Description text */
+.description {
+  font-size: 1.125rem;
   line-height: 1.75rem;
-  color: #334155;
+  color: #475569;
+  margin: 0;
+}
+
+.highlight {
+  color: #667eea;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* Coming soon badge */
+.comingSoon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.pulse {
+  animation: pulseOpacity 2s ease-in-out infinite;
+}
+
+@keyframes pulseOpacity {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   .container {
-    background: radial-gradient(circle at top, #0f172a 0%, #020617 100%);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4c1d95 100%);
     color: #f8fafc;
   }
 
   .content {
-    background-color: rgba(15, 23, 42, 0.7);
-    box-shadow: 0 20px 60px -25px rgba(148, 163, 184, 0.35);
+    background: rgba(15, 23, 42, 0.9);
+    box-shadow: 0 25px 80px -25px rgba(0, 0, 0, 0.6),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
   }
 
-  .content p {
-    color: #cbd5f5;
+  .description {
+    color: #cbd5e1;
+  }
+
+  .roadLine {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 640px) {
+  .scooter {
+    font-size: 2rem;
+  }
+
+  .scooter2 {
+    font-size: 1.75rem;
+  }
+
+  .scooter3 {
+    font-size: 2.25rem;
+  }
+
+  .content {
+    padding: 2.5rem 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .mainIcon {
+    font-size: 3rem;
   }
 }
