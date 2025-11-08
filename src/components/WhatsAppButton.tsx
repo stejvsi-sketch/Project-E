@@ -21,9 +21,6 @@ export function WhatsAppButton({ phoneNumber, message = 'Hi, I am interested in 
       aria-label="Contact us on WhatsApp"
     >
       <MessageCircle className="w-6 h-6 group-hover:animate-bounce" />
-      <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
-        1
-      </span>
     </button>
   )
 }
