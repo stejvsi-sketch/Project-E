@@ -40,16 +40,17 @@
 /* Premium Button Styles */
 @layer components {
   .btn-primary {
-    @apply px-10 py-5 bg-neutral-dark text-white text-lg font-semibold rounded-xl;
-    @apply hover:bg-black transition-all shadow-lg hover:shadow-xl;
-    @apply transform hover:-translate-y-0.5;
-    @apply focus:outline-none focus:ring-4 focus:ring-primary-orange/50;
+    @apply bg-teal-600 text-white px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
+    @apply hover:bg-teal-500 transition-all duration-200;
+    @apply shadow-lg hover:shadow-xl hover:scale-105;
+    @apply focus:outline-none focus:ring-4 focus:ring-teal-500/50;
   }
 
   .btn-secondary {
-    @apply px-10 py-5 border-2 border-neutral-dark text-neutral-dark text-lg font-semibold rounded-xl;
-    @apply hover:bg-neutral-dark hover:text-white transition-all;
-    @apply focus:outline-none focus:ring-4 focus:ring-primary-orange/50;
+    @apply bg-gray-700 text-white px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
+    @apply hover:bg-gray-600 transition-all duration-200;
+    @apply shadow-lg hover:shadow-xl hover:scale-105;
+    @apply focus:outline-none focus:ring-4 focus:ring-teal-500/50;
   }
 
   /* Skeleton loader animation */

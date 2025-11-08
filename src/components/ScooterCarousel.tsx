@@ -12,13 +12,13 @@ interface Scooter {
 }
 
 const scooters: Scooter[] = [
-  { name: 'Urban Elite', category: 'Executive Series', emoji: '🛴', range: '60+ KM', speed: '45 KM/H' },
-  { name: 'City Pro', category: 'Professional Series', emoji: '🛵', range: '55+ KM', speed: '42 KM/H' },
-  { name: 'Metro X', category: 'Premium Series', emoji: '🏍️', range: '70+ KM', speed: '48 KM/H' },
-  { name: 'Eco Plus', category: 'Eco Series', emoji: '🛴', range: '45+ KM', speed: '35 KM/H' },
-  { name: 'Sport', category: 'Performance Series', emoji: '🏍️', range: '50+ KM', speed: '50 KM/H' },
-  { name: 'Classic', category: 'Heritage Series', emoji: '🛵', range: '40+ KM', speed: '32 KM/H' },
-  { name: 'Cruiser', category: 'Comfort Series', emoji: '🛴', range: '65+ KM', speed: '40 KM/H' },
+  { name: 'M\'LiteEv Urban Elite', category: 'Executive Series', emoji: '🛴', range: '60+ KM', speed: '45 KM/H' },
+  { name: 'M\'LiteEv City Pro', category: 'Professional Series', emoji: '🛴', range: '55+ KM', speed: '42 KM/H' },
+  { name: 'M\'LiteEv Metro X', category: 'Premium Series', emoji: '🛴', range: '70+ KM', speed: '48 KM/H' },
+  { name: 'M\'LiteEv Eco Plus', category: 'Eco Series', emoji: '🛴', range: '45+ KM', speed: '35 KM/H' },
+  { name: 'M\'LiteEv Sport', category: 'Performance Series', emoji: '🛴', range: '50+ KM', speed: '50 KM/H' },
+  { name: 'M\'LiteEv Classic', category: 'Heritage Series', emoji: '🛴', range: '40+ KM', speed: '32 KM/H' },
+  { name: 'M\'LiteEv Cruiser', category: 'Comfort Series', emoji: '🛴', range: '65+ KM', speed: '40 KM/H' },
 ]
 
 interface ScooterCarouselProps {
@@ -101,12 +101,6 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
           <ChevronRight className="w-6 h-6 text-neutral-dark" />
         </button>
 
-        {/* Auto-play indicator */}
-        {autoPlay && !isHovered && (
-          <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm px-3 py-1.5 rounded-full text-white text-xs font-medium">
-            Auto-rotating
-          </div>
-        )}
       </div>
 
       {/* Dots Navigation */}

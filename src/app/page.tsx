@@ -8,136 +8,303 @@ import { ScooterCarousel } from '@/components/ScooterCarousel'
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Premium First Fold */}
-      <section className="relative bg-white overflow-hidden">
-        {/* Hero Background Image */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100"></div>
+      {/* Hero Section - Clean Minimal */}
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark overflow-hidden min-h-[85vh]">
+        {/* Large Background Text Watermark */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <h1 className="text-[20vw] md:text-[15vw] font-black text-white/5 tracking-tighter select-none">
+            M'LITEEV
+          </h1>
+        </div>
 
         <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center py-6 md:py-10">
-            {/* Left Content */}
-            <div className="space-y-6">
-              {/* Heading - Display Serif */}
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-dark leading-[1.1]">
-                The Future of
-                <span className="block text-primary-orange">Urban Mobility</span>
-              </h1>
-              
-              {/* Subheading */}
-              <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
+          <div className="flex flex-col items-center justify-center py-12 md:py-16">
+            {/* Main Scooter Display */}
+            <div className="w-full max-w-4xl mb-8">
+              <ScooterCarousel autoPlay={true} interval={4000} />
+            </div>
+
+            {/* Product Description */}
+            <div className="text-center max-w-2xl mb-8">
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                 Premium electric scooters engineered for the modern city — sustainable, silent, and sophisticated.
-              </p>
-
-              {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/models">
-                  <button className="px-10 py-5 bg-neutral-dark text-white text-lg font-semibold rounded-xl hover:bg-black transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-full sm:w-auto">
-                    Reserve Test Ride
-                  </button>
-                </Link>
-                <Link href="/contact">
-                  <button className="px-10 py-5 border-2 border-neutral-dark text-neutral-dark text-lg font-semibold rounded-xl hover:bg-neutral-dark hover:text-white transition-all w-full sm:w-auto">
-                    Explore Models
-                  </button>
-                </Link>
-              </div>
-
-              {/* Microcopy */}
-              <p className="text-sm text-gray-500">
-                ✓ Free 30-day test ride · ✓ 0% financing available · ✓ 3-year warranty
               </p>
             </div>
 
-            {/* Right Visual - Auto-Rotating Scooter Display */}
-            <div className="relative hidden lg:block">
-              <ScooterCarousel autoPlay={true} interval={4000} />
+            {/* Single CTA Button */}
+            <Link href="/models">
+              <button className="px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white text-base font-semibold rounded-md transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                BOOK NOW
+              </button>
+            </Link>
+
+            {/* Minimal Features */}
+            <div className="flex gap-6 md:gap-12 mt-10 text-sm text-gray-400">
+              <span>✓ 3-Year Warranty</span>
+              <span>✓ 0% Financing</span>
+              <span>✓ Free Test Ride</span>
             </div>
           </div>
         </div>
 
         {/* Trust Bar - Press & Badges */}
-        <div className="border-t border-gray-200 bg-white/80 backdrop-blur-sm">
+        <div className="border-t border-gray-700 bg-gray-800/80 backdrop-blur-sm">
           <div className="container-custom py-8">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
               {/* Trust Badges */}
               <div className="flex flex-col items-center text-center">
-                <Shield className="w-8 h-8 text-primary-orange mb-2" />
-                <p className="text-xs font-semibold text-gray-700">3-Year Warranty</p>
+                <Shield className="w-8 h-8 text-teal-500 mb-2" />
+                <p className="text-xs font-semibold text-gray-300">3-Year Warranty</p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <CheckCircle2 className="w-8 h-8 text-primary-orange mb-2" />
-                <p className="text-xs font-semibold text-gray-700">ISO Certified</p>
+                <CheckCircle2 className="w-8 h-8 text-teal-500 mb-2" />
+                <p className="text-xs font-semibold text-gray-300">ISO Certified</p>
               </div>
               <div className="flex flex-col items-center text-center">
-                <Award className="w-8 h-8 text-primary-orange mb-2" />
-                <p className="text-xs font-semibold text-gray-700">Award Winning</p>
+                <Award className="w-8 h-8 text-teal-500 mb-2" />
+                <p className="text-xs font-semibold text-gray-300">Award Winning</p>
               </div>
               
               {/* Press Mentions */}
-              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">As Seen In</div>
-              <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider">Economic Times</div>
+              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">As Seen In</div>
+              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Economic Times</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Brand Pillars - Minimal */}
-      <section className="py-32 bg-white">
+      {/* Features - Icon Cards */}
+      <section className="py-16 bg-gray-900 border-t border-gray-800">
         <div className="container-custom">
-          {/* Section Header */}
-          <div className="text-center mb-20 max-w-3xl mx-auto">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-dark mb-6">
-              Why M&rsquo;LiteEv?
-            </h2>
-            <p className="text-xl text-gray-600">
-              Uncompromising quality, innovative engineering, and timeless design.
-            </p>
-          </div>
-
-          {/* Features Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                icon: <Zap className="w-8 h-8" />,
-                title: 'Powerful Performance',
-                description: 'High-efficiency motors for smooth acceleration'
+                icon: <Shield className="w-12 h-12" />,
+                title: '3-YEAR WARRANTY',
+                description: 'Combines product durability with warranty support'
               },
               {
-                icon: <Battery className="w-8 h-8" />,
-                title: 'Extended Range',
-                description: 'Advanced battery for longer rides'
+                icon: <Zap className="w-12 h-12" />,
+                title: 'SMART CONNECTIVITY',
+                description: 'Captures key benefits—turn-by-turn maps and real-time alerts'
               },
               {
-                icon: <Shield className="w-8 h-8" />,
-                title: '3-Year Warranty',
-                description: 'Comprehensive coverage and support'
+                icon: <Battery className="w-12 h-12" />,
+                title: 'DISC BRAKES',
+                description: 'Precision Braking for Real Control'
               },
               {
-                icon: <Sparkles className="w-8 h-8" />,
-                title: 'Premium Design',
-                description: 'Sleek aesthetics, modern engineering'
+                icon: <Sparkles className="w-12 h-12" />,
+                title: 'AMAZING COLORS',
+                description: (
+                  <div className="flex gap-2 justify-center mt-2">
+                    {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#6B7280'].map((color, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-300" style={{ backgroundColor: color }}></div>
+                    ))}
+                  </div>
+                )
               },
             ].map((feature, index) => (
               <div key={index} className="text-center">
-                <div className="flex justify-center mb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center text-neutral-dark">
-                    {feature.icon}
-                  </div>
+                <div className="flex justify-center mb-4 text-teal-500">
+                  {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-neutral-dark mb-3">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wide">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600">
+                <div className="text-xs text-gray-400">
                   {feature.description}
-                </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Built to Last - Product Detail Grid */}
+      <section className="py-20 bg-gray-800">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left Content */}
+            <div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                BUILT TO LAST
+              </h2>
+              <p className="text-gray-300 text-lg mb-8">
+                Designed for everyday use
+              </p>
+              <Link href="/contact">
+                <button className="px-10 py-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-md transition-all uppercase text-sm tracking-wide">
+                  BOOK A TEST RIDE
+                </button>
+              </Link>
+            </div>
+
+            {/* Right Grid - Product Details */}
+            <div className="grid grid-cols-2 gap-4">
+              {/* Large Image - Top Left */}
+              <div className="col-span-2 lg:col-span-1 lg:row-span-2 relative h-64 lg:h-full bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg overflow-hidden">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-9xl">🛴</div>
+                </div>
+              </div>
+
+              {/* LED Head Lamp */}
+              <div className="relative h-32 bg-gray-400 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="relative z-10 text-white text-center p-4">
+                  <div className="font-bold text-sm">LED HEAD LAMP &</div>
+                  <div className="font-bold text-sm">DIGITAL DISPLAY</div>
+                </div>
+              </div>
+
+              {/* Luxe Bulb Beam */}
+              <div className="relative h-32 bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/40"></div>
+                <div className="relative z-10 text-white text-center p-4">
+                  <div className="font-bold text-sm">LUXE</div>
+                  <div className="font-bold text-sm">BULB BEAM</div>
+                </div>
+              </div>
+
+              {/* Front Disc Brakes */}
+              <div className="col-span-2 lg:col-span-1 relative h-32 bg-gradient-to-br from-teal-500 to-teal-700 rounded-lg overflow-hidden flex items-center justify-center">
+                <div className="relative z-10 text-white text-center p-4">
+                  <div className="font-bold text-lg">FRONT</div>
+                  <div className="font-bold text-lg">DISC</div>
+                  <div className="font-bold text-lg">BRAKES</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Specifications Section */}
+      <section className="py-20 bg-gray-900">
+        <div className="container-custom">
+          <h2 className="text-4xl font-bold text-center text-white mb-12">
+            Specifications
+          </h2>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {/* Motor & Performance */}
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+              <div className="flex items-center gap-3 mb-6 text-teal-500">
+                <Zap className="w-6 h-6" />
+                <h3 className="text-xl font-bold text-white">Motor & Performance</h3>
+              </div>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Battery</div>
+                  <div className="text-gray-400">Lead Acid / Lithium</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Range</div>
+                  <div className="text-gray-400">Upto 120 kms</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Brake & Tyre */}
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+              <div className="flex items-center gap-3 mb-6 text-teal-500">
+                <Battery className="w-6 h-6" />
+                <h3 className="text-xl font-bold text-white">Brake & Tyre</h3>
+              </div>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Brake Type</div>
+                  <div className="text-gray-400">Front Disc / Rear Drum</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Tyre Type</div>
+                  <div className="text-gray-400">Tubeless</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Front Tyre</div>
+                  <div className="text-gray-400">90/100/10</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Rear Tyre</div>
+                  <div className="text-gray-400">90/100/10</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Suspension & Dimension */}
+            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
+              <div className="flex items-center gap-3 mb-6 text-teal-500">
+                <Shield className="w-6 h-6" />
+                <h3 className="text-xl font-bold text-white">Suspension & Dimension</h3>
+              </div>
+              <div className="grid md:grid-cols-4 gap-6">
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Dimensions (lxwxh) mm</div>
+                  <div className="text-gray-400">1800 x 660 x 1100</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Front</div>
+                  <div className="text-gray-400">Telescopic</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Rear</div>
+                  <div className="text-gray-400">Dual</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Kerb weight without battery</div>
+                  <div className="text-gray-400">58.500 kg</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Color Selector with Teal Background */}
+      <section className="py-20 bg-gradient-to-br from-teal-500 to-teal-700">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Color Buttons */}
+            <div className="space-y-4 max-w-sm mx-auto lg:mx-0">
+              <button className="w-full py-4 px-8 bg-white/20 backdrop-blur-sm border-2 border-white text-white font-semibold rounded-lg hover:bg-white/30 transition-all">
+                M'LiteEv Teal
+              </button>
+              <button className="w-full py-4 px-8 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all">
+                M'LiteEv Red
+              </button>
+              <button className="w-full py-4 px-8 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all">
+                M'LiteEv Gray
+              </button>
+            </div>
+
+            {/* Right - Scooter Image */}
+            <div className="relative h-96 flex items-center justify-center">
+              <div className="text-[200px]">🛴</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dark CTA Section */}
+      <section className="py-20 bg-neutral-dark">
+        <div className="container-custom text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Effortless Elegance, Practical Luxury
+          </h2>
+          <p className="text-xl text-gray-300 mb-8">
+            Street-Ready & Smart
+          </p>
+          <Link href="/contact">
+            <button className="px-12 py-4 border-2 border-teal-600 text-teal-600 bg-transparent font-semibold rounded-md hover:bg-teal-600 hover:text-white transition-all uppercase text-sm tracking-wide">
+              BOOK NOW
+            </button>
+          </Link>
+        </div>
+      </section>
+
       {/* Featured Models - Minimal */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-gray-50 hidden">
         <div className="container-custom">
           {/* Section Header */}
           <div className="text-center mb-20">
@@ -152,9 +319,9 @@ export default function Home() {
           {/* Models Grid */}
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
-              { name: 'Urban Elite', category: 'Executive Series' },
-              { name: 'City Pro', category: 'Professional Series' },
-              { name: 'Metro X', category: 'Premium Series' }
+              { name: 'M\'LiteEv Urban Elite', category: 'Executive Series' },
+              { name: 'M\'LiteEv City Pro', category: 'Professional Series' },
+              { name: 'M\'LiteEv Metro X', category: 'Premium Series' }
             ].map((model, idx) => (
               <div key={idx} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow">
                 {/* Image */}
@@ -187,7 +354,7 @@ export default function Home() {
 
                   {/* CTA */}
                   <Link href="/models">
-                    <button className="w-full bg-neutral-dark text-white font-medium py-3 rounded-lg hover:bg-black transition-colors">
+                    <button className="w-full bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 rounded-md transition-all uppercase text-sm tracking-wide">
                       View Details
                     </button>
                   </Link>
@@ -221,7 +388,7 @@ export default function Home() {
 
           <div className="text-center">
             <Link href="/models">
-              <button className="px-8 py-4 border-2 border-neutral-dark text-neutral-dark font-medium rounded-lg hover:bg-neutral-dark hover:text-white transition-all">
+              <button className="px-10 py-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-md transition-all uppercase text-sm tracking-wide shadow-md hover:shadow-lg">
                 View All Models
               </button>
             </Link>
@@ -230,7 +397,7 @@ export default function Home() {
       </section>
 
       {/* Testimonials - Minimal */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white hidden">
         <div className="container-custom">
           {/* Section Header */}
           <div className="text-center mb-20">
@@ -306,7 +473,7 @@ export default function Home() {
       </section>
 
       {/* Quick Configurator Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-50 hidden">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-dark mb-4">
@@ -322,49 +489,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section - Minimal */}
-      <section className="py-32 bg-neutral-dark">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to get started?
-            </h2>
-            <p className="text-xl text-gray-300 mb-12">
-              Explore our collection or get in touch with our team.
-            </p>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/models">
-                <button className="px-10 py-4 bg-white text-neutral-dark font-medium text-lg rounded-lg hover:bg-gray-100 transition-colors">
-                  Explore Models
-                </button>
-              </Link>
-              <Link href="/contact">
-                <button className="px-10 py-4 border-2 border-white text-white font-medium text-lg rounded-lg hover:bg-white hover:text-neutral-dark transition-all">
-                  Contact Us
-                </button>
-              </Link>
-            </div>
-
-            {/* Contact Info */}
-            <div className="grid md:grid-cols-3 gap-6 text-gray-300">
-              <div>
-                <div className="text-sm mb-1">Call Us</div>
-                <div className="font-medium">+91 XXXX XXXXXX</div>
-              </div>
-              <div>
-                <div className="text-sm mb-1">Email</div>
-                <div className="font-medium">info@mliteev.com</div>
-              </div>
-              <div>
-                <div className="text-sm mb-1">Visit Us</div>
-                <div className="font-medium">Experience Center</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

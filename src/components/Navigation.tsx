@@ -95,27 +95,61 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Navigation - Full Screen Overlay */}
         <div
           className={cn(
-            'md:hidden overflow-hidden transition-all duration-300 ease-in-out',
-            isMenuOpen ? 'max-h-96 pb-6' : 'max-h-0'
+            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-gradient-to-br from-gray-900 via-gray-800 to-teal-900',
+            isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
+          style={{ top: '112px' }} // Below navigation bar
         >
-          <div className="flex flex-col space-y-4 pt-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-transparent to-teal-900/20">
+            {/* Navigation Links */}
+            <div className="flex flex-col space-y-6 pt-12">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="text-white text-2xl md:text-3xl font-semibold hover:text-teal-400 transition-colors border-b border-gray-700 pb-4"
+                >
+                  {link.label}
+                </Link>
+              ))}
+              <Link 
+                href="/contact" 
                 onClick={() => setIsMenuOpen(false)}
-                className="text-neutral-dark hover:text-primary-orange transition-colors duration-200 font-medium py-2"
+                className="text-white text-2xl md:text-3xl font-semibold hover:text-teal-400 transition-colors border-b border-gray-700 pb-4"
               >
-                {link.label}
+                Contact Us
               </Link>
-            ))}
-            <Link href="/contact" className="btn-primary w-full text-center" onClick={() => setIsMenuOpen(false)}>
-              Enquire Now
-            </Link>
+            </div>
+
+            {/* Social Media Icons */}
+            <div className="flex gap-6 justify-center pb-8">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-white transition-colors">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                </svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-white transition-colors">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                  <circle cx="4" cy="4" r="2"/>
+                </svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-white transition-colors">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23 12s0-3.85-.46-5.58c-.25-.95-1-1.7-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46c-.95.25-1.69 1.01-1.94 1.96C1 8.15 1 12 1 12s0 3.85.46 5.58c.25.95 1 1.7 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46c.95-.25 1.69-1.01 1.94-1.96C23 15.85 23 12 23 12zm-13 3.27V8.73L15.5 12 10 15.27z"/>
+                </svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-teal-400 hover:text-white transition-colors">
+                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>

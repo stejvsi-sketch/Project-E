@@ -39,24 +39,24 @@ export default function SupportPage() {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-900">
       {/* Hero */}
-      <section className="bg-white py-24">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-24">
         <div className="container-custom text-center">
           <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-primary-orange uppercase tracking-wider px-4 py-2 rounded-full bg-primary-orange/10">
+            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10">
               Support Center
             </span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-dark mb-6">How Can We Help?</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">How Can We Help?</h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Get answers, support, and expert guidance for your M&rsquo;LiteEv
           </p>
         </div>
       </section>
 
       {/* Support Categories */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-800">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
@@ -85,9 +85,9 @@ export default function SupportPage() {
                 key={index}
                 className="bg-neutral-gray p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
               >
-                <div className="text-primary-orange mb-3 flex justify-center">{category.icon}</div>
-                <h3 className="font-bold text-lg mb-2">{category.title}</h3>
-                <p className="text-gray-600 text-sm">{category.description}</p>
+                <div className="text-teal-500 mb-3 flex justify-center">{category.icon}</div>
+                <h3 className="font-bold text-lg mb-2 text-white">{category.title}</h3>
+                <p className="text-gray-400 text-sm">{category.description}</p>
               </div>
             ))}
           </div>
@@ -95,17 +95,17 @@ export default function SupportPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-dark text-center mb-12">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-12">
             Frequently Asked Questions
           </h2>
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-bold text-neutral-dark mb-3">{faq.question}</h3>
-                <p className="text-gray-600">{faq.answer}</p>
+              <div key={index} className="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-700">
+                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                <p className="text-gray-300">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -113,16 +113,16 @@ export default function SupportPage() {
       </section>
 
       {/* Battery Care Guide */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-800">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-neutral-dark mb-8 text-center">
+          <h2 className="text-3xl font-bold text-white mb-8 text-center">
             Battery Care Tips
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-green-50 border-2 border-green-500 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-green-700 mb-4">✓ DO</h3>
-              <ul className="space-y-3 text-gray-700">
+            <div className="bg-teal-900/30 border-2 border-teal-500 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-teal-400 mb-4">✓ DO</h3>
+              <ul className="space-y-3 text-gray-300">
                 <li>• Charge regularly, even if not fully depleted</li>
                 <li>• Store in a cool, dry place</li>
                 <li>• Use the original charger</li>
@@ -131,9 +131,9 @@ export default function SupportPage() {
               </ul>
             </div>
 
-            <div className="bg-red-50 border-2 border-red-500 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-red-700 mb-4">✗ DON&apos;T</h3>
-              <ul className="space-y-3 text-gray-700">
+            <div className="bg-red-900/30 border-2 border-red-500 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-red-400 mb-4">✗ DON&apos;T</h3>
+              <ul className="space-y-3 text-gray-300">
                 <li>• Leave battery completely discharged for long periods</li>
                 <li>• Expose to extreme temperatures</li>
                 <li>• Use third-party chargers</li>
@@ -146,7 +146,7 @@ export default function SupportPage() {
       </section>
 
       {/* Contact CTA */}
-      <section className="section-padding bg-primary-orange text-white">
+      <section className="section-padding bg-gradient-to-br from-teal-600 to-teal-700 text-white">
         <div className="container-custom text-center">
           <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
           <p className="text-xl mb-8 opacity-90">

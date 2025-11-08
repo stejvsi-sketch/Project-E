@@ -4,28 +4,28 @@ import Link from 'next/link'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-900">
       {/* Hero */}
-      <section className="bg-white py-24">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-24">
         <div className="container-custom text-center">
           <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-primary-orange uppercase tracking-wider px-4 py-2 rounded-full bg-primary-orange/10">
+            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10">
               About Us
             </span>
           </div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-neutral-dark mb-6">About M&rsquo;LiteEv</h1>
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
+          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">About M&rsquo;LiteEv</h1>
+          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
             Energising the future of urban mobility
           </p>
         </div>
       </section>
 
       {/* Mission */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gray-800">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-dark mb-8">Our Mission</h2>
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-8">Our Mission</h2>
+            <p className="text-xl text-gray-300 leading-relaxed">
               At M&rsquo;LiteEv, we&apos;re on a mission to revolutionize urban transportation through 
               innovative, eco-friendly electric scooters. We believe that sustainable mobility 
               shouldn&apos;t come at the cost of performance or style. Our premium electric scooters 
@@ -37,9 +37,9 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-neutral-dark text-center mb-16">Our Values</h2>
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">Our Values</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
@@ -66,13 +66,13 @@ export default function AboutPage() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl text-center hover:shadow-xl transition-all duration-300"
+                className="bg-gray-800 p-8 rounded-2xl text-center hover:shadow-xl hover:bg-gray-700 transition-all duration-300 border border-gray-700"
               >
-                <div className="text-primary-orange mb-4 flex justify-center">
+                <div className="text-teal-500 mb-4 flex justify-center">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-neutral-dark mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <p className="text-gray-400">{value.description}</p>
               </div>
             ))}
           </div>
@@ -80,12 +80,12 @@ export default function AboutPage() {
       </section>
 
       {/* Story */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-gray-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-neutral-dark mb-6">Our Story</h2>
-              <div className="space-y-4 text-gray-600 text-lg">
+              <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
+              <div className="space-y-4 text-gray-300 text-lg">
                 <p>
                   M&rsquo;LiteEv was born from a simple observation: cities needed smarter, 
                   cleaner, and more efficient transportation solutions. Founded by passionate 
@@ -105,7 +105,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary-orange-light to-primary-orange rounded-3xl p-12 text-white">
+              <div className="bg-gradient-to-br from-teal-600 to-teal-700 rounded-3xl p-12 text-white">
                 <div className="text-center">
                   <div className="text-8xl mb-6">⚡</div>
                   <h3 className="text-3xl font-bold mb-4">Energise Your Ride</h3>
@@ -120,7 +120,7 @@ export default function AboutPage() {
       </section>
 
       {/* Stats */}
-      <section className="section-padding bg-primary-orange text-white">
+      <section className="section-padding bg-gradient-to-br from-teal-600 to-teal-700 text-white">
         <div className="container-custom">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div>
@@ -144,12 +144,12 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="section-padding bg-white">
+      <section className="section-padding bg-neutral-dark">
         <div className="container-custom text-center">
-          <h2 className="text-4xl font-bold text-neutral-dark mb-6">
+          <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Join the Movement?
           </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Discover how M&rsquo;LiteEv can transform your daily commute into an eco-friendly adventure
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
