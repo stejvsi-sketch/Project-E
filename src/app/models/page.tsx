@@ -37,10 +37,10 @@ export default function ModelsPage() {
       name: 'M\'LiteEv Urban Elite',
       tagline: 'Effortless Elegance, Practical Luxury',
       description: 'The Urban Elite is a dynamic electric scooter which has the comfort of any petrol scooter with slick design, a spectacular operating voltage and a loading capacity. Features include smart connectivity and riding comfort.',
-      bgColor: 'from-red-500 to-red-600',
+      bgColor: 'from-red-700 to-red-800',
       slug: 'urban-elite',
       colors: [
-        { name: 'Red', code: 'bg-red-500', border: 'border-red-300' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' }
       ],
@@ -216,7 +216,7 @@ export default function ModelsPage() {
       {productHeros.map((product, index) => (
         <section
           key={product.id}
-          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500`}
+          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500 pt-20`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
