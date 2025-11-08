@@ -72,12 +72,6 @@ export default function ModelsPage() {
     },
   ]
 
-  const models = [
-    { id: 1, name: 'Model A', slug: 'model-a', category: 'Commuter' },
-    { id: 2, name: 'Model B', slug: 'model-b', category: 'City' },
-    { id: 3, name: 'Model C', slug: 'model-c', category: 'Premium' },
-  ]
-
   return (
     <div className="min-h-screen">
       {/* Full-Screen Product Heroes - Warivo Style */}

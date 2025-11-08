@@ -30,8 +30,8 @@ export function Navigation() {
     <nav className={`bg-white sticky top-0 z-50 border-b transition-all duration-300 ${
       scrolled ? 'shadow-md border-gray-200' : 'shadow-sm border-gray-100'
     }`}>
-      {/* Utility Bar */}
-      <div className="border-b border-gray-100 bg-gray-50">
+      {/* Utility Bar - Hidden on Mobile */}
+      <div className="hidden md:block border-b border-gray-100 bg-gray-50">
         <div className="container-custom">
           <div className="flex items-center justify-end h-10 gap-6 text-sm">
             <a href="tel:+919876543210" className="flex items-center gap-2 text-gray-600 hover:text-primary-orange transition-colors">
@@ -48,22 +48,22 @@ export function Navigation() {
 
       {/* Main Navigation */}
       <div className="container-custom">
-        <div className="flex items-center justify-between h-28 md:h-28 py-3">
+        <div className="flex items-center justify-between h-20 md:h-28 py-2 md:py-3">
           {/* Logo with Title & Motto */}
-          <Link href="/" className="flex items-center gap-3 md:gap-4 group">
+          <Link href="/" className="flex items-center gap-2 md:gap-4 group">
             <Image
               src="/images/logo/logo.png"
               alt="M'LiteEv"
               width={400}
               height={140}
               priority
-              className="h-16 w-auto md:h-20"
+              className="h-12 w-auto md:h-20"
             />
             <div className="flex flex-col">
-              <div className="text-xl md:text-3xl font-bold text-neutral-dark group-hover:text-primary-orange transition-colors">
+              <div className="text-lg md:text-3xl font-bold text-neutral-dark group-hover:text-primary-orange transition-colors">
                 M<span className="text-primary-orange">'</span>LiteEv
               </div>
-              <div className="text-[9px] md:text-xs text-gray-600 uppercase tracking-widest font-semibold">
+              <div className="text-[8px] md:text-xs text-gray-600 uppercase tracking-widest font-semibold">
                 Energise Your Ride
               </div>
             </div>
@@ -85,13 +85,17 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Premium Style */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-neutral-gray transition-colors"
+            className="md:hidden p-3 rounded-lg hover:bg-gray-100 transition-all active:scale-95"
             aria-label="Toggle menu"
           >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMenuOpen ? (
+              <X size={28} className="text-neutral-dark" strokeWidth={2} />
+            ) : (
+              <Menu size={28} className="text-neutral-dark" strokeWidth={2} />
+            )}
           </button>
         </div>
 
@@ -101,7 +105,7 @@ export function Navigation() {
             'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-gradient-to-br from-gray-900 via-gray-800 to-teal-900',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
-          style={{ top: '112px' }} // Below navigation bar
+          style={{ top: '5rem' }} // Below navigation bar (h-20 = 5rem on mobile)
         >
           <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-transparent to-teal-900/20">
             {/* Navigation Links */}

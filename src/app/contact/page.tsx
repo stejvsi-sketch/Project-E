@@ -4,24 +4,69 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { LeadForm } from '@/components/LeadForm'
 
 export default function ContactPage() {
-  // Placeholder data - will be replaced with real scooter data from Supabase
+  // 7 Models with 3 colors each = 21 total variants
   const scooters = [
     {
       id: '1',
-      name: 'Model A',
+      name: 'M\'LiteEv Urban Elite',
       variants: [
-        { id: '1a', color_name: 'Midnight Black' },
-        { id: '1b', color_name: 'Racing Red' },
-        { id: '1c', color_name: 'Pearl White' },
+        { id: '1a', color_name: 'Red' },
+        { id: '1b', color_name: 'Black' },
+        { id: '1c', color_name: 'White' },
       ],
     },
     {
       id: '2',
-      name: 'Model B',
+      name: 'M\'LiteEv City Pro',
       variants: [
-        { id: '2a', color_name: 'Ocean Blue' },
-        { id: '2b', color_name: 'Forest Green' },
-        { id: '2c', color_name: 'Sunset Orange' },
+        { id: '2a', color_name: 'Gray' },
+        { id: '2b', color_name: 'Blue' },
+        { id: '2c', color_name: 'Silver' },
+      ],
+    },
+    {
+      id: '3',
+      name: 'M\'LiteEv Metro X',
+      variants: [
+        { id: '3a', color_name: 'Teal' },
+        { id: '3b', color_name: 'White' },
+        { id: '3c', color_name: 'Black' },
+      ],
+    },
+    {
+      id: '4',
+      name: 'M\'LiteEv Eco Plus',
+      variants: [
+        { id: '4a', color_name: 'Green' },
+        { id: '4b', color_name: 'White' },
+        { id: '4c', color_name: 'Gray' },
+      ],
+    },
+    {
+      id: '5',
+      name: 'M\'LiteEv Sport',
+      variants: [
+        { id: '5a', color_name: 'Orange' },
+        { id: '5b', color_name: 'Black' },
+        { id: '5c', color_name: 'Red' },
+      ],
+    },
+    {
+      id: '6',
+      name: 'M\'LiteEv Classic',
+      variants: [
+        { id: '6a', color_name: 'Beige' },
+        { id: '6b', color_name: 'Brown' },
+        { id: '6c', color_name: 'Cream' },
+      ],
+    },
+    {
+      id: '7',
+      name: 'M\'LiteEv Cruiser',
+      variants: [
+        { id: '7a', color_name: 'Blue' },
+        { id: '7b', color_name: 'Silver' },
+        { id: '7c', color_name: 'Black' },
       ],
     },
   ]
@@ -50,9 +95,9 @@ export default function ContactPage() {
       {/* Contact Content */}
       <section className="py-20 bg-gray-800">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-5 gap-12">
+          <div className="grid lg:grid-cols-3 gap-8 xl:gap-12">
             {/* Contact Info */}
-            <div>
+            <div className="lg:col-span-1">
               <h2 className="text-3xl font-bold text-white mb-6">Contact Information</h2>
               <p className="text-gray-300 mb-8">
                 Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
@@ -105,7 +150,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Information */}
+            {/* Contact Form */}
             <div className="lg:col-span-2 space-y-8">
               <div>
                 <h2 className="font-display text-4xl font-bold text-white mb-4">
@@ -116,10 +161,9 @@ export default function ContactPage() {
                 </p>
               </div>
               <LeadForm scooters={scooters} />
-            </div>
-
-            {/* Why Choose M&rsquo;LiteEv? */}
-            <div className="mt-12 bg-gray-700 p-8 rounded-2xl border border-gray-600">
+              
+              {/* Why Choose M&rsquo;LiteEv? */}
+              <div className="mt-8 bg-gray-700 p-8 rounded-2xl border border-gray-600">
               <h3 className="text-xl font-bold text-white mb-4">Why Choose M&rsquo;LiteEv?</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center">
@@ -139,6 +183,7 @@ export default function ContactPage() {
                   Nationwide Service Network
                 </li>
               </ul>
+              </div>
             </div>
           </div>
         </div>
