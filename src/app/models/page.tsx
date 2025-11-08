@@ -58,7 +58,7 @@ export default function ModelsPage() {
       slug: 'city-pro',
       colors: [
         { name: 'Gray', code: 'bg-gray-500', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-500', border: 'border-blue-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
         { name: 'Silver', code: 'bg-gray-300', border: 'border-gray-200' }
       ],
       specs: [
@@ -114,12 +114,12 @@ export default function ModelsPage() {
       name: 'M\'LiteEv Sport',
       tagline: 'Unleash the thrill',
       description: 'For those who crave adrenaline. The Sport model features enhanced acceleration, superior handling, and aggressive styling for the ultimate ride.',
-      bgColor: 'from-purple-500 to-purple-600',
+      bgColor: 'from-indigo-700 to-indigo-800',
       slug: 'sport',
       colors: [
-        { name: 'Purple', code: 'bg-purple-500', border: 'border-purple-300' },
+        { name: 'Indigo', code: 'bg-indigo-700', border: 'border-indigo-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'Red', code: 'bg-red-500', border: 'border-red-300' }
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' }
       ],
       specs: [
         { icon: Battery, label: 'Range', value: '65 km' },

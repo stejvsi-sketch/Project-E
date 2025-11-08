@@ -27,7 +27,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       description: 'Navigate city streets with confidence. The City Pro combines intelligent features with urban practicality for the modern commuter.',
       colors: [
         { name: 'Steel Gray', code: 'bg-gray-600', border: 'border-gray-400' },
-        { name: 'Ocean Blue', code: 'bg-blue-600', border: 'border-blue-400' },
+        { name: 'Deep Blue', code: 'bg-blue-700', border: 'border-blue-500' },
         { name: 'Silver', code: 'bg-gray-400', border: 'border-gray-300' },
       ]
     },
@@ -56,9 +56,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       tagline: 'Performance Unleashed',
       description: 'Built for thrill-seekers. The Sport model delivers maximum power and acceleration for an exhilarating ride.',
       colors: [
-        { name: 'Racing Red', code: 'bg-red-600', border: 'border-red-400' },
+        { name: 'Indigo', code: 'bg-indigo-700', border: 'border-indigo-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'Orange', code: 'bg-orange-600', border: 'border-orange-400' },
+        { name: 'Deep Red', code: 'bg-red-700', border: 'border-red-500' },
       ]
     },
     'classic': {
@@ -76,7 +76,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       tagline: 'Comfort Redefined',
       description: 'Long-range comfort for extended journeys. The Cruiser is perfect for those who go the extra mile.',
       colors: [
-        { name: 'Sky Blue', code: 'bg-blue-500', border: 'border-blue-300' },
+        { name: 'Ocean Blue', code: 'bg-blue-700', border: 'border-blue-500' },
         { name: 'Silver', code: 'bg-gray-400', border: 'border-gray-300' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
       ]
