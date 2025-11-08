@@ -1,10 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, use } from 'react'
 import Link from 'next/link'
 import { Zap, Battery, Shield, ChevronLeft, Gauge, Clock, CheckCircle2, Star } from 'lucide-react'
 
-export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  // Unwrap params Promise for Next.js 15+
+  const { slug } = use(params)
   const [selectedColor, setSelectedColor] = useState(0)
 
   // M'LiteEv Product Data - Matches slug from models page
@@ -81,7 +83,7 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
     },
   }
 
-  const product = productData[params.slug] || productData['urban-elite']
+  const product = productData[slug] || productData['urban-elite']
   product.keySpecs = [
     { icon: Battery, value: '80 km', label: 'Range' },
     { icon: Zap, value: '60 km/h', label: 'Top Speed' },
