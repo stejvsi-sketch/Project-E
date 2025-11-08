@@ -7,16 +7,11 @@ import { useState, useEffect } from 'react'
 
 export default function ModelsPage() {
   const [activeSection, setActiveSection] = useState(0)
-  const [scrollProgress, setScrollProgress] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.product-section')
-      const scrollY = window.scrollY
       const windowHeight = window.innerHeight
-      const docHeight = document.documentElement.scrollHeight
-      
-      setScrollProgress((scrollY / (docHeight - windowHeight)) * 100)
       
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect()
@@ -181,14 +176,6 @@ export default function ModelsPage() {
 
   return (
     <div className="min-h-screen relative">
-      {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-1 bg-gray-800/50 z-50">
-        <div 
-          className="h-full bg-gradient-to-r from-teal-500 to-teal-400 transition-all duration-300"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
-
       {/* Side Navigation Dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
         {productHeros.map((product, index) => (
