@@ -1,241 +1,271 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
-import { Zap, Battery, Shield, ChevronLeft } from 'lucide-react'
+import { Zap, Battery, Shield, ChevronLeft, Gauge, Clock, CheckCircle2, Star } from 'lucide-react'
 
 export default function ProductDetailPage({ params }: { params: { slug: string } }) {
+  const [selectedColor, setSelectedColor] = useState(0)
+
   // Product data - will be fetched from database later
   const product = {
-    name: 'NOVA-S',
-    tagline: 'Effortless Elegance',
-    subtitle: 'Practical Luxury',
-    description: 'The ultimate smart device — Smart Bluetooth Connectivity, up to seamless mobile pairing, and backed by a 3-Year Warranty.',
-    specs: [
-      { value: '60', label: 'Actual Range/charge(km) Solo', icon: '60' },
-      { value: '250', label: 'Rated Power (W)', icon: '250' },
-      { value: '25', label: 'Speed(km/h) Solo GPS', icon: '25' },
-      { value: '03', label: 'Driving Mode (Gear System)', icon: '03' },
+    name: 'Urban Elite',
+    tagline: 'Effortless Elegance, Practical Luxury',
+    description: 'The ultimate smart device — Smart Bluetooth Connectivity, seamless mobile pairing, and backed by a 3-Year Warranty. Experience premium electric mobility at its finest.',
+    keySpecs: [
+      { icon: Battery, value: '80 km', label: 'Range' },
+      { icon: Zap, value: '60 km/h', label: 'Top Speed' },
+      { icon: Gauge, value: '2000W', label: 'Power' },
+      { icon: Clock, value: '4 hrs', label: 'Charge Time' },
     ],
     features: [
       {
-        title: 'ALL DIGITAL CONSOLE BODY COLOR MIRROR',
-        description: 'Speedometer tripmeter & odometer stay fully informed.',
+        title: 'All Digital Console',
+        description: 'Speedometer, tripmeter & odometer - stay fully informed with premium digital display.',
         image: '📱'
       },
       {
-        title: 'STYLISH ALLOY WHEELS & TUBELESS TYRES',
-        description: 'Stylish alloy wheels with durable tubeless tyres for a sleek, smooth ride.',
+        title: 'Stylish Alloy Wheels',
+        description: 'Premium alloy wheels with durable tubeless tyres for a sleek, smooth ride.',
         image: '⚙️'
       },
       {
-        title: 'DISC BRAKING SYSTEM',
-        description: 'Balanced and reliable braking performance',
+        title: 'Disc Braking System',
+        description: 'Advanced disc brakes for balanced and reliable stopping power.',
         image: '🛞'
       },
       {
-        title: 'TELESCOPIC & DUAL SUSPENSION',
-        description: 'Comfortable ride with longer, comfortable seat across uneven roads and speed bumps',
+        title: 'Telescopic Suspension',
+        description: 'Comfortable ride with dual suspension across uneven roads and speed bumps.',
         image: '🔧'
       },
     ],
     colors: [
-      { name: 'M\'LiteEv Teal', code: 'bg-teal-400' },
-      { name: 'Pearl White', code: 'bg-white' },
-      { name: 'Midnight Black', code: 'bg-black' },
+      { name: 'Crimson Red', code: 'bg-red-700', border: 'border-red-500' },
+      { name: 'Midnight Black', code: 'bg-black', border: 'border-gray-400' },
+      { name: 'Pearl White', code: 'bg-white', border: 'border-gray-300' },
     ]
   }
 
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Back Button */}
-      <div className="container-custom pt-6">
-        <Link href="/models" className="inline-flex items-center gap-2 text-white hover:text-teal-500 transition-colors">
+      <div className="container-custom pt-8 pb-4">
+        <Link href="/models" className="inline-flex items-center gap-2 px-4 py-2 text-white hover:text-teal-400 transition-all bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700 hover:border-teal-500/50">
           <ChevronLeft className="w-5 h-5" />
           <span>Back to Models</span>
         </Link>
       </div>
 
-      {/* Hero Section with Specs */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-teal-600">
+      {/* Hero Section with Product Image */}
+      <section className="py-20 pt-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
-            {/* Left - Product Name */}
-            <div className="text-white">
-              <h1 className="text-6xl md:text-7xl font-bold mb-4">{product.name}</h1>
-              <p className="text-2xl font-semibold mb-2">{product.tagline}</p>
-              <p className="text-2xl font-semibold">{product.subtitle}</p>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left - Product Info */}
+            <div className="text-white space-y-6 text-center lg:text-left">
+              <div>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-4 tracking-tight">{product.name}</h1>
+                <p className="text-xl md:text-2xl text-teal-400 italic font-semibold">{product.tagline}</p>
+              </div>
+              <p className="text-lg text-gray-300 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                {product.description}
+              </p>
+
+              {/* Key Specs - Quick View */}
+              <div className="grid grid-cols-2 gap-4 pt-6">
+                {product.keySpecs.map((spec, index) => {
+                  const Icon = spec.icon
+                  return (
+                    <div key={index} className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-4 hover:border-teal-500/50 transition-all hover:scale-105 group">
+                      <Icon className="w-6 h-6 text-teal-500 mb-2 group-hover:scale-110 transition-transform" />
+                      <div className="text-2xl font-bold mb-1">{spec.value}</div>
+                      <div className="text-xs text-gray-400 uppercase tracking-wide">{spec.label}</div>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
 
             {/* Right - Product Image */}
-            <div className="relative h-96 flex items-center justify-center">
-              <div className="text-[250px]">🛴</div>
+            <div className="relative h-96 lg:h-[600px] flex items-center justify-center">
+              <div className="absolute inset-0 bg-teal-500/10 rounded-full blur-3xl" />
+              <div className="text-[250px] lg:text-[400px] drop-shadow-2xl relative z-10 transform hover:scale-110 transition-all duration-700">🛴</div>
             </div>
-          </div>
-
-          {/* Specs Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white">
-            {product.specs.map((spec, index) => (
-              <div key={index} className="text-center text-white">
-                <div className="text-6xl font-black mb-2 font-mono tracking-tight">
-                  {spec.icon}
-                </div>
-                <div className="text-sm font-semibold opacity-90 leading-tight">
-                  {spec.label}
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
-      {/* Elevate Your Ride */}
-      <section className="py-20 bg-white">
+      {/* Premium Features */}
+      <section className="py-20 bg-gray-800">
         <div className="container-custom">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-dark mb-4 text-center">
-              Elevate Your Ride With {product.name}
-            </h2>
-            <p className="text-xl text-gray-600 mb-4 text-center max-w-3xl mx-auto">
-              {product.description}
-            </p>
             <div className="text-center mb-12">
-              <Link href="/contact">
-                <button className="px-10 py-4 bg-teal-600 hover:bg-teal-500 text-white font-semibold rounded-md transition-all uppercase text-sm tracking-wide">
-                  BOOK {product.name} NOW
-                </button>
-              </Link>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Premium Features
+              </h2>
+              <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+                Experience cutting-edge technology and design that sets {product.name} apart
+              </p>
             </div>
 
             {/* Feature Grid */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 mb-12">
               {product.features.map((feature, index) => (
                 <div
                   key={index}
-                  className="relative bg-gray-700 rounded-lg overflow-hidden h-64 flex items-end p-8"
+                  className="group relative bg-gray-900/50 backdrop-blur-sm rounded-2xl overflow-hidden h-64 flex items-end p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:scale-105"
                 >
-                  <div className="absolute inset-0 flex items-center justify-center text-9xl opacity-20">
+                  <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute inset-0 flex items-center justify-center text-9xl opacity-10 group-hover:opacity-20 transition-opacity">
                     {feature.image}
                   </div>
                   <div className="relative z-10 text-white">
-                    <p className="text-sm mb-2 opacity-80">{feature.description}</p>
-                    <h3 className="text-xl font-bold">{feature.title}</h3>
+                    <h3 className="text-2xl font-bold mb-2 group-hover:text-teal-400 transition-colors">{feature.title}</h3>
+                    <p className="text-sm opacity-80 leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Link href="/contact" className="w-full sm:w-auto inline-block">
+                <button className="w-full sm:w-auto px-10 py-4 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-lg transition-all uppercase text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-105">
+                  BOOK TEST RIDE
+                </button>
+              </Link>
             </div>
           </div>
         </div>
       </section>
 
       {/* Colors Section */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-teal-600">
+      <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            3 Amazing Colours
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Choose Your Color
+            </h2>
+            <p className="text-lg text-gray-300">Available in 3 stunning colors</p>
+          </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Color Buttons */}
-            <div className="space-y-4 max-w-sm mx-auto lg:mx-0">
+            {/* Left - Interactive Color Selector */}
+            <div className="space-y-4 max-w-lg mx-auto lg:mx-0">
               {product.colors.map((color, index) => (
                 <button
                   key={index}
-                  className={`w-full py-4 px-8 ${
-                    index === 0
-                      ? 'bg-white/20 backdrop-blur-sm border-2 border-white'
-                      : color.code
-                  } text-white font-semibold rounded-lg hover:scale-105 transition-all`}
+                  onClick={() => setSelectedColor(index)}
+                  className={`group w-full py-6 px-8 rounded-2xl transition-all duration-300 flex items-center gap-6 ${
+                    selectedColor === index
+                      ? 'bg-gray-800/80 backdrop-blur-sm border-2 border-teal-500 shadow-xl shadow-teal-500/20 scale-105'
+                      : 'bg-gray-800/40 backdrop-blur-sm border-2 border-gray-700 hover:border-teal-500/50 hover:scale-102'
+                  }`}
                 >
-                  {color.name}
+                  <div className={`w-16 h-16 rounded-full ${color.code} border-4 ${color.border} shadow-lg transition-transform duration-300 ${selectedColor === index ? 'scale-110' : 'group-hover:scale-105'}`} />
+                  <div className="text-left flex-1">
+                    <div className={`text-xl font-bold transition-colors ${selectedColor === index ? 'text-teal-400' : 'text-white group-hover:text-teal-400'}`}>
+                      {color.name}
+                    </div>
+                    <div className="text-sm text-gray-400">Available now</div>
+                  </div>
+                  {selectedColor === index && (
+                    <CheckCircle2 className="w-6 h-6 text-teal-500" />
+                  )}
                 </button>
               ))}
             </div>
 
-            {/* Right - Scooter Image */}
-            <div className="relative h-96 flex items-center justify-center">
-              <div className="text-[250px]">🛴</div>
+            {/* Right - Product Visualization */}
+            <div className="relative h-[500px] flex items-center justify-center bg-gray-800/30 rounded-3xl border border-gray-700">
+              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent rounded-3xl" />
+              <div className="text-[280px] drop-shadow-2xl transform hover:scale-105 transition-all duration-500">🛴</div>
+              <div className="absolute bottom-8 left-0 right-0 text-center">
+                <div className="inline-block bg-gray-900/90 backdrop-blur-md px-6 py-3 rounded-full border border-gray-700">
+                  <span className="text-white font-semibold">{product.colors[selectedColor].name}</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Specifications */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-800">
         <div className="container-custom">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">
-            Specifications
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-white mb-4">
+              Technical Specifications
+            </h2>
+            <p className="text-lg text-gray-300">Detailed specifications for {product.name}</p>
+          </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
             {/* Motor & Performance */}
-            <div className="bg-teal-600 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6 text-white">
+            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
                 <Zap className="w-6 h-6" />
-                <h3 className="text-xl font-bold">Motor & Performance</h3>
+                <h3 className="text-xl font-bold text-white">Motor & Performance</h3>
               </div>
               <div className="grid md:grid-cols-2 gap-6 text-white">
                 <div>
-                  <div className="font-semibold mb-1">Range</div>
-                  <div className="opacity-90">Upto 120 kms</div>
+                  <div className="font-semibold mb-1 text-gray-300">Range</div>
+                  <div className="text-lg">Upto 120 kms</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Battery</div>
-                  <div className="opacity-90">Lead Acid / Lithium</div>
+                  <div className="font-semibold mb-1 text-gray-300">Battery</div>
+                  <div className="text-lg">Lead Acid / Lithium</div>
                 </div>
               </div>
             </div>
 
             {/* Brake & Tyre */}
-            <div className="bg-teal-600 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6 text-white">
+            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
                 <Battery className="w-6 h-6" />
-                <h3 className="text-xl font-bold">Brake & Tyre</h3>
+                <h3 className="text-xl font-bold text-white">Brake & Tyre</h3>
               </div>
-              <div className="grid md:grid-cols-4 gap-6 text-white">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
                 <div>
-                  <div className="font-semibold mb-1">Brake Type</div>
-                  <div className="opacity-90">Front Disc/Rear Drum</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Brake Type</div>
+                  <div className="text-lg">Front Disc/Rear Drum</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Tyre Type</div>
-                  <div className="opacity-90">Tubeless</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Tyre Type</div>
+                  <div className="text-lg">Tubeless</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Front Tyre</div>
-                  <div className="opacity-90">90/90/12</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Front Tyre</div>
+                  <div className="text-lg">90/90/12</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Rear Tyre</div>
-                  <div className="opacity-90">90/90/12</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Rear Tyre</div>
+                  <div className="text-lg">90/90/12</div>
                 </div>
-              </div>
-              <div className="mt-4 text-white">
-                <div className="font-semibold mb-1">Front wheel rim</div>
-                <div className="opacity-90">Alloy</div>
               </div>
             </div>
 
             {/* Suspension & Dimension */}
-            <div className="bg-teal-600 rounded-lg p-8">
-              <div className="flex items-center gap-3 mb-6 text-white">
+            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
                 <Shield className="w-6 h-6" />
-                <h3 className="text-xl font-bold">Suspension & Dimension</h3>
+                <h3 className="text-xl font-bold text-white">Suspension & Dimension</h3>
               </div>
-              <div className="grid md:grid-cols-4 gap-6 text-white">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-white">
                 <div>
-                  <div className="font-semibold mb-1">Front</div>
-                  <div className="opacity-90">Telescopic</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Front</div>
+                  <div className="text-lg">Telescopic</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Rear</div>
-                  <div className="opacity-90">Dual</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Rear</div>
+                  <div className="text-lg">Dual</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Kerb weight without battery</div>
-                  <div className="opacity-90">58.500 kg</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Kerb Weight</div>
+                  <div className="text-lg">58.5 kg</div>
                 </div>
                 <div>
-                  <div className="font-semibold mb-1">Dimensions (lxwxh) mm</div>
-                  <div className="opacity-90">1800 x 660 x 1100</div>
+                  <div className="font-semibold mb-1 text-gray-300 text-sm">Dimensions</div>
+                  <div className="text-lg">1800x660x1100mm</div>
                 </div>
               </div>
             </div>
@@ -244,19 +274,28 @@ export default function ProductDetailPage({ params }: { params: { slug: string }
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-neutral-dark">
+      <section className="py-20 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 border-t border-gray-800">
         <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Ready to Experience {product.name}?
-          </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Book a test ride today and feel the difference
-          </p>
-          <Link href="/contact">
-            <button className="px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white font-semibold rounded-md transition-all uppercase text-sm tracking-wide shadow-lg hover:scale-105">
-              BOOK TEST RIDE
-            </button>
-          </Link>
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Ready to Experience {product.name}?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+              Book a test ride today and discover the future of electric mobility
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="w-full sm:w-auto inline-block">
+                <button className="w-full sm:w-auto px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white font-bold rounded-lg transition-all uppercase text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-105">
+                  BOOK TEST RIDE
+                </button>
+              </Link>
+              <Link href="/models" className="w-full sm:w-auto inline-block">
+                <button className="w-full sm:w-auto px-12 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-gray-900 transition-all uppercase text-sm tracking-wide">
+                  VIEW ALL MODELS
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </div>

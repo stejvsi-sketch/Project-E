@@ -276,7 +276,7 @@ export default function ModelsPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-8 pb-4">
                   <Link href={`/models/${product.slug}`} className="w-full sm:w-auto">
                     <button className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-all uppercase text-sm tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 transform duration-300 flex items-center justify-center gap-2">
                       Explore Details
