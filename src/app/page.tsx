@@ -47,10 +47,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Trust Bar - Press & Badges */}
+        {/* Trust Bar - Badges */}
         <div className="border-t border-gray-700 bg-gray-800/80 backdrop-blur-sm">
           <div className="container-custom py-8">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center justify-items-center">
+            <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
               {/* Trust Badges */}
               <div className="flex flex-col items-center text-center">
                 <Shield className="w-8 h-8 text-teal-500 mb-2" />
@@ -64,10 +64,6 @@ export default function Home() {
                 <Award className="w-8 h-8 text-teal-500 mb-2" />
                 <p className="text-xs font-semibold text-gray-300">Award Winning</p>
               </div>
-              
-              {/* Press Mentions */}
-              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">As Seen In</div>
-              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Economic Times</div>
             </div>
           </div>
         </div>
