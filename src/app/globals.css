@@ -1,42 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary-orange: #FF6A00;
+  --primary-orange-light: #FF8A33;
+  --primary-orange-dark: #E65F00;
+  --neutral-dark: #222222;
+  --neutral-gray: #F7F7F7;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    @apply bg-white text-neutral-dark antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Display serif font for headlines */
+  h1, h2, h3 {
+    font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  /* Ensure buttons meet accessibility minimum */
+  button, a.btn-primary, a.btn-secondary {
+    min-height: 44px;
   }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
+/* Premium Button Styles */
+@layer components {
+  .btn-primary {
+    @apply px-10 py-5 bg-neutral-dark text-white text-lg font-semibold rounded-xl;
+    @apply hover:bg-black transition-all shadow-lg hover:shadow-xl;
+    @apply transform hover:-translate-y-0.5;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary-orange/50;
+  }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  .btn-secondary {
+    @apply px-10 py-5 border-2 border-neutral-dark text-neutral-dark text-lg font-semibold rounded-xl;
+    @apply hover:bg-neutral-dark hover:text-white transition-all;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary-orange/50;
+  }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+  /* Skeleton loader animation */
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+  .skeleton {
+    animation: shimmer 2s infinite linear;
+    background: linear-gradient(
+      to right,
+      #f0f0f0 0%,
+      #e0e0e0 20%,
+      #f0f0f0 40%,
+      #f0f0f0 100%
+    );
+    background-size: 1000px 100%;
+  }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  /* Utility classes */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
   }
 }
