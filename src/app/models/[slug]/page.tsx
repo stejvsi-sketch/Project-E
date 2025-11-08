@@ -152,10 +152,22 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               </div>
             </div>
 
-            {/* Right - Product Image */}
+            {/* Right - Product Image with Selected Color */}
             <div className="relative h-64 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
-              <div className="absolute inset-0 bg-teal-500/10 rounded-full blur-3xl" />
-              <div className="text-[120px] sm:text-[180px] md:text-[250px] lg:text-[400px] drop-shadow-2xl relative z-10 transform hover:scale-110 transition-all duration-700">🛴</div>
+              <div className={`absolute inset-0 ${product.colors[selectedColor].code}/10 rounded-full blur-3xl`} />
+              {/* Scooter Silhouette SVG */}
+              <svg viewBox="0 0 200 200" className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] relative z-10 transform hover:scale-110 transition-all duration-700 drop-shadow-2xl">
+                {/* Main Body */}
+                <rect x="40" y="80" width="120" height="40" rx="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Handlebars */}
+                <rect x="35" y="60" width="8" height="30" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                <rect x="30" y="58" width="20" height="6" rx="3" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Wheels */}
+                <circle cx="60" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                <circle cx="140" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Deck connecting wheels */}
+                <rect x="60" y="130" width="80" height="8" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+              </svg>
             </div>
           </div>
         </div>
@@ -241,10 +253,22 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               ))}
             </div>
 
-            {/* Right - Product Visualization */}
+            {/* Right - Product Visualization with Color Change */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-gray-800/30 rounded-3xl border border-gray-700 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-teal-500/5 to-transparent rounded-3xl" />
-              <div className="text-[150px] sm:text-[200px] md:text-[250px] lg:text-[280px] drop-shadow-2xl transform hover:scale-105 transition-all duration-500">🛴</div>
+              <div className={`absolute inset-0 bg-gradient-to-br from-${product.colors[selectedColor].code.replace('bg-', '')}/10 to-transparent rounded-3xl transition-all duration-500`} />
+              {/* Animated Scooter Silhouette */}
+              <svg viewBox="0 0 200 200" className="w-[240px] sm:w-[320px] md:w-[400px] drop-shadow-2xl transform hover:scale-105 transition-all duration-500">
+                {/* Main Body */}
+                <rect x="40" y="80" width="120" height="40" rx="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Handlebars */}
+                <rect x="35" y="60" width="8" height="30" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                <rect x="30" y="58" width="20" height="6" rx="3" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Wheels */}
+                <circle cx="60" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                <circle cx="140" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+                {/* Deck */}
+                <rect x="60" y="130" width="80" height="8" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
+              </svg>
               <div className="absolute bottom-8 left-0 right-0 text-center">
                 <div className="inline-block bg-gray-900/90 backdrop-blur-md px-6 py-3 rounded-full border border-gray-700">
                   <span className="text-white font-semibold">{product.colors[selectedColor].name}</span>
