@@ -74,15 +74,10 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-6">
-              <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10">
-                Contact Us
-              </span>
-            </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
               Let's Start Your Journey
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
@@ -163,7 +158,7 @@ export default function ContactPage() {
               <LeadForm scooters={scooters} />
               
               {/* Why Choose M&rsquo;LiteEv? */}
-              <div className="mt-8 bg-gray-700 p-8 rounded-2xl border border-gray-600">
+              <div className="mt-8 bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-600 hover:border-teal-500/50 transition-all duration-300">
               <h3 className="text-xl font-bold text-white mb-4">Why Choose M&rsquo;LiteEv?</h3>
               <ul className="space-y-3 text-gray-300">
                 <li className="flex items-center">

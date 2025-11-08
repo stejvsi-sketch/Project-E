@@ -6,14 +6,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-24">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
         <div className="container-custom text-center">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10">
-              About Us
-            </span>
-          </div>
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6">About M&rsquo;LiteEv</h1>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">About M&rsquo;LiteEv</h1>
           <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
             Energising the future of urban mobility
           </p>

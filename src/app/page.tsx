@@ -32,8 +32,8 @@ export default function Home() {
             </div>
 
             {/* Single CTA Button */}
-            <Link href="/models">
-              <button className="px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white text-base font-semibold rounded-md transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+            <Link href="/models" className="w-full sm:w-auto inline-block">
+              <button className="w-full sm:w-auto px-8 sm:px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white text-base font-semibold rounded-md transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
                 BOOK NOW
               </button>
             </Link>
