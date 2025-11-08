@@ -105,11 +105,11 @@ export default function Home() {
                 )
               },
             ].map((feature, index) => (
-              <div key={index} className="text-center">
-                <div className="flex justify-center mb-4 text-teal-500">
+              <div key={index} className="group text-center bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-800 hover:border-teal-500/50 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-teal-500/10">
+                <div className="flex justify-center mb-4 text-teal-500 group-hover:scale-110 transition-transform duration-300">
                   {feature.icon}
                 </div>
-                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wide">
+                <h3 className="text-sm font-bold text-white mb-2 uppercase tracking-wide group-hover:text-teal-400 transition-colors">
                   {feature.title}
                 </h3>
                 <div className="text-xs text-gray-400">
@@ -189,8 +189,8 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto space-y-6">
             {/* Motor & Performance */}
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-              <div className="flex items-center gap-3 mb-6 text-teal-500">
+            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
                 <Zap className="w-6 h-6" />
                 <h3 className="text-xl font-bold text-white">Motor & Performance</h3>
               </div>
@@ -207,8 +207,8 @@ export default function Home() {
             </div>
 
             {/* Brake & Tyre */}
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-              <div className="flex items-center gap-3 mb-6 text-teal-500">
+            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
                 <Battery className="w-6 h-6" />
                 <h3 className="text-xl font-bold text-white">Brake & Tyre</h3>
               </div>
@@ -233,8 +233,8 @@ export default function Home() {
             </div>
 
             {/* Suspension & Dimension */}
-            <div className="bg-gray-800 rounded-lg p-8 border border-gray-700">
-              <div className="flex items-center gap-3 mb-6 text-teal-500">
+            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
+              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
                 <Shield className="w-6 h-6" />
                 <h3 className="text-xl font-bold text-white">Suspension & Dimension</h3>
               </div>

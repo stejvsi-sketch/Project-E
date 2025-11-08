@@ -104,7 +104,7 @@ export default function ContactPage() {
               </p>
               {/* Contact Cards */}
               <div className="space-y-6">
-                <a href="tel:+919876543210" className="flex items-start gap-4 p-6 bg-gray-700 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-600 hover:border-teal-500 group">
+                <a href="tel:+919876543210" className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
                   <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
                     <Phone className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
                   </div>
@@ -115,7 +115,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="mailto:info@mliteev.com" className="flex items-start gap-4 p-6 bg-gray-700 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-600 hover:border-teal-500 group">
+                <a href="mailto:info@mliteev.com" className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
                   <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
                     <Mail className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
                   </div>
@@ -126,7 +126,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-6 bg-gray-700 rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-600 hover:border-teal-500 group">
+                <div className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
                   <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
                     <MapPin className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
                   </div>

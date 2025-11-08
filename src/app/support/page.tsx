@@ -83,10 +83,10 @@ export default function SupportPage() {
             ].map((category, index) => (
               <div
                 key={index}
-                className="bg-neutral-gray p-6 rounded-xl hover:shadow-lg transition-all duration-300 text-center"
+                className="group bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 text-center border border-gray-700 hover:border-teal-500/50 hover:scale-105"
               >
-                <div className="text-teal-500 mb-3 flex justify-center">{category.icon}</div>
-                <h3 className="font-bold text-lg mb-2 text-white">{category.title}</h3>
+                <div className="text-teal-500 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
+                <h3 className="font-bold text-lg mb-2 text-white group-hover:text-teal-400 transition-colors">{category.title}</h3>
                 <p className="text-gray-400 text-sm">{category.description}</p>
               </div>
             ))}
@@ -103,8 +103,8 @@ export default function SupportPage() {
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow border border-gray-700">
-                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+              <div key={index} className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-700 hover:border-teal-500/50">
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{faq.question}</h3>
                 <p className="text-gray-300">{faq.answer}</p>
               </div>
             ))}

@@ -240,7 +240,6 @@ export default function ModelsPage() {
                   <span className="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30">
                     Model {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="text-2xl font-bold">{product.price}</span>
                 </div>
 
                 <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">

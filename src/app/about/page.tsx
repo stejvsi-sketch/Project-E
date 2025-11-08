@@ -66,12 +66,12 @@ export default function AboutPage() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="bg-gray-800 p-8 rounded-2xl text-center hover:shadow-xl hover:bg-gray-700 transition-all duration-300 border border-gray-700"
+                className="group bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl text-center hover:shadow-xl hover:shadow-teal-500/10 hover:bg-gray-800 transition-all duration-300 border border-gray-700 hover:border-teal-500/50 hover:scale-105"
               >
-                <div className="text-teal-500 mb-4 flex justify-center">
+                <div className="text-teal-500 mb-4 flex justify-center group-hover:scale-110 transition-transform duration-300">
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{value.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{value.title}</h3>
                 <p className="text-gray-400">{value.description}</p>
               </div>
             ))}
