@@ -8,9 +8,9 @@ import { ScooterCarousel } from '@/components/ScooterCarousel'
 export default function Home() {
   return (
     <>
-      {/* Hero Section - Clean Minimal */}
+      {/* M'LiteEv Hero - Premium Electric Scooter Showcase */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark overflow-hidden min-h-[85vh]">
-        {/* Large Background Text Watermark */}
+        {/* M'LiteEv Brand Watermark Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <h1 className="text-[20vw] md:text-[15vw] font-black text-white/5 tracking-tighter select-none">
             M'LITEEV
@@ -18,31 +18,31 @@ export default function Home() {
         </div>
 
         <div className="container-custom relative z-10">
-          <div className="flex flex-col items-center justify-center py-12 md:py-16">
-            {/* Main Scooter Display */}
-            <div className="w-full max-w-4xl mb-8">
+          <div className="flex flex-col items-center justify-center py-12 md:py-20">
+            {/* M'LiteEv Electric Scooter Carousel Showcase */}
+            <div className="w-full max-w-5xl mb-10">
               <ScooterCarousel autoPlay={true} interval={4000} />
             </div>
 
-            {/* Product Description */}
+            {/* M'LiteEv Value Proposition */}
             <div className="text-center max-w-2xl mb-8">
               <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
                 Premium electric scooters engineered for the modern city — sustainable, silent, and sophisticated.
               </p>
             </div>
 
-            {/* Single CTA Button */}
-            <Link href="/models" className="w-full sm:w-auto inline-block">
-              <button className="w-full sm:w-auto px-8 sm:px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white text-base font-semibold rounded-md transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
-                BOOK NOW
+            {/* Primary M'LiteEv CTA - Book Now */}
+            <Link href="/models" className="w-full sm:w-auto inline-block group">
+              <button className="w-full sm:w-auto px-8 sm:px-12 py-4 bg-teal-600 hover:bg-teal-500 text-white text-base font-semibold rounded-lg transition-all shadow-lg hover:shadow-2xl transform hover:scale-105">
+                EXPLORE M'LITEEV MODELS
               </button>
             </Link>
 
-            {/* Minimal Features */}
-            <div className="flex gap-6 md:gap-12 mt-10 text-sm text-gray-400">
-              <span>✓ 3-Year Warranty</span>
-              <span>✓ 0% Financing</span>
-              <span>✓ Free Test Ride</span>
+            {/* M'LiteEv Key Benefits */}
+            <div className="flex flex-wrap gap-6 md:gap-12 mt-10 text-sm text-gray-400 justify-center">
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-500" /> 3-Year Warranty</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-500" /> 0% Financing</span>
+              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-teal-500" /> Free Test Ride</span>
             </div>
           </div>
         </div>
@@ -69,33 +69,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features - Icon Cards */}
-      <section className="py-16 bg-gray-900 border-t border-gray-800">
+      {/* M'LiteEv Core Features - What Makes Us Different */}
+      <section className="py-20 bg-gray-900 border-t border-gray-800">
         <div className="container-custom">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Why Choose M'LiteEv</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">Premium features that set our electric scooters apart</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: <Shield className="w-12 h-12" />,
                 title: '3-YEAR WARRANTY',
-                description: 'Combines product durability with warranty support'
+                description: 'Comprehensive coverage on motor, battery, and components'
               },
               {
                 icon: <Zap className="w-12 h-12" />,
                 title: 'SMART CONNECTIVITY',
-                description: 'Captures key benefits—turn-by-turn maps and real-time alerts'
+                description: 'Bluetooth connectivity with GPS tracking and real-time alerts'
               },
               {
                 icon: <Battery className="w-12 h-12" />,
-                title: 'DISC BRAKES',
-                description: 'Precision Braking for Real Control'
+                title: 'ADVANCED BRAKING',
+                description: 'Front disc and rear drum brakes for superior control'
               },
               {
                 icon: <Sparkles className="w-12 h-12" />,
-                title: 'AMAZING COLORS',
+                title: 'VIBRANT COLORS',
                 description: (
                   <div className="flex gap-2 justify-center mt-2">
-                    {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#6B7280'].map((color, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-300" style={{ backgroundColor: color }}></div>
+                    {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#F5F5F5'].map((color, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-600 shadow-md hover:scale-110 transition-transform" style={{ backgroundColor: color }}></div>
                     ))}
                   </div>
                 )
@@ -117,26 +121,26 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Built to Last - Product Detail Grid */}
+      {/* M'LiteEv Durability Showcase - Built for Indian Roads */}
       <section className="py-20 bg-gray-800">
         <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left Content */}
-            <div>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* M'LiteEv Durability Promise */}
+            <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 BUILT TO LAST
               </h2>
-              <p className="text-gray-300 text-lg mb-8">
-                Designed for everyday use
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Every M'LiteEv scooter is engineered to withstand daily urban commutes with superior build quality and premium components.
               </p>
-              <Link href="/contact">
-                <button className="px-10 py-4 bg-teal-600 hover:bg-teal-700 text-white font-semibold rounded-md transition-all uppercase text-sm tracking-wide">
+              <Link href="/contact" className="inline-block">
+                <button className="px-10 py-4 bg-teal-600 hover:bg-teal-500 text-white font-semibold rounded-lg transition-all uppercase text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-105">
                   BOOK A TEST RIDE
                 </button>
               </Link>
             </div>
 
-            {/* Right Grid - Product Details */}
+            {/* M'LiteEv Premium Component Grid */}
             <div className="grid grid-cols-2 gap-4">
               {/* Large Image - Top Left */}
               <div className="col-span-2 lg:col-span-1 lg:row-span-2 relative h-64 lg:h-full bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg overflow-hidden">
@@ -176,12 +180,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Specifications Section */}
+      {/* M'LiteEv Technical Specifications */}
       <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="text-4xl font-bold text-center text-white mb-12">
-            Specifications
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Technical Specifications
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">Detailed specs of our premium electric scooters</p>
+          </div>
 
           <div className="max-w-4xl mx-auto space-y-6">
             {/* Motor & Performance */}

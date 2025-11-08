@@ -5,58 +5,66 @@ import Link from 'next/link'
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Hero */}
+      {/* M'LiteEv Brand Story Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
         <div className="container-custom text-center">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/30">
+              Our Story
+            </span>
+          </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">About M&rsquo;LiteEv</h1>
-          <p className="text-2xl text-gray-300 max-w-3xl mx-auto">
-            Energising the future of urban mobility
+          <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto">
+            Energising the future of urban mobility with premium electric scooters
           </p>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* M'LiteEv Mission Statement */}
       <section className="py-20 bg-gray-800">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-white mb-8">Our Mission</h2>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              At M&rsquo;LiteEv, we&apos;re on a mission to revolutionize urban transportation through 
-              innovative, eco-friendly electric scooters. We believe that sustainable mobility 
-              shouldn&apos;t come at the cost of performance or style. Our premium electric scooters 
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-8">Our Mission</h2>
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+              At M&rsquo;LiteEv, we&apos;re revolutionizing urban transportation through 
+              innovative, eco-friendly electric scooters. We believe sustainable mobility 
+              shouldn&apos;t compromise on performance or style. Our premium electric scooters 
               combine cutting-edge technology, superior design, and environmental responsibility 
-              to deliver an unmatched riding experience.
+              to deliver an unmatched riding experience for modern cities.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Values */}
+      {/* M'LiteEv Core Values */}
       <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-16">Our Values</h2>
+          <div className="text-center mb-16">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">What Drives Us</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">The principles that guide M'LiteEv in creating exceptional electric scooters</p>
+          </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
                 icon: <Zap className="w-12 h-12" />,
                 title: 'Innovation',
-                description: 'Constantly pushing boundaries with cutting-edge electric vehicle technology',
+                description: 'Pushing boundaries with cutting-edge electric vehicle technology and smart features',
               },
               {
                 icon: <Heart className="w-12 h-12" />,
                 title: 'Sustainability',
-                description: 'Committed to reducing carbon footprint and protecting our environment',
+                description: 'Reducing carbon emissions and protecting our environment for future generations',
               },
               {
                 icon: <Award className="w-12 h-12" />,
-                title: 'Quality',
-                description: 'Premium materials and craftsmanship in every scooter we build',
+                title: 'Premium Quality',
+                description: 'Superior materials and exceptional craftsmanship in every M\'LiteEv scooter',
               },
               {
                 icon: <Users className="w-12 h-12" />,
                 title: 'Community',
-                description: 'Building a community of eco-conscious urban riders',
+                description: 'Building a community of eco-conscious riders transforming urban mobility',
               },
             ].map((value, index) => (
               <div
@@ -74,12 +82,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Story */}
-      <section className="section-padding bg-gray-800">
+      {/* M'LiteEv Journey - From Vision to Reality */}
+      <section className="py-20 bg-gray-800">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-white mb-6">Our Story</h2>
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">The M'LiteEv Journey</h2>
               <div className="space-y-4 text-gray-300 text-lg">
                 <p>
                   M&rsquo;LiteEv was born from a simple observation: cities needed smarter, 
@@ -114,10 +122,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="section-padding bg-gradient-to-br from-teal-600 to-teal-700 text-white">
+      {/* M'LiteEv Impact - Our Numbers Tell Our Story */}
+      <section className="py-20 bg-gradient-to-br from-teal-600 to-teal-700 text-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Impact</h2>
+            <p className="text-lg opacity-90">Making a difference in urban mobility across India</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-5xl font-bold mb-2">10K+</div>
               <div className="text-lg opacity-90">Happy Riders</div>
@@ -138,21 +150,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding bg-neutral-dark">
+      {/* M'LiteEv CTA - Join the Electric Revolution */}
+      <section className="py-20 bg-gray-900">
         <div className="container-custom text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Join the Movement?
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Join the M'LiteEv Family?
           </h2>
-          <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Discover how M&rsquo;LiteEv can transform your daily commute into an eco-friendly adventure
+          <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+            Transform your daily commute into an eco-friendly adventure with M&rsquo;LiteEv electric scooters
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/models">
-              <Button size="lg">Explore Our Models</Button>
+            <Link href="/models" className="w-full sm:w-auto inline-block">
+              <Button size="lg" className="w-full sm:w-auto">Explore Our Models</Button>
             </Link>
-            <Link href="/contact">
-              <Button variant="secondary" size="lg">Contact Us</Button>
+            <Link href="/contact" className="w-full sm:w-auto inline-block">
+              <Button variant="secondary" size="lg" className="w-full sm:w-auto">Contact Us</Button>
             </Link>
           </div>
         </div>

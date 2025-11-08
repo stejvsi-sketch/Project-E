@@ -6,8 +6,10 @@ import { Button } from '@/components/ui/Button'
 import { useState, useEffect } from 'react'
 
 export default function ModelsPage() {
+  // Track which M'LiteEv model is currently in viewport
   const [activeSection, setActiveSection] = useState(0)
 
+  // M'LiteEv Model Navigation - Detect which product section is in view
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll('.product-section')
@@ -25,7 +27,7 @@ export default function ModelsPage() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 7 Models with 3 colors each = 21 total variants
+  // M'LiteEv Complete Product Lineup - 7 Premium Electric Scooter Models
   const productHeros = [
     {
       id: 1,

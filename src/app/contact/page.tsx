@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from 'lucide-react'
 import { LeadForm } from '@/components/LeadForm'
 
 export default function ContactPage() {
-  // 7 Models with 3 colors each = 21 total variants
+  // M'LiteEv Complete Model Lineup - All 7 models with their color variants
   const scooters = [
     {
       id: '1',
@@ -73,7 +73,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Hero Section */}
+      {/* M'LiteEv Contact Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">

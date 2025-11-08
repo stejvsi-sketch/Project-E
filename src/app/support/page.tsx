@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
 
 export default function SupportPage() {
+  // M'LiteEv Frequently Asked Questions - Common queries from our customers
   const faqs = [
     {
       question: 'What is the range of M\'LiteEv scooters?',
@@ -40,20 +41,25 @@ export default function SupportPage() {
 
   return (
     <div className="min-h-screen bg-gray-900">
-      {/* Hero */}
+      {/* M'LiteEv Support Center Hero */}
       <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
         <div className="container-custom text-center">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/30">
+              Support Center
+            </span>
+          </div>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">How Can We Help?</h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Get answers, support, and expert guidance for your M&rsquo;LiteEv
+            Get answers, support, and expert guidance for your M&rsquo;LiteEv electric scooter
           </p>
         </div>
       </section>
 
-      {/* Support Categories */}
-      <section className="section-padding bg-gray-800">
+      {/* M'LiteEv Support Categories */}
+      <section className="py-20 bg-gray-800">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               {
                 icon: <Battery className="w-8 h-8" />,
@@ -89,12 +95,15 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* M'LiteEv FAQ - Customer Questions Answered */}
       <section className="py-20 bg-gray-900">
         <div className="container-custom">
-          <h2 className="font-display text-4xl md:text-5xl font-bold text-white text-center mb-12">
-            Frequently Asked Questions
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">Quick answers to common M'LiteEv questions</p>
+          </div>
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
@@ -107,12 +116,15 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* Battery Care Guide */}
-      <section className="section-padding bg-gray-800">
+      {/* M'LiteEv Battery Care Guide */}
+      <section className="py-20 bg-gray-800">
         <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-white mb-8 text-center">
-            Battery Care Tips
-          </h2>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Battery Care Tips
+            </h2>
+            <p className="text-gray-400">Maximize your M'LiteEv battery life with these tips</p>
+          </div>
           
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-teal-900/30 border-2 border-teal-500 rounded-xl p-6">
@@ -140,21 +152,21 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* Contact CTA */}
-      <section className="section-padding bg-gradient-to-br from-teal-600 to-teal-700 text-white">
+      {/* M'LiteEv Support Contact CTA */}
+      <section className="py-20 bg-gray-900">
         <div className="container-custom text-center">
-          <h2 className="text-4xl font-bold mb-6">Still Have Questions?</h2>
-          <p className="text-xl mb-8 opacity-90">
-            Our support team is ready to assist you
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Still Have Questions?</h2>
+          <p className="text-lg md:text-xl text-gray-300 mb-8">
+            Our M'LiteEv support team is ready to assist you with any queries
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="bg-white text-primary-orange hover:bg-gray-100">
+            <Link href="/contact" className="w-full sm:w-auto inline-block">
+              <Button size="lg" className="w-full sm:w-auto bg-teal-600 hover:bg-teal-500">
                 Contact Support
               </Button>
             </Link>
-            <a href="tel:+919876543210">
-              <Button size="lg" variant="secondary" className="border-white text-white hover:bg-white hover:text-primary-orange">
+            <a href="tel:+919876543210" className="w-full sm:w-auto inline-block">
+              <Button size="lg" variant="secondary" className="w-full sm:w-auto border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white">
                 Call Us Now
               </Button>
             </a>
