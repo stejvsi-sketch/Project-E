@@ -117,10 +117,10 @@ export default function ModelsPage() {
       name: 'M\'LiteEv Sport',
       tagline: 'Unleash the thrill',
       description: 'For those who crave adrenaline. The Sport model features enhanced acceleration, superior handling, and aggressive styling for the ultimate ride.',
-      bgColor: 'from-orange-500 to-orange-600',
+      bgColor: 'from-purple-500 to-purple-600',
       slug: 'sport',
       colors: [
-        { name: 'Orange', code: 'bg-orange-500', border: 'border-orange-300' },
+        { name: 'Purple', code: 'bg-purple-500', border: 'border-purple-300' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'Red', code: 'bg-red-500', border: 'border-red-300' }
       ],
@@ -137,12 +137,12 @@ export default function ModelsPage() {
       name: 'M\'LiteEv Classic',
       tagline: 'Timeless sophistication',
       description: 'Classic design meets modern technology. The Classic offers vintage aesthetics with contemporary electric performance.',
-      bgColor: 'from-amber-600 to-amber-700',
+      bgColor: 'from-slate-600 to-slate-700',
       slug: 'classic',
       colors: [
-        { name: 'Beige', code: 'bg-amber-200', border: 'border-amber-300' },
-        { name: 'Brown', code: 'bg-amber-700', border: 'border-amber-500' },
-        { name: 'Cream', code: 'bg-amber-50', border: 'border-amber-200' }
+        { name: 'Charcoal', code: 'bg-slate-600', border: 'border-slate-400' },
+        { name: 'Graphite', code: 'bg-slate-700', border: 'border-slate-500' },
+        { name: 'Pearl', code: 'bg-slate-200', border: 'border-slate-300' }
       ],
       specs: [
         { icon: Battery, label: 'Range', value: '70 km' },
