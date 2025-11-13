@@ -6,7 +6,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* M'LiteEv Brand Story Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
+      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark pb-8 md:pb-12 pt-0">
         <div className="container-custom text-center">
           <div className="inline-block mb-6">
             <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/30">

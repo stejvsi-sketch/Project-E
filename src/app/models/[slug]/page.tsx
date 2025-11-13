@@ -124,7 +124,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       </div>
 
       {/* Hero Section with Product Image */}
-      <section className="py-20 pt-10 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+      <section className="pb-8 md:pb-12 pt-0 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Product Info */}

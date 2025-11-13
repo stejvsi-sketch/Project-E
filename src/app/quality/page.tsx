@@ -4,35 +4,35 @@ export default function Quality() {
   return (
     <div className="min-h-screen bg-primary-bg">
       {/* Quality Standards Hero */}
-      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark py-20 pt-32">
+      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-8 md:pb-12 pt-0 prevent-horizontal-scroll">
         <div className="container-custom text-center">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-accent-gold uppercase tracking-wider px-4 py-2 rounded-full bg-accent-gold/10 border border-accent-gold/30">
+          <div className="inline-block mb-4 md:mb-6">
+            <span className="text-xs md:text-sm font-semibold text-accent-gold uppercase tracking-wider px-3 md:px-4 py-2 rounded-full bg-accent-gold/10 border border-accent-gold/30">
               Excellence
             </span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
+          <h1 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-text-primary mb-4 md:mb-6 leading-tight">
             Quality Standards
           </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
+          <p className="text-base md:text-lg lg:text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto px-4">
             Our commitment to premium electric mobility excellence
           </p>
         </div>
       </section>
 
       {/* Quality Pillars */}
-      <section className="py-20">
+      <section className="py-12 md:py-20 prevent-horizontal-scroll">
         <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-3 md:mb-4">
               Our Quality Pillars
             </h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">
+            <p className="text-text-secondary max-w-2xl mx-auto px-4">
               Every M'LiteEv scooter meets the highest standards of quality, safety, and performance
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {[
               {
                 icon: <Shield className="w-8 h-8" />,
@@ -67,7 +67,7 @@ export default function Quality() {
             ].map((pillar, index) => (
               <div
                 key={index}
-                className="bg-secondary-bg p-8 rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-300 text-center group hover:scale-105"
+                className="bg-secondary-bg p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-300 text-center group hover:scale-105"
               >
                 <div className="text-accent-gold mb-4 group-hover:scale-110 transition-transform">
                   {pillar.icon}
@@ -81,11 +81,11 @@ export default function Quality() {
       </section>
 
       {/* Testing Standards */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray">
+      <section className="py-12 md:py-20 bg-secondary-bg border-t border-border-gray prevent-horizontal-scroll">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-text-primary mb-4 md:mb-6">
                 Rigorous Testing Protocols
               </h2>
               <div className="space-y-6">
@@ -103,8 +103,8 @@ export default function Quality() {
                 </div>
               </div>
             </div>
-            <div className="bg-primary-bg p-8 rounded-3xl border border-border-gray">
-              <h3 className="text-2xl font-bold text-text-primary mb-6">Quality Certifications</h3>
+            <div className="bg-primary-bg p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border-gray">
+              <h3 className="text-xl md:text-2xl font-bold text-text-primary mb-4 md:mb-6">Quality Certifications</h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <CheckCircle className="w-6 h-6 text-accent-gold" />
@@ -133,17 +133,17 @@ export default function Quality() {
       </section>
 
       {/* Quality Commitment */}
-      <section className="py-20">
+      <section className="py-12 md:py-20 prevent-horizontal-scroll">
         <div className="container-custom text-center">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-6">
               Our Quality Commitment
             </h2>
-            <p className="text-xl text-text-secondary leading-relaxed mb-8">
+            <p className="text-base md:text-lg lg:text-xl text-text-secondary leading-relaxed mb-6 md:mb-8 px-4">
               We stand behind every M'LiteEv scooter with comprehensive quality assurance, ongoing support, and continuous improvement to deliver the premium electric mobility experience you deserve.
             </p>
-            <div className="bg-secondary-bg p-8 rounded-3xl border border-border-gray">
-              <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-secondary-bg p-4 md:p-6 lg:p-8 rounded-2xl md:rounded-3xl border border-border-gray">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <div className="text-center">
                   <div className="text-3xl font-bold text-accent-gold mb-2">100%</div>
                   <div className="text-text-secondary">Quality Tested</div>

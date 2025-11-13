@@ -38,7 +38,7 @@ export default function SupportPage() {
   return (
     <div className="min-h-screen bg-primary-bg">
       {/* M'LiteEv Support Center Hero */}
-      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark py-20 pt-32">
+      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-8 md:pb-12 pt-0">
         <div className="container-custom text-center">
           <div className="inline-block mb-6">
             <span className="text-sm font-semibold text-accent-teal uppercase tracking-wider px-4 py-2 rounded-full bg-accent-teal/10 border border-accent-teal/30">

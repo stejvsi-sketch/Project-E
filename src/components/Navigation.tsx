@@ -39,14 +39,14 @@ export function Navigation() {
   ]
 
   return (
-    <nav className={`bg-gradient-to-r from-secondary-bg/80 via-primary-bg/70 to-secondary-bg/80 backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
-      scrolled ? 'shadow-xl border-border-gray/50 bg-opacity-90' : 'shadow-lg border-border-gray/20 bg-opacity-80'
+    <nav className={`bg-primary-bg/95 backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
+      scrolled ? 'shadow-xl border-border-gray/50 bg-primary-bg' : 'shadow-lg border-border-gray/20'
     }`}>
 
       {/* Main Navigation */}
       <div className="container-custom relative">
-        {/* Enhanced glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/10 via-white/5 to-accent-teal/10 blur-xl opacity-50"></div>
+        {/* Subtle glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/3 via-transparent to-accent-teal/3 blur-xl opacity-30"></div>
         <div className="relative flex items-center justify-between h-24 md:h-32 py-3 md:py-4">
           {/* Premium Logo Section */}
           <Link href="/" className="flex items-center gap-3 md:gap-6 group">

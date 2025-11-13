@@ -74,7 +74,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark">
       {/* Premium Contact Hero with Animated Background */}
-      <section className="relative overflow-hidden py-20 pt-32">
+      <section className="relative overflow-hidden pb-8 md:pb-12 pt-0">
         
         {/* Content */}
         <div className="container-custom relative z-10">
