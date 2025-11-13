@@ -4,69 +4,83 @@ import { Mail, Phone, MapPin, Clock, Award, Users, Shield } from 'lucide-react'
 import { LeadForm } from '@/components/LeadForm'
 
 export default function ContactPage() {
-  // M'LiteEv Complete Model Lineup - All 7 models with their color variants
+  // M'LiteEv Complete Model Lineup - New 7 models with color variants
   const scooters = [
     {
       id: '1',
-      name: 'M\'LiteEv Urban Elite',
+      name: 'S.L Pro',
       variants: [
         { id: '1a', color_name: 'Red' },
         { id: '1b', color_name: 'Black' },
         { id: '1c', color_name: 'White' },
+        { id: '1d', color_name: 'Blue' },
+        { id: '1e', color_name: 'Grey' },
       ],
     },
     {
       id: '2',
-      name: 'M\'LiteEv City Pro',
+      name: 'D.L Pro',
       variants: [
-        { id: '2a', color_name: 'Gray' },
-        { id: '2b', color_name: 'Blue' },
-        { id: '2c', color_name: 'Silver' },
+        { id: '2a', color_name: 'Red' },
+        { id: '2b', color_name: 'Black' },
+        { id: '2c', color_name: 'White' },
+        { id: '2d', color_name: 'Blue' },
+        { id: '2e', color_name: 'Grey' },
       ],
     },
     {
       id: '3',
-      name: 'M\'LiteEv Metro X',
+      name: 'CS Pro',
       variants: [
-        { id: '3a', color_name: 'Teal' },
-        { id: '3b', color_name: 'White' },
-        { id: '3c', color_name: 'Black' },
+        { id: '3a', color_name: 'Red' },
+        { id: '3b', color_name: 'Black' },
+        { id: '3c', color_name: 'White' },
+        { id: '3d', color_name: 'Blue' },
+        { id: '3e', color_name: 'Grey' },
       ],
     },
     {
       id: '4',
-      name: 'M\'LiteEv Eco Plus',
+      name: 'CS Pro +',
       variants: [
-        { id: '4a', color_name: 'Green' },
-        { id: '4b', color_name: 'White' },
-        { id: '4c', color_name: 'Gray' },
+        { id: '4a', color_name: 'Red' },
+        { id: '4b', color_name: 'Black' },
+        { id: '4c', color_name: 'White' },
+        { id: '4d', color_name: 'Blue' },
+        { id: '4e', color_name: 'Grey' },
       ],
     },
     {
       id: '5',
-      name: 'M\'LiteEv Sport',
+      name: 'Vespa Pro',
       variants: [
-        { id: '5a', color_name: 'Orange' },
+        { id: '5a', color_name: 'Red' },
         { id: '5b', color_name: 'Black' },
-        { id: '5c', color_name: 'Red' },
+        { id: '5c', color_name: 'White' },
+        { id: '5d', color_name: 'Blue' },
+        { id: '5e', color_name: 'Grey' },
       ],
     },
     {
       id: '6',
-      name: 'M\'LiteEv Classic',
+      name: 'Vespa Pro +',
       variants: [
-        { id: '6a', color_name: 'Beige' },
-        { id: '6b', color_name: 'Brown' },
-        { id: '6c', color_name: 'Cream' },
+        { id: '6a', color_name: 'Red' },
+        { id: '6b', color_name: 'Black' },
+        { id: '6c', color_name: 'White' },
+        { id: '6d', color_name: 'Blue' },
+        { id: '6e', color_name: 'Grey' },
       ],
     },
     {
       id: '7',
-      name: 'M\'LiteEv Cruiser',
+      name: 'CS 3',
       variants: [
-        { id: '7a', color_name: 'Blue' },
-        { id: '7b', color_name: 'Silver' },
-        { id: '7c', color_name: 'Black' },
+        { id: '7a', color_name: 'Red' },
+        { id: '7b', color_name: 'Black' },
+        { id: '7c', color_name: 'White' },
+        { id: '7d', color_name: 'Blue' },
+        { id: '7e', color_name: 'Grey' },
       ],
     },
   ]
@@ -118,7 +132,7 @@ export default function ContactPage() {
               
               {/* Premium Contact Cards */}
               <div className="space-y-4">
-                <a href="tel:+919876543210" className="group block">
+                <a href="tel:+919818649138" className="group block">
                   <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-gold/20 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-5">
@@ -127,7 +141,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-text-primary mb-1">Call Us</h3>
-                        <p className="text-lg text-text-primary font-semibold">+91 98765 43210</p>
+                        <p className="text-lg text-text-primary font-semibold">+91 98186 49138</p>
                         <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
                           <Clock className="w-4 h-4" />
                           <span>Mon-Sat, 9AM-7PM IST</span>
@@ -137,7 +151,7 @@ export default function ContactPage() {
                   </div>
                 </a>
 
-                <a href="mailto:info@mliteev.com" className="group block">
+                <a href="mailto:mukulgarg65@gmail.com" className="group block">
                   <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-teal/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-teal/20 hover:-translate-y-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     <div className="relative flex items-center gap-5">
@@ -146,7 +160,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-text-primary mb-1">Email Us</h3>
-                        <p className="text-lg text-text-primary font-semibold">info@mliteev.com</p>
+                        <p className="text-lg text-text-primary font-semibold">mukulgarg65@gmail.com</p>
                         <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
                           <Clock className="w-4 h-4" />
                           <span>Response within 24 hours</span>
@@ -165,8 +179,8 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-text-primary mb-1">Visit Our Store</h3>
-                        <p className="text-lg text-text-primary">Premium Experience Center</p>
-                        <p className="text-text-secondary">Mumbai, Maharashtra</p>
+                        <p className="text-lg text-text-primary">Near Atal Park, Sector-2</p>
+                        <p className="text-text-secondary">Faridabad, Haryana-121004</p>
                         <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
                           <Clock className="w-4 h-4" />
                           <span>Mon-Sun, 10AM-8PM</span>
@@ -228,20 +242,20 @@ export default function ContactPage() {
                     <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal rounded-lg flex items-center justify-center">
                       <Users className="w-5 h-5 text-primary-bg" />
                     </div>
-                    <h3 className="text-xl font-bold text-text-primary">Service Excellence</h3>
+                    <h3 className="text-xl font-bold text-text-primary">Our Services</h3>
                   </div>
                   <ul className="space-y-3 text-text-secondary">
                     <li className="flex items-center">
                       <span className="text-accent-gold mr-3">✓</span>
-                      Local Service Support
+                      All Electric Scooty Sales
                     </li>
                     <li className="flex items-center">
                       <span className="text-accent-gold mr-3">✓</span>
-                      Quick Response Team
+                      Genuine Spare Parts
                     </li>
                     <li className="flex items-center">
                       <span className="text-accent-gold mr-3">✓</span>
-                      Premium Customer Care
+                      Service & Maintenance
                     </li>
                   </ul>
                 </div>

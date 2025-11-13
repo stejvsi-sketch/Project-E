@@ -9,107 +9,126 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   const { slug } = use(params)
   const [selectedColor, setSelectedColor] = useState(0)
 
-  // M'LiteEv Product Data - Matches slug from models page
+  // M'LiteEv Product Data - New 7 Models
   const productData: Record<string, any> = {
-    'urban-elite': {
-      name: 'M\'LiteEv Urban Elite',
-      tagline: 'Effortless Elegance, Practical Luxury',
-      description: 'The ultimate smart device — Smart Bluetooth Connectivity, seamless mobile pairing, and premium build quality. Experience electric mobility at its finest.',
+    'sl-pro': {
+      name: 'S.L Pro',
+      tagline: 'Standard Line Excellence',
+      description: 'The S.L Pro delivers reliable performance with 1000W motor power and versatile controller options. Perfect for daily commuting with premium build quality.',
       colors: [
-        { name: 'Crimson Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Midnight Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'Pearl White', code: 'bg-white', border: 'border-gray-300' },
-      ]
-    },
-    'city-pro': {
-      name: 'M\'LiteEv City Pro',
-      tagline: 'Smart Urban Mobility',
-      description: 'Navigate city streets with confidence. The City Pro combines intelligent features with urban practicality for the modern commuter.',
-      colors: [
-        { name: 'Steel Gray', code: 'bg-gray-600', border: 'border-gray-400' },
-        { name: 'Deep Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Silver', code: 'bg-gray-400', border: 'border-gray-300' },
-      ]
-    },
-    'metro-x': {
-      name: 'M\'LiteEv Metro X',
-      tagline: 'Express Your Style',
-      description: 'Bold design meets powerful performance. The Metro X is engineered for riders who demand both style and substance.',
-      colors: [
-        { name: 'Teal', code: 'bg-teal-600', border: 'border-teal-400' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
       ]
     },
-    'eco-plus': {
-      name: 'M\'LiteEv Eco Plus',
-      tagline: 'Green Performance',
-      description: 'Maximum efficiency with minimum environmental impact. The Eco Plus is designed for eco-conscious riders.',
+    'dl-pro': {
+      name: 'D.L Pro',
+      tagline: 'Deluxe Line Performance',
+      description: 'The D.L Pro offers enhanced deluxe features with 1000W motor power and versatile controller options. Superior comfort and style for discerning riders.',
       colors: [
-        { name: 'Forest Green', code: 'bg-green-700', border: 'border-green-500' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Gray', code: 'bg-gray-600', border: 'border-gray-400' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
       ]
     },
-    'sport': {
-      name: 'M\'LiteEv Sport',
-      tagline: 'Performance Unleashed',
-      description: 'Built for thrill-seekers. The Sport model delivers maximum power and acceleration for an exhilarating ride.',
+    'cs-pro': {
+      name: 'CS Pro',
+      tagline: 'City Sport Performance',
+      description: 'The CS Pro delivers enhanced performance with 1200W motor power and advanced controller system. Perfect for sport-oriented urban commuting.',
       colors: [
-        { name: 'Indigo', code: 'bg-indigo-700', border: 'border-indigo-500' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'Deep Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
       ]
     },
-    'classic': {
-      name: 'M\'LiteEv Classic',
-      tagline: 'Timeless Elegance',
-      description: 'Vintage aesthetics with modern technology. The Classic brings retro charm to electric mobility.',
+    'cs-pro-plus': {
+      name: 'CS Pro +',
+      tagline: 'City Sport Plus Excellence',
+      description: 'The CS Pro + offers enhanced features with 1200W motor power and premium upgrades. Superior performance for demanding urban riders.',
       colors: [
-        { name: 'Cream', code: 'bg-amber-100', border: 'border-amber-300' },
-        { name: 'Brown', code: 'bg-amber-800', border: 'border-amber-600' },
-        { name: 'Beige', code: 'bg-stone-400', border: 'border-stone-300' },
-      ]
-    },
-    'cruiser': {
-      name: 'M\'LiteEv Cruiser',
-      tagline: 'Comfort Redefined',
-      description: 'Long-range comfort for extended journeys. The Cruiser is perfect for those who go the extra mile.',
-      colors: [
-        { name: 'Ocean Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Silver', code: 'bg-gray-400', border: 'border-gray-300' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
+      ]
+    },
+    'vespa-pro': {
+      name: 'Vespa Pro',
+      tagline: 'Premium Classic Style',
+      description: 'The Vespa Pro combines classic Italian design with modern electric performance. 1200W motor with premium features for sophisticated riders.',
+      colors: [
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
+      ]
+    },
+    'vespa-pro-plus': {
+      name: 'Vespa Pro +',
+      tagline: 'Premium Classic Plus',
+      description: 'The enhanced Vespa Pro + offers additional premium features with classic styling. Superior performance and luxury for discerning riders.',
+      colors: [
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
+      ]
+    },
+    'cs-3': {
+      name: 'CS 3',
+      tagline: 'City Sport Generation 3',
+      description: 'The latest CS 3 represents the pinnacle of City Sport engineering. Advanced 1200W motor with cutting-edge technology and premium features.',
+      colors: [
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' },
       ]
     },
   }
 
-  const product = productData[slug] || productData['urban-elite']
+  const product = productData[slug] || productData['sl-pro']
+  
+  // Set specifications based on model type
+  const is1000WModel = ['sl-pro', 'dl-pro'].includes(slug)
+  const is1200WModel = ['cs-pro', 'cs-pro-plus', 'vespa-pro', 'vespa-pro-plus', 'cs-3'].includes(slug)
+  
   product.keySpecs = [
-    { icon: Battery, value: '80 km', label: 'Range' },
-    { icon: Zap, value: '60 km/h', label: 'Top Speed' },
-    { icon: Gauge, value: '2000W', label: 'Power' },
-    { icon: Clock, value: '4 hrs', label: 'Charge Time' },
+    { icon: Battery, value: is1000WModel ? '48V/60V/72V' : '60V/72V', label: 'Controller' },
+    { icon: Zap, value: is1000WModel ? '40-45 km/h' : '50-55 km/h', label: 'Top Speed' },
+    { icon: Gauge, value: is1000WModel ? '1000W' : '1200W', label: 'Motor Power' },
+    { icon: Shield, value: is1000WModel ? 'Disc/Drum' : 'Disc/Disc', label: 'Brake System' },
   ]
   product.features = [
     {
-      title: 'All Digital Console',
+      title: 'Digital Console',
       description: 'Speedometer, tripmeter & odometer - stay fully informed with premium digital display.',
       image: '📱'
     },
     {
-      title: 'Stylish Alloy Wheels',
-      description: 'Premium alloy wheels with durable tubeless tyres for a sleek, smooth ride.',
-      image: '⚙️'
-    },
-    {
-      title: 'Disc Braking System',
-      description: 'Advanced disc brakes for balanced and reliable stopping power.',
+      title: 'Premium Tyres',
+      description: `${is1000WModel ? '90-100-10' : '90-90-12'} tubeless tyres for optimal grip and performance.`,
       image: '🛞'
     },
     {
-      title: 'Telescopic Suspension',
-      description: 'Comfortable ride with dual suspension across uneven roads and speed bumps.',
+      title: 'Braking System',
+      description: `${is1000WModel ? 'Front Disc/Rear Drum' : 'Front Disc/Rear Disc'} brakes for superior stopping power.`,
       image: '🔧'
+    },
+    {
+      title: 'Controller System',
+      description: `${is1000WModel ? '48V/60V/72V' : '60V/72V'} controller with multiple voltage options for flexibility.`,
+      image: '⚡'
     },
   ]
 

@@ -88,9 +88,9 @@ export default function Terms() {
               <div className="text-text-secondary space-y-4">
                 <p>Questions about the Terms of Use should be sent to us at:</p>
                 <div className="space-y-2">
-                  <p><strong>Email:</strong> info@mliteev.com</p>
-                  <p><strong>Phone:</strong> +91 98765 43210</p>
-                  <p><strong>Address:</strong> Mumbai, Maharashtra, India</p>
+                  <p><strong>Email:</strong> mukulgarg65@gmail.com</p>
+                  <p><strong>Phone:</strong> +91 98186 49138</p>
+                  <p><strong>Address:</strong> Near Atal Park, Sector-2, Faridabad, Haryana-121004</p>
                 </div>
                 <p className="text-sm mt-4"><em>Last updated: November 2024</em></p>
               </div>

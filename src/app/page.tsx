@@ -25,9 +25,12 @@ export default function Home() {
             </div>
 
             {/* M'LiteEv Value Proposition */}
-            <div className="text-center max-w-2xl mb-8">
-              <p className="text-lg md:text-xl text-text-primary leading-relaxed">
-                Experience premium electric mobility with M'LiteEv's cutting-edge scooters
+            <div className="text-center max-w-3xl mb-8">
+              <p className="text-lg md:text-xl text-text-primary leading-relaxed mb-4">
+                Experience premium electric mobility with our complete range of 7 electric scooter models
+              </p>
+              <p className="text-base md:text-lg text-text-secondary">
+                From S.L Pro to CS 3 • All Electric Scooty Sales & Genuine Spare Parts • 1000W-1200W Power Range
               </p>
             </div>
 
@@ -70,13 +73,13 @@ export default function Home() {
       </section>
 
       {/* M'LiteEv Core Features - What Makes Us Different */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray">
-        <div className="container-custom">
+      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden">
+        <div className="container-custom overflow-hidden">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Why Choose M'LiteEv</h2>
             <p className="text-text-secondary max-w-2xl mx-auto">Premium features that set our electric scooters apart</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden">
             {[
               {
                 icon: <Shield className="w-12 h-12" />,
@@ -99,14 +102,14 @@ export default function Home() {
                 description: (
                   <div className="flex gap-2 justify-center mt-2">
                     {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#F5F5F5'].map((color, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-600 shadow-md hover:scale-110 transition-transform" style={{ backgroundColor: color }}></div>
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-600 shadow-md hover:shadow-lg hover:border-accent-gold transition-all duration-200" style={{ backgroundColor: color }}></div>
                     ))}
                   </div>
                 )
               },
             ].map((feature, index) => (
-              <div key={index} className="bg-secondary-bg p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-300 text-center group hover:scale-105 border border-border-gray hover:border-accent-gold/50">
-                <div className="text-accent-gold mb-6 group-hover:scale-110 transition-transform">
+              <div key={index} className="bg-secondary-bg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-accent-gold/10 transition-all duration-300 text-center group hover:-translate-y-2 border border-border-gray hover:border-accent-gold/50">
+                <div className="text-accent-gold mb-6 group-hover:text-accent-gold-hover transition-colors duration-300">
                   {feature.icon}
                 </div>
                 <h3 className="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">
@@ -197,14 +200,22 @@ export default function Home() {
                 <Zap className="w-6 h-6" />
                 <h3 className="text-xl font-bold text-white">Motor & Performance</h3>
               </div>
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-4 gap-6">
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Battery</div>
-                  <div className="text-gray-400">Lead Acid / Lithium</div>
+                  <div className="font-semibold text-gray-200 mb-1">Motor Power</div>
+                  <div className="text-gray-400">1000W / 1200W</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Range</div>
-                  <div className="text-gray-400">Upto 120 kms</div>
+                  <div className="font-semibold text-gray-200 mb-1">Controller</div>
+                  <div className="text-gray-400">48V/60V/72V</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">Max Speed</div>
+                  <div className="text-gray-400">40-55 km/h</div>
+                </div>
+                <div>
+                  <div className="font-semibold text-gray-200 mb-1">7 Models Available</div>
+                  <div className="text-gray-400">S.L Pro to CS 3</div>
                 </div>
               </div>
             </div>
@@ -217,20 +228,20 @@ export default function Home() {
               </div>
               <div className="grid md:grid-cols-4 gap-6">
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Brake Type</div>
-                  <div className="text-gray-400">Front Disc / Rear Drum</div>
+                  <div className="font-semibold text-gray-200 mb-1">Brake System</div>
+                  <div className="text-gray-400">Disc/Drum or Disc/Disc</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Tyre Type</div>
-                  <div className="text-gray-400">Tubeless</div>
+                  <div className="font-semibold text-gray-200 mb-1">Tyre Size</div>
+                  <div className="text-gray-400">90-100-10 / 90-90-12</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Front Tyre</div>
-                  <div className="text-gray-400">90/100/10</div>
+                  <div className="font-semibold text-gray-200 mb-1">S.L & D.L Pro</div>
+                  <div className="text-gray-400">90-100-10 Tyre</div>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Rear Tyre</div>
-                  <div className="text-gray-400">90/100/10</div>
+                  <div className="font-semibold text-gray-200 mb-1">CS & Vespa Series</div>
+                  <div className="text-gray-400">90-90-12 Tyre</div>
                 </div>
               </div>
             </div>
@@ -270,14 +281,20 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Color Buttons */}
             <div className="space-y-4 max-w-sm mx-auto lg:mx-0">
-              <button className="w-full py-4 px-8 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all">
-                M'LiteEv Emerald
-              </button>
               <button className="w-full py-4 px-8 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all">
                 M'LiteEv Red
               </button>
+              <button className="w-full py-4 px-8 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all border border-gray-300">
+                M'LiteEv White
+              </button>
+              <button className="w-full py-4 px-8 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-all">
+                M'LiteEv Black
+              </button>
               <button className="w-full py-4 px-8 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
                 M'LiteEv Blue
+              </button>
+              <button className="w-full py-4 px-8 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 transition-all">
+                M'LiteEv Grey
               </button>
             </div>
 
@@ -306,19 +323,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* M'LiteEv Premium Testimonials - Social Proof */}
-      <section className="py-20 bg-primary-bg border-t border-border-gray">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-text-primary mb-6">
-              What Our Customers Say
-            </h2>
-            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
-              Discover what our customers have to say about their M'LiteEv experience.
-            </p>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials - Minimal */}
       <section className="py-32 bg-white hidden">

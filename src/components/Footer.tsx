@@ -16,8 +16,11 @@ export function Footer() {
             <p className="text-xs text-accent-gold uppercase tracking-widest font-semibold mb-4">
               Energise Your Ride
             </p>
-            <p className="text-text-secondary leading-relaxed max-w-sm">
-              Revolutionizing urban transportation with premium electric scooters. Sustainable, stylish, and built for the modern city.
+            <p className="text-text-secondary leading-relaxed max-w-sm mb-4">
+              Deals in all kinds of electrical scooty & spare parts. 7 premium models from S.L Pro to CS 3.
+            </p>
+            <p className="text-xs text-text-secondary">
+              Power Range: 1000W - 1200W | Speed: 40-55 km/h
             </p>
           </div>
 
@@ -54,15 +57,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <Phone className="w-5 h-5 mr-3 text-accent-gold mt-1 flex-shrink-0" />
-                <span className="text-text-secondary">+91 XXXX XXXXXX</span>
+                <span className="text-text-secondary">+91 98186 49138</span>
               </li>
               <li className="flex items-start">
                 <Mail className="w-5 h-5 mr-3 text-accent-gold mt-1 flex-shrink-0" />
-                <span className="text-text-secondary">info@mliteev.com</span>
+                <span className="text-text-secondary">mukulgarg65@gmail.com</span>
               </li>
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 text-accent-gold mt-1 flex-shrink-0" />
-                <span className="text-text-secondary">Your Location, City, State</span>
+                <span className="text-text-secondary">Near Atal Park, Sector-2<br />Faridabad, Haryana-121004</span>
               </li>
             </ul>
           </div>

@@ -31,143 +31,157 @@ export default function ModelsPage() {
   const productHeros = [
     {
       id: 1,
-      name: 'M\'LiteEv Urban Elite',
-      tagline: 'Effortless Elegance, Practical Luxury',
-      description: 'The Urban Elite is a dynamic electric scooter which has the comfort of any petrol scooter with slick design, a spectacular operating voltage and a loading capacity. Features include smart connectivity and riding comfort.',
+      name: 'S.L Pro',
+      tagline: 'Standard Line Excellence',
+      description: 'The S.L Pro delivers reliable performance with 1000W motor power and versatile controller options. Perfect for daily commuting with premium build quality.',
       bgColor: 'from-red-700 to-red-800',
-      slug: 'urban-elite',
+      slug: 'sl-pro',
       colors: [
         { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' }
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '80 km' },
-        { icon: Zap, label: 'Top Speed', value: '60 km/h' },
-        { icon: Gauge, label: 'Power', value: '2000W' },
-        { icon: Clock, label: 'Charge', value: '4 hrs' }
+        { icon: Battery, label: 'Controller', value: '48V/60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '40-45 km/h' },
+        { icon: Gauge, label: 'Power', value: '1000W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Drum' }
       ],
-      price: '₹89,999'
+      price: 'Contact for Price'
     },
     {
       id: 2,
-      name: 'M\'LiteEv City Pro',
-      tagline: 'Ride with clarity and intelligence',
-      description: 'Bright illumination, sleek dashboard, and smart connectivity. The City Pro combines style with substance for the modern urban commuter.',
+      name: 'D.L Pro',
+      tagline: 'Deluxe Line Performance',
+      description: 'The D.L Pro offers enhanced deluxe features with 1000W motor power and versatile controller options. Superior comfort and style for discerning riders.',
       bgColor: 'from-gray-600 to-gray-700',
-      slug: 'city-pro',
+      slug: 'dl-pro',
       colors: [
-        { name: 'Gray', code: 'bg-gray-500', border: 'border-gray-300' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
         { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Silver', code: 'bg-gray-300', border: 'border-gray-200' }
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '70 km' },
-        { icon: Zap, label: 'Top Speed', value: '55 km/h' },
-        { icon: Gauge, label: 'Power', value: '1800W' },
-        { icon: Clock, label: 'Charge', value: '3.5 hrs' }
+        { icon: Battery, label: 'Controller', value: '48V/60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '40-45 km/h' },
+        { icon: Gauge, label: 'Power', value: '1000W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Drum' }
       ],
-      price: '₹79,999'
+      price: 'Contact for Price'
     },
     {
       id: 3,
-      name: 'M\'LiteEv Metro X',
-      tagline: 'Urban mobility at its finest',
-      description: 'Navigate city streets with confidence. The Metro X features responsive handling, premium build quality, and all the modern amenities you need.',
-      bgColor: 'from-teal-500 to-teal-600',
-      slug: 'metro-x',
+      name: 'CS Pro',
+      tagline: 'City Sport Performance',
+      description: 'The CS Pro delivers enhanced performance with 1200W motor power and advanced controller system. Perfect for sport-oriented urban commuting.',
+      bgColor: 'from-teal-800 to-teal-900',
+      slug: 'cs-pro',
       colors: [
-        { name: 'Teal', code: 'bg-teal-500', border: 'border-teal-300' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' }
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '75 km' },
-        { icon: Zap, label: 'Top Speed', value: '58 km/h' },
-        { icon: Gauge, label: 'Power', value: '1900W' },
-        { icon: Clock, label: 'Charge', value: '3.8 hrs' }
+        { icon: Battery, label: 'Controller', value: '60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '50-55 km/h' },
+        { icon: Gauge, label: 'Power', value: '1200W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Disc' }
       ],
-      price: '₹84,999'
+      price: 'Contact for Price'
     },
     {
       id: 4,
-      name: 'M\'LiteEv Eco Plus',
-      tagline: 'Sustainable performance',
-      description: 'Eco-friendly without compromise. The Eco Plus delivers exceptional efficiency, extended range, and a lighter environmental footprint.',
-      bgColor: 'from-green-500 to-green-600',
-      slug: 'eco-plus',
+      name: 'CS Pro +',
+      tagline: 'City Sport Plus Excellence',
+      description: 'The CS Pro + offers enhanced features with 1200W motor power and premium upgrades. Superior performance for demanding urban riders.',
+      bgColor: 'from-emerald-800 to-emerald-900',
+      slug: 'cs-pro-plus',
       colors: [
-        { name: 'Green', code: 'bg-green-500', border: 'border-green-300' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Gray', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '90 km' },
-        { icon: Zap, label: 'Top Speed', value: '50 km/h' },
-        { icon: Gauge, label: 'Power', value: '1500W' },
-        { icon: Clock, label: 'Charge', value: '3 hrs' }
+        { icon: Battery, label: 'Controller', value: '60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '50-55 km/h' },
+        { icon: Gauge, label: 'Power', value: '1200W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Disc' }
       ],
-      price: '₹69,999'
+      price: 'Contact for Price'
     },
     {
       id: 5,
-      name: 'M\'LiteEv Sport',
-      tagline: 'Unleash the thrill',
-      description: 'For those who crave adrenaline. The Sport model features enhanced acceleration, superior handling, and aggressive styling for the ultimate ride.',
+      name: 'Vespa Pro',
+      tagline: 'Premium Classic Style',
+      description: 'The Vespa Pro combines classic Italian design with modern electric performance. 1200W motor with premium features for sophisticated riders.',
       bgColor: 'from-indigo-700 to-indigo-800',
-      slug: 'sport',
+      slug: 'vespa-pro',
       colors: [
-        { name: 'Indigo', code: 'bg-indigo-700', border: 'border-indigo-500' },
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' }
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '65 km' },
-        { icon: Zap, label: 'Top Speed', value: '70 km/h' },
-        { icon: Gauge, label: 'Power', value: '2500W' },
-        { icon: Clock, label: 'Charge', value: '4.5 hrs' }
+        { icon: Battery, label: 'Controller', value: '60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '50-55 km/h' },
+        { icon: Gauge, label: 'Power', value: '1200W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Disc' }
       ],
-      price: '₹99,999'
+      price: 'Contact for Price'
     },
     {
       id: 6,
-      name: 'M\'LiteEv Classic',
-      tagline: 'Timeless sophistication',
-      description: 'Classic design meets modern technology. The Classic offers vintage aesthetics with contemporary electric performance.',
+      name: 'Vespa Pro +',
+      tagline: 'Premium Classic Plus',
+      description: 'The enhanced Vespa Pro + offers additional premium features with classic styling. Superior performance and luxury for discerning riders.',
       bgColor: 'from-slate-600 to-slate-700',
-      slug: 'classic',
+      slug: 'vespa-pro-plus',
       colors: [
-        { name: 'Charcoal', code: 'bg-slate-600', border: 'border-slate-400' },
-        { name: 'Graphite', code: 'bg-slate-700', border: 'border-slate-500' },
-        { name: 'Pearl', code: 'bg-slate-200', border: 'border-slate-300' }
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '70 km' },
-        { icon: Zap, label: 'Top Speed', value: '52 km/h' },
-        { icon: Gauge, label: 'Power', value: '1700W' },
-        { icon: Clock, label: 'Charge', value: '3.5 hrs' }
+        { icon: Battery, label: 'Controller', value: '60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '50-55 km/h' },
+        { icon: Gauge, label: 'Power', value: '1200W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Disc' }
       ],
-      price: '₹74,999'
+      price: 'Contact for Price'
     },
     {
       id: 7,
-      name: 'M\'LiteEv Cruiser',
-      tagline: 'Comfort for long rides',
-      description: 'Built for comfort on longer journeys. The Cruiser features enhanced suspension, spacious seating, and superior range for extended rides.',
-      bgColor: 'from-blue-500 to-blue-600',
-      slug: 'cruiser',
+      name: 'CS 3',
+      tagline: 'City Sport Generation 3',
+      description: 'The latest CS 3 represents the pinnacle of City Sport engineering. Advanced 1200W motor with cutting-edge technology and premium features.',
+      bgColor: 'from-blue-800 to-blue-900',
+      slug: 'cs-3',
       colors: [
-        { name: 'Blue', code: 'bg-blue-500', border: 'border-blue-300' },
-        { name: 'Silver', code: 'bg-gray-300', border: 'border-gray-200' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' }
+        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
+        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
+        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
       ],
       specs: [
-        { icon: Battery, label: 'Range', value: '85 km' },
-        { icon: Zap, label: 'Top Speed', value: '57 km/h' },
-        { icon: Gauge, label: 'Power', value: '1950W' },
-        { icon: Clock, label: 'Charge', value: '4 hrs' }
+        { icon: Battery, label: 'Controller', value: '60V/72V' },
+        { icon: Zap, label: 'Top Speed', value: '50-55 km/h' },
+        { icon: Gauge, label: 'Power', value: '1200W' },
+        { icon: Shield, label: 'Brake', value: 'Front Disc/Rear Disc' }
       ],
-      price: '₹87,999'
+      price: 'Contact for Price'
     },
   ]
 
@@ -244,17 +258,17 @@ export default function ModelsPage() {
                 </p>
 
                 {/* Specs Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 py-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-6">
                   {product.specs.map((spec, idx) => {
                     const Icon = spec.icon
                     return (
                       <div 
                         key={idx}
-                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 group"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 group min-w-0"
                       >
-                        <Icon className="w-6 h-6 mb-2 group-hover:scale-110 transition-transform" />
-                        <div className="text-xs opacity-70 uppercase tracking-wide">{spec.label}</div>
-                        <div className="text-xl font-bold mt-1">{spec.value}</div>
+                        <Icon className="w-5 h-5 md:w-6 md:h-6 mb-2 group-hover:scale-110 transition-transform" />
+                        <div className="text-xs opacity-70 uppercase tracking-wide mb-1">{spec.label}</div>
+                        <div className="text-sm md:text-lg font-bold break-words hyphens-auto leading-tight">{spec.value}</div>
                       </div>
                     )
                   })}

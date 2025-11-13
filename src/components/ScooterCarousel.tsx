@@ -9,16 +9,17 @@ interface Scooter {
   emoji: string
   range: string
   speed: string
+  power: string
 }
 
 const scooters: Scooter[] = [
-  { name: 'M\'LiteEv Urban Elite', category: 'Executive Series', emoji: '🛴', range: '60+ KM', speed: '45 KM/H' },
-  { name: 'M\'LiteEv City Pro', category: 'Professional Series', emoji: '🛴', range: '55+ KM', speed: '42 KM/H' },
-  { name: 'M\'LiteEv Metro X', category: 'Premium Series', emoji: '🛴', range: '70+ KM', speed: '48 KM/H' },
-  { name: 'M\'LiteEv Eco Plus', category: 'Eco Series', emoji: '🛴', range: '45+ KM', speed: '35 KM/H' },
-  { name: 'M\'LiteEv Sport', category: 'Performance Series', emoji: '🛴', range: '50+ KM', speed: '50 KM/H' },
-  { name: 'M\'LiteEv Classic', category: 'Heritage Series', emoji: '🛴', range: '40+ KM', speed: '32 KM/H' },
-  { name: 'M\'LiteEv Cruiser', category: 'Comfort Series', emoji: '🛴', range: '65+ KM', speed: '40 KM/H' },
+  { name: 'S.L Pro', category: 'Standard Line', emoji: '🛴', range: '50+ KM', speed: '40-45 KM/H', power: '1000W' },
+  { name: 'D.L Pro', category: 'Deluxe Line', emoji: '🛴', range: '50+ KM', speed: '40-45 KM/H', power: '1000W' },
+  { name: 'CS Pro', category: 'City Sport', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
+  { name: 'CS Pro +', category: 'City Sport Plus', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
+  { name: 'Vespa Pro', category: 'Premium Classic', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
+  { name: 'Vespa Pro +', category: 'Premium Classic Plus', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
+  { name: 'CS 3', category: 'City Sport 3', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
 ]
 
 interface ScooterCarouselProps {
@@ -67,7 +68,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
 
   return (
     <div 
-      className="relative w-full max-w-4xl mx-auto"
+      className="relative w-full max-w-4xl mx-auto overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -77,7 +78,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-4">
             {/* Large Emoji/Image */}
-            <div className="text-[200px] transition-all duration-500 transform hover:scale-110">
+            <div className="text-[120px] md:text-[200px] transition-all duration-500 transform hover:scale-110">
               {scooters[current].emoji}
             </div>
             
