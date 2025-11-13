@@ -39,14 +39,14 @@ export function Navigation() {
   ]
 
   return (
-    <nav className={`bg-gradient-to-r from-secondary-bg via-primary-bg to-secondary-bg backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
-      scrolled ? 'shadow-xl border-border-gray bg-opacity-95' : 'shadow-lg border-border-gray/30 bg-opacity-90'
+    <nav className={`bg-gradient-to-r from-secondary-bg/80 via-primary-bg/70 to-secondary-bg/80 backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
+      scrolled ? 'shadow-xl border-border-gray/50 bg-opacity-90' : 'shadow-lg border-border-gray/20 bg-opacity-80'
     }`}>
 
       {/* Main Navigation */}
       <div className="container-custom relative">
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/5 via-transparent to-accent-teal/5 blur-xl opacity-30"></div>
+        {/* Enhanced glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/10 via-white/5 to-accent-teal/10 blur-xl opacity-50"></div>
         <div className="relative flex items-center justify-between h-20 md:h-28 py-2 md:py-3">
           {/* Logo with Title & Motto */}
           <Link href="/" className="flex items-center gap-2 md:gap-4 group">
@@ -107,12 +107,12 @@ export function Navigation() {
         {/* Mobile Navigation - Full Screen Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-gradient-to-br from-secondary-bg via-primary-bg to-secondary-bg backdrop-blur-2xl',
+            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-primary-bg',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
           style={{ top: '5rem' }} // Below navigation bar (h-20 = 5rem on mobile)
         >
-          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-accent-gold/3 via-transparent to-accent-teal/3">
+          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg">
             {/* Navigation Links */}
             <div className="flex flex-col space-y-6 pt-12">
               {navLinks.map((link) => (
