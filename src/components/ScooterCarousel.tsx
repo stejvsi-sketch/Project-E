@@ -52,6 +52,19 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
     setCurrent(index)
   }
 
+  // Premium dark color schemes for each scooter
+  const colorSchemes = [
+    { bg: 'from-orange-900 via-red-900 to-orange-800', border: 'border-orange-700/30' }, // Urban Elite - Deep Orange
+    { bg: 'from-slate-900 via-gray-900 to-slate-800', border: 'border-slate-700/30' }, // City Pro - Deep Gray
+    { bg: 'from-emerald-900 via-green-900 to-emerald-800', border: 'border-emerald-700/30' }, // Metro X - Forest Green
+    { bg: 'from-teal-900 via-cyan-900 to-teal-800', border: 'border-teal-700/30' }, // Eco Plus - Deep Teal
+    { bg: 'from-red-900 via-rose-900 to-red-800', border: 'border-red-700/30' }, // Sport - Deep Red
+    { bg: 'from-indigo-900 via-blue-900 to-indigo-800', border: 'border-indigo-700/30' }, // Classic - Deep Indigo
+    { bg: 'from-blue-900 via-sky-900 to-blue-800', border: 'border-blue-700/30' }, // Cruiser - Deep Blue
+  ]
+
+  const currentScheme = colorSchemes[current] || colorSchemes[0]
+
   return (
     <div 
       className="relative w-full max-w-4xl mx-auto"
@@ -59,7 +72,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className="relative h-[500px] bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl overflow-hidden shadow-xl">
+      <div className={`relative h-[500px] bg-gradient-to-br ${currentScheme.bg} rounded-3xl overflow-hidden shadow-xl border ${currentScheme.border} transition-all duration-700`}>
         {/* Scooter Display */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-4">
@@ -69,14 +82,14 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
             </div>
             
             {/* Info */}
-            <div className="space-y-2">
-              <p className="text-sm text-text-secondary uppercase tracking-wider">
+            <div className="space-y-4">
+              <p className="text-sm text-accent-gold uppercase tracking-wider font-semibold">
                 {scooters[current].category}
               </p>
-              <h3 className="font-display text-4xl font-bold text-text-primary">
-                M'LiteEv {scooters[current].name}
+              <h3 className="font-display text-4xl font-bold text-white drop-shadow-lg">
+                {scooters[current].name}
               </h3>
-              <div className="flex items-center justify-center gap-6 text-text-secondary">
+              <div className="flex items-center justify-center gap-6 text-white/90 text-lg font-medium">
                 <span>{scooters[current].range}</span>
                 <span>•</span>
                 <span>{scooters[current].speed}</span>

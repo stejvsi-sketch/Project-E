@@ -143,14 +143,14 @@ export default function Home() {
             {/* M'LiteEv Premium Component Grid */}
             <div className="grid grid-cols-2 gap-4">
               {/* Large Image - Top Left */}
-              <div className="col-span-2 lg:col-span-1 lg:row-span-2 relative h-64 lg:h-full bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg overflow-hidden">
+              <div className="col-span-2 lg:col-span-1 lg:row-span-2 relative h-64 lg:h-full bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-lg overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-9xl">🛴</div>
                 </div>
               </div>
 
               {/* LED Head Lamp */}
-              <div className="relative h-32 bg-gray-400 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="relative h-32 bg-gradient-to-br from-slate-600 to-slate-800 rounded-lg overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="relative z-10 text-white text-center p-4">
                   <div className="font-bold text-sm">LED HEAD LAMP &</div>
@@ -159,7 +159,7 @@ export default function Home() {
               </div>
 
               {/* Luxe Bulb Beam */}
-              <div className="relative h-32 bg-gray-500 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="relative h-32 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg overflow-hidden flex items-center justify-center">
                 <div className="absolute inset-0 bg-black/40"></div>
                 <div className="relative z-10 text-white text-center p-4">
                   <div className="font-bold text-sm">LUXE</div>
@@ -168,7 +168,7 @@ export default function Home() {
               </div>
 
               {/* Front Disc Brakes */}
-              <div className="col-span-2 lg:col-span-1 relative h-32 bg-gradient-to-br from-teal-500 to-teal-700 rounded-lg overflow-hidden flex items-center justify-center">
+              <div className="col-span-2 lg:col-span-1 relative h-32 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg overflow-hidden flex items-center justify-center">
                 <div className="relative z-10 text-white text-center p-4">
                   <div className="font-bold text-lg">FRONT</div>
                   <div className="font-bold text-lg">DISC</div>
@@ -264,20 +264,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Color Selector with Teal Background */}
-      <section className="py-20 bg-gradient-to-br from-teal-500 to-teal-700">
+      {/* Color Selector with Dark Background */}
+      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Color Buttons */}
             <div className="space-y-4 max-w-sm mx-auto lg:mx-0">
-              <button className="w-full py-4 px-8 bg-white/20 backdrop-blur-sm border-2 border-white text-white font-semibold rounded-lg hover:bg-white/30 transition-all">
-                M'LiteEv Teal
+              <button className="w-full py-4 px-8 bg-emerald-600 text-white font-semibold rounded-lg hover:bg-emerald-700 transition-all">
+                M'LiteEv Emerald
               </button>
               <button className="w-full py-4 px-8 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all">
                 M'LiteEv Red
               </button>
-              <button className="w-full py-4 px-8 bg-gray-700 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all">
-                M'LiteEv Gray
+              <button className="w-full py-4 px-8 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
+                M'LiteEv Blue
               </button>
             </div>
 

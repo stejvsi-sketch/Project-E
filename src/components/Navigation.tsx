@@ -119,37 +119,71 @@ export function Navigation() {
           >
             {/* Button glow */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            {isMenuOpen ? (
-              <X size={24} className="relative z-10 text-text-primary group-hover:text-accent-gold transition-colors" strokeWidth={2.5} />
-            ) : (
-              <Menu size={24} className="relative z-10 text-text-primary group-hover:text-accent-gold transition-colors" strokeWidth={2.5} />
-            )}
+            {/* Always show hamburger menu - premium style */}
+            <div className="relative z-10 flex flex-col justify-center items-center w-6 h-6">
+              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 my-1 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
+              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
+            </div>
           </button>
         </div>
 
-        {/* Mobile Navigation - Full Screen Overlay */}
+        {/* Premium Side Menu Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-primary-bg',
+            'md:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
-          style={{ top: '5rem' }} // Below navigation bar (h-20 = 5rem on mobile)
+          style={{ top: '6rem' }}
         >
-          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg">
-            {/* Navigation Links */}
-            <div className="flex flex-col space-y-6 pt-12">
-              {navLinks.map((link) => (
+          {/* Background Overlay */}
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            onClick={() => setIsMenuOpen(false)}
+          />
+          
+          {/* Premium Sliding Menu Panel */}
+          <div
+            className={cn(
+              'absolute right-0 top-0 h-full w-80 bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out',
+              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            )}
+            style={{ 
+              borderLeft: '1px solid #444444',
+              backgroundImage: 'radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)'
+            }}
+          >
+            <div className="flex flex-col h-full p-8">
+            {/* Premium Navigation Links */}
+            <div className="flex flex-col space-y-8 pt-16">
+              {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-text-primary text-2xl md:text-3xl font-semibold hover:text-accent-gold transition-colors border-b border-border-gray pb-4"
+                  className="relative group text-text-primary text-3xl font-bold hover:text-accent-gold transition-all duration-300 pb-6 border-b border-border-gray/30"
+                  style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {link.label}
+                  <span className="relative z-10 uppercase tracking-wider">{link.label}</span>
+                  {/* Hover effect background */}
+                  <div className="absolute inset-0 -mx-4 rounded-xl bg-gradient-to-r from-accent-gold/10 to-accent-teal/10 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
+                  {/* Gold accent line */}
+                  <div className="absolute bottom-0 left-0 w-0 group-hover:w-16 h-1 bg-gradient-to-r from-accent-gold to-accent-teal transition-all duration-500"></div>
                 </Link>
               ))}
+              
+              {/* Premium Mobile CTA */}
+              <div className="mt-12 pt-8 border-t border-border-gray/30">
+                <Link 
+                  href="/contact" 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-primary-bg font-bold text-lg uppercase tracking-wider rounded-xl shadow-xl hover:shadow-2xl hover:shadow-accent-gold/25 transition-all duration-300 hover:scale-105 active:scale-95"
+                >
+                  Enquire Now
+                </Link>
+              </div>
             </div>
-
+            </div>
           </div>
         </div>
       </div>
