@@ -18,16 +18,16 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Prevent body scrolling when mobile menu is open
+  // Prevent body scroll when menu is open (fixes scroll glitch)
   useEffect(() => {
     if (isMenuOpen) {
-      const previousOverflow = document.body.style.overflow
       document.body.style.overflow = 'hidden'
-      return () => {
-        document.body.style.overflow = previousOverflow
-      }
+    } else {
+      document.body.style.overflow = 'unset'
     }
-    document.body.style.overflow = ''
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   }, [isMenuOpen])
 
   const navLinks = [
@@ -131,9 +131,10 @@ export function Navigation() {
         {/* Premium Side Menu Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-[60] transition-opacity duration-500 ease-in-out',
+            'md:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
+          style={{ top: '6rem' }}
         >
           {/* Background Overlay */}
           <div 
@@ -144,20 +145,18 @@ export function Navigation() {
           {/* Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute left-0 top-0 h-full w-[18rem] max-w-[88vw] shadow-2xl transition-transform duration-500 ease-out overflow-hidden',
-              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+              'absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out overflow-hidden',
+              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
-              background: 'linear-gradient(to bottom, #1C1C1C, #121212, #1C1C1C)',
-              borderRight: '1px solid #444444',
-              backgroundImage: 'radial-gradient(circle at top left, rgba(255, 215, 0, 0.08), transparent 55%)',
-              willChange: 'transform',
-              backgroundColor: '#121212' // Fallback solid background
+              borderLeft: '1px solid #444444',
+              backgroundImage: 'radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)',
+              willChange: 'transform'
             }}
           >
-            <div className="flex flex-col h-full p-8 overflow-y-auto" style={{ backgroundColor: '#121212', minHeight: '100vh' }}>
+            <div className="flex flex-col h-full p-8">
             {/* Premium Navigation Links */}
-            <div className="flex flex-col space-y-8 pt-24">
+            <div className="flex flex-col space-y-8 pt-16">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
