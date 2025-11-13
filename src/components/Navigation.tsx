@@ -145,18 +145,19 @@ export function Navigation() {
           {/* Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out overflow-hidden',
+              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out overflow-hidden',
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
               borderLeft: '1px solid #444444',
               backgroundImage: 'radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)',
-              willChange: 'transform'
+              willChange: 'transform',
+              height: 'calc(100vh - 6rem)'
             }}
           >
-            <div className="flex flex-col h-full p-8">
+            <div className="flex flex-col h-full p-6 md:p-8">
             {/* Premium Navigation Links */}
-            <div className="flex flex-col space-y-8 pt-16">
+            <div className="flex flex-col space-y-6 pt-8">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
