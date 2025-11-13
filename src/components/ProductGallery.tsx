@@ -32,7 +32,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
     <div className="space-y-4">
       {/* Main Image */}
       <div className="relative aspect-square group">
-        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-gray-50">
+        <div className="relative w-full h-full rounded-2xl overflow-hidden bg-secondary-bg border border-border-gray">
           {images[activeImage]?.url?.startsWith('http') ? (
             <Image
               src={images[activeImage].url}
@@ -51,10 +51,10 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
         {/* Zoom Button */}
         <button
           onClick={() => setIsZoomed(true)}
-          className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm p-3 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+          className="absolute top-4 right-4 bg-secondary-bg/90 backdrop-blur-sm p-3 rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-opacity hover:bg-secondary-bg border border-border-gray"
           aria-label="Zoom image"
         >
-          <ZoomIn className="w-5 h-5 text-neutral-dark" />
+          <ZoomIn className="w-5 h-5 text-text-primary" />
         </button>
 
         {/* Image Counter */}
@@ -104,7 +104,7 @@ export function ProductGallery({ images, productName }: ProductGalleryProps) {
           {/* Close Button */}
           <button
             onClick={() => setIsZoomed(false)}
-            className="absolute top-4 right-4 bg-white/10 hover:bg-white/20 backdrop-blur-sm p-3 rounded-full transition-colors"
+            className="absolute top-4 right-4 bg-secondary-bg/10 hover:bg-secondary-bg/20 backdrop-blur-sm p-3 rounded-full transition-colors border border-border-gray"
             aria-label="Close zoom"
           >
             <X className="w-6 h-6 text-white" />

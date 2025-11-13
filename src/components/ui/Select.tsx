@@ -12,14 +12,15 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full">
         {label && (
-          <label className="block text-sm font-semibold text-neutral-dark mb-2">
+          <label className="block text-sm font-semibold text-text-primary mb-2">
             {label}
           </label>
         )}
         <select
           className={cn(
-            'flex h-12 w-full rounded-lg border border-gray-300 bg-white px-4 py-3 text-base transition-colors',
-            'focus:outline-none focus:ring-2 focus:ring-primary-orange focus:border-transparent',
+            'flex h-12 w-full rounded-lg border border-border-gray bg-secondary-bg px-4 py-3 text-base transition-colors',
+            'text-text-primary placeholder:text-text-secondary',
+            'focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold',
             'disabled:cursor-not-allowed disabled:opacity-50',
             error && 'border-red-500 focus:ring-red-500',
             className
@@ -28,7 +29,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(
           {...props}
         >
           {options.map((option) => (
-            <option key={option.value} value={option.value}>
+            <option key={option.value} value={option.value} className="bg-secondary-bg text-text-primary">
               {option.label}
             </option>
           ))}

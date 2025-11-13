@@ -10,6 +10,7 @@ const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
+  fallback: ["system-ui", "-apple-system", "sans-serif"],
 });
 
 // Display Serif for Headlines
@@ -17,6 +18,7 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
+  fallback: ["Georgia", "serif"],
 });
 
 const geistSans = Geist({

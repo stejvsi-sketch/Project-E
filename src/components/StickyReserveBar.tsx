@@ -24,7 +24,7 @@ export function StickyReserveBar({ productName, onReserve }: StickyReserveBarPro
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-40 bg-white border-t border-gray-200 shadow-2xl transition-transform duration-300 lg:hidden ${
+      className={`fixed bottom-0 left-0 right-0 z-40 bg-secondary-bg border-t border-border-gray shadow-2xl transition-transform duration-300 lg:hidden ${
         isVisible ? 'translate-y-0' : 'translate-y-full'
       }`}
     >
@@ -32,10 +32,10 @@ export function StickyReserveBar({ productName, onReserve }: StickyReserveBarPro
         <div className="flex items-center justify-between gap-4">
           {/* Product Info */}
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-semibold text-neutral-dark truncate">
+            <p className="text-sm font-semibold text-text-primary truncate">
               {productName}
             </p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-text-secondary">
               Contact us for pricing
             </p>
           </div>

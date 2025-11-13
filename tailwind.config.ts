@@ -10,22 +10,35 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'primary-orange': '#FF6A00',
-        'primary-orange-light': '#FF8A33',
-        'primary-orange-dark': '#CC5500',
-        'neutral-dark': '#222222',
-        'neutral-gray': '#F5F5F5',
+        // Premium Dark EV Palette
+        'primary-bg': '#121212',
+        'secondary-bg': '#1C1C1C',
+        'text-primary': '#E0E0E0',
+        'text-secondary': '#B0B0B0',
+        'accent-gold': '#FFD700',
+        'accent-gold-hover': '#EFB810',
+        'accent-teal': '#00BCD4',
+        'border-gray': '#444444',
+        
+        // Legacy mappings (updated to new palette)
+        'primary-orange': '#FFD700',
+        'primary-orange-light': '#EFB810',
+        'primary-orange-dark': '#E5C100',
+        'neutral-dark': '#121212',
+        'neutral-gray': '#1C1C1C',
+        
+        // Enhanced teal palette with new accent
         'teal': {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
+          50: '#e0f7fa',
+          100: '#b2ebf2',
+          200: '#80deea',
+          300: '#4dd0e1',
+          400: '#26c6da',
+          500: '#00bcd4',
+          600: '#00acc1',
+          700: '#0097a7',
+          800: '#00838f',
+          900: '#006064',
         },
       },
       fontFamily: {

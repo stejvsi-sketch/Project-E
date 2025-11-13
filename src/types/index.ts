@@ -24,7 +24,7 @@ export interface Specs {
   top_speed: string
   battery: string
   weight: string
-  warranty: string
+  build_quality: string
   charging_time?: string
   brakes?: string
   dimensions?: string

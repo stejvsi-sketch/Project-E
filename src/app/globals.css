@@ -3,11 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --primary-orange: #FF6A00;
-  --primary-orange-light: #FF8A33;
-  --primary-orange-dark: #E65F00;
-  --neutral-dark: #222222;
-  --neutral-gray: #F7F7F7;
+  /* Premium Dark EV Scooter Color Palette */
+  --primary-bg: #121212;
+  --secondary-bg: #1C1C1C;
+  
+  --text-primary: #E0E0E0;
+  --text-secondary: #B0B0B0;
+  
+  --accent-gold: #FFD700;
+  --accent-gold-hover: #EFB810;
+  --accent-teal: #00BCD4;
+  
+  --border-color: #444444;
+  
+  /* Legacy color mappings for gradual transition */
+  --primary-orange: #FFD700;
+  --primary-orange-light: #EFB810;
+  --primary-orange-dark: #E5C100;
+  --neutral-dark: #121212;
+  --neutral-gray: #1C1C1C;
 }
 
 @layer base {
@@ -18,39 +32,66 @@
   }
   
   body {
-    @apply bg-white text-neutral-dark antialiased;
+    background-color: var(--primary-bg);
+    color: var(--text-primary);
     font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+    @apply antialiased;
   }
 
   html {
     @apply scroll-smooth;
   }
 
-  /* Display serif font for headlines */
+  /* Display serif font for headlines with fallbacks */
   h1, h2, h3 {
     font-family: var(--font-playfair), Georgia, serif;
+  }
+
+  /* Prevent layout shift by ensuring consistent font rendering */
+  .font-loaded {
+    visibility: visible;
   }
 
   /* Ensure buttons meet accessibility minimum */
   button, a.btn-primary, a.btn-secondary {
     min-height: 44px;
   }
+
+  /* Prevent layout shift during font loading */
+  .text-loading {
+    visibility: hidden;
+  }
 }
 
 /* Premium Button Styles */
 @layer components {
   .btn-primary {
-    @apply bg-teal-600 text-white px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
-    @apply hover:bg-teal-500 transition-all duration-200;
+    background-color: var(--accent-gold);
+    color: var(--primary-bg);
+    @apply px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
+    @apply transition-all duration-200;
     @apply shadow-lg hover:shadow-xl hover:scale-105;
-    @apply focus:outline-none focus:ring-4 focus:ring-teal-500/50;
+    @apply focus:outline-none focus:ring-4 focus:ring-yellow-500/50;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--accent-gold-hover);
   }
 
   .btn-secondary {
-    @apply bg-gray-700 text-white px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
-    @apply hover:bg-gray-600 transition-all duration-200;
+    background-color: var(--secondary-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    @apply px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
+    @apply transition-all duration-200;
     @apply shadow-lg hover:shadow-xl hover:scale-105;
-    @apply focus:outline-none focus:ring-4 focus:ring-teal-500/50;
+    @apply focus:outline-none focus:ring-4;
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--accent-teal);
+    color: var(--primary-bg);
   }
 
   /* Skeleton loader animation */

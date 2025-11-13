@@ -39,43 +39,36 @@ export function Navigation() {
   ]
 
   return (
-    <nav className={`bg-white sticky top-0 z-50 border-b transition-all duration-300 ${
-      scrolled ? 'shadow-md border-gray-200' : 'shadow-sm border-gray-100'
+    <nav className={`bg-gradient-to-r from-secondary-bg via-primary-bg to-secondary-bg backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
+      scrolled ? 'shadow-xl border-border-gray bg-opacity-95' : 'shadow-lg border-border-gray/30 bg-opacity-90'
     }`}>
-      {/* Utility Bar - Hidden on Mobile */}
-      <div className="hidden md:block border-b border-gray-100 bg-gray-50">
-        <div className="container-custom">
-          <div className="flex items-center justify-end h-10 gap-6 text-sm">
-            <a href="tel:+919876543210" className="flex items-center gap-2 text-gray-600 hover:text-primary-orange transition-colors">
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+91 98765 43210</span>
-            </a>
-            <Link href="/contact" className="flex items-center gap-2 text-gray-600 hover:text-primary-orange transition-colors">
-              <MapPin className="w-4 h-4" />
-              <span className="hidden sm:inline">Find Store</span>
-            </Link>
-          </div>
-        </div>
-      </div>
 
       {/* Main Navigation */}
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20 md:h-28 py-2 md:py-3">
+      <div className="container-custom relative">
+        {/* Subtle glow effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/5 via-transparent to-accent-teal/5 blur-xl opacity-30"></div>
+        <div className="relative flex items-center justify-between h-20 md:h-28 py-2 md:py-3">
           {/* Logo with Title & Motto */}
           <Link href="/" className="flex items-center gap-2 md:gap-4 group">
-            <Image
-              src="/images/logo/logo.png"
-              alt="M'LiteEv"
-              width={400}
-              height={140}
-              priority
-              className="h-12 w-auto md:h-20"
-            />
-            <div className="flex flex-col">
-              <div className="text-lg md:text-3xl font-bold text-neutral-dark group-hover:text-primary-orange transition-colors">
-                M<span className="text-primary-orange">'</span>LiteEv
+            <div className="flex-shrink-0 w-12 h-12 md:w-20 md:h-20 relative p-1 rounded-xl bg-gradient-to-br from-accent-gold/10 to-accent-teal/10 shadow-lg">
+              <Image
+                src="/images/logo/logo.png"
+                alt="M'LiteEv"
+                width={400}
+                height={140}
+                priority
+                className="h-full w-full object-contain filter brightness-125 contrast-110 saturate-110 drop-shadow-lg"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
+            </div>
+            <div className="flex flex-col min-w-0">
+              <div className="text-lg md:text-3xl font-bold text-text-primary group-hover:text-accent-gold transition-colors whitespace-nowrap">
+                M<span className="text-accent-gold">'</span>LiteEv
               </div>
-              <div className="text-[8px] md:text-xs text-gray-600 uppercase tracking-widest font-semibold">
+              <div className="text-[8px] md:text-xs text-text-secondary uppercase tracking-widest font-semibold whitespace-nowrap">
                 Energise Your Ride
               </div>
             </div>
@@ -87,7 +80,7 @@ export function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-neutral-dark hover:text-primary-orange transition-colors duration-200 font-medium"
+                className="text-text-primary hover:text-accent-gold transition-colors duration-200 font-medium"
               >
                 {link.label}
               </Link>
@@ -100,13 +93,13 @@ export function Navigation() {
           {/* Mobile Menu Button - Premium Style */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-3 rounded-lg hover:bg-gray-100 transition-all active:scale-95"
+            className="md:hidden p-3 rounded-lg hover:bg-secondary-bg transition-all active:scale-95"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X size={28} className="text-neutral-dark" strokeWidth={2} />
+              <X size={28} className="text-text-primary" strokeWidth={2} />
             ) : (
-              <Menu size={28} className="text-neutral-dark" strokeWidth={2} />
+              <Menu size={28} className="text-text-primary" strokeWidth={2} />
             )}
           </button>
         </div>
@@ -114,12 +107,12 @@ export function Navigation() {
         {/* Mobile Navigation - Full Screen Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-gradient-to-br from-gray-900 via-gray-800 to-teal-900',
+            'md:hidden fixed inset-0 z-50 transition-all duration-300 ease-in-out bg-gradient-to-br from-secondary-bg via-primary-bg to-secondary-bg backdrop-blur-2xl',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
           style={{ top: '5rem' }} // Below navigation bar (h-20 = 5rem on mobile)
         >
-          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-transparent to-teal-900/20">
+          <div className="flex flex-col justify-between h-full p-8 bg-gradient-to-b from-accent-gold/3 via-transparent to-accent-teal/3">
             {/* Navigation Links */}
             <div className="flex flex-col space-y-6 pt-12">
               {navLinks.map((link) => (
@@ -127,42 +120,13 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-white text-2xl md:text-3xl font-semibold hover:text-teal-400 transition-colors border-b border-gray-700 pb-4"
+                  className="text-text-primary text-2xl md:text-3xl font-semibold hover:text-accent-gold transition-colors border-b border-border-gray pb-4"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link 
-                href="/contact" 
-                onClick={() => setIsMenuOpen(false)}
-                className="text-white text-2xl md:text-3xl font-semibold hover:text-teal-400 transition-colors border-b border-gray-700 pb-4"
-              >
-                Contact Us
-              </Link>
             </div>
 
-            {/* Social Media Icons with Brand Colors */}
-            <div className="flex gap-6 justify-center pb-8">
-              {/* Facebook - Blue */}
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-blue-400 transition-colors">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
-                </svg>
-              </a>
-              {/* Instagram - Red/Pink Gradient */}
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-pink-500 hover:text-pink-400 transition-colors">
-                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                  <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/>
-                </svg>
-              </a>
-              {/* Twitter/X - Black */}
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-900 hover:text-gray-700 transition-colors bg-white rounded-full p-1">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </a>
-            </div>
           </div>
         </div>
       </div>

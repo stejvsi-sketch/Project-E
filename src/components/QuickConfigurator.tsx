@@ -29,12 +29,12 @@ export function QuickConfigurator() {
   const [selectedColor, setSelectedColor] = useState(colors[0])
 
   return (
-    <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-2xl border border-gray-100">
+    <div className="bg-secondary-bg rounded-3xl shadow-2xl p-8 max-w-md mx-auto border border-border-gray">
       <div className="mb-8">
-        <h3 className="font-display text-3xl font-bold text-neutral-dark mb-2">
+        <h3 className="font-display text-3xl font-bold text-text-primary mb-2">
           Configure Your Scooter
         </h3>
-        <p className="text-gray-600">Build your perfect electric scooter in seconds</p>
+        <p className="text-text-secondary">Build your perfect electric scooter in seconds</p>
       </div>
 
       {/* Model Selection */}
@@ -53,8 +53,8 @@ export function QuickConfigurator() {
                   : 'border-gray-200 hover:border-gray-300 hover:shadow-md'
               }`}
             >
-              <div className="text-lg font-bold text-neutral-dark mb-2">{model.name}</div>
-              <div className="text-sm text-gray-500 space-y-1">
+              <div className="text-lg font-bold text-text-primary mb-2">{model.name}</div>
+              <div className="text-sm text-text-secondary space-y-1">
                 <div>{model.range} range</div>
                 <div>{model.topSpeed} top speed</div>
               </div>
@@ -99,10 +99,10 @@ export function QuickConfigurator() {
       </div>
 
       {/* Configuration Summary */}
-      <div className="bg-gray-50 rounded-xl p-6 mb-6">
+      <div className="bg-primary-bg border border-border-gray rounded-xl p-6 mb-6">
         <div className="mb-4">
-          <p className="text-sm text-gray-500 mb-2">Your Configuration</p>
-          <p className="text-2xl font-bold text-neutral-dark">
+          <p className="text-sm text-text-secondary mb-2">Your Configuration</p>
+          <p className="text-2xl font-bold text-text-primary">
             {selectedModel.name} · {selectedColor.name}
           </p>
         </div>
@@ -113,25 +113,25 @@ export function QuickConfigurator() {
             <svg className="w-5 h-5 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-gray-600">3-Year Warranty</span>
+            <span className="text-text-secondary">Premium Build</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <svg className="w-5 h-5 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-gray-600">Free Delivery</span>
+            <span className="text-text-secondary">Free Delivery</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <svg className="w-5 h-5 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-gray-600">0% Financing</span>
+            <span className="text-text-secondary">0% Financing</span>
           </div>
           <div className="flex items-center gap-2 text-sm">
-            <svg className="w-5 h-5 text-primary-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-5 h-5 text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
-            <span className="text-gray-600">30-Day Test Ride</span>
+            <span className="text-text-secondary">30-Day Test Ride</span>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ export function QuickConfigurator() {
       </div>
 
       {/* Fine Print */}
-      <p className="text-xs text-gray-500 text-center mt-4">
+      <p className="text-xs text-text-secondary text-center mt-4">
         Free 30-day test ride · 0% financing available · Contact us for pricing
       </p>
     </div>

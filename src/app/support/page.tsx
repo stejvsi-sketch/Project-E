@@ -14,10 +14,6 @@ export default function SupportPage() {
       answer: 'Full charge typically takes 4-6 hours using the standard charger. Fast charging options are available for select models.',
     },
     {
-      question: 'What warranty do you offer?',
-      answer: 'All M\'LiteEv scooters come with a comprehensive 3-year warranty covering motor, battery, and major components.',
-    },
-    {
       question: 'Do you provide home delivery?',
       answer: 'Yes! We offer free home delivery across all major cities. Assembly and initial setup are included.',
     },
@@ -31,7 +27,7 @@ export default function SupportPage() {
     },
     {
       question: 'Are spare parts readily available?',
-      answer: 'Yes, we maintain a network of service centers and authorized dealers with readily available spare parts.',
+      answer: 'Yes, we work with local service partners and maintain stock of common spare parts for quick repairs.',
     },
     {
       question: 'What is the top speed?',
@@ -40,17 +36,19 @@ export default function SupportPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900">
+    <div className="min-h-screen bg-primary-bg">
       {/* M'LiteEv Support Center Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
+      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark py-20 pt-32">
         <div className="container-custom text-center">
           <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-teal-500 uppercase tracking-wider px-4 py-2 rounded-full bg-teal-500/10 border border-teal-500/30">
+            <span className="text-sm font-semibold text-accent-teal uppercase tracking-wider px-4 py-2 rounded-full bg-accent-teal/10 border border-accent-teal/30">
               Support Center
             </span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">How Can We Help?</h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
+            Support Center
+          </h1>
+          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
             Get answers, support, and expert guidance for your M&rsquo;LiteEv electric scooter
           </p>
         </div>
@@ -73,8 +71,8 @@ export default function SupportPage() {
               },
               {
                 icon: <Shield className="w-8 h-8" />,
-                title: 'Warranty',
-                description: 'Understand your coverage',
+                title: 'Quality Assurance',
+                description: 'Premium build standards',
               },
               {
                 icon: <Phone className="w-8 h-8" />,
@@ -84,11 +82,13 @@ export default function SupportPage() {
             ].map((category, index) => (
               <div
                 key={index}
-                className="group bg-gray-800/50 backdrop-blur-sm p-6 rounded-2xl hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 text-center border border-gray-700 hover:border-teal-500/50 hover:scale-105"
+                className="group bg-secondary-bg backdrop-blur-sm p-6 rounded-2xl hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 text-center border border-border-gray hover:border-accent-gold/50 hover:scale-105"
               >
-                <div className="text-teal-500 mb-3 flex justify-center group-hover:scale-110 transition-transform duration-300">{category.icon}</div>
-                <h3 className="font-bold text-lg mb-2 text-white group-hover:text-teal-400 transition-colors">{category.title}</h3>
-                <p className="text-gray-400 text-sm">{category.description}</p>
+                <div className="text-accent-gold mb-4 group-hover:scale-110 group-hover:text-accent-gold-hover transition-all">
+                  {category.icon}
+                </div>
+                <h3 className="text-xl font-bold text-text-primary mb-2">{category.title}</h3>
+                <p className="text-text-secondary">{category.description}</p>
               </div>
             ))}
           </div>
@@ -99,17 +99,15 @@ export default function SupportPage() {
       <section className="py-20 bg-gray-900">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Quick answers to common M'LiteEv questions</p>
+            <h2 className="text-3xl font-bold text-text-primary mb-8">How Can We Help?</h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">Quick answers to common M'LiteEv questions</p>
           </div>
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-700 hover:border-teal-500/50">
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-teal-400 transition-colors">{faq.question}</h3>
-                <p className="text-gray-300">{faq.answer}</p>
+              <div key={index} className="group bg-secondary-bg backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 border border-border-gray hover:border-accent-gold/50">
+                <h3 className="text-xl font-bold text-text-primary mb-3">{faq.question}</h3>
+                <p className="text-text-secondary">{faq.answer}</p>
               </div>
             ))}
           </div>

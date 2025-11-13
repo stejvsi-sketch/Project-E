@@ -70,13 +70,13 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
             
             {/* Info */}
             <div className="space-y-2">
-              <p className="text-sm text-gray-500 uppercase tracking-wider">
+              <p className="text-sm text-text-secondary uppercase tracking-wider">
                 {scooters[current].category}
               </p>
-              <h3 className="font-display text-4xl font-bold text-neutral-dark">
+              <h3 className="font-display text-4xl font-bold text-text-primary">
                 M'LiteEv {scooters[current].name}
               </h3>
-              <div className="flex items-center justify-center gap-6 text-gray-600">
+              <div className="flex items-center justify-center gap-6 text-text-secondary">
                 <span>{scooters[current].range}</span>
                 <span>•</span>
                 <span>{scooters[current].speed}</span>
@@ -88,17 +88,17 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
         {/* Navigation Arrows */}
         <button
           onClick={goToPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+          className="absolute left-4 top-1/2 -translate-y-1/2 bg-secondary-bg/90 hover:bg-secondary-bg p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-border-gray"
           aria-label="Previous scooter"
         >
-          <ChevronLeft className="w-6 h-6 text-neutral-dark" />
+          <ChevronLeft className="w-6 h-6 text-text-primary" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg transition-all hover:scale-110"
+          className="absolute right-4 top-1/2 -translate-y-1/2 bg-secondary-bg/90 hover:bg-secondary-bg p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-border-gray"
           aria-label="Next scooter"
         >
-          <ChevronRight className="w-6 h-6 text-neutral-dark" />
+          <ChevronRight className="w-6 h-6 text-text-primary" />
         </button>
 
       </div>
@@ -111,8 +111,8 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
             onClick={() => goToSlide(index)}
             className={`h-2 rounded-full transition-all ${
               current === index 
-                ? 'bg-primary-orange w-8' 
-                : 'bg-gray-300 w-2 hover:bg-gray-400'
+                ? 'bg-accent-gold w-8' 
+                : 'bg-border-gray w-2 hover:bg-text-secondary'
             }`}
             aria-label={`Go to scooter ${index + 1}`}
           />
@@ -120,7 +120,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
       </div>
 
       {/* Model Counter */}
-      <div className="text-center mt-4 text-sm text-gray-500">
+      <div className="text-center mt-4 text-sm text-text-secondary">
         {current + 1} / {scooters.length}
       </div>
     </div>

@@ -14,7 +14,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     'urban-elite': {
       name: 'M\'LiteEv Urban Elite',
       tagline: 'Effortless Elegance, Practical Luxury',
-      description: 'The ultimate smart device — Smart Bluetooth Connectivity, seamless mobile pairing, and backed by a 3-Year Warranty. Experience premium electric mobility at its finest.',
+      description: 'The ultimate smart device — Smart Bluetooth Connectivity, seamless mobile pairing, and premium build quality. Experience electric mobility at its finest.',
       colors: [
         { name: 'Crimson Red', code: 'bg-red-700', border: 'border-red-500' },
         { name: 'Midnight Black', code: 'bg-black', border: 'border-gray-400' },

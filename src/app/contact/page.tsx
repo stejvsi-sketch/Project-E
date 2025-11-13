@@ -1,6 +1,6 @@
 'use client'
 
-import { Mail, Phone, MapPin } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Award, Users, Shield } from 'lucide-react'
 import { LeadForm } from '@/components/LeadForm'
 
 export default function ContactPage() {
@@ -72,112 +72,179 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-900">
-      {/* M'LiteEv Contact Hero */}
-      <section className="bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark py-20 pt-32">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-              Let's Start Your Journey
+    <div className="min-h-screen bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark">
+      {/* Premium Contact Hero with Animated Background */}
+      <section className="relative overflow-hidden py-20 pt-32">
+        
+        {/* Content */}
+        <div className="container-custom relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8">
+              <Award className="w-5 h-5 text-accent-gold" />
+              <span className="text-text-primary font-medium">Premium Electric Mobility</span>
+            </div>
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-text-primary via-accent-gold to-accent-teal bg-clip-text text-transparent mb-8 leading-tight">
+              Let's Start Your
+              <span className="block text-accent-gold">Electric Journey</span>
             </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Ready to experience premium electric mobility? Our team is here to help you find your perfect ride.
+            <p className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
+              Experience the future of urban mobility. Our premium electric scooters are crafted for the modern lifestyle.
             </p>
+            
           </div>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="py-20 bg-gray-800">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-3 gap-8 xl:gap-12">
+      <section className="relative py-20">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-gray-900"></div>
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="grid lg:grid-cols-3 gap-12 xl:gap-16">
             {/* Contact Info */}
-            <div className="lg:col-span-1">
-              <h2 className="text-3xl font-bold text-white mb-6">Contact Information</h2>
-              <p className="text-gray-300 mb-8">
-                Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
-              </p>
-              {/* Contact Cards */}
-              <div className="space-y-6">
-                <a href="tel:+919876543210" className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
-                  <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
-                    <Phone className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Call Us</h3>
-                    <p className="text-gray-200 font-semibold">+91 98765 43210</p>
-                    <p className="text-sm text-gray-400 mt-1">Mon-Sat, 9AM-7PM IST</p>
+            <div className="lg:col-span-1 space-y-8">
+              <div>
+                <h2 className="text-4xl font-bold text-text-primary mb-4">
+                  Get in Touch
+                </h2>
+                <p className="text-xl text-text-secondary leading-relaxed">
+                  Connect with our experts and discover your perfect electric companion.
+                </p>
+              </div>
+              
+              {/* Premium Contact Cards */}
+              <div className="space-y-4">
+                <a href="tel:+919876543210" className="group block">
+                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-gold/20 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-5">
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-2xl flex items-center justify-center shadow-lg shadow-accent-gold/25">
+                        <Phone className="w-7 h-7 text-primary-bg" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-text-primary mb-1">Call Us</h3>
+                        <p className="text-lg text-text-primary font-semibold">+91 98765 43210</p>
+                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+                          <Clock className="w-4 h-4" />
+                          <span>Mon-Sat, 9AM-7PM IST</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </a>
 
-                <a href="mailto:info@mliteev.com" className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
-                  <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
-                    <Mail className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Email Us</h3>
-                    <p className="text-gray-200 font-semibold">info@mliteev.com</p>
-                    <p className="text-sm text-gray-400 mt-1">Response within 24 hours</p>
+                <a href="mailto:info@mliteev.com" className="group block">
+                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-teal/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-teal/20 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-5">
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-teal to-accent-teal rounded-2xl flex items-center justify-center shadow-lg shadow-accent-teal/25">
+                        <Mail className="w-7 h-7 text-primary-bg" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-text-primary mb-1">Email Us</h3>
+                        <p className="text-lg text-text-primary font-semibold">info@mliteev.com</p>
+                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+                          <Clock className="w-4 h-4" />
+                          <span>Response within 24 hours</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </a>
 
-                <div className="flex items-start gap-4 p-6 bg-gray-700/50 backdrop-blur-sm rounded-2xl shadow-sm hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 border border-gray-600 hover:border-teal-500/50 group hover:scale-105">
-                  <div className="bg-teal-500/10 group-hover:bg-teal-500 p-3 rounded-lg transition-colors">
-                    <MapPin className="w-6 h-6 text-teal-500 group-hover:text-white transition-colors" />
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-white mb-1">Visit Our Store</h3>
-                    <p className="text-gray-200">Experience Center</p>
-                    <p className="text-gray-200">Mumbai, Maharashtra</p>
-                    <p className="text-sm text-gray-400 mt-1">Mon-Sun, 10AM-8PM</p>
+                <div className="group">
+                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-gold/20 hover:-translate-y-1">
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex items-center gap-5">
+                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-teal to-accent-teal rounded-2xl flex items-center justify-center shadow-lg shadow-accent-teal/25">
+                        <MapPin className="w-7 h-7 text-primary-bg" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold text-text-primary mb-1">Visit Our Store</h3>
+                        <p className="text-lg text-text-primary">Premium Experience Center</p>
+                        <p className="text-text-secondary">Mumbai, Maharashtra</p>
+                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
+                          <Clock className="w-4 h-4" />
+                          <span>Mon-Sun, 10AM-8PM</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Trust Indicators */}
-              <div className="pt-8 border-t border-gray-700">
-                <p className="text-sm font-semibold text-white mb-3">Trusted by</p>
-                <div className="flex flex-wrap gap-4 text-xs text-gray-400">
-                  <span>✓ 15,000+ Customers</span>
-                  <span>✓ 98% Satisfaction</span>
-                  <span>✓ 4.9/5 Rating</span>
-                </div>
-              </div>
             </div>
 
             {/* Contact Form */}
             <div className="lg:col-span-2 space-y-8">
-              <div>
-                <h2 className="font-display text-4xl font-bold text-white mb-4">
-                  Get in Touch
+              <div className="text-center lg:text-left">
+                <h2 className="font-display text-5xl font-bold text-text-primary mb-6">
+                  Start Your Journey
                 </h2>
-                <p className="text-lg text-gray-300 leading-relaxed">
-                  Our team responds within 24 hours. Let's find your perfect scooter.
+                <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
+                  Join thousands of satisfied customers who've discovered the future of urban mobility with M'LiteEv.
                 </p>
               </div>
-              <LeadForm scooters={scooters} />
               
-              {/* Why Choose M&rsquo;LiteEv? */}
-              <div className="mt-8 bg-gray-700/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-600 hover:border-teal-500/50 transition-all duration-300">
-              <h3 className="text-xl font-bold text-white mb-4">Why Choose M&rsquo;LiteEv?</h3>
-              <ul className="space-y-3 text-gray-300">
-                <li className="flex items-center">
-                  <span className="text-teal-500 mr-2">✓</span>
-                  3-Year Comprehensive Warranty
-                </li>
-                <li className="flex items-center">
-                  <span className="text-teal-500 mr-2">✓</span>
-                  Free Home Test Rides
-                </li>
-                <li className="flex items-center">
-                  <span className="text-teal-500 mr-2">✓</span>
-                  Expert Customer Support
-                </li>
-                <li className="flex items-center">
-                  <span className="text-teal-500 mr-2">✓</span>
-                  Nationwide Service Network
-                </li>
-              </ul>
+              {/* Premium Form Container */}
+              <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/30 transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl"></div>
+                <div className="relative">
+                  <LeadForm scooters={scooters} />
+                </div>
+              </div>
+              
+              {/* Premium Benefits Section */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-lg flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-primary-bg" />
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary">Premium Benefits</h3>
+                  </div>
+                  <ul className="space-y-3 text-text-secondary">
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Free Home Test Rides
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Expert Customer Support
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Premium Build Quality
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal rounded-lg flex items-center justify-center">
+                      <Users className="w-5 h-5 text-primary-bg" />
+                    </div>
+                    <h3 className="text-xl font-bold text-text-primary">Service Excellence</h3>
+                  </div>
+                  <ul className="space-y-3 text-text-secondary">
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Local Service Support
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Quick Response Team
+                    </li>
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-3">✓</span>
+                      Premium Customer Care
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
