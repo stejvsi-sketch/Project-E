@@ -12,7 +12,7 @@ export default function Home() {
       <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[85vh]">
         {/* M'LiteEv Brand Watermark Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 className="text-[20vw] md:text-[15vw] font-black text-white/5 tracking-tighter select-none">
+          <h1 className="text-[18vw] md:text-[12vw] lg:text-[15vw] font-black text-white/5 tracking-tighter select-none whitespace-nowrap">
             M'LITEEV
           </h1>
         </div>
