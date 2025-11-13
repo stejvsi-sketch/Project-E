@@ -308,73 +308,33 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             <p className="text-base sm:text-lg text-gray-300 px-4">Detailed specifications for {product.name}</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Motor & Performance */}
-            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
-                <Zap className="w-5 h-5 sm:w-6 sm:h-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-white">Motor & Performance</h3>
-              </div>
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6 text-white">
+          <div className="max-w-4xl mx-auto">
+            {/* Complete Specifications */}
+            <div className="bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-700">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-white">
                 <div>
-                  <div className="text-sm sm:text-base font-semibold mb-1 text-gray-300">Range</div>
-                  <div className="text-base sm:text-lg">Upto 120 kms</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Controller</div>
+                  <div className="text-lg font-bold">{is1000WModel ? '48V/60V/72V' : '60V/72V'}</div>
                 </div>
                 <div>
-                  <div className="text-sm sm:text-base font-semibold mb-1 text-gray-300">Battery</div>
-                  <div className="text-base sm:text-lg">Lead Acid / Lithium</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Brake & Tyre */}
-            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
-                <Battery className="w-5 h-5 sm:w-6 sm:h-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-white">Brake & Tyre</h3>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-white">
-                <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Brake Type</div>
-                  <div className="text-sm sm:text-base md:text-lg">Front Disc/Rear Drum</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Motor Power</div>
+                  <div className="text-lg font-bold">{is1000WModel ? '1000W' : '1200W'}</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Tyre Type</div>
-                  <div className="text-sm sm:text-base md:text-lg">Tubeless</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Max Speed</div>
+                  <div className="text-lg font-bold">{is1000WModel ? '40-45 Km/H' : '50-55 Km/H'}</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Front Tyre</div>
-                  <div className="text-sm sm:text-base md:text-lg">90/90/12</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Brake System</div>
+                  <div className="text-lg font-bold">{is1000WModel ? 'Front Disc/Rear Drum' : 'Front Disc/Rear Disc'}</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Rear Tyre</div>
-                  <div className="text-sm sm:text-base md:text-lg">90/90/12</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Suspension & Dimension */}
-            <div className="group bg-gray-900/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-gray-700 hover:border-teal-500/50 transition-all">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform">
-                <Shield className="w-5 h-5 sm:w-6 sm:h-6" />
-                <h3 className="text-lg sm:text-xl font-bold text-white">Suspension & Dimension</h3>
-              </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 text-white">
-                <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Front</div>
-                  <div className="text-sm sm:text-base md:text-lg">Telescopic</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Tyre Size</div>
+                  <div className="text-lg font-bold">{is1000WModel ? '90-100-10' : '90-90-12'}</div>
                 </div>
                 <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Rear</div>
-                  <div className="text-sm sm:text-base md:text-lg">Dual</div>
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Kerb Weight</div>
-                  <div className="text-sm sm:text-base md:text-lg">58.5 kg</div>
-                </div>
-                <div>
-                  <div className="text-xs sm:text-sm font-semibold mb-1 text-gray-300">Dimensions</div>
-                  <div className="text-sm sm:text-base md:text-lg break-words">1800x660x1100mm</div>
+                  <div className="text-sm font-semibold mb-2 text-teal-400">Colours Available</div>
+                  <div className="text-lg font-bold">Red, White, Black + Blue, Grey</div>
                 </div>
               </div>
             </div>

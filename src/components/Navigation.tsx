@@ -131,7 +131,7 @@ export function Navigation() {
         {/* Premium Side Menu Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-[60] transition-all duration-500 ease-in-out',
+            'md:hidden fixed inset-0 z-[70] transition-all duration-500 ease-in-out',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
           style={{ top: '6rem' }}
