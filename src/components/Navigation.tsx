@@ -145,13 +145,13 @@ export function Navigation() {
           {/* Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute right-0 top-0 h-full w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-hidden',
-              isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+              'absolute left-0 top-0 h-full w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-hidden',
+              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
             )}
             style={{ 
               background: 'linear-gradient(to bottom, #1C1C1C, #121212, #1C1C1C)',
-              borderLeft: '1px solid #444444',
-              backgroundImage: 'radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)',
+              borderRight: '1px solid #444444',
+              backgroundImage: 'radial-gradient(circle at top left, rgba(255, 215, 0, 0.05), transparent 50%)',
               willChange: 'transform',
               backgroundColor: '#121212' // Fallback solid background
             }}
