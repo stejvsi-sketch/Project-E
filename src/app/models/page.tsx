@@ -1,9 +1,9 @@
 'use client'
 
 import Link from 'next/link'
-import { Battery, Zap, Shield, ChevronDown, ArrowRight, Gauge, Clock } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
+import { Battery, Zap, Shield, ArrowRight, Gauge, Bike } from 'lucide-react'
 import { useState, useEffect } from 'react'
+import { ALL_MODELS } from '@/data/models'
 
 export default function ModelsPage() {
   // Track which M'LiteEv model is currently in viewport
@@ -37,11 +37,9 @@ export default function ModelsPage() {
       bgColor: 'from-red-700 to-red-800',
       slug: 'sl-pro',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '48V/60V/72V' },
@@ -59,11 +57,9 @@ export default function ModelsPage() {
       bgColor: 'from-gray-600 to-gray-700',
       slug: 'dl-pro',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '48V/60V/72V' },
@@ -81,11 +77,9 @@ export default function ModelsPage() {
       bgColor: 'from-teal-800 to-teal-900',
       slug: 'cs-pro',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '60V/72V' },
@@ -103,11 +97,9 @@ export default function ModelsPage() {
       bgColor: 'from-emerald-800 to-emerald-900',
       slug: 'cs-pro-plus',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '60V/72V' },
@@ -125,11 +117,9 @@ export default function ModelsPage() {
       bgColor: 'from-indigo-700 to-indigo-800',
       slug: 'vespa-pro',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '60V/72V' },
@@ -147,11 +137,9 @@ export default function ModelsPage() {
       bgColor: 'from-slate-600 to-slate-700',
       slug: 'vespa-pro-plus',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '60V/72V' },
@@ -169,11 +157,9 @@ export default function ModelsPage() {
       bgColor: 'from-blue-800 to-blue-900',
       slug: 'cs-3',
       colors: [
-        { name: 'Red', code: 'bg-red-700', border: 'border-red-500' },
-        { name: 'Black', code: 'bg-black', border: 'border-gray-400' },
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-white', border: 'border-gray-300' },
-        { name: 'Blue', code: 'bg-blue-700', border: 'border-blue-500' },
-        { name: 'Grey', code: 'bg-gray-500', border: 'border-gray-300' }
+        { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
         { icon: Battery, label: 'Controller', value: '60V/72V' },
@@ -191,7 +177,7 @@ export default function ModelsPage() {
   }
 
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative overflow-hidden w-full max-w-full">
       {/* Side Navigation Dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
         {productHeros.map((product, index) => (

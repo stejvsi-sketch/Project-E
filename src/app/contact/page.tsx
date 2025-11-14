@@ -1,20 +1,29 @@
 'use client'
 
-import { Mail, Phone, MapPin, Clock, Award, Users, Shield } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Award, Users, Shield, ArrowUpRight } from 'lucide-react'
 import { LeadForm } from '@/components/LeadForm'
+import { ALL_MODELS, COMPANY_INFO } from '@/data/models'
 
 export default function ContactPage() {
-  // M'LiteEv Complete Model Lineup - New 7 models with color variants
-  const scooters = [
+  // M'LiteEv Complete Model Lineup - 7 models with accurate color variants (Red, White, Black)
+  const scooters = ALL_MODELS.map((model, index) => ({
+    id: String(index + 1),
+    name: model.name,
+    variants: model.colors.map((color, colorIndex) => ({
+      id: `${index + 1}${String.fromCharCode(97 + colorIndex)}`,
+      color_name: color
+    }))
+  }))
+
+  // Legacy color format for backward compatibility
+  const legacyScooters = [
     {
       id: '1',
       name: 'S.L Pro',
       variants: [
         { id: '1a', color_name: 'Red' },
-        { id: '1b', color_name: 'Black' },
-        { id: '1c', color_name: 'White' },
-        { id: '1d', color_name: 'Blue' },
-        { id: '1e', color_name: 'Grey' },
+        { id: '1b', color_name: 'White' },
+        { id: '1c', color_name: 'Black' },
       ],
     },
     {
@@ -22,10 +31,8 @@ export default function ContactPage() {
       name: 'D.L Pro',
       variants: [
         { id: '2a', color_name: 'Red' },
-        { id: '2b', color_name: 'Black' },
-        { id: '2c', color_name: 'White' },
-        { id: '2d', color_name: 'Blue' },
-        { id: '2e', color_name: 'Grey' },
+        { id: '2b', color_name: 'White' },
+        { id: '2c', color_name: 'Black' },
       ],
     },
     {
@@ -33,10 +40,8 @@ export default function ContactPage() {
       name: 'CS Pro',
       variants: [
         { id: '3a', color_name: 'Red' },
-        { id: '3b', color_name: 'Black' },
-        { id: '3c', color_name: 'White' },
-        { id: '3d', color_name: 'Blue' },
-        { id: '3e', color_name: 'Grey' },
+        { id: '3b', color_name: 'White' },
+        { id: '3c', color_name: 'Black' },
       ],
     },
     {
@@ -44,10 +49,8 @@ export default function ContactPage() {
       name: 'CS Pro +',
       variants: [
         { id: '4a', color_name: 'Red' },
-        { id: '4b', color_name: 'Black' },
-        { id: '4c', color_name: 'White' },
-        { id: '4d', color_name: 'Blue' },
-        { id: '4e', color_name: 'Grey' },
+        { id: '4b', color_name: 'White' },
+        { id: '4c', color_name: 'Black' },
       ],
     },
     {
@@ -55,10 +58,8 @@ export default function ContactPage() {
       name: 'Vespa Pro',
       variants: [
         { id: '5a', color_name: 'Red' },
-        { id: '5b', color_name: 'Black' },
-        { id: '5c', color_name: 'White' },
-        { id: '5d', color_name: 'Blue' },
-        { id: '5e', color_name: 'Grey' },
+        { id: '5b', color_name: 'White' },
+        { id: '5c', color_name: 'Black' },
       ],
     },
     {
@@ -66,10 +67,8 @@ export default function ContactPage() {
       name: 'Vespa Pro +',
       variants: [
         { id: '6a', color_name: 'Red' },
-        { id: '6b', color_name: 'Black' },
-        { id: '6c', color_name: 'White' },
-        { id: '6d', color_name: 'Blue' },
-        { id: '6e', color_name: 'Grey' },
+        { id: '6b', color_name: 'White' },
+        { id: '6c', color_name: 'Black' },
       ],
     },
     {
@@ -77,7 +76,7 @@ export default function ContactPage() {
       name: 'CS 3',
       variants: [
         { id: '7a', color_name: 'Red' },
-        { id: '7b', color_name: 'Black' },
+        { id: '7b', color_name: 'White' },
         { id: '7c', color_name: 'White' },
         { id: '7d', color_name: 'Blue' },
         { id: '7e', color_name: 'Grey' },
