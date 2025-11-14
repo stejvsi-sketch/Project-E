@@ -7,27 +7,27 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-bg via-secondary-bg to-black overflow-hidden w-full max-w-full">
       {/* M'LiteEv Brand Story Hero - Premium */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark pb-16 md:pb-20 overflow-hidden w-full max-w-full">
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark pb-12 md:pb-16 pt-4 md:pt-8 overflow-hidden w-full max-w-full">
         {/* Background effects */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,215,0,0.1),transparent_50%)] pointer-events-none"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] whitespace-nowrap pointer-events-none">ABOUT</div>
         
         <div className="container-custom text-center relative z-10">
-          <div className="inline-block mb-8 animate-fadeIn">
-            <span className="text-xs md:text-sm font-bold text-accent-gold uppercase tracking-[0.3em] px-6 py-3 rounded-full bg-accent-gold/10 border-2 border-accent-gold/30 shadow-lg shadow-accent-gold/20">
+          <div className="inline-block mb-6 md:mb-8">
+            <span className="text-xs md:text-sm font-bold text-accent-gold uppercase tracking-[0.2em] md:tracking-[0.3em] px-4 md:px-6 py-2 md:py-3 rounded-full bg-accent-gold/10 border-2 border-accent-gold/30">
               Our Story
             </span>
           </div>
-          <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 md:mb-8">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
             <span className="bg-gradient-to-r from-white via-accent-gold to-accent-teal bg-clip-text text-transparent">About M'LiteEv</span>
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
             Energising the future of urban mobility with premium electric scooters
           </p>
-          <div className="mt-8 flex items-center justify-center gap-3 text-sm text-accent-gold">
-            <div className="w-16 h-px bg-gradient-to-r from-transparent to-accent-gold"></div>
-            <span className="uppercase tracking-widest font-semibold">{COMPANY_INFO.tagline}</span>
-            <div className="w-16 h-px bg-gradient-to-l from-transparent to-accent-gold"></div>
+          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-3 text-xs md:text-sm text-accent-gold">
+            <div className="w-8 md:w-16 h-px bg-gradient-to-r from-transparent to-accent-gold"></div>
+            <span className="uppercase tracking-wider md:tracking-widest font-semibold">{COMPANY_INFO.tagline}</span>
+            <div className="w-8 md:w-16 h-px bg-gradient-to-l from-transparent to-accent-gold"></div>
           </div>
         </div>
       </section>
@@ -97,11 +97,11 @@ export default function AboutPage() {
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-gold/0 to-accent-teal/0 group-hover:from-accent-gold/5 group-hover:to-accent-teal/5 transition-all duration-500"></div>
                 <div className="relative">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} bg-opacity-10 mb-4 group-hover:scale-105 transition-transform duration-300`}>
+                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} bg-opacity-10 mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <div className="text-white">{value.icon}</div>
                   </div>
                   <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-accent-gold transition-colors">{value.title}</h3>
-                  <div className="text-sm md:text-lg font-bold leading-tight">{value.description}</div>
+                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">{value.description}</p>
                 </div>
               </div>
             ))}

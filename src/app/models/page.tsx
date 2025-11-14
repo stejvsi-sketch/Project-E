@@ -205,25 +205,25 @@ export default function ModelsPage() {
       {productHeros.map((product, index) => (
         <section
           key={product.id}
-          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500`}
+          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500 pt-16 md:pt-20 overflow-hidden`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
           </div>
 
-          <div className="container-custom relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="container-custom relative z-10 px-4">
+            <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
               {/* Product Image with Glow Effect */}
-              <div className="relative h-96 lg:h-[600px] flex items-center justify-center order-1 lg:order-1">
+              <div className="relative h-64 md:h-80 lg:h-[500px] flex items-center justify-center order-1 lg:order-1">
                 <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl" />
-                <div className="text-[200px] lg:text-[400px] transform hover:scale-110 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
+                <div className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[300px] transform hover:scale-110 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
                   🛴
                 </div>
               </div>
 
               {/* Product Info */}
-              <div className="text-white space-y-6 lg:space-y-8 text-center lg:text-left order-2 lg:order-2 px-4 lg:px-0">
+              <div className="text-white space-y-4 md:space-y-6 text-center lg:text-left order-2 lg:order-2">
                 {/* Model Number Badge */}
                 <div className="flex items-center gap-4 justify-center lg:justify-start">
                   <span className="text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full bg-white/20 backdrop-blur-md border border-white/30">
@@ -231,46 +231,46 @@ export default function ModelsPage() {
                   </span>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
                   {product.name.replace('M\'LiteEv ', '')}
                 </h1>
                 
-                <p className="text-lg md:text-xl lg:text-2xl font-semibold opacity-90 italic">
+                <p className="text-base sm:text-lg md:text-xl font-semibold opacity-90 italic">
                   {product.tagline}
                 </p>
 
-                <p className="text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 opacity-80">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 opacity-80">
                   {product.description}
                 </p>
 
                 {/* Specs Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 py-4 md:py-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 py-4 md:py-6">
                   {product.specs.map((spec, idx) => {
                     const Icon = spec.icon
                     return (
                       <div 
                         key={idx}
-                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-4 hover:bg-white/20 transition-all duration-300 group"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl p-2 md:p-3 lg:p-4 hover:bg-white/20 transition-all duration-300 group min-w-0"
                       >
-                        <Icon className="w-5 h-5 md:w-6 md:h-6 mb-2 group-hover:scale-110 transition-transform" />
-                        <div className="text-xs opacity-70 uppercase tracking-wide mb-1">{spec.label}</div>
-                        <div className="text-sm md:text-base font-bold leading-tight">{spec.value}</div>
+                        <Icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mb-1 md:mb-2 group-hover:scale-110 transition-transform" />
+                        <div className="text-[10px] md:text-xs opacity-70 uppercase tracking-wide mb-0.5 md:mb-1">{spec.label}</div>
+                        <div className="text-xs sm:text-sm md:text-base lg:text-lg font-bold break-words leading-tight">{spec.value}</div>
                       </div>
                     )
                   })}
                 </div>
                 
                 {/* Color Swatches */}
-                <div className="pt-4">
-                  <div className="text-sm font-semibold mb-3 opacity-80 uppercase tracking-wide">Available Colors:</div>
-                  <div className="flex gap-3 justify-center lg:justify-start flex-wrap">
+                <div className="pt-2 md:pt-4">
+                  <div className="text-xs md:text-sm font-semibold mb-2 md:mb-3 opacity-80 uppercase tracking-wide">Available Colors:</div>
+                  <div className="flex gap-2 md:gap-3 justify-center lg:justify-start flex-wrap">
                     {product.colors.map((color, idx) => (
                       <div 
                         key={idx} 
                         className="group relative cursor-pointer"
                       >
-                        <div className={`w-12 h-12 rounded-full ${color.code} border-4 ${color.border} shadow-lg hover:scale-125 transition-all duration-300 hover:shadow-2xl`} />
-                        <span className="absolute -bottom-6 left-1/2 -translate-x-1/2 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                        <div className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full ${color.code} border-2 md:border-4 ${color.border} shadow-lg hover:scale-125 transition-all duration-300`} />
+                        <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] md:text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                           {color.name}
                         </span>
                       </div>
@@ -278,7 +278,7 @@ export default function ModelsPage() {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-8 pb-4">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start pt-4 md:pt-6 pb-4">
                   <Link href={`/models/${product.slug}`} className="w-full sm:w-auto">
                     <button className="w-full sm:w-auto px-6 sm:px-8 py-4 bg-white text-gray-900 font-bold rounded-lg hover:bg-gray-100 transition-all uppercase text-sm tracking-wider shadow-xl hover:shadow-2xl hover:scale-105 transform duration-300 flex items-center justify-center gap-2">
                       Explore Details

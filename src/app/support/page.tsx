@@ -36,16 +36,16 @@ export default function SupportPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-primary-bg overflow-hidden w-full max-w-full">
+    <div className="min-h-screen bg-primary-bg overflow-x-hidden">
       {/* M'LiteEv Support Center Hero */}
-      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-12 md:pb-16 overflow-hidden w-full max-w-full">
-        <div className="container-custom text-center">
-          <div className="inline-block mb-6">
-            <span className="text-sm font-semibold text-accent-teal uppercase tracking-wider px-4 py-2 rounded-full bg-accent-teal/10 border border-accent-teal/30">
+      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-6 md:pb-8 pt-4 md:pt-6">
+        <div className="container-custom text-center px-4">
+          <div className="inline-block mb-4 md:mb-6">
+            <span className="text-xs md:text-sm font-semibold text-accent-teal uppercase tracking-wider px-4 py-2 rounded-full bg-accent-teal/10 border border-accent-teal/30">
               Support Center
             </span>
           </div>
-          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 md:mb-6">
             Support Center
           </h1>
           <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">

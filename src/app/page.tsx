@@ -1,39 +1,15 @@
-'use client'
-
 import Link from 'next/link'
 import Image from 'next/image'
-import { Zap, Battery, Shield, Sparkles, ArrowRight, Award, TrendingUp, CheckCircle2, Phone, Mail, MapPin, Users, Target, Leaf, Clock } from 'lucide-react'
+import { Zap, Battery, Shield, Sparkles, ArrowRight, Award, TrendingUp, CheckCircle2, Phone, Mail, MapPin, Users } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { QuickConfigurator } from '@/components/QuickConfigurator'
 import { ScooterCarousel } from '@/components/ScooterCarousel'
-import { useEffect, useRef, useState } from 'react'
-import { ALL_MODELS } from '@/data/models'
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState<{ [key: string]: boolean }>({})
-  const observerRef = useRef<IntersectionObserver | null>(null)
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }))
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    const elements = document.querySelectorAll('.animate-on-scroll')
-    elements.forEach((el) => observerRef.current?.observe(el))
-
-    return () => observerRef.current?.disconnect()
-  }, [])
   return (
     <>
       {/* M'LiteEv Hero - Premium Electric Scooter Showcase */}
-      <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[85vh] w-full max-w-full">
+      <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[80vh] w-full max-w-full">
         {/* M'LiteEv Brand Watermark Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[12vw] font-black text-white/5 tracking-tighter select-none whitespace-nowrap max-w-full">
@@ -41,35 +17,35 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="container-custom relative z-10 max-w-full">
-          <div className="flex flex-col items-center justify-center py-12 md:py-20 w-full">
+        <div className="container-custom relative z-10 max-w-full px-4">
+          <div className="flex flex-col items-center justify-center py-8 md:py-12 lg:py-16 w-full">
             {/* M'LiteEv Electric Scooter Carousel Showcase */}
-            <div className="w-full max-w-5xl mb-10 px-2 sm:px-4">
+            <div className="w-full max-w-5xl mb-6 md:mb-8 lg:mb-10">
               <ScooterCarousel autoPlay={true} interval={4000} />
             </div>
 
             {/* M'LiteEv Value Proposition */}
-            <div className="text-center max-w-3xl mb-8">
-              <p className="text-lg md:text-xl text-text-primary leading-relaxed mb-4">
+            <div className="text-center max-w-3xl mb-6 md:mb-8 px-4">
+              <p className="text-base sm:text-lg md:text-xl text-text-primary leading-relaxed mb-3 md:mb-4">
                 Experience premium electric mobility with our complete range of 7 electric scooter models
               </p>
-              <p className="text-base md:text-lg text-text-secondary">
+              <p className="text-sm sm:text-base md:text-lg text-text-secondary">
                 From S.L Pro to CS 3 • All Electric Scooty Sales & Genuine Spare Parts • 1000W-1200W Power Range
               </p>
             </div>
 
             {/* Primary M'LiteEv CTA - Book Now */}
-            <Link href="/models" className="w-full sm:w-auto inline-block group">
-              <button className="btn-primary w-full sm:w-auto px-8 sm:px-12 py-4 text-base font-semibold rounded-lg">
+            <Link href="/models" className="w-full sm:w-auto inline-block group px-4 sm:px-0">
+              <button className="btn-primary w-full sm:w-auto px-6 sm:px-10 md:px-12 py-3 md:py-4 text-sm md:text-base font-semibold rounded-lg">
                 EXPLORE M'LITEEV MODELS
               </button>
             </Link>
 
             {/* M'LiteEv Key Benefits */}
-            <div className="flex flex-wrap gap-6 md:gap-12 mt-10 text-sm text-text-secondary justify-center">
-              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-gold" /> Premium Quality</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-gold" /> 0% Financing</span>
-              <span className="flex items-center gap-2"><CheckCircle2 className="w-4 h-4 text-accent-gold" /> Free Test Ride</span>
+            <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-12 mt-6 md:mt-8 lg:mt-10 text-xs sm:text-sm text-text-secondary justify-center px-4">
+              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> Premium Quality</span>
+              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> 0% Financing</span>
+              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> Free Test Ride</span>
             </div>
           </div>
         </div>
@@ -97,94 +73,61 @@ export default function Home() {
       </section>
 
       {/* M'LiteEv Core Features - What Makes Us Different */}
-      <section className="py-16 md:py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
-        <div className="container-custom overflow-hidden px-4">
-          <div id="features-header" className="animate-on-scroll text-center mb-12 transition-all duration-700 opacity-0 translate-y-8" style={{ opacity: isVisible['features-header'] ? 1 : 0, transform: isVisible['features-header'] ? 'translateY(0)' : 'translateY(2rem)' }}>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-text-primary mb-4">Why Choose M'LiteEv</h2>
-            <p className="text-text-secondary max-w-2xl mx-auto text-sm md:text-base">Premium features that set our electric scooters apart</p>
+      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
+        <div className="container-custom overflow-hidden">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Why Choose M'LiteEv</h2>
+            <p className="text-text-secondary max-w-2xl mx-auto">Premium features that set our electric scooters apart</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 overflow-hidden">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden">
             {[
               {
-                icon: <Shield className="w-10 h-10 md:w-12 md:h-12" />,
+                icon: <Shield className="w-12 h-12" />,
                 title: 'PREMIUM BUILD',
-                description: 'Superior quality engineering and materials',
-                color: 'from-accent-gold/10 to-amber-600/10'
+                description: 'Superior quality engineering and materials'
               },
               {
-                icon: <Zap className="w-10 h-10 md:w-12 md:h-12" />,
-                title: 'POWERFUL MOTORS',
-                description: '1000W-1200W motors for excellent performance',
-                color: 'from-accent-teal/10 to-cyan-600/10'
+                icon: <Zap className="w-12 h-12" />,
+                title: 'SMART CONNECTIVITY',
+                description: 'Bluetooth connectivity with GPS tracking and real-time alerts'
               },
               {
-                icon: <Battery className="w-10 h-10 md:w-12 md:h-12" />,
-                title: 'LONG RANGE',
-                description: 'Up to 60+ km on a single charge',
-                color: 'from-green-500/10 to-emerald-600/10'
+                icon: <Battery className="w-12 h-12" />,
+                title: 'ADVANCED BRAKING',
+                description: 'Front disc and rear drum brakes for superior control'
               },
               {
-                icon: <Target className="w-10 h-10 md:w-12 md:h-12" />,
-                title: 'PRECISION BRAKING',
-                description: 'Advanced disc braking for safety',
-                color: 'from-purple-500/10 to-pink-600/10'
+                icon: <Sparkles className="w-12 h-12" />,
+                title: 'VIBRANT COLORS',
+                description: (
+                  <div className="flex gap-2 justify-center mt-2">
+                    {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#F5F5F5'].map((color, i) => (
+                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-600 shadow-md hover:shadow-lg hover:border-accent-gold transition-all duration-200" style={{ backgroundColor: color }}></div>
+                    ))}
+                  </div>
+                )
               },
             ].map((feature, index) => (
-              <div key={index} id={`feature-${index}`} className="animate-on-scroll bg-gradient-to-br from-secondary-bg to-gray-800 p-6 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:shadow-accent-gold/10 transition-all duration-500 text-center group hover:-translate-y-2 border border-border-gray hover:border-accent-gold/50 opacity-0" style={{ opacity: isVisible[`feature-${index}`] ? 1 : 0, transform: isVisible[`feature-${index}`] ? 'translateY(0)' : 'translateY(2rem)', transitionDelay: `${index * 100}ms` }}>
-                <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${feature.color} mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <div className="text-accent-gold group-hover:text-accent-gold-hover transition-colors duration-300">
-                    {feature.icon}
-                  </div>
+              <div key={index} className="bg-secondary-bg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-accent-gold/10 transition-all duration-300 text-center group hover:-translate-y-2 border border-border-gray hover:border-accent-gold/50">
+                <div className="text-accent-gold mb-6 group-hover:text-accent-gold-hover transition-colors duration-300">
+                  {feature.icon}
                 </div>
-                <h3 className="text-base md:text-xl font-bold text-text-primary mb-2 md:mb-3 uppercase tracking-wide">
+                <h3 className="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">
                   {feature.title}
                 </h3>
-                <p className="text-xs md:text-sm text-text-secondary leading-relaxed">
+                <div className="text-text-secondary leading-relaxed">
                   {feature.description}
-                </p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Our Models Showcase */}
-      <section id="models-section" className="animate-on-scroll py-16 md:py-20 bg-gradient-to-b from-gray-900 to-gray-800 overflow-hidden w-full max-w-full transition-all duration-700 opacity-0" style={{ opacity: isVisible['models-section'] ? 1 : 0 }}>
-        <div className="container-custom px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-4">Our Premium Models</h2>
-            <p className="text-gray-300 max-w-2xl mx-auto text-sm md:text-base">Choose from 7 exceptional electric scooter models</p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 md:gap-6">
-            {ALL_MODELS.slice(0, 7).map((model, index) => (
-              <Link key={index} href="/models" className="group">
-                <div className="bg-gradient-to-br from-gray-800 to-gray-900 p-4 md:p-6 rounded-xl border border-gray-700 hover:border-accent-gold/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-accent-gold/20">
-                  <div className="text-4xl md:text-5xl mb-3 md:mb-4 text-center">🛴</div>
-                  <h3 className="text-sm md:text-base font-bold text-white text-center mb-1 md:mb-2">{model.name}</h3>
-                  <p className="text-xs text-gray-400 text-center">{model.motorPower}</p>
-                  <div className="mt-2 md:mt-3 pt-2 md:pt-3 border-t border-gray-700 flex justify-center gap-1 md:gap-2">
-                    {model.colors.map((color, i) => (
-                      <div key={i} className={`w-3 h-3 md:w-4 md:h-4 rounded-full border ${color === 'Red' ? 'bg-red-600' : color === 'White' ? 'bg-white' : 'bg-black'} border-gray-600`}></div>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-8 md:mt-12">
-            <Link href="/models">
-              <button className="px-8 md:px-12 py-3 md:py-4 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-black font-bold rounded-xl hover:scale-105 transition-all duration-300 text-sm md:text-base uppercase tracking-wider shadow-2xl">
-                View All Models
-              </button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* M'LiteEv Durability Showcase - Built for Indian Roads */}
-      <section id="durability-section" className="animate-on-scroll py-16 md:py-20 bg-gray-800 overflow-hidden w-full max-w-full transition-all duration-700 opacity-0" style={{ opacity: isVisible['durability-section'] ? 1 : 0 }}>
-        <div className="container-custom px-4">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+      <section className="py-20 bg-gray-800 overflow-hidden w-full max-w-full">
+        <div className="container-custom">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* M'LiteEv Durability Promise */}
             <div className="space-y-6">
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">

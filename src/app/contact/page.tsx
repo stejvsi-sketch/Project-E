@@ -85,22 +85,22 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark">
+    <div className="min-h-screen bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-x-hidden">
       {/* Premium Contact Hero with Animated Background */}
-      <section className="relative overflow-hidden pb-8 md:pb-12 pt-0">
+      <section className="relative overflow-hidden pb-6 md:pb-8 pt-2 md:pt-4">
         
         {/* Content */}
-        <div className="container-custom relative z-10">
-          <div className="max-w-5xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-6 py-3 mb-8">
-              <Award className="w-5 h-5 text-accent-gold" />
-              <span className="text-text-primary font-medium">Premium Electric Mobility</span>
+        <div className="container-custom relative z-10 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6">
+              <Award className="w-4 h-4 md:w-5 md:h-5 text-accent-gold" />
+              <span className="text-text-primary font-medium text-sm md:text-base">Premium Electric Mobility</span>
             </div>
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-text-primary via-accent-gold to-accent-teal bg-clip-text text-transparent mb-8 leading-tight">
+            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-text-primary via-accent-gold to-accent-teal bg-clip-text text-transparent mb-4 md:mb-6 leading-tight">
               Let's Start Your
               <span className="block text-accent-gold">Electric Journey</span>
             </h1>
-            <p className="text-xl md:text-2xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-text-secondary leading-relaxed max-w-2xl mx-auto">
               Experience the future of urban mobility. Our premium electric scooters are crafted for the modern lifestyle.
             </p>
             
@@ -109,41 +109,40 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Content */}
-      <section className="relative py-20">
+      <section className="relative py-8 md:py-12">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-900/50 to-gray-900"></div>
         <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.05) 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
         </div>
         
-        <div className="container-custom relative z-10">
-          <div className="grid lg:grid-cols-3 gap-12 xl:gap-16">
+        <div className="container-custom relative z-10 px-4">
+          <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
             {/* Contact Info */}
-            <div className="lg:col-span-1 space-y-8">
+            <div className="lg:col-span-1 space-y-4 md:space-y-6">
               <div>
-                <h2 className="text-4xl font-bold text-text-primary mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-text-primary mb-3">
                   Get in Touch
                 </h2>
-                <p className="text-xl text-text-secondary leading-relaxed">
+                <p className="text-base md:text-lg text-text-secondary leading-relaxed">
                   Connect with our experts and discover your perfect electric companion.
                 </p>
               </div>
               
               {/* Premium Contact Cards */}
-              <div className="space-y-4">
+              <div className="space-y-3 md:space-y-4">
                 <a href="tel:+919818649138" className="group block">
-                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-gold/20 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative flex items-center gap-5">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-2xl flex items-center justify-center shadow-lg shadow-accent-gold/25">
-                        <Phone className="w-7 h-7 text-primary-bg" />
+                  <div className="relative p-4 md:p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray hover:border-accent-gold/50 transition-all duration-300">
+                    <div className="relative flex items-center gap-3 md:gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-xl flex items-center justify-center">
+                        <Phone className="w-5 h-5 md:w-6 md:h-6 text-primary-bg" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-text-primary mb-1">Call Us</h3>
-                        <p className="text-lg text-text-primary font-semibold">+91 98186 49138</p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
-                          <Clock className="w-4 h-4" />
-                          <span>Mon-Sat, 9AM-7PM IST</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base md:text-lg font-bold text-text-primary mb-0.5">Call Us</h3>
+                        <p className="text-sm md:text-base text-text-primary font-semibold truncate">+91 98186 49138</p>
+                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-secondary">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                          <span>Mon-Sat, 9AM-7PM</span>
                         </div>
                       </div>
                     </div>
@@ -151,18 +150,17 @@ export default function ContactPage() {
                 </a>
 
                 <a href="mailto:mukulgarg65@gmail.com" className="group block">
-                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-teal/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-teal/20 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-teal/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative flex items-center gap-5">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-teal to-accent-teal rounded-2xl flex items-center justify-center shadow-lg shadow-accent-teal/25">
-                        <Mail className="w-7 h-7 text-primary-bg" />
+                  <div className="relative p-4 md:p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray hover:border-accent-teal/50 transition-all duration-300">
+                    <div className="relative flex items-center gap-3 md:gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent-teal to-accent-teal rounded-xl flex items-center justify-center">
+                        <Mail className="w-5 h-5 md:w-6 md:h-6 text-primary-bg" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-text-primary mb-1">Email Us</h3>
-                        <p className="text-lg text-text-primary font-semibold">mukulgarg65@gmail.com</p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
-                          <Clock className="w-4 h-4" />
-                          <span>Response within 24 hours</span>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base md:text-lg font-bold text-text-primary mb-0.5">Email Us</h3>
+                        <p className="text-sm md:text-base text-text-primary font-semibold truncate">mukulgarg65@gmail.com</p>
+                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-secondary">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                          <span>24h response</span>
                         </div>
                       </div>
                     </div>
@@ -170,18 +168,17 @@ export default function ContactPage() {
                 </a>
 
                 <div className="group">
-                  <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/50 transition-all duration-500 hover:shadow-2xl hover:shadow-accent-gold/20 hover:-translate-y-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="relative flex items-center gap-5">
-                      <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-accent-teal to-accent-teal rounded-2xl flex items-center justify-center shadow-lg shadow-accent-teal/25">
-                        <MapPin className="w-7 h-7 text-primary-bg" />
+                  <div className="relative p-4 md:p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray hover:border-accent-gold/50 transition-all duration-300">
+                    <div className="relative flex items-center gap-3 md:gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-accent-teal to-accent-teal rounded-xl flex items-center justify-center">
+                        <MapPin className="w-5 h-5 md:w-6 md:h-6 text-primary-bg" />
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-text-primary mb-1">Visit Our Store</h3>
-                        <p className="text-lg text-text-primary">Near Atal Park, Sector-2</p>
-                        <p className="text-text-secondary">Faridabad, Haryana-121004</p>
-                        <div className="flex items-center gap-2 mt-2 text-sm text-text-secondary">
-                          <Clock className="w-4 h-4" />
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-base md:text-lg font-bold text-text-primary mb-0.5">Visit Us</h3>
+                        <p className="text-sm md:text-base text-text-primary">Near Atal Park, Sector-2</p>
+                        <p className="text-xs md:text-sm text-text-secondary">Faridabad, Haryana-121004</p>
+                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-secondary">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
                           <span>Mon-Sun, 10AM-8PM</span>
                         </div>
                       </div>
@@ -193,67 +190,66 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 space-y-8">
+            <div className="lg:col-span-2 space-y-4 md:space-y-6">
               <div className="text-center lg:text-left">
-                <h2 className="font-display text-5xl font-bold text-text-primary mb-6">
+                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 md:mb-4">
                   Start Your Journey
                 </h2>
-                <p className="text-xl text-text-secondary leading-relaxed max-w-2xl">
-                  Join thousands of satisfied customers who've discovered the future of urban mobility with M'LiteEv.
+                <p className="text-sm sm:text-base md:text-lg text-text-secondary leading-relaxed max-w-xl">
+                  Join thousands of satisfied customers who've discovered the future of urban mobility.
                 </p>
               </div>
               
               {/* Premium Form Container */}
-              <div className="relative p-8 bg-secondary-bg backdrop-blur-xl rounded-3xl border border-border-gray hover:border-accent-gold/30 transition-all duration-500">
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent rounded-3xl"></div>
+              <div className="relative p-4 md:p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray">
                 <div className="relative">
                   <LeadForm scooters={scooters} />
                 </div>
               </div>
               
               {/* Premium Benefits Section */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-lg flex items-center justify-center">
-                      <Shield className="w-5 h-5 text-primary-bg" />
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="p-4 md:p-5 bg-secondary-bg backdrop-blur-xl rounded-xl border border-border-gray">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-accent-gold to-accent-gold-hover rounded-lg flex items-center justify-center">
+                      <Shield className="w-4 h-4 text-primary-bg" />
                     </div>
-                    <h3 className="text-xl font-bold text-text-primary">Premium Benefits</h3>
+                    <h3 className="text-base md:text-lg font-bold text-text-primary">Premium Benefits</h3>
                   </div>
-                  <ul className="space-y-3 text-text-secondary">
+                  <ul className="space-y-2 text-sm md:text-base text-text-secondary">
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
+                      <span className="text-accent-gold mr-2">✓</span>
                       Free Home Test Rides
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
-                      Expert Customer Support
+                      <span className="text-accent-gold mr-2">✓</span>
+                      Expert Support
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
-                      Premium Build Quality
+                      <span className="text-accent-gold mr-2">✓</span>
+                      Premium Quality
                     </li>
                   </ul>
                 </div>
                 
-                <div className="p-6 bg-secondary-bg backdrop-blur-xl rounded-2xl border border-border-gray">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-gradient-to-br from-accent-teal to-accent-teal rounded-lg flex items-center justify-center">
-                      <Users className="w-5 h-5 text-primary-bg" />
+                <div className="p-4 md:p-5 bg-secondary-bg backdrop-blur-xl rounded-xl border border-border-gray">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 bg-gradient-to-br from-accent-teal to-accent-teal rounded-lg flex items-center justify-center">
+                      <Users className="w-4 h-4 text-primary-bg" />
                     </div>
-                    <h3 className="text-xl font-bold text-text-primary">Our Services</h3>
+                    <h3 className="text-base md:text-lg font-bold text-text-primary">Our Services</h3>
                   </div>
-                  <ul className="space-y-3 text-text-secondary">
+                  <ul className="space-y-2 text-sm md:text-base text-text-secondary">
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
-                      All Electric Scooty Sales
+                      <span className="text-accent-gold mr-2">✓</span>
+                      Electric Scooty Sales
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
+                      <span className="text-accent-gold mr-2">✓</span>
                       Genuine Spare Parts
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-3">✓</span>
+                      <span className="text-accent-gold mr-2">✓</span>
                       Service & Maintenance
                     </li>
                   </ul>
