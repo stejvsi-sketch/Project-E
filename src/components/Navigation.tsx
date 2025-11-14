@@ -22,11 +22,17 @@ export function Navigation() {
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden'
+      document.body.style.height = '100vh'
+      document.documentElement.style.overflow = 'hidden'
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.height = ''
+      document.documentElement.style.overflow = ''
     }
     return () => {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
+      document.body.style.height = ''
+      document.documentElement.style.overflow = ''
     }
   }, [isMenuOpen])
 
@@ -119,12 +125,8 @@ export function Navigation() {
           >
             {/* Button glow */}
             <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            {/* Always show hamburger menu - premium style */}
-            <div className="relative z-10 flex flex-col justify-center items-center w-6 h-6">
-              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 my-1 ${isMenuOpen ? 'opacity-0' : ''}`}></div>
-              <div className={`w-6 h-0.5 bg-text-primary group-hover:bg-accent-gold transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></div>
-            </div>
+            {/* Hamburger Icon - no transform */}
+            <Menu className="relative z-10 w-6 h-6 text-text-primary group-hover:text-accent-gold transition-colors duration-300" />
           </button>
         </div>
 
@@ -142,59 +144,88 @@ export function Navigation() {
             onClick={() => setIsMenuOpen(false)}
           />
           
-          {/* Premium Sliding Menu Panel */}
+          {/* Ultra Premium Sliding Menu Panel */}
           <div
             className={cn(
               'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-y-auto',
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
-              backgroundColor: '#1C1C1C',
-              borderLeft: '1px solid #444444',
-              backgroundImage: 'linear-gradient(to bottom, #1C1C1C, #121212, #1C1C1C), radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)',
-              backgroundBlendMode: 'normal',
+              backgroundColor: '#0A0A0A',
+              borderLeft: '2px solid rgba(255, 215, 0, 0.2)',
+              backgroundImage: `
+                linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, transparent 50%, rgba(0, 188, 212, 0.03) 100%),
+                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08), transparent 40%),
+                radial-gradient(circle at 20% 80%, rgba(0, 188, 212, 0.08), transparent 40%)
+              `,
+              boxShadow: '-20px 0 60px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(255, 215, 0, 0.02)',
               willChange: 'transform',
               height: '100vh'
             }}
           >
-            <div className="flex flex-col h-full p-6 md:p-8">
-              {/* Close Button */}
-              <div className="flex justify-end mb-4">
+            <div className="flex flex-col h-full p-8">
+              {/* Premium Header with Close */}
+              <div className="flex items-center justify-between mb-8 pb-6 border-b border-accent-gold/20">
+                <div>
+                  <h2 className="text-2xl font-bold bg-gradient-to-r from-accent-gold via-accent-gold-hover to-accent-teal bg-clip-text text-transparent">Menu</h2>
+                  <p className="text-xs text-text-secondary mt-1 tracking-widest uppercase">Navigation</p>
+                </div>
                 <button
                   onClick={() => setIsMenuOpen(false)}
-                  className="p-3 rounded-xl bg-gradient-to-br from-accent-gold/10 to-accent-teal/10 border border-white/10 backdrop-blur-sm hover:scale-110 active:scale-95 transition-all duration-300 group shadow-lg"
+                  className="relative p-3 rounded-xl bg-gradient-to-br from-accent-gold/15 to-accent-teal/15 border border-accent-gold/30 hover:border-accent-gold hover:scale-110 active:scale-95 transition-all duration-300 group shadow-xl"
                   aria-label="Close menu"
                 >
-                  <X className="w-6 h-6 text-text-primary group-hover:text-accent-gold transition-colors duration-300" />
+                  <div className="absolute inset-0 rounded-xl bg-accent-gold/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <X className="relative z-10 w-6 h-6 text-accent-gold group-hover:rotate-90 transition-transform duration-300" />
                 </button>
               </div>
-            {/* Premium Navigation Links */}
-            <div className="flex flex-col space-y-6 pt-8">
+            {/* Ultra Premium Navigation Links */}
+            <div className="flex-1 flex flex-col space-y-2">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="relative group text-text-primary text-3xl font-bold hover:text-accent-gold transition-all duration-300 pb-6 border-b border-border-gray/30"
-                  style={{ animationDelay: `${index * 100}ms` }}
+                  className="relative group px-6 py-5 rounded-2xl transition-all duration-500 hover:bg-gradient-to-r hover:from-accent-gold/10 hover:via-accent-gold/5 hover:to-transparent border border-transparent hover:border-accent-gold/20"
+                  style={{ 
+                    animationDelay: `${index * 50}ms`,
+                    animation: isMenuOpen ? 'slideIn 0.5s ease-out forwards' : 'none'
+                  }}
                 >
-                  <span className="relative z-10 uppercase tracking-wider">{link.label}</span>
-                  {/* Hover effect background */}
-                  <div className="absolute inset-0 -mx-4 rounded-xl bg-gradient-to-r from-accent-gold/10 to-accent-teal/10 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
-                  {/* Gold accent line */}
-                  <div className="absolute bottom-0 left-0 w-0 group-hover:w-16 h-1 bg-gradient-to-r from-accent-gold to-accent-teal transition-all duration-500"></div>
+                  {/* Glow effect on hover */}
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-gold/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
+                  
+                  <div className="relative flex items-center justify-between">
+                    <span className="text-2xl md:text-3xl font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300 uppercase tracking-wide">
+                      {link.label}
+                    </span>
+                    <div className="w-2 h-2 rounded-full bg-accent-gold/0 group-hover:bg-accent-gold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent-gold/50"></div>
+                  </div>
+                  
+                  {/* Bottom gradient line */}
+                  <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               ))}
               
-              {/* Premium Mobile CTA */}
-              <div className="mt-12 pt-8 border-t border-border-gray/30">
+              {/* Ultra Premium Mobile CTA */}
+              <div className="mt-auto pt-8 border-t border-accent-gold/20">
                 <Link 
                   href="/contact" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="inline-flex items-center justify-center w-full px-8 py-4 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-primary-bg font-bold text-lg uppercase tracking-wider rounded-xl shadow-xl hover:shadow-2xl hover:shadow-accent-gold/25 transition-all duration-300 hover:scale-105 active:scale-95"
+                  className="relative inline-flex items-center justify-center w-full px-8 py-5 bg-gradient-to-r from-accent-gold via-accent-gold-hover to-accent-gold text-primary-bg font-black text-lg uppercase tracking-widest rounded-2xl shadow-2xl hover:shadow-accent-gold/50 transition-all duration-500 hover:scale-105 active:scale-95 group overflow-hidden"
                 >
-                  Enquire Now
+                  {/* Animated shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 group-hover:animate-shine"></div>
+                  {/* Glow effect */}
+                  <div className="absolute -inset-1 bg-gradient-to-r from-accent-gold to-accent-teal opacity-50 blur-xl group-hover:opacity-75 transition-opacity duration-300"></div>
+                  <span className="relative z-10">Enquire Now</span>
                 </Link>
+                
+                {/* Contact info */}
+                <div className="mt-6 text-center space-y-2">
+                  <p className="text-sm text-text-secondary">Call us now</p>
+                  <a href="tel:9818649138" className="text-accent-gold font-bold text-lg hover:text-accent-gold-hover transition-colors">9818649138</a>
+                </div>
               </div>
             </div>
             </div>
