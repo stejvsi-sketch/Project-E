@@ -32,6 +32,12 @@ export const metadata: Metadata = {
   description: "Discover premium electric scooters by M'LiteEv. Revolutionizing urban mobility with cutting-edge technology, eco-friendly design, and superior performance.",
   keywords: "electric scooters, ev scooters, electric mobility, eco-friendly transport, M'LiteEv",
   authors: [{ name: "M'LiteEv" }],
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -64,7 +70,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
         <Navigation />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-24 md:pt-32">
           {children}
         </main>
         <Footer />

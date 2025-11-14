@@ -69,16 +69,17 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
   return (
     <div 
       className="relative w-full max-w-4xl mx-auto overflow-hidden"
+      style={{ maxWidth: '100%' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className={`relative h-[500px] bg-gradient-to-br ${currentScheme.bg} rounded-3xl overflow-hidden shadow-xl border ${currentScheme.border} transition-all duration-700`}>
+      <div className={`relative h-[400px] sm:h-[500px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border ${currentScheme.border} transition-all duration-700`}>
         {/* Scooter Display */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-4">
             {/* Large Emoji/Image */}
-            <div className="text-[120px] md:text-[200px] transition-all duration-500 transform hover:scale-110">
+            <div className="text-[100px] sm:text-[120px] md:text-[200px] transition-all duration-500 transform hover:scale-110">
               {scooters[current].emoji}
             </div>
             
@@ -87,10 +88,10 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
               <p className="text-sm text-accent-gold uppercase tracking-wider font-semibold">
                 {scooters[current].category}
               </p>
-              <h3 className="font-display text-4xl font-bold text-white drop-shadow-lg">
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg px-4">
                 {scooters[current].name}
               </h3>
-              <div className="flex items-center justify-center gap-6 text-white/90 text-lg font-medium">
+              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-white/90 text-base sm:text-lg font-medium px-4">
                 <span>{scooters[current].range}</span>
                 <span>•</span>
                 <span>{scooters[current].speed}</span>

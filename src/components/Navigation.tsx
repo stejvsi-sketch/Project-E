@@ -39,7 +39,7 @@ export function Navigation() {
   ]
 
   return (
-    <nav className={`bg-primary-bg/95 backdrop-blur-xl sticky top-0 z-50 border-b transition-all duration-300 ${
+    <nav className={`bg-primary-bg/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
       scrolled ? 'shadow-xl border-border-gray/50 bg-primary-bg' : 'shadow-lg border-border-gray/20'
     }`}>
 
@@ -131,28 +131,28 @@ export function Navigation() {
         {/* Premium Side Menu Overlay */}
         <div
           className={cn(
-            'md:hidden fixed inset-0 z-[70] transition-all duration-500 ease-in-out',
+            'md:hidden fixed inset-0 z-[100] transition-all duration-500 ease-in-out',
             isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
           )}
-          style={{ top: '6rem' }}
+          style={{ top: 0 }}
         >
           {/* Background Overlay */}
           <div 
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
             onClick={() => setIsMenuOpen(false)}
           />
           
           {/* Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out overflow-hidden',
+              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] bg-gradient-to-b from-secondary-bg via-primary-bg to-secondary-bg shadow-2xl transition-all duration-500 ease-out overflow-y-auto',
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
               borderLeft: '1px solid #444444',
               backgroundImage: 'radial-gradient(circle at top right, rgba(255, 215, 0, 0.05), transparent 50%)',
               willChange: 'transform',
-              height: 'calc(100vh - 6rem)'
+              height: '100vh'
             }}
           >
             <div className="flex flex-col h-full p-6 md:p-8">

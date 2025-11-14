@@ -9,18 +9,18 @@ export default function Home() {
   return (
     <>
       {/* M'LiteEv Hero - Premium Electric Scooter Showcase */}
-      <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[85vh]">
+      <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[85vh] w-full max-w-full">
         {/* M'LiteEv Brand Watermark Background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 className="text-[18vw] md:text-[12vw] lg:text-[15vw] font-black text-white/5 tracking-tighter select-none whitespace-nowrap">
+          <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[12vw] font-black text-white/5 tracking-tighter select-none whitespace-nowrap max-w-full">
             M'LITEEV
           </h1>
         </div>
 
-        <div className="container-custom relative z-10">
-          <div className="flex flex-col items-center justify-center py-12 md:py-20">
+        <div className="container-custom relative z-10 max-w-full">
+          <div className="flex flex-col items-center justify-center py-12 md:py-20 w-full">
             {/* M'LiteEv Electric Scooter Carousel Showcase */}
-            <div className="w-full max-w-5xl mb-10">
+            <div className="w-full max-w-5xl mb-10 px-2 sm:px-4">
               <ScooterCarousel autoPlay={true} interval={4000} />
             </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
       </section>
 
       {/* M'LiteEv Core Features - What Makes Us Different */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden">
+      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
         <div className="container-custom overflow-hidden">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Why Choose M'LiteEv</h2>
@@ -125,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* M'LiteEv Durability Showcase - Built for Indian Roads */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-gray-800 overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* M'LiteEv Durability Promise */}
@@ -184,7 +184,7 @@ export default function Home() {
       </section>
 
       {/* M'LiteEv Technical Specifications */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-gray-900 overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -276,7 +276,7 @@ export default function Home() {
       </section>
 
       {/* Color Selector with Dark Background */}
-      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900">
+      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Color Buttons */}
@@ -307,7 +307,7 @@ export default function Home() {
       </section>
 
       {/* Dark CTA Section */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray">
+      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
         <div className="container-custom text-center">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
             Effortless Elegance, Practical Luxury
