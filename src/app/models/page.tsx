@@ -205,7 +205,7 @@ export default function ModelsPage() {
       {productHeros.map((product, index) => (
         <section
           key={product.id}
-          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500 pt-20`}
+          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -244,17 +244,17 @@ export default function ModelsPage() {
                 </p>
 
                 {/* Specs Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 py-6">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 py-4 md:py-6">
                   {product.specs.map((spec, idx) => {
                     const Icon = spec.icon
                     return (
                       <div 
                         key={idx}
-                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-4 hover:bg-white/20 transition-all duration-300 hover:scale-105 group min-w-0"
+                        className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-3 md:p-4 hover:bg-white/20 transition-all duration-300 group"
                       >
                         <Icon className="w-5 h-5 md:w-6 md:h-6 mb-2 group-hover:scale-110 transition-transform" />
                         <div className="text-xs opacity-70 uppercase tracking-wide mb-1">{spec.label}</div>
-                        <div className="text-sm md:text-lg font-bold break-words hyphens-auto leading-tight">{spec.value}</div>
+                        <div className="text-sm md:text-base font-bold leading-tight">{spec.value}</div>
                       </div>
                     )
                   })}
