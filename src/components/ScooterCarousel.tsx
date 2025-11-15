@@ -128,49 +128,49 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className={`relative h-[580px] sm:h-[620px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
-        {/* Mobile Premium Layout */}
-        <div className="md:hidden absolute inset-0 flex flex-col">
-          {/* Top Section: Model Name & Badge */}
-          <div className="px-6 pt-8 pb-4 space-y-3 z-10">
-            <div className="inline-block px-4 py-1.5 bg-accent-gold/20 backdrop-blur-md border border-accent-gold/40 rounded-full">
-              <p className="text-xs text-accent-gold uppercase tracking-widest font-bold">
+      <div className={`relative h-[480px] sm:h-[520px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
+        {/* Mobile Premium Card Layout */}
+        <div className="md:hidden absolute inset-0 flex flex-col justify-between py-6">
+          {/* Top: Category Badge & Model Name */}
+          <div className="px-5 space-y-2 z-10">
+            <div className="inline-block px-3 py-1 bg-accent-gold/25 backdrop-blur-sm border border-accent-gold/50 rounded-full">
+              <p className="text-[10px] text-accent-gold uppercase tracking-wider font-bold">
                 {scooters[current].category}
               </p>
             </div>
-            <h3 className="font-display text-5xl font-black text-white drop-shadow-2xl leading-none">
+            <h3 className="font-display text-4xl font-black text-white drop-shadow-xl leading-none">
               {scooters[current].name}
             </h3>
           </div>
           
-          {/* Center: Large Scooter Image */}
-          <div className="flex-1 relative flex items-center justify-center px-4">
-            <div className="relative w-full h-full max-w-[420px]">
+          {/* Center: Scooter Image - More Compact */}
+          <div className="flex items-center justify-center px-3 -my-4">
+            <div className="relative w-[280px] h-[240px]">
               {imageData.type === 'image' ? (
                 <Image
                   src={imageData.value}
                   alt={currentScooter.name}
                   fill
                   className="object-contain drop-shadow-2xl"
-                  sizes="420px"
+                  sizes="280px"
                   priority={current === 0}
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-[180px]">
+                <div className="absolute inset-0 flex items-center justify-center text-[120px]">
                   {imageData.value}
                 </div>
               )}
             </div>
           </div>
           
-          {/* Bottom: Stats */}
-          <div className="px-6 pb-8 flex items-center justify-center gap-4 z-10">
-            <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
-              <span className="text-white font-bold text-lg">{scooters[current].range}</span>
+          {/* Bottom: Compact Stats */}
+          <div className="px-5 flex items-center justify-center gap-3 z-10">
+            <div className="bg-white/20 backdrop-blur-sm border border-white/40 px-4 py-2 rounded-lg">
+              <span className="text-white font-bold text-sm">{scooters[current].range}</span>
             </div>
-            <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
-            <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
-              <span className="text-white font-bold text-lg">{scooters[current].speed}</span>
+            <div className="w-1 h-1 rounded-full bg-white/50"></div>
+            <div className="bg-white/20 backdrop-blur-sm border border-white/40 px-4 py-2 rounded-lg">
+              <span className="text-white font-bold text-sm">{scooters[current].speed}</span>
             </div>
           </div>
         </div>
