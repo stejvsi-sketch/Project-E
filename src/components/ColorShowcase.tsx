@@ -77,7 +77,10 @@ export function ColorShowcase() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)] rounded-3xl"></div>
         <div className="relative flex items-center justify-center min-h-[300px] md:min-h-[400px]">
           {isLoading ? (
-            <div className="text-text-heading text-xl">Loading...</div>
+            <div className="flex flex-col items-center gap-4">
+              <div className="w-32 h-6 rounded-full bg-white/20 animate-pulse" />
+              <div className="w-48 h-48 rounded-full bg-white/10 animate-pulse" />
+            </div>
           ) : imageData.type === 'image' ? (
             <div className="relative w-full h-[300px] md:h-[400px]">
               <Image

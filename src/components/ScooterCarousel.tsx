@@ -108,9 +108,13 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
 
   if (isLoading || scooters.length === 0) {
     return (
-      <div className="relative w-full max-w-4xl mx-auto overflow-hidden" style={{ maxWidth: '100%' }}>
-        <div className="relative h-[400px] sm:h-[500px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-700 flex items-center justify-center">
-          <div className="text-white text-xl">Loading models...</div>
+      <div className="relative w-full max-w-6xl mx-auto overflow-hidden" style={{ maxWidth: '100%' }}>
+        <div className="relative h-[450px] sm:h-[520px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-gray-800/60">
+          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_60%)]" />
+          <div className="flex flex-col items-center justify-center h-full gap-6">
+            <div className="w-40 sm:w-56 h-24 rounded-3xl bg-white/5 animate-pulse" />
+            <div className="w-52 sm:w-72 h-52 rounded-full bg-white/10 animate-pulse" />
+          </div>
         </div>
       </div>
     )
@@ -124,46 +128,92 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className={`relative h-[550px] sm:h-[600px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
-        {/* Premium Image Container */}
-        <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-12 py-8">
-          {/* Scooter Image - Larger and More Prominent */}
-          <div className="relative w-full h-[280px] sm:h-[320px] md:w-1/2 md:h-[500px] lg:h-[550px] flex items-center justify-center order-2 md:order-1">
-            <div className="relative w-full h-full max-w-[400px] sm:max-w-[480px] md:max-w-none transition-all duration-500 transform hover:scale-105">
+      <div className={`relative h-[580px] sm:h-[620px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
+        {/* Mobile Premium Layout */}
+        <div className="md:hidden absolute inset-0 flex flex-col">
+          {/* Top Section: Model Name & Badge */}
+          <div className="px-6 pt-8 pb-4 space-y-3 z-10">
+            <div className="inline-block px-4 py-1.5 bg-accent-gold/20 backdrop-blur-md border border-accent-gold/40 rounded-full">
+              <p className="text-xs text-accent-gold uppercase tracking-widest font-bold">
+                {scooters[current].category}
+              </p>
+            </div>
+            <h3 className="font-display text-5xl font-black text-white drop-shadow-2xl leading-none">
+              {scooters[current].name}
+            </h3>
+          </div>
+          
+          {/* Center: Large Scooter Image */}
+          <div className="flex-1 relative flex items-center justify-center px-4">
+            <div className="relative w-full h-full max-w-[420px]">
               {imageData.type === 'image' ? (
                 <Image
                   src={imageData.value}
                   alt={currentScooter.name}
                   fill
                   className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"
+                  sizes="420px"
                   priority={current === 0}
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-[150px] sm:text-[180px] md:text-[250px]">
+                <div className="absolute inset-0 flex items-center justify-center text-[180px]">
                   {imageData.value}
                 </div>
               )}
             </div>
           </div>
           
-          {/* Premium Text Overlay - Mobile: Over image, Desktop: Side by side */}
-          <div className="w-full md:w-1/2 text-center md:text-left space-y-4 sm:space-y-6 order-1 md:order-2 md:pl-8">
+          {/* Bottom: Stats */}
+          <div className="px-6 pb-8 flex items-center justify-center gap-4 z-10">
+            <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
+              <span className="text-white font-bold text-lg">{scooters[current].range}</span>
+            </div>
+            <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
+            <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
+              <span className="text-white font-bold text-lg">{scooters[current].speed}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden md:flex absolute inset-0 items-center justify-between px-12 py-8">
+          {/* Scooter Image */}
+          <div className="relative w-1/2 h-[500px] lg:h-[550px] flex items-center justify-center">
+            <div className="relative w-full h-full max-w-none transition-all duration-500 transform hover:scale-105">
+              {imageData.type === 'image' ? (
+                <Image
+                  src={imageData.value}
+                  alt={currentScooter.name}
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 1024px) 500px, 600px"
+                  priority={current === 0}
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-[250px]">
+                  {imageData.value}
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* Text Content */}
+          <div className="w-1/2 text-left space-y-6 pl-8">
             <div className="inline-block px-5 py-2 bg-accent-gold/20 backdrop-blur-md border border-accent-gold/40 rounded-full">
-              <p className="text-xs sm:text-sm text-accent-gold uppercase tracking-widest font-bold">
+              <p className="text-sm text-accent-gold uppercase tracking-widest font-bold">
                 {scooters[current].category}
               </p>
             </div>
-            <h3 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl leading-tight">
+            <h3 className="font-display text-6xl lg:text-7xl font-black text-white drop-shadow-2xl leading-tight">
               {scooters[current].name}
             </h3>
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+            <div className="flex items-center gap-6">
               <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
-                <span className="text-white font-bold text-base sm:text-lg md:text-xl">{scooters[current].range}</span>
+                <span className="text-white font-bold text-xl">{scooters[current].range}</span>
               </div>
               <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
               <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
-                <span className="text-white font-bold text-base sm:text-lg md:text-xl">{scooters[current].speed}</span>
+                <span className="text-white font-bold text-xl">{scooters[current].speed}</span>
               </div>
             </div>
           </div>

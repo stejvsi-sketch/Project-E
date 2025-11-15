@@ -26,12 +26,6 @@ function ProductImage({
   const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColor)
   const imageData = getImageOrFallback(variantImage?.image_url || null)
 
-  if (isLoading) {
-    return (
-      <div className="text-white text-lg animate-pulse">Loading images...</div>
-    )
-  }
-
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {imageData.type === 'image' ? (
