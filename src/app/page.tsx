@@ -77,19 +77,19 @@ export default function Home() {
 
       {/* Philosophy of Excellence */}
       <section className="py-32 md:py-40 bg-muted-bg overflow-hidden w-full max-w-full">
-        <div className="container-custom max-w-7xl mx-auto">
+        <div className="container-custom max-w-7xl mx-auto px-4">
           {/* Refined header */}
-          <div className="text-center mb-24 md:mb-32">
-            <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="w-20 h-[2px] bg-accent-gold"></div>
-              <p className="text-xs tracking-[0.5em] uppercase text-accent-gold font-bold">Philosophy</p>
-              <div className="w-20 h-[2px] bg-accent-gold"></div>
+          <div className="text-center mb-24 md:mb-32 overflow-hidden">
+            <div className="flex items-center justify-center gap-3 md:gap-4 mb-8 px-4">
+              <div className="w-12 md:w-20 h-[2px] bg-accent-gold flex-shrink-0"></div>
+              <p className="text-xs tracking-[0.3em] md:tracking-[0.5em] uppercase text-accent-gold font-bold whitespace-nowrap">Philosophy</p>
+              <div className="w-12 md:w-20 h-[2px] bg-accent-gold flex-shrink-0"></div>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-text-heading leading-tight mb-10">
-              <span className="font-light">Uncompromising</span>
-              <span className="block font-black italic mt-3">Excellence</span>
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display text-text-heading leading-tight mb-10 px-4">
+              <span className="font-light block sm:inline">Uncompromising</span>
+              <span className="block font-black italic mt-2 sm:mt-3">Excellence</span>
             </h2>
-            <p className="text-xl md:text-2xl text-text-heading/70 max-w-3xl mx-auto leading-relaxed font-light">Every detail meticulously refined for perfection</p>
+            <p className="text-lg sm:text-xl md:text-2xl text-text-heading/70 max-w-3xl mx-auto leading-relaxed font-light px-4">Every detail meticulously refined for perfection</p>
           </div>
           {/* Minimalist feature showcase - NO HORIZONTAL SCROLL */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 max-w-6xl mx-auto">
