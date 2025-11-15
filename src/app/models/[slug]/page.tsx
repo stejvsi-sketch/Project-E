@@ -153,9 +153,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
   ]
 
   return (
-    <div className="min-h-screen bg-[#f8f4ec] text-[#2f1f15]">
+    <div className="min-h-screen bg-[#f8f4ec] text-[#2f1f15] -mt-24 md:-mt-32">
       {/* Back Button */}
-      <div className="container-custom pt-8 pb-4">
+      <div className="container-custom pt-32 md:pt-40 pb-4">
         <Link href="/models" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#e0c7a5] bg-white/80 text-[#2f1f15] shadow-sm transition-all hover:border-[#c98545] hover:text-[#a65a2c]">
           <ChevronLeft className="w-5 h-5" />
           <span>Back to Models</span>

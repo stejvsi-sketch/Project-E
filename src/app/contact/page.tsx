@@ -85,9 +85,9 @@ export default function ContactPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-primary-bg via-muted-bg to-secondary-bg overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-primary-bg via-muted-bg to-secondary-bg overflow-x-hidden -mt-24 md:-mt-32">
       {/* Clean Contact Hero */}
-      <section className="relative overflow-hidden pb-8 md:pb-12 pt-0">
+      <section className="relative overflow-hidden pb-8 md:pb-12 pt-24 md:pt-32">
         <div className="container-custom relative z-10 px-4">
           <div className="max-w-3xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 bg-accent-gold/10 border border-accent-gold/20 rounded-full px-5 py-2 mb-6">

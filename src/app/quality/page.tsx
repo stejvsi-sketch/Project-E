@@ -2,9 +2,9 @@ import { Shield, Award, Zap, Settings, CheckCircle, Star } from 'lucide-react'
 
 export default function Quality() {
   return (
-    <div className="min-h-screen bg-primary-bg">
+    <div className="min-h-screen bg-primary-bg -mt-24 md:-mt-32">
       {/* Quality Standards Hero */}
-      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-8 md:pb-12 pt-0 prevent-horizontal-scroll">
+      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-8 md:pb-12 pt-24 md:pt-32 prevent-horizontal-scroll">
         <div className="container-custom text-center">
           <div className="inline-block mb-4 md:mb-6">
             <span className="text-xs md:text-sm font-semibold text-accent-gold uppercase tracking-wider px-3 md:px-4 py-2 rounded-full bg-accent-gold/10 border border-accent-gold/30">
