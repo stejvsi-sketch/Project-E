@@ -86,101 +86,84 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-bg via-muted-bg to-secondary-bg overflow-x-hidden">
-      {/* Premium Contact Hero with Animated Background */}
-      <section className="relative overflow-hidden pb-6 md:pb-8 pt-0">
-        
-        {/* Content */}
+      {/* Clean Contact Hero */}
+      <section className="relative overflow-hidden pb-8 md:pb-12 pt-0">
         <div className="container-custom relative z-10 px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 bg-secondary-bg backdrop-blur-md border border-border-subtle rounded-full px-4 md:px-6 py-2 md:py-3 mb-4 md:mb-6">
-              <Award className="w-4 h-4 md:w-5 md:h-5 text-accent-gold" />
-              <span className="text-text-heading font-medium text-sm md:text-base">Premium Electric Mobility</span>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-accent-gold/10 border border-accent-gold/20 rounded-full px-5 py-2 mb-6">
+              <Award className="w-4 h-4 text-accent-gold" />
+              <span className="text-text-heading font-semibold text-sm">Premium Electric Mobility</span>
             </div>
-            <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-heading mb-4 md:mb-6 leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-text-heading mb-5 leading-tight">
               Let's Start Your
-              <span className="block text-accent-gold">Electric Journey</span>
+              <span className="block text-accent-gold mt-2">Electric Journey</span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-text-body leading-relaxed max-w-2xl mx-auto">
-              Experience the future of urban mobility. Our premium electric scooters are crafted for the modern lifestyle.
+            <p className="text-lg md:text-xl text-text-body leading-relaxed max-w-xl mx-auto">
+              Connect with us and experience the future of urban mobility.
             </p>
-            
           </div>
         </div>
       </section>
 
       {/* Contact Content */}
-      <section className="relative py-8 md:py-12">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary-bg/30 to-secondary-bg/50"></div>
-        <div className="absolute inset-0 opacity-20">
-          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(212,175,55,0.1) 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
-        </div>
+      <section className="relative py-12 md:py-16">
         
         <div className="container-custom relative z-10 px-4">
           <div className="grid lg:grid-cols-3 gap-6 md:gap-8 lg:gap-12">
             {/* Contact Info */}
             <div className="lg:col-span-1 space-y-4 md:space-y-6">
               <div>
-                <h2 className="text-2xl md:text-3xl font-bold text-text-heading mb-3 font-display">
+                <h2 className="text-2xl md:text-3xl font-bold text-text-heading mb-2 font-display">
                   Get in Touch
                 </h2>
-                <p className="text-base md:text-lg text-text-body leading-relaxed">
-                  Connect with our experts and discover your perfect electric companion.
+                <p className="text-base text-text-body leading-relaxed">
+                  We're here to help you find your perfect ride.
                 </p>
               </div>
               
-              {/* Premium Contact Cards */}
-              <div className="space-y-3 md:space-y-4">
+              {/* Contact Cards */}
+              <div className="space-y-3">
                 <a href="tel:+919818649138" className="group block">
-                  <div className="relative p-4 md:p-6 bg-muted-bg backdrop-blur-xl rounded-2xl border border-border-subtle hover:border-accent-gold transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div className="relative flex items-center gap-3 md:gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-accent-gold rounded-xl flex items-center justify-center">
-                        <Phone className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle hover:border-accent-gold hover:shadow-md transition-all">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 bg-accent-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Phone className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base md:text-lg font-bold text-text-heading mb-0.5">Call Us</h3>
-                        <p className="text-sm md:text-base text-text-heading font-semibold truncate">+91 98186 49138</p>
-                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-muted">
-                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
-                          <span>Mon-Sat, 9AM-7PM</span>
-                        </div>
+                        <h3 className="text-sm font-semibold text-text-heading mb-0.5">Call Us</h3>
+                        <p className="text-base text-text-heading font-bold truncate">+91 98186 49138</p>
+                        <p className="text-xs text-text-muted mt-0.5">Mon-Sat, 9AM-7PM</p>
                       </div>
                     </div>
                   </div>
                 </a>
 
                 <a href="mailto:mukulgarg65@gmail.com" className="group block">
-                  <div className="relative p-4 md:p-6 bg-muted-bg backdrop-blur-xl rounded-2xl border border-border-subtle hover:border-accent-gold transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div className="relative flex items-center gap-3 md:gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-accent-gold rounded-xl flex items-center justify-center">
-                        <Mail className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle hover:border-accent-gold hover:shadow-md transition-all">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 bg-accent-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                        <Mail className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base md:text-lg font-bold text-text-heading mb-0.5">Email Us</h3>
-                        <p className="text-sm md:text-base text-text-heading font-semibold truncate">mukulgarg65@gmail.com</p>
-                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-muted">
-                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
-                          <span>24h response</span>
-                        </div>
+                        <h3 className="text-sm font-semibold text-text-heading mb-0.5">Email Us</h3>
+                        <p className="text-base text-text-heading font-bold truncate">mukulgarg65@gmail.com</p>
+                        <p className="text-xs text-text-muted mt-0.5">24h response time</p>
                       </div>
                     </div>
                   </div>
                 </a>
 
                 <div className="group">
-                  <div className="relative p-4 md:p-6 bg-muted-bg backdrop-blur-xl rounded-2xl border border-border-subtle hover:border-accent-gold transition-all duration-300 shadow-sm hover:shadow-md">
-                    <div className="relative flex items-center gap-3 md:gap-4">
-                      <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 bg-accent-gold rounded-xl flex items-center justify-center">
-                        <MapPin className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                  <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle hover:border-accent-gold hover:shadow-md transition-all">
+                    <div className="flex items-center gap-3">
+                      <div className="w-11 h-11 bg-accent-gold rounded-lg flex items-center justify-center flex-shrink-0">
+                        <MapPin className="w-5 h-5 text-white" />
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className="text-base md:text-lg font-bold text-text-heading mb-0.5">Visit Us</h3>
-                        <p className="text-sm md:text-base text-text-heading">Near Atal Park, Sector-2</p>
-                        <p className="text-xs md:text-sm text-text-body">Faridabad, Haryana-121004</p>
-                        <div className="flex items-center gap-1 md:gap-2 mt-1 text-xs md:text-sm text-text-muted">
-                          <Clock className="w-3 h-3 md:w-4 md:h-4" />
-                          <span>Mon-Sun, 10AM-8PM</span>
-                        </div>
+                        <h3 className="text-sm font-semibold text-text-heading mb-0.5">Visit Us</h3>
+                        <p className="text-sm text-text-heading font-semibold">Near Atal Park, Sector-2</p>
+                        <p className="text-xs text-text-body">Faridabad, Haryana-121004</p>
+                        <p className="text-xs text-text-muted mt-0.5">Mon-Sun, 10AM-8PM</p>
                       </div>
                     </div>
                   </div>
@@ -190,66 +173,62 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 space-y-4 md:space-y-6">
-              <div className="text-center lg:text-left">
-                <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-text-heading mb-3 md:mb-4">
-                  Start Your Journey
-                </h2>
-                <p className="text-sm sm:text-base md:text-lg text-text-body leading-relaxed max-w-xl">
-                  Join thousands of satisfied customers who've discovered the future of urban mobility.
-                </p>
-              </div>
-              
-              {/* Premium Form Container */}
-              <div className="relative p-4 md:p-6 bg-muted-bg backdrop-blur-xl rounded-2xl border border-border-subtle shadow-sm">
-                <div className="relative">
-                  <LeadForm scooters={scooters} />
+            <div className="lg:col-span-2">
+              <div className="bg-white/80 backdrop-blur-sm rounded-2xl border border-border-subtle shadow-lg p-6 md:p-8">
+                <div className="mb-6">
+                  <h2 className="font-display text-2xl md:text-3xl font-bold text-text-heading mb-2">
+                    Request Information
+                  </h2>
+                  <p className="text-sm text-text-body">
+                    Fill out the form below and we'll get back to you within 24 hours.
+                  </p>
                 </div>
+                <LeadForm scooters={scooters} />
               </div>
               
-              {/* Premium Benefits Section */}
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="p-4 md:p-5 bg-muted-bg backdrop-blur-xl rounded-xl border border-border-subtle shadow-sm">
+              {/* Benefits Section */}
+              <div className="grid md:grid-cols-2 gap-4 mt-6">
+                <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 bg-accent-gold rounded-lg flex items-center justify-center">
+                    <div className="w-9 h-9 bg-accent-gold rounded-lg flex items-center justify-center">
                       <Shield className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-text-heading">Premium Benefits</h3>
+                    <h3 className="text-base font-bold text-text-heading">Why Choose Us</h3>
                   </div>
-                  <ul className="space-y-2 text-sm md:text-base text-text-body">
+                  <ul className="space-y-2 text-sm text-text-body">
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
                       Free Home Test Rides
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
-                      Expert Support
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
+                      Expert Support Team
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
-                      Premium Quality
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
+                      Premium Quality Assured
                     </li>
                   </ul>
                 </div>
                 
-                <div className="p-4 md:p-5 bg-muted-bg backdrop-blur-xl rounded-xl border border-border-subtle shadow-sm">
+                <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 bg-accent-gold rounded-lg flex items-center justify-center">
+                    <div className="w-9 h-9 bg-accent-gold rounded-lg flex items-center justify-center">
                       <Users className="w-4 h-4 text-white" />
                     </div>
-                    <h3 className="text-base md:text-lg font-bold text-text-heading">Our Services</h3>
+                    <h3 className="text-base font-bold text-text-heading">Our Services</h3>
                   </div>
-                  <ul className="space-y-2 text-sm md:text-base text-text-body">
+                  <ul className="space-y-2 text-sm text-text-body">
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
-                      Electric Scooty Sales
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
+                      Electric Scooter Sales
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
                       Genuine Spare Parts
                     </li>
                     <li className="flex items-center">
-                      <span className="text-accent-gold mr-2">✓</span>
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
                       Service & Maintenance
                     </li>
                   </ul>

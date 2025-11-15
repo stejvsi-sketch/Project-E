@@ -82,10 +82,10 @@ export function LeadForm({ scooters }: LeadFormProps) {
 
   if (isSuccess) {
     return (
-      <div className="bg-secondary-bg border-2 border-accent-gold rounded-lg p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-accent-gold mx-auto mb-4" />
-        <h3 className="text-2xl font-bold text-text-primary mb-2">Thank You!</h3>
-        <p className="text-text-secondary">
+      <div className="bg-accent-gold/5 border border-accent-gold/20 rounded-2xl p-8 text-center">
+        <CheckCircle className="w-14 h-14 text-accent-gold mx-auto mb-4" />
+        <h3 className="text-xl font-bold text-text-heading mb-2">Thank You!</h3>
+        <p className="text-text-body text-sm">
           We&rsquo;ve received your enquiry. Our team will respond within 24 hours.
         </p>
       </div>
@@ -93,7 +93,7 @@ export function LeadForm({ scooters }: LeadFormProps) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-4">
       <Input
         label="Your Email"
         type="email"

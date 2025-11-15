@@ -118,71 +118,71 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
 
   return (
     <div 
-      className="relative w-full max-w-4xl mx-auto overflow-hidden"
+      className="relative w-full max-w-6xl mx-auto overflow-hidden"
       style={{ maxWidth: '100%' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className={`relative h-[400px] sm:h-[500px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border ${currentScheme.border} transition-all duration-700`}>
-        {/* Scooter Display */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center space-y-4">
-            {/* Scooter Image or Emoji Fallback */}
-            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] mx-auto transition-all duration-500 transform hover:scale-110">
+      <div className={`relative h-[550px] sm:h-[600px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
+        {/* Premium Image Container */}
+        <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between px-6 md:px-12 py-8">
+          {/* Scooter Image - Larger and More Prominent */}
+          <div className="relative w-full h-[280px] sm:h-[320px] md:w-1/2 md:h-[500px] lg:h-[550px] flex items-center justify-center order-2 md:order-1">
+            <div className="relative w-full h-full max-w-[400px] sm:max-w-[480px] md:max-w-none transition-all duration-500 transform hover:scale-105">
               {imageData.type === 'image' ? (
                 <Image
                   src={imageData.value}
                   alt={currentScooter.name}
                   fill
                   className="object-contain drop-shadow-2xl"
-                  sizes="(max-width: 640px) 250px, (max-width: 768px) 300px, 400px"
+                  sizes="(max-width: 768px) 400px, (max-width: 1024px) 500px, 600px"
                   priority={current === 0}
                 />
               ) : (
-                <div className="absolute inset-0 flex items-center justify-center text-[100px] sm:text-[120px] md:text-[200px]">
+                <div className="absolute inset-0 flex items-center justify-center text-[150px] sm:text-[180px] md:text-[250px]">
                   {imageData.value}
                 </div>
               )}
             </div>
-            
-            {/* Info */}
-            <div className="space-y-4 sm:space-y-6">
-              <div className="inline-block px-6 py-2 bg-accent-gold/20 backdrop-blur-sm border border-accent-gold/40 rounded-full">
-                <p className="text-xs sm:text-sm text-accent-gold uppercase tracking-widest font-bold">
-                  {scooters[current].category}
-                </p>
+          </div>
+          
+          {/* Premium Text Overlay - Mobile: Over image, Desktop: Side by side */}
+          <div className="w-full md:w-1/2 text-center md:text-left space-y-4 sm:space-y-6 order-1 md:order-2 md:pl-8">
+            <div className="inline-block px-5 py-2 bg-accent-gold/20 backdrop-blur-md border border-accent-gold/40 rounded-full">
+              <p className="text-xs sm:text-sm text-accent-gold uppercase tracking-widest font-bold">
+                {scooters[current].category}
+              </p>
+            </div>
+            <h3 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white drop-shadow-2xl leading-tight">
+              {scooters[current].name}
+            </h3>
+            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+              <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
+                <span className="text-white font-bold text-base sm:text-lg md:text-xl">{scooters[current].range}</span>
               </div>
-              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white px-4 drop-shadow-2xl">
-                {scooters[current].name}
-              </h3>
-              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 px-4">
-                <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-lg">
-                  <span className="text-white font-bold text-sm sm:text-base md:text-lg">{scooters[current].range}</span>
-                </div>
-                <div className="w-1 h-1 rounded-full bg-white/50"></div>
-                <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-lg">
-                  <span className="text-white font-bold text-sm sm:text-base md:text-lg">{scooters[current].speed}</span>
-                </div>
+              <div className="w-1.5 h-1.5 rounded-full bg-white/60"></div>
+              <div className="bg-white/15 backdrop-blur-md border border-white/30 px-5 py-3 rounded-xl">
+                <span className="text-white font-bold text-base sm:text-lg md:text-xl">{scooters[current].speed}</span>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Navigation Arrows - Smaller on Mobile */}
+        {/* Navigation Arrows */}
         <button
           onClick={goToPrev}
-          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-accent-gold/30"
+          className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 sm:p-4 rounded-full shadow-xl transition-all hover:scale-110 border border-accent-gold/30 z-20"
           aria-label="Previous scooter"
         >
-          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-text-heading" />
+          <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6 text-text-heading" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-accent-gold/30"
+          className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 sm:p-4 rounded-full shadow-xl transition-all hover:scale-110 border border-accent-gold/30 z-20"
           aria-label="Next scooter"
         >
-          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-text-heading" />
+          <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6 text-text-heading" />
         </button>
 
       </div>

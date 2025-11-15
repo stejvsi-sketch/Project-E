@@ -35,18 +35,18 @@ function ProductImage({
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {imageData.type === 'image' ? (
-        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px]">
+        <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]">
           <Image
             src={imageData.value}
             alt={`${modelSlug} ${selectedColor}`}
             fill
-            className="object-contain drop-shadow-2xl transform hover:scale-110 transition-all duration-700 cursor-pointer"
-            sizes="(max-width: 640px) 200px, (max-width: 768px) 250px, (max-width: 1024px) 350px, 450px"
+            className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
+            sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, (max-width: 1024px) 450px, 550px"
             priority
           />
         </div>
       ) : (
-        <div className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[300px] transform hover:scale-110 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
+        <div className="text-[180px] sm:text-[220px] md:text-[280px] lg:text-[350px] transform hover:scale-105 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
           {imageData.value}
         </div>
       )}
