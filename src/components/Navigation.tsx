@@ -45,88 +45,82 @@ export function Navigation() {
   ]
 
   return (
-    <nav className={`bg-primary-bg/95 backdrop-blur-xl fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300 ${
-      scrolled ? 'shadow-xl border-border-gray/50 bg-primary-bg' : 'shadow-lg border-border-gray/20'
+    <nav className={`bg-primary-bg fixed top-0 left-0 right-0 z-50 border-b-2 transition-all duration-500 ${
+      scrolled ? 'shadow-lg border-accent-gold/30' : 'border-accent-gold/20'
     }`}>
 
       {/* Main Navigation */}
       <div className="container-custom relative">
-        {/* Subtle glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/3 via-transparent to-accent-teal/3 blur-xl opacity-30"></div>
-        <div className="relative flex items-center justify-between h-24 md:h-32 py-3 md:py-4">
-          {/* Premium Logo Section */}
-          <Link href="/" className="flex items-center gap-3 md:gap-6 group">
-            <div className="relative">
-              {/* Logo Container with Premium Effects */}
-              <div className="w-16 h-16 md:w-24 md:h-24 relative p-2 rounded-2xl bg-gradient-to-br from-accent-gold/15 via-white/5 to-accent-teal/15 shadow-2xl backdrop-blur-sm border border-white/10 group-hover:scale-105 transition-all duration-500">
-                {/* Inner glow */}
-                <div className="absolute inset-1 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-teal/20 blur-sm opacity-50"></div>
-                <Image
-                  src="/images/logo/logo.png"
-                  alt="M'LiteEv"
-                  width={400}
-                  height={140}
-                  priority
-                  className="relative z-10 h-full w-full object-contain filter brightness-125 contrast-115 saturate-120 drop-shadow-xl"
-                  style={{
-                    maxWidth: '100%',
-                    height: 'auto',
-                  }}
-                />
+        <div className="relative flex items-center justify-between h-20 md:h-24 py-4 md:py-5">
+          {/* Ultra-Luxury Logo */}
+          <Link href="/" className="flex items-center gap-4 md:gap-6 group">
+            <div className="relative flex items-center">
+              {/* Premium logo frame */}
+              <div className="relative w-16 h-16 md:w-24 md:h-24">
+                {/* Outer glow */}
+                <div className="absolute inset-0 bg-accent-gold/5 blur-xl group-hover:bg-accent-gold/10 transition-all duration-500"></div>
+                {/* Main container */}
+                <div className="relative w-full h-full p-3 md:p-4 bg-white shadow-md group-hover:shadow-xl transition-all duration-500">
+                  {/* Inner gold accent border */}
+                  <div className="absolute inset-2 border border-accent-gold/30 group-hover:border-accent-gold/60 transition-all duration-500"></div>
+                  <Image
+                    src="/images/logo/logo.png"
+                    alt="M'LiteEv"
+                    width={400}
+                    height={140}
+                    priority
+                    className="relative z-10 h-full w-full object-contain"
+                    style={{
+                      maxWidth: '100%',
+                      height: 'auto',
+                    }}
+                  />
+                </div>
               </div>
             </div>
             
-            {/* Premium Brand Identity */}
+            {/* Refined Brand Identity */}
             <div className="flex flex-col justify-center min-w-0">
-              <div className="text-xl md:text-4xl font-black text-text-primary group-hover:text-accent-gold transition-all duration-300 tracking-tight">
-                M<span className="text-accent-gold font-light">'</span><span className="bg-gradient-to-r from-text-primary to-accent-gold bg-clip-text text-transparent">LiteEv</span>
+              <div className="text-2xl md:text-3xl lg:text-4xl font-display font-black text-text-heading tracking-tight leading-none">
+                M<span className="text-accent-gold">'</span>LiteEv
               </div>
-              <div className="text-xs md:text-sm text-text-secondary/80 font-semibold uppercase tracking-[0.2em] mt-1 group-hover:text-accent-gold/70 transition-all duration-300">
-                <span className="hidden sm:inline">Premium </span>Electric Mobility
+              <div className="text-[9px] md:text-[11px] text-accent-gold font-bold uppercase tracking-[0.4em] mt-2 leading-none">
+                Luxury Electric Mobility
               </div>
-              {/* Subtle underline accent */}
-              <div className="w-0 group-hover:w-full h-0.5 bg-gradient-to-r from-accent-gold to-accent-teal transition-all duration-500 mt-1"></div>
             </div>
           </Link>
 
-          {/* Premium Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2">
+          {/* Refined Desktop Navigation */}
+          <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative px-4 py-2 text-text-primary hover:text-accent-gold transition-all duration-300 font-semibold text-sm uppercase tracking-wider group"
+                className="relative px-5 py-2.5 text-text-heading hover:text-accent-gold transition-all duration-300 font-medium text-sm tracking-wide group"
               >
                 <span className="relative z-10">{link.label}</span>
-                {/* Hover background effect */}
-                <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-accent-gold/10 to-accent-teal/10 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-95 group-hover:scale-100"></div>
-                {/* Bottom accent line */}
-                <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-3/4 h-0.5 bg-gradient-to-r from-accent-gold to-accent-teal transition-all duration-300"></div>
+                {/* Subtle bottom accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-accent-gold scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
               </Link>
             ))}
             
-            {/* Premium CTA Button */}
-            <div className="ml-4 relative">
-              <Link href="/contact" className="relative inline-flex items-center px-8 py-3 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-primary-bg font-bold text-sm uppercase tracking-wider rounded-xl shadow-xl hover:shadow-2xl hover:shadow-accent-gold/25 transition-all duration-300 hover:scale-105 active:scale-95 group overflow-hidden">
-                {/* Button glow effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-accent-gold/20 to-accent-teal/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10">Enquire Now</span>
-                {/* Shine effect */}
-                <div className="absolute inset-0 -skew-x-12 bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-pulse"></div>
+            {/* Luxury CTA */}
+            <div className="ml-6">
+              <Link href="/contact">
+                <button className="px-8 py-2.5 bg-accent-gold text-white font-semibold text-sm tracking-wide rounded-sm hover:bg-accent-gold-hover transition-all duration-300 shadow-sm hover:shadow-md">
+                  Enquire Now
+                </button>
               </Link>
             </div>
           </div>
 
-          {/* Premium Mobile Menu Button */}
+          {/* Refined Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden relative p-4 rounded-xl bg-gradient-to-br from-accent-gold/10 to-accent-teal/10 border border-white/10 backdrop-blur-sm hover:scale-105 active:scale-95 transition-all duration-300 group shadow-lg"
+            className="lg:hidden relative p-3 rounded-sm border border-accent-gold/30 hover:border-accent-gold transition-all duration-300 group"
             aria-label="Toggle menu"
           >
-            {/* Button glow */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-accent-gold/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm"></div>
-            {/* Hamburger Icon - no transform */}
-            <Menu className="relative z-10 w-6 h-6 text-text-primary group-hover:text-accent-gold transition-colors duration-300" />
+            <Menu className="w-5 h-5 text-text-heading group-hover:text-accent-gold transition-colors duration-300" />
           </button>
         </div>
 
@@ -147,18 +141,10 @@ export function Navigation() {
           {/* Ultra Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-y-auto',
+              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-y-auto bg-secondary-bg border-l-2 border-accent-gold/30',
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
-              backgroundColor: '#0A0A0A',
-              borderLeft: '2px solid rgba(255, 215, 0, 0.2)',
-              backgroundImage: `
-                linear-gradient(135deg, rgba(255, 215, 0, 0.03) 0%, transparent 50%, rgba(0, 188, 212, 0.03) 100%),
-                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.08), transparent 40%),
-                radial-gradient(circle at 20% 80%, rgba(0, 188, 212, 0.08), transparent 40%)
-              `,
-              boxShadow: '-20px 0 60px rgba(0, 0, 0, 0.5), inset 0 0 100px rgba(255, 215, 0, 0.02)',
               willChange: 'transform',
               height: '100vh'
             }}
@@ -186,44 +172,39 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="relative group px-6 py-5 rounded-2xl transition-all duration-500 hover:bg-gradient-to-r hover:from-accent-gold/10 hover:via-accent-gold/5 hover:to-transparent border border-transparent hover:border-accent-gold/20"
+                  className="relative group px-6 py-5 rounded-2xl transition-all duration-500 hover:bg-accent-champagne border border-transparent hover:border-accent-gold"
                   style={{ 
                     animationDelay: `${index * 50}ms`,
                     animation: isMenuOpen ? 'slideIn 0.5s ease-out forwards' : 'none'
                   }}
                 >
-                  {/* Glow effect on hover */}
-                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-accent-gold/20 to-accent-teal/20 opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500"></div>
-                  
                   <div className="relative flex items-center justify-between">
-                    <span className="text-2xl md:text-3xl font-bold text-text-primary group-hover:text-accent-gold transition-colors duration-300 uppercase tracking-wide">
+                    <span className="text-2xl md:text-3xl font-bold text-text-heading group-hover:text-accent-gold transition-colors duration-300 uppercase tracking-wide font-display">
                       {link.label}
                     </span>
-                    <div className="w-2 h-2 rounded-full bg-accent-gold/0 group-hover:bg-accent-gold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent-gold/50"></div>
+                    <div className="w-2 h-2 rounded-full bg-accent-gold/0 group-hover:bg-accent-gold transition-all duration-300"></div>
                   </div>
                   
                   {/* Bottom gradient line */}
-                  <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-6 right-6 h-px bg-accent-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               ))}
               
               {/* Ultra Premium Mobile CTA */}
-              <div className="mt-auto pt-8 border-t border-accent-gold/20">
+              <div className="mt-auto pt-8 border-t border-border-subtle">
                 <Link 
                   href="/contact" 
                   onClick={() => setIsMenuOpen(false)}
-                  className="relative inline-flex items-center justify-center w-full px-8 py-5 bg-gradient-to-r from-accent-gold via-accent-gold-hover to-accent-gold text-primary-bg font-black text-lg uppercase tracking-widest rounded-2xl shadow-2xl hover:shadow-accent-gold/50 transition-all duration-500 hover:scale-105 active:scale-95 group overflow-hidden"
+                  className="relative inline-flex items-center justify-center w-full px-8 py-5 bg-accent-gold hover:bg-accent-gold-hover text-white font-black text-lg uppercase tracking-widest rounded-2xl shadow-sm hover:shadow-md transition-all duration-500 hover:scale-105 active:scale-95 group overflow-hidden"
                 >
                   {/* Animated shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 group-hover:animate-shine"></div>
-                  {/* Glow effect */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-accent-gold to-accent-teal opacity-50 blur-xl group-hover:opacity-75 transition-opacity duration-300"></div>
                   <span className="relative z-10">Enquire Now</span>
                 </Link>
                 
                 {/* Contact info */}
                 <div className="mt-6 text-center space-y-2">
-                  <p className="text-sm text-text-secondary">Call us now</p>
+                  <p className="text-sm text-text-body">Call us now</p>
                   <a href="tel:9818649138" className="text-accent-gold font-bold text-lg hover:text-accent-gold-hover transition-colors">9818649138</a>
                 </div>
               </div>

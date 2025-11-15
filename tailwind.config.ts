@@ -10,36 +10,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Premium Dark EV Palette
-        'primary-bg': '#121212',
-        'secondary-bg': '#1C1C1C',
-        'text-primary': '#E0E0E0',
-        'text-secondary': '#B0B0B0',
-        'accent-gold': '#FFD700',
-        'accent-gold-hover': '#EFB810',
-        'accent-teal': '#00BCD4',
-        'border-gray': '#444444',
+        // Luxury Ivory & Gold Palette
+        // Backgrounds
+        'primary-bg': '#FFFFE3',        // soft ivory (page + hero canvas)
+        'secondary-bg': '#EDE8D0',      // warm cream for cards/alternate sections
+        'muted-bg': '#F7F5EE',          // subtle alternate background
         
-        // Legacy mappings (updated to new palette)
-        'primary-orange': '#FFD700',
-        'primary-orange-light': '#EFB810',
-        'primary-orange-dark': '#E5C100',
-        'neutral-dark': '#121212',
-        'neutral-gray': '#1C1C1C',
+        // Accents
+        'accent-gold': '#D4AF37',       // primary gold for CTAs
+        'accent-gold-hover': '#BFA430', // gold hover/pressed state
+        'accent-champagne': '#F7E6CA',  // soft accent/hover
+        'accent-blush': '#E8C9CF',      // tiny secondary accent
         
-        // Enhanced teal palette with new accent
-        'teal': {
-          50: '#e0f7fa',
-          100: '#b2ebf2',
-          200: '#80deea',
-          300: '#4dd0e1',
-          400: '#26c6da',
-          500: '#00bcd4',
-          600: '#00acc1',
-          700: '#0097a7',
-          800: '#00838f',
-          900: '#006064',
-        },
+        // Typography & grounding
+        'text-heading': '#000000',      // pure black headings
+        'text-body': '#1A1A1A',         // almost black body text
+        'text-muted': '#4A4A4A',        // darker muted text
+        'text-charcoal': '#333333',     // inverted/footer
+        
+        // Borders & states
+        'border-subtle': '#E0DCD7',     // subtle borders
+        'disabled-bg': '#DDDDDD',       // disabled background
+        'disabled-text': '#AAAAAA',     // disabled text
+        
+        // Legacy mappings for compatibility
+        'text-primary': '#000000',
+        'text-secondary': '#1A1A1A',
+        'primary-orange': '#D4AF37',
+        'primary-orange-light': '#F7E6CA',
+        'primary-orange-dark': '#BFA430',
+        'neutral-dark': '#2C2C2C',
+        'neutral-gray': '#EDE8D0',
+        'border-gray': '#E0DCD7',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],

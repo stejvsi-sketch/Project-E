@@ -8,115 +8,134 @@ import { ScooterCarousel } from '@/components/ScooterCarousel'
 export default function Home() {
   return (
     <>
-      {/* M'LiteEv Hero - Premium Electric Scooter Showcase */}
-      <section className="relative bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark overflow-hidden min-h-[80vh] w-full max-w-full">
-        {/* M'LiteEv Brand Watermark Background */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 className="text-[15vw] sm:text-[12vw] md:text-[10vw] lg:text-[12vw] font-black text-white/5 tracking-tighter select-none whitespace-nowrap max-w-full">
-            M'LITEEV
-          </h1>
+      {/* Ultra-Luxury Hero */}
+      <section className="relative bg-primary-bg overflow-hidden min-h-screen w-full max-w-full flex items-center pt-20 md:pt-24">
+        {/* Sophisticated pattern overlay */}
+        <div className="absolute inset-0 opacity-[0.025]">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>
         </div>
 
-        <div className="container-custom relative z-10 max-w-full px-4">
-          <div className="flex flex-col items-center justify-center py-8 md:py-12 lg:py-16 w-full">
-            {/* M'LiteEv Electric Scooter Carousel Showcase */}
-            <div className="w-full max-w-5xl mb-6 md:mb-8 lg:mb-10">
-              <ScooterCarousel autoPlay={true} interval={4000} />
-            </div>
+        <div className="container-custom relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-col items-center justify-center py-12 md:py-16 w-full">
 
-            {/* M'LiteEv Value Proposition */}
-            <div className="text-center max-w-3xl mb-6 md:mb-8 px-4">
-              <p className="text-base sm:text-lg md:text-xl text-text-primary leading-relaxed mb-3 md:mb-4">
-                Experience premium electric mobility with our complete range of 7 electric scooter models
-              </p>
-              <p className="text-sm sm:text-base md:text-lg text-text-secondary">
-                From S.L Pro to CS 3 • All Electric Scooty Sales & Genuine Spare Parts • 1000W-1200W Power Range
+            {/* Ultra-luxury headline */}
+            <div className="text-center max-w-6xl mb-10 md:mb-14">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display text-text-heading leading-[1.05] tracking-tight mb-6 md:mb-8 px-4">
+                <span className="block font-light">Elevate</span>
+                <span className="block font-black italic text-accent-gold mt-1 md:mt-2">Every Journey</span>
+              </h1>
+              <div className="w-16 h-[2px] bg-accent-gold mx-auto mb-6 md:mb-8"></div>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-text-heading leading-relaxed max-w-4xl mx-auto font-light tracking-wide px-4">
+                Italian elegance meets electric innovation
               </p>
             </div>
 
-            {/* Primary M'LiteEv CTA - Book Now */}
-            <Link href="/models" className="w-full sm:w-auto inline-block group px-4 sm:px-0">
-              <button className="btn-primary w-full sm:w-auto px-6 sm:px-10 md:px-12 py-3 md:py-4 text-sm md:text-base font-semibold rounded-lg">
-                EXPLORE M'LITEEV MODELS
-              </button>
-            </Link>
-
-            {/* M'LiteEv Key Benefits */}
-            <div className="flex flex-wrap gap-4 sm:gap-6 md:gap-12 mt-6 md:mt-8 lg:mt-10 text-xs sm:text-sm text-text-secondary justify-center px-4">
-              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> Premium Quality</span>
-              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> 0% Financing</span>
-              <span className="flex items-center gap-1.5 md:gap-2"><CheckCircle2 className="w-3 h-3 sm:w-4 sm:h-4 text-accent-gold" /> Free Test Ride</span>
+            {/* Carousel showcase */}
+            <div className="w-full max-w-7xl mb-12 md:mb-16 px-4">
+              <ScooterCarousel autoPlay={true} interval={5000} />
             </div>
+
+            {/* Premium CTAs */}
+            <div className="flex flex-col sm:flex-row gap-5 mb-10 md:mb-14 px-4">
+              <Link href="/models" className="w-full sm:w-auto">
+                <button className="group relative w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 bg-text-heading text-primary-bg font-bold text-sm tracking-[0.25em] uppercase overflow-hidden transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
+                  <span className="relative z-10">Discover Collection</span>
+                  <div className="absolute inset-0 bg-accent-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                </button>
+              </Link>
+              <Link href="/contact" className="w-full sm:w-auto">
+                <button className="w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-primary-bg font-bold text-sm tracking-[0.25em] uppercase transition-all duration-500">
+                  Private Consultation
+                </button>
+              </Link>
+            </div>
+
           </div>
         </div>
 
-        {/* Trust Bar - Badges */}
-        <div className="border-t border-border-gray bg-secondary-bg/80 backdrop-blur-sm">
-          <div className="container-custom py-8">
-            <div className="grid grid-cols-3 gap-8 items-center justify-items-center">
-              {/* Trust Badges */}
-              <div className="flex flex-col items-center text-center">
-                <Shield className="w-8 h-8 text-accent-gold mb-2" />
-                <p className="text-xs font-semibold text-text-primary">Premium Build</p>
+        {/* Minimal credentials strip */}
+        <div className="absolute bottom-0 left-0 right-0 border-t-2 border-accent-gold/30">
+          <div className="container-custom py-6 md:py-8">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-4xl mx-auto px-4">
+              <div className="text-center">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent-gold mb-1 md:mb-2">7</p>
+                <p className="text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-text-heading font-medium">Models</p>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <CheckCircle2 className="w-8 h-8 text-accent-gold mb-2" />
-                <p className="text-xs font-semibold text-text-primary">Quality Certified</p>
+              <div className="text-center border-x border-accent-gold/20">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent-gold mb-1 md:mb-2">1200W</p>
+                <p className="text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-text-heading font-medium">Power</p>
               </div>
-              <div className="flex flex-col items-center text-center">
-                <Users className="w-8 h-8 text-accent-gold mb-2" />
-                <p className="text-xs font-semibold text-text-primary">Expert Support</p>
+              <div className="text-center">
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent-gold mb-1 md:mb-2">60+</p>
+                <p className="text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-text-heading font-medium">Range KM</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* M'LiteEv Core Features - What Makes Us Different */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
-        <div className="container-custom overflow-hidden">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4">Why Choose M'LiteEv</h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">Premium features that set our electric scooters apart</p>
+      {/* Philosophy of Excellence */}
+      <section className="py-32 md:py-40 bg-muted-bg overflow-hidden w-full max-w-full">
+        <div className="container-custom max-w-7xl mx-auto">
+          {/* Refined header */}
+          <div className="text-center mb-24 md:mb-32">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+              <p className="text-xs tracking-[0.5em] uppercase text-accent-gold font-bold">Philosophy</p>
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-text-heading leading-tight mb-10">
+              <span className="font-light">Uncompromising</span>
+              <span className="block font-black italic mt-3">Excellence</span>
+            </h2>
+            <p className="text-xl md:text-2xl text-text-heading/70 max-w-3xl mx-auto leading-relaxed font-light">Every detail meticulously refined for perfection</p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 overflow-hidden">
+          {/* Minimalist feature showcase - NO HORIZONTAL SCROLL */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-20 max-w-6xl mx-auto">
             {[
               {
-                icon: <Shield className="w-12 h-12" />,
-                title: 'PREMIUM BUILD',
-                description: 'Superior quality engineering and materials'
+                number: '01',
+                title: 'Artisan Craftsmanship',
+                description: 'Each component hand-selected and assembled by master technicians with decades of experience in precision engineering.'
               },
               {
-                icon: <Zap className="w-12 h-12" />,
-                title: 'SMART CONNECTIVITY',
-                description: 'Bluetooth connectivity with GPS tracking and real-time alerts'
+                number: '02',
+                title: 'Intelligent Performance',
+                description: 'Whisper-quiet 1000-1200W motors deliver seamless acceleration while intelligent battery management ensures optimal range.'
               },
               {
-                icon: <Battery className="w-12 h-12" />,
-                title: 'ADVANCED BRAKING',
-                description: 'Front disc and rear drum brakes for superior control'
+                number: '03',
+                title: 'Safety Excellence',
+                description: 'Advanced dual-disc braking systems and premium suspension technology provide uncompromising control in all conditions.'
               },
               {
-                icon: <Sparkles className="w-12 h-12" />,
-                title: 'VIBRANT COLORS',
+                number: '04',
+                title: 'Bespoke Personalization',
                 description: (
-                  <div className="flex gap-2 justify-center mt-2">
-                    {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#F5F5F5'].map((color, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full border-2 border-gray-600 shadow-md hover:shadow-lg hover:border-accent-gold transition-all duration-200" style={{ backgroundColor: color }}></div>
-                    ))}
+                  <div className="space-y-4">
+                    <p>Choose from our curated palette of finishes</p>
+                    <div className="flex flex-wrap gap-3">
+                      {['#000000', '#DC2626', '#1E40AF', '#0d9488', '#F5F5F5'].map((color, i) => (
+                        <div key={i} className="w-8 h-8 rounded-full border-2 border-accent-gold/40 hover:border-accent-gold transition-all duration-300 hover:scale-110" style={{ backgroundColor: color }}></div>
+                      ))}
+                    </div>
                   </div>
                 )
               },
             ].map((feature, index) => (
-              <div key={index} className="bg-secondary-bg p-8 rounded-3xl shadow-lg hover:shadow-2xl hover:shadow-accent-gold/10 transition-all duration-300 text-center group hover:-translate-y-2 border border-border-gray hover:border-accent-gold/50">
-                <div className="text-accent-gold mb-6 group-hover:text-accent-gold-hover transition-colors duration-300">
-                  {feature.icon}
-                </div>
-                <h3 className="text-xl font-bold text-text-primary mb-3 uppercase tracking-wide">
-                  {feature.title}
-                </h3>
-                <div className="text-text-secondary leading-relaxed">
-                  {feature.description}
+              <div key={index} className="group w-full">
+                <div className="flex items-start gap-4 md:gap-6 w-full">
+                  <div className="text-6xl md:text-7xl font-display font-bold text-accent-gold flex-shrink-0">
+                    {feature.number}
+                  </div>
+                  <div className="flex-1 pt-2 md:pt-4 min-w-0">
+                    <h3 className="text-xl md:text-2xl lg:text-3xl font-display font-semibold text-text-heading mb-3 md:mb-4 tracking-tight">
+                      {feature.title}
+                    </h3>
+                    <div className="text-sm md:text-base lg:text-lg text-text-heading leading-relaxed">
+                      {feature.description}
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -124,150 +143,113 @@ export default function Home() {
         </div>
       </section>
 
-      {/* M'LiteEv Durability Showcase - Built for Indian Roads */}
-      <section className="py-20 bg-gray-800 overflow-hidden w-full max-w-full">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* M'LiteEv Durability Promise */}
-            <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-                BUILT TO LAST
+      {/* Heritage Statement */}
+      <section className="py-40 md:py-48 bg-text-charcoal overflow-hidden w-full max-w-full relative">
+        {/* Refined pattern */}
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
+        </div>
+        <div className="container-custom relative z-10 max-w-7xl mx-auto">
+          <div className="max-w-6xl mx-auto">
+            {/* Premium header */}
+            <div className="text-center mb-20 md:mb-24">
+              <div className="flex items-center justify-center gap-4 mb-8">
+                <div className="w-20 h-[1px] bg-accent-gold/50"></div>
+                <p className="text-xs tracking-[0.5em] uppercase text-accent-gold font-medium">Heritage</p>
+                <div className="w-20 h-[1px] bg-accent-gold/50"></div>
+              </div>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display font-light text-white leading-tight mb-10">
+                Engineered for
+                <span className="block font-bold italic text-accent-gold mt-3">Perfection</span>
               </h2>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                Every M'LiteEv scooter is engineered to withstand daily urban commutes with superior build quality and premium components.
+              <p className="text-xl md:text-2xl text-white leading-relaxed font-light max-w-4xl mx-auto">
+                Each M'LiteEv represents the pinnacle of electric mobility—where meticulous Italian craftsmanship meets cutting-edge innovation.
               </p>
-              <Link href="/contact" className="inline-block">
-                <button className="px-10 py-4 bg-teal-600 hover:bg-teal-500 text-white font-semibold rounded-lg transition-all uppercase text-sm tracking-wide shadow-xl hover:shadow-2xl hover:scale-105">
-                  BOOK A TEST RIDE
+            </div>
+
+            {/* Stats showcase */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mb-20">
+              <div className="text-center border-t-2 border-accent-gold/50 pt-8">
+                <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">100%</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Electric</p>
+              </div>
+              <div className="text-center border-t-2 border-accent-gold/50 pt-8">
+                <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">Zero</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Emissions</p>
+              </div>
+              <div className="text-center border-t-2 border-accent-gold/50 pt-8">
+                <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">∞</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Innovation</p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center">
+              <Link href="/contact">
+                <button className="px-12 md:px-16 py-5 md:py-6 bg-white text-text-heading font-semibold tracking-[0.2em] uppercase text-sm hover:bg-accent-gold hover:text-white transition-all duration-500 shadow-lg">
+                  Book Private Viewing
                 </button>
               </Link>
             </div>
-
-            {/* M'LiteEv Premium Component Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Large Image - Top Left */}
-              <div className="col-span-2 lg:col-span-1 lg:row-span-2 relative h-64 lg:h-full bg-gradient-to-br from-emerald-600 to-emerald-800 rounded-lg overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-9xl">🛴</div>
-                </div>
-              </div>
-
-              {/* LED Head Lamp */}
-              <div className="relative h-32 bg-gradient-to-br from-slate-600 to-slate-800 rounded-lg overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-black/40"></div>
-                <div className="relative z-10 text-white text-center p-4">
-                  <div className="font-bold text-sm">LED HEAD LAMP &</div>
-                  <div className="font-bold text-sm">DIGITAL DISPLAY</div>
-                </div>
-              </div>
-
-              {/* Luxe Bulb Beam */}
-              <div className="relative h-32 bg-gradient-to-br from-blue-600 to-blue-800 rounded-lg overflow-hidden flex items-center justify-center">
-                <div className="absolute inset-0 bg-black/40"></div>
-                <div className="relative z-10 text-white text-center p-4">
-                  <div className="font-bold text-sm">LUXE</div>
-                  <div className="font-bold text-sm">BULB BEAM</div>
-                </div>
-              </div>
-
-              {/* Front Disc Brakes */}
-              <div className="col-span-2 lg:col-span-1 relative h-32 bg-gradient-to-br from-orange-600 to-orange-800 rounded-lg overflow-hidden flex items-center justify-center">
-                <div className="relative z-10 text-white text-center p-4">
-                  <div className="font-bold text-lg">FRONT</div>
-                  <div className="font-bold text-lg">DISC</div>
-                  <div className="font-bold text-lg">BRAKES</div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* M'LiteEv Technical Specifications */}
-      <section className="py-20 bg-gray-900 overflow-hidden w-full max-w-full">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Technical Specifications
+      {/* Technical Excellence */}
+      <section className="py-32 md:py-40 bg-secondary-bg overflow-hidden w-full max-w-full">
+        <div className="container-custom max-w-7xl mx-auto">
+          <div className="text-center mb-20 md:mb-24">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+              <p className="text-xs tracking-[0.5em] uppercase text-accent-gold font-bold">Performance</p>
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+            </div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-text-heading mb-10">
+              <span className="font-light">Technical</span>
+              <span className="block font-black italic mt-3">Excellence</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">Detailed specs of our premium electric scooters</p>
+            <p className="text-xl md:text-2xl text-text-heading/70 max-w-3xl mx-auto font-light">Precision engineering in every detail</p>
           </div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Motor & Performance */}
-            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
-                <Zap className="w-6 h-6" />
-                <h3 className="text-xl font-bold text-white">Motor & Performance</h3>
-              </div>
-              <div className="grid md:grid-cols-4 gap-6">
+          <div className="max-w-6xl mx-auto space-y-16">
+            {/* Power */}
+            <div className="border-t border-accent-gold/20 pt-12">
+              <h3 className="text-2xl md:text-3xl font-display font-light text-text-heading mb-10 text-center">Power & Performance</h3>
+              <div className="grid md:grid-cols-4 gap-10 text-center">
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Motor Power</div>
-                  <div className="text-gray-400">1000W / 1200W</div>
+                  <p className="text-4xl md:text-5xl font-display font-light text-accent-gold mb-3">1200W</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">Peak Power</p>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Controller</div>
-                  <div className="text-gray-400">48V/60V/72V</div>
+                  <p className="text-4xl md:text-5xl font-display font-light text-accent-gold mb-3">72V</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">Controller</p>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Max Speed</div>
-                  <div className="text-gray-400">40-55 km/h</div>
+                  <p className="text-4xl md:text-5xl font-display font-light text-accent-gold mb-3">55</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">km/h Max</p>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">7 Models Available</div>
-                  <div className="text-gray-400">S.L Pro to CS 3</div>
+                  <p className="text-4xl md:text-5xl font-display font-light text-accent-gold mb-3">7</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">Models</p>
                 </div>
               </div>
             </div>
 
-            {/* Brake & Tyre */}
-            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
-                <Battery className="w-6 h-6" />
-                <h3 className="text-xl font-bold text-white">Brake & Tyre</h3>
-              </div>
-              <div className="grid md:grid-cols-4 gap-6">
+            {/* Control & Safety */}
+            <div className="border-t border-accent-gold/20 pt-12">
+              <h3 className="text-2xl md:text-3xl font-display font-light text-text-heading mb-10 text-center">Control & Safety</h3>
+              <div className="grid md:grid-cols-3 gap-10 text-center">
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Brake System</div>
-                  <div className="text-gray-400">Disc/Drum or Disc/Disc</div>
+                  <p className="text-3xl md:text-4xl font-display font-light text-accent-gold mb-3">Dual Disc</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">Braking System</p>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">Tyre Size</div>
-                  <div className="text-gray-400">90-100-10 / 90-90-12</div>
+                  <p className="text-3xl md:text-4xl font-display font-light text-accent-gold mb-3">Telescopic</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">Suspension</p>
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-200 mb-1">S.L & D.L Pro</div>
-                  <div className="text-gray-400">90-100-10 Tyre</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-200 mb-1">CS & Vespa Series</div>
-                  <div className="text-gray-400">90-90-12 Tyre</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Suspension & Dimension */}
-            <div className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-gray-700 hover:border-teal-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/10">
-              <div className="flex items-center gap-3 mb-6 text-teal-500 group-hover:scale-105 transition-transform duration-300">
-                <Shield className="w-6 h-6" />
-                <h3 className="text-xl font-bold text-white">Suspension & Dimension</h3>
-              </div>
-              <div className="grid md:grid-cols-4 gap-6">
-                <div>
-                  <div className="font-semibold text-gray-200 mb-1">Dimensions (lxwxh) mm</div>
-                  <div className="text-gray-400">1800 x 660 x 1100</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-200 mb-1">Front</div>
-                  <div className="text-gray-400">Telescopic</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-200 mb-1">Rear</div>
-                  <div className="text-gray-400">Dual</div>
-                </div>
-                <div>
-                  <div className="font-semibold text-gray-200 mb-1">Kerb weight without battery</div>
-                  <div className="text-gray-400">58.500 kg</div>
+                  <p className="text-3xl md:text-4xl font-display font-light text-accent-gold mb-3">Premium</p>
+                  <p className="text-sm tracking-[0.2em] uppercase text-text-body">90-90-12 Tyres</p>
                 </div>
               </div>
             </div>
@@ -275,57 +257,83 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Color Selector with Dark Background */}
-      <section className="py-20 bg-gradient-to-br from-slate-800 to-slate-900 overflow-hidden w-full max-w-full">
-        <div className="container-custom">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left - Color Buttons */}
-            <div className="space-y-4 max-w-sm mx-auto lg:mx-0">
-              <button className="w-full py-4 px-8 bg-red-600 text-white font-semibold rounded-lg hover:bg-red-700 transition-all">
-                M'LiteEv Red
-              </button>
-              <button className="w-full py-4 px-8 bg-white text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-all border border-gray-300">
-                M'LiteEv White
-              </button>
-              <button className="w-full py-4 px-8 bg-black text-white font-semibold rounded-lg hover:bg-gray-800 transition-all">
-                M'LiteEv Black
-              </button>
-              <button className="w-full py-4 px-8 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-all">
-                M'LiteEv Blue
-              </button>
-              <button className="w-full py-4 px-8 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 transition-all">
-                M'LiteEv Grey
-              </button>
+      {/* Signature Colors - Premium Edition */}
+      <section className="py-32 md:py-40 bg-secondary-bg overflow-hidden w-full max-w-full border-t-2 border-accent-gold/20">
+        <div className="container-custom max-w-7xl mx-auto px-6">
+          <div className="text-center mb-20 md:mb-24">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+              <p className="text-xs tracking-[0.5em] uppercase text-accent-gold font-bold">Personalization</p>
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
             </div>
-
-            {/* Right - Scooter Image */}
-            <div className="relative h-96 flex items-center justify-center">
-              <div className="text-[200px]">🛴</div>
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-text-heading mb-8">
+              <span className="font-light">Choose Your</span>
+              <span className="block font-black mt-3">Signature</span>
+            </h2>
+            <p className="text-lg md:text-xl text-text-heading/80 max-w-2xl mx-auto font-light">Classic elegance in three timeless finishes</p>
+          </div>
+          
+          <div className="max-w-5xl mx-auto">
+            {/* Premium color trio - Only Red, White, Black */}
+            <div className="grid grid-cols-3 gap-8 md:gap-16 mb-20">
+              {[
+                { name: 'Midnight Black', hex: '#000000', border: 'border-text-heading' },
+                { name: 'Pure White', hex: '#FFFFFF', border: 'border-text-heading' },
+                { name: 'Crimson Red', hex: '#DC2626', border: 'border-red-600' },
+              ].map((color, i) => (
+                <div key={i} className="text-center group cursor-pointer">
+                  <div className="relative mx-auto mb-6">
+                    {/* Premium frame */}
+                    <div className={`w-20 h-20 md:w-28 md:h-28 rounded-full border-4 ${color.border} group-hover:border-accent-gold transition-all duration-500 mx-auto p-1 bg-white shadow-xl group-hover:shadow-2xl`}>
+                      <div className="w-full h-full rounded-full" style={{ backgroundColor: color.hex }}></div>
+                    </div>
+                  </div>
+                  <p className="text-sm md:text-base tracking-[0.2em] uppercase text-text-heading font-semibold">{color.name}</p>
+                </div>
+              ))}
+            </div>
+            
+            {/* Premium scooter showcase */}
+            <div className="relative bg-gradient-to-br from-muted-bg to-primary-bg rounded-3xl p-12 md:p-20 border-2 border-accent-gold/20 shadow-2xl">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)] rounded-3xl"></div>
+              <div className="relative flex items-center justify-center">
+                <div className="text-[150px] md:text-[250px] filter drop-shadow-2xl">🛴</div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Dark CTA Section */}
-      <section className="py-20 bg-secondary-bg border-t border-border-gray overflow-hidden w-full max-w-full">
-        <div className="container-custom text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-4">
-            Effortless Elegance, Practical Luxury
+      {/* Final Invitation */}
+      <section className="py-40 md:py-52 bg-primary-bg overflow-hidden w-full max-w-full border-t-2 border-accent-gold/30">
+        <div className="container-custom text-center max-w-6xl mx-auto px-6">
+          <div className="mb-10">
+            <div className="w-24 h-[2px] bg-accent-gold mx-auto mb-8"></div>
+          </div>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display text-text-heading leading-tight mb-12">
+            <span className="block font-light">Begin Your</span>
+            <span className="block font-black italic text-accent-gold mt-4">Electric Journey</span>
           </h2>
-          <p className="text-xl text-text-secondary mb-8">
-            Street-Ready & Smart
+          <p className="text-xl md:text-2xl text-text-heading/70 mb-16 font-light leading-relaxed max-w-3xl mx-auto">
+            Experience the pinnacle of electric mobility, crafted for those who demand nothing less than excellence.
           </p>
-          <Link href="/contact">
-            <button className="btn-primary px-12 py-4 font-semibold rounded-md uppercase text-sm tracking-wide">
-              BOOK NOW
-            </button>
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-5 justify-center">
+            <Link href="/models" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto px-16 py-6 bg-text-heading text-primary-bg font-bold tracking-[0.25em] uppercase text-sm hover:bg-accent-gold hover:text-white transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
+                View Collection
+              </button>
+            </Link>
+            <Link href="/contact" className="w-full sm:w-auto">
+              <button className="w-full sm:w-auto px-16 py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-primary-bg font-bold tracking-[0.25em] uppercase text-sm transition-all duration-500">
+                Private Consultation
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
-
 
       {/* Testimonials - Minimal */}
-      <section className="py-32 bg-white hidden">
+      <section className="py-32 bg-secondary-bg hidden">
         <div className="container-custom">
           {/* Section Header */}
           <div className="text-center mb-20">

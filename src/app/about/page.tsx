@@ -5,46 +5,46 @@ import { COMPANY_INFO } from '@/data/models'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-primary-bg via-secondary-bg to-black overflow-hidden w-full max-w-full">
-      {/* M'LiteEv Brand Story Hero - Premium */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-neutral-dark pb-12 md:pb-16 pt-4 md:pt-8 overflow-hidden w-full max-w-full">
-        {/* Background effects */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,215,0,0.1),transparent_50%)] pointer-events-none"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[20vw] font-black text-white/[0.02] whitespace-nowrap pointer-events-none">ABOUT</div>
+    <div className="min-h-screen bg-primary-bg overflow-hidden w-full max-w-full">
+      {/* Ultra-Premium Hero */}
+      <section className="relative bg-primary-bg pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden w-full max-w-full">
+        {/* Sophisticated pattern */}
+        <div className="absolute inset-0 opacity-[0.025]">
+          <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>
+        </div>
         
-        <div className="container-custom text-center relative z-10">
-          <div className="inline-block mb-6 md:mb-8">
-            <span className="text-xs md:text-sm font-bold text-accent-gold uppercase tracking-[0.2em] md:tracking-[0.3em] px-4 md:px-6 py-2 md:py-3 rounded-full bg-accent-gold/10 border-2 border-accent-gold/30">
-              Our Story
-            </span>
+        <div className="container-custom text-center relative z-10 max-w-6xl mx-auto px-6">
+          <div className="mb-12 md:mb-16">
+            <div className="flex items-center justify-center gap-4 mb-8">
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+              <span className="text-xs tracking-[0.5em] uppercase text-accent-gold font-bold">Our Story</span>
+              <div className="w-20 h-[2px] bg-accent-gold"></div>
+            </div>
           </div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6">
-            <span className="bg-gradient-to-r from-white via-accent-gold to-accent-teal bg-clip-text text-transparent">About M'LiteEv</span>
+          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-text-heading mb-10 md:mb-12">
+            <span className="block font-light">About</span>
+            <span className="block font-black mt-2">M'LiteEv</span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
-            Energising the future of urban mobility with premium electric scooters
+          <div className="w-24 h-[2px] bg-accent-gold mx-auto mb-8"></div>
+          <p className="text-xl sm:text-2xl md:text-3xl text-text-heading/80 max-w-4xl mx-auto leading-relaxed font-light">
+            Pioneering the future of luxury electric mobility
           </p>
-          <div className="mt-6 md:mt-8 flex items-center justify-center gap-2 md:gap-3 text-xs md:text-sm text-accent-gold">
-            <div className="w-8 md:w-16 h-px bg-gradient-to-r from-transparent to-accent-gold"></div>
-            <span className="uppercase tracking-wider md:tracking-widest font-semibold">{COMPANY_INFO.tagline}</span>
-            <div className="w-8 md:w-16 h-px bg-gradient-to-l from-transparent to-accent-gold"></div>
-          </div>
         </div>
       </section>
 
       {/* M'LiteEv Mission Statement - Premium */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-800 to-gray-900 overflow-hidden w-full max-w-full">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-muted-bg to-secondary-bg overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-12">
               <div className="inline-flex items-center justify-center p-3 rounded-2xl bg-accent-gold/10 border border-accent-gold/20 mb-6">
                 <Target className="w-8 h-8 text-accent-gold" />
               </div>
-              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6">Our Mission</h2>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-6">Our Mission</h2>
             </div>
-            <div className="relative p-8 md:p-12 rounded-3xl bg-gradient-to-br from-accent-gold/5 via-transparent to-accent-teal/5 border border-accent-gold/10">
-              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent-gold/5 to-accent-teal/5 blur-2xl"></div>
-              <p className="relative text-base sm:text-lg md:text-xl text-gray-200 leading-relaxed text-center">
+            <div className="relative p-8 md:p-12 rounded-3xl bg-accent-champagne/30 border border-accent-gold/20 shadow-sm">
+              <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-accent-gold/5 to-accent-champagne/5 blur-xl"></div>
+              <p className="relative text-base sm:text-lg md:text-xl text-text-heading leading-relaxed text-center">
                 At <span className="text-accent-gold font-bold">M'LiteEv</span>, we're revolutionizing urban transportation through 
                 innovative, eco-friendly electric scooters. We believe sustainable mobility 
                 shouldn't compromise on performance or style. Our premium electric scooters 
@@ -57,11 +57,11 @@ export default function AboutPage() {
       </section>
 
       {/* M'LiteEv Core Values - Premium Grid */}
-      <section className="py-16 md:py-24 bg-gray-900 overflow-hidden w-full max-w-full">
+      <section className="py-16 md:py-24 bg-primary-bg overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 md:mb-6">What Drives Us</h2>
-            <p className="text-gray-300 text-base md:text-lg max-w-3xl mx-auto px-4">The principles that guide M'LiteEv in creating exceptional electric scooters</p>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-4 md:mb-6">What Drives Us</h2>
+            <p className="text-text-body text-base md:text-lg max-w-3xl mx-auto px-4">The principles that guide M'LiteEv in creating exceptional electric scooters</p>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -93,15 +93,14 @@ export default function AboutPage() {
             ].map((value, index) => (
               <div
                 key={index}
-                className="group relative bg-gray-800/30 backdrop-blur-sm p-6 md:p-8 rounded-2xl text-center hover:bg-gray-800/50 transition-all duration-500 border border-gray-700/50 hover:border-accent-gold/50 hover:-translate-y-2"
+                className="group relative bg-muted-bg backdrop-blur-sm p-6 md:p-8 rounded-2xl text-center hover:bg-accent-champagne transition-all duration-500 border border-border-subtle hover:border-accent-gold hover:-translate-y-1 shadow-sm hover:shadow-md"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-gold/0 to-accent-teal/0 group-hover:from-accent-gold/5 group-hover:to-accent-teal/5 transition-all duration-500"></div>
                 <div className="relative">
-                  <div className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${value.color} bg-opacity-10 mb-4 group-hover:scale-110 transition-transform duration-300`}>
-                    <div className="text-white">{value.icon}</div>
+                  <div className={`inline-flex p-4 rounded-2xl bg-accent-gold/10 mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <div className="text-accent-gold">{value.icon}</div>
                   </div>
-                  <h3 className="text-lg md:text-xl font-bold text-white mb-3 group-hover:text-accent-gold transition-colors">{value.title}</h3>
-                  <p className="text-sm md:text-base text-gray-400 leading-relaxed">{value.description}</p>
+                  <h3 className="text-lg md:text-xl font-bold text-text-heading mb-3 group-hover:text-accent-gold transition-colors">{value.title}</h3>
+                  <p className="text-sm md:text-base text-text-body leading-relaxed">{value.description}</p>
                 </div>
               </div>
             ))}
@@ -119,9 +118,9 @@ export default function AboutPage() {
                   <Lightbulb className="w-6 h-6 text-accent-gold" />
                   <span className="text-accent-gold text-sm font-bold uppercase tracking-widest">The Journey</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4">The M'LiteEv Story</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-4 font-display">The M'LiteEv Story</h2>
               </div>
-              <div className="space-y-4 md:space-y-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+              <div className="space-y-4 md:space-y-6 text-text-body text-sm sm:text-base md:text-lg leading-relaxed">
                 <p>
                   <span className="text-accent-gold font-semibold">M'LiteEv</span> was born from a simple observation: cities needed smarter, 
                   cleaner, and more efficient transportation solutions. Founded by passionate 
@@ -145,8 +144,8 @@ export default function AboutPage() {
                 <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12">
                   <div className="text-center">
                     <div className="text-6xl md:text-8xl mb-6">⚡</div>
-                    <h3 className="text-2xl md:text-3xl font-black bg-gradient-to-r from-accent-gold to-accent-teal bg-clip-text text-transparent mb-4">Energise Your Ride</h3>
-                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    <h3 className="text-2xl md:text-3xl font-black text-accent-gold mb-4 font-display">Energise Your Ride</h3>
+                    <p className="text-sm md:text-base text-text-body leading-relaxed">
                       Join the electric revolution and experience the future of urban mobility
                     </p>
                     <Link href="/contact" className="inline-block mt-6">
@@ -163,27 +162,27 @@ export default function AboutPage() {
       </section>
 
       {/* M'LiteEv Impact - Our Numbers */}
-      <section className="py-16 md:py-24 bg-gradient-to-br from-accent-gold via-accent-gold-hover to-accent-teal text-black overflow-hidden w-full max-w-full relative">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)] pointer-events-none"></div>
+      <section className="py-16 md:py-24 bg-text-charcoal text-primary-bg overflow-hidden w-full max-w-full relative">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_70%)] pointer-events-none"></div>
         <div className="container-custom relative z-10">
           <div className="text-center mb-12 md:mb-16">
-            <div className="inline-flex items-center gap-2 mb-4">
+            <div className="inline-flex items-center gap-2 mb-4 text-accent-gold">
               <TrendingUp className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-widest">Impact</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4">Our Impact</h2>
-            <p className="text-base md:text-lg font-semibold">Making a difference in urban mobility</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-display text-primary-bg">Our Impact</h2>
+            <p className="text-base md:text-lg font-semibold text-accent-champagne">Making a difference in urban mobility</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
-              { value: '7', label: 'Premium Models', suffix: '' },
+              { value: '7', label: 'Luxury Models', suffix: '' },
               { value: '1000', label: 'Watt Power', suffix: 'W+' },
               { value: '60', label: 'KM Range', suffix: '+' },
               { value: '100', label: 'Eco-Friendly', suffix: '%' },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105">
-                <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2">{stat.value}{stat.suffix}</div>
-                <div className="text-sm md:text-base font-bold">{stat.label}</div>
+              <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-accent-gold/10 backdrop-blur-sm border border-accent-gold/30 hover:bg-accent-gold/20 transition-all duration-300 hover:scale-105">
+                <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 text-accent-gold">{stat.value}{stat.suffix}</div>
+                <div className="text-sm md:text-base font-bold text-primary-bg">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -191,22 +190,22 @@ export default function AboutPage() {
       </section>
 
       {/* M'LiteEv CTA - Join Us */}
-      <section className="py-16 md:py-24 bg-gray-900 overflow-hidden w-full max-w-full">
+      <section className="py-16 md:py-24 bg-secondary-bg overflow-hidden w-full max-w-full border-t border-border-subtle">
         <div className="container-custom text-center px-4">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-6 md:mb-8">
-            Ready to <span className="bg-gradient-to-r from-accent-gold to-accent-teal bg-clip-text text-transparent">Join Us</span>?
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-6 md:mb-8 font-display">
+            Ready to <span className="text-accent-gold">Join Us</span>?
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-300 mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-text-body mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
             Transform your daily commute into an eco-friendly adventure with M'LiteEv electric scooters
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link href="/models" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-10 py-4 bg-gradient-to-r from-accent-gold to-accent-gold-hover text-black font-black text-sm md:text-base uppercase tracking-wider rounded-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-accent-gold/50">
+              <button className="btn-primary w-full sm:w-auto px-10 py-4 text-sm md:text-base uppercase tracking-wider rounded-xl hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-accent-gold/50">
                 Explore Models
               </button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-accent-gold text-accent-gold font-black text-sm md:text-base uppercase tracking-wider rounded-xl hover:bg-accent-gold hover:text-black transition-all duration-300">
+              <button className="btn-secondary w-full sm:w-auto px-10 py-4 text-sm md:text-base uppercase tracking-wider rounded-xl hover:bg-accent-gold hover:text-black transition-all duration-300">
                 Contact Us
               </button>
             </Link>

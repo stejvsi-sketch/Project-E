@@ -84,17 +84,23 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
             </div>
             
             {/* Info */}
-            <div className="space-y-4">
-              <p className="text-sm text-accent-gold uppercase tracking-wider font-semibold">
-                {scooters[current].category}
-              </p>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white drop-shadow-lg px-4">
+            <div className="space-y-4 sm:space-y-6">
+              <div className="inline-block px-6 py-2 bg-accent-gold/20 backdrop-blur-sm border border-accent-gold/40 rounded-full">
+                <p className="text-xs sm:text-sm text-accent-gold uppercase tracking-widest font-bold">
+                  {scooters[current].category}
+                </p>
+              </div>
+              <h3 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white px-4 drop-shadow-2xl">
                 {scooters[current].name}
               </h3>
-              <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-white/90 text-base sm:text-lg font-medium px-4">
-                <span>{scooters[current].range}</span>
-                <span>•</span>
-                <span>{scooters[current].speed}</span>
+              <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 px-4">
+                <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-lg">
+                  <span className="text-white font-bold text-sm sm:text-base md:text-lg">{scooters[current].range}</span>
+                </div>
+                <div className="w-1 h-1 rounded-full bg-white/50"></div>
+                <div className="bg-white/10 backdrop-blur-sm border border-white/30 px-4 py-2 rounded-lg">
+                  <span className="text-white font-bold text-sm sm:text-base md:text-lg">{scooters[current].speed}</span>
+                </div>
               </div>
             </div>
           </div>

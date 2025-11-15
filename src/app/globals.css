@@ -3,25 +3,38 @@
 @tailwind utilities;
 
 :root {
-  /* Premium Dark EV Scooter Color Palette */
-  --primary-bg: #121212;
-  --secondary-bg: #1C1C1C;
+  /* Luxury Ivory & Gold Color Palette */
+  /* Backgrounds */
+  --primary-bg: #FFFFE3;        /* soft ivory (page + hero canvas) */
+  --secondary-bg: #EDE8D0;      /* warm cream for cards/alternate sections */
+  --muted-bg: #F7F5EE;          /* subtle alternate background */
   
-  --text-primary: #E0E0E0;
-  --text-secondary: #B0B0B0;
+  /* Accents */
+  --accent-gold: #D4AF37;       /* primary gold for CTAs */
+  --accent-gold-hover: #BFA430; /* gold hover/pressed state */
+  --accent-champagne: #F7E6CA;  /* soft accent/hover */
+  --accent-blush: #E8C9CF;      /* tiny secondary accent */
   
-  --accent-gold: #FFD700;
-  --accent-gold-hover: #EFB810;
-  --accent-teal: #00BCD4;
+  /* Typography & grounding */
+  --text-heading: #000000;      /* pure black headings */
+  --text-body: #1A1A1A;         /* almost black body text */
+  --text-muted: #4A4A4A;        /* darker muted text */
+  --text-charcoal: #333333;     /* inverted/footer */
   
-  --border-color: #444444;
+  /* Borders & states */
+  --border-color: #E0DCD7;      /* subtle borders */
+  --border-subtle: #E0DCD7;
+  --disabled-bg: #DDDDDD;
+  --disabled-text: #AAAAAA;
   
-  /* Legacy color mappings for gradual transition */
-  --primary-orange: #FFD700;
-  --primary-orange-light: #EFB810;
-  --primary-orange-dark: #E5C100;
-  --neutral-dark: #121212;
-  --neutral-gray: #1C1C1C;
+  /* Legacy color mappings for compatibility */
+  --text-primary: #000000;
+  --text-secondary: #1A1A1A;
+  --primary-orange: #D4AF37;
+  --primary-orange-light: #F7E6CA;
+  --primary-orange-dark: #BFA430;
+  --neutral-dark: #000000;
+  --neutral-gray: #EDE8D0;
 }
 
 @layer base {
@@ -36,16 +49,22 @@
     max-width: 100%;
   }
   
-  /* Force viewport constraints */
+  /* Force viewport constraints - PREVENT HORIZONTAL SCROLL */
   body, html, #__next, main {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    width: 100%;
     position: relative;
+  }
+  
+  /* Ensure all containers respect viewport */
+  * {
+    max-width: 100%;
   }
   
   body {
     background-color: var(--primary-bg);
-    color: var(--text-primary);
+    color: #1A1A1A !important;
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
     @apply antialiased;
@@ -64,6 +83,27 @@
   /* Display serif font for headlines with fallbacks */
   h1, h2, h3 {
     font-family: var(--font-playfair), Georgia, serif;
+    font-weight: 700;
+    color: #000000 !important;
+  }
+  
+  /* Ensure body text is readable */
+  p {
+    font-weight: 400;
+    color: #1A1A1A !important;
+  }
+  
+  span:not(.text-white):not(.text-accent-gold):not(.text-primary-bg) {
+    color: #1A1A1A;
+  }
+  
+  div:not(.text-white):not(.text-accent-gold):not(.text-primary-bg) {
+    font-weight: 400;
+  }
+  
+  /* Strong emphasis */
+  strong, b {
+    font-weight: 600;
   }
 
   /* Prevent layout shift by ensuring consistent font rendering */
@@ -86,30 +126,43 @@
 @layer components {
   .btn-primary {
     background-color: var(--accent-gold);
-    color: var(--primary-bg);
+    color: #FFFFFF;
     @apply px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
     @apply transition-all duration-200;
-    @apply shadow-lg hover:shadow-xl hover:scale-105;
-    @apply focus:outline-none focus:ring-4 focus:ring-yellow-500/50;
+    @apply shadow-sm hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-gold/50;
   }
   
   .btn-primary:hover {
     background-color: var(--accent-gold-hover);
   }
+  
+  .btn-primary:disabled {
+    background-color: var(--disabled-bg);
+    color: var(--disabled-text);
+    cursor: not-allowed;
+  }
 
   .btn-secondary {
-    background-color: var(--secondary-bg);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+    background-color: transparent;
+    color: var(--text-heading);
+    border: 1px solid var(--accent-gold);
     @apply px-8 py-3 rounded-md font-semibold uppercase text-sm tracking-wide;
     @apply transition-all duration-200;
-    @apply shadow-lg hover:shadow-xl hover:scale-105;
-    @apply focus:outline-none focus:ring-4;
+    @apply shadow-sm hover:shadow-md;
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-gold/50;
   }
   
   .btn-secondary:hover {
-    background-color: var(--accent-teal);
-    color: var(--primary-bg);
+    background-color: var(--accent-champagne);
+    border-color: var(--accent-gold-hover);
+  }
+  
+  .btn-secondary:disabled {
+    background-color: transparent;
+    border-color: var(--disabled-bg);
+    color: var(--disabled-text);
+    cursor: not-allowed;
   }
 
   /* Skeleton loader animation */
@@ -156,10 +209,10 @@
     animation: shimmer 2s infinite linear;
     background: linear-gradient(
       to right,
-      #f0f0f0 0%,
-      #e0e0e0 20%,
-      #f0f0f0 40%,
-      #f0f0f0 100%
+      #F7F5EE 0%,
+      #EDE8D0 20%,
+      #F7F5EE 40%,
+      #F7F5EE 100%
     );
     background-size: 1000px 100%;
   }
@@ -187,5 +240,18 @@
     width: 100%;
     max-width: 100%;
     overflow-x: hidden;
+  }
+
+  /* Force dark text utilities */
+  .text-text-body {
+    color: #1A1A1A !important;
+  }
+  
+  .text-text-heading {
+    color: #000000 !important;
+  }
+  
+  .text-text-muted {
+    color: #4A4A4A !important;
   }
 }

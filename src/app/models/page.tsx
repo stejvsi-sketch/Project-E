@@ -34,11 +34,11 @@ export default function ModelsPage() {
       name: 'S.L Pro',
       tagline: 'Standard Line Excellence',
       description: 'The S.L Pro delivers reliable performance with 1000W motor power and versatile controller options. Perfect for daily commuting with premium build quality.',
-      bgColor: 'from-red-700 to-red-800',
+      bgColor: 'from-red-700 to-red-900',
       slug: 'sl-pro',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -54,11 +54,11 @@ export default function ModelsPage() {
       name: 'D.L Pro',
       tagline: 'Deluxe Line Performance',
       description: 'The D.L Pro offers enhanced deluxe features with 1000W motor power and versatile controller options. Superior comfort and style for discerning riders.',
-      bgColor: 'from-gray-600 to-gray-700',
+      bgColor: 'from-slate-700 to-slate-900',
       slug: 'dl-pro',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -74,11 +74,11 @@ export default function ModelsPage() {
       name: 'CS Pro',
       tagline: 'City Sport Performance',
       description: 'The CS Pro delivers enhanced performance with 1200W motor power and advanced controller system. Perfect for sport-oriented urban commuting.',
-      bgColor: 'from-teal-800 to-teal-900',
+      bgColor: 'from-teal-700 to-teal-900',
       slug: 'cs-pro',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -94,11 +94,11 @@ export default function ModelsPage() {
       name: 'CS Pro +',
       tagline: 'City Sport Plus Excellence',
       description: 'The CS Pro + offers enhanced features with 1200W motor power and premium upgrades. Superior performance for demanding urban riders.',
-      bgColor: 'from-emerald-800 to-emerald-900',
+      bgColor: 'from-emerald-700 to-emerald-900',
       slug: 'cs-pro-plus',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -114,11 +114,11 @@ export default function ModelsPage() {
       name: 'Vespa Pro',
       tagline: 'Premium Classic Style',
       description: 'The Vespa Pro combines classic Italian design with modern electric performance. 1200W motor with premium features for sophisticated riders.',
-      bgColor: 'from-indigo-700 to-indigo-800',
+      bgColor: 'from-indigo-700 to-indigo-900',
       slug: 'vespa-pro',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -134,11 +134,11 @@ export default function ModelsPage() {
       name: 'Vespa Pro +',
       tagline: 'Premium Classic Plus',
       description: 'The enhanced Vespa Pro + offers additional premium features with classic styling. Superior performance and luxury for discerning riders.',
-      bgColor: 'from-slate-600 to-slate-700',
+      bgColor: 'from-purple-700 to-purple-900',
       slug: 'vespa-pro-plus',
       colors: [
-        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
+        { name: 'Gold', code: 'bg-accent-gold', border: 'border-accent-gold-hover' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -154,11 +154,11 @@ export default function ModelsPage() {
       name: 'CS 3',
       tagline: 'City Sport Generation 3',
       description: 'The latest CS 3 represents the pinnacle of City Sport engineering. Advanced 1200W motor with cutting-edge technology and premium features.',
-      bgColor: 'from-blue-800 to-blue-900',
+      bgColor: 'from-blue-700 to-blue-900',
       slug: 'cs-3',
       colors: [
-        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
-        { name: 'White', code: 'bg-white', border: 'border-gray-300' },
+        { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
+        { name: 'Gold', code: 'bg-accent-gold', border: 'border-accent-gold-hover' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -231,15 +231,15 @@ export default function ModelsPage() {
                   </span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight font-display text-white">
                   {product.name.replace('M\'LiteEv ', '')}
                 </h1>
                 
-                <p className="text-base sm:text-lg md:text-xl font-semibold opacity-90 italic">
+                <p className="text-base sm:text-lg md:text-xl font-semibold text-accent-gold italic">
                   {product.tagline}
                 </p>
 
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 opacity-80">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0 text-white/90">
                   {product.description}
                 </p>
 
@@ -252,9 +252,9 @@ export default function ModelsPage() {
                         key={idx}
                         className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg md:rounded-xl p-2 md:p-3 lg:p-4 hover:bg-white/20 transition-all duration-300 group min-w-0"
                       >
-                        <Icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mb-1 md:mb-2 group-hover:scale-110 transition-transform" />
-                        <div className="text-[10px] md:text-xs opacity-70 uppercase tracking-wide mb-0.5 md:mb-1">{spec.label}</div>
-                        <div className="text-xs sm:text-sm md:text-base lg:text-lg font-bold break-words leading-tight">{spec.value}</div>
+                        <Icon className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 mb-1 md:mb-2 group-hover:scale-110 transition-transform text-white" />
+                        <div className="text-[10px] md:text-xs text-white/70 uppercase tracking-wide mb-0.5 md:mb-1">{spec.label}</div>
+                        <div className="text-xs md:text-sm lg:text-base font-bold truncate text-white">{spec.value}</div>
                       </div>
                     )
                   })}
