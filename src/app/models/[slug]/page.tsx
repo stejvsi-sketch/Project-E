@@ -1,13 +1,33 @@
 'use client'
 
-import { useState, use } from 'react'
+import { useState, use, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Zap, Battery, Shield, ChevronLeft, Gauge, Clock, CheckCircle2, Star } from 'lucide-react'
+import { getModelVariantImages, getImageOrFallback, type ModelImage } from '@/lib/images'
 
 export default function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   // Unwrap params Promise for Next.js 15+
   const { slug } = use(params)
   const [selectedColor, setSelectedColor] = useState(0)
+  const [variantImages, setVariantImages] = useState<ModelImage[]>([])
+  const [imagesLoading, setImagesLoading] = useState(true)
+
+  // Load variant images for this model
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        const images = await getModelVariantImages(slug)
+        setVariantImages(images)
+      } catch (error) {
+        console.error('Error loading variant images:', error)
+      } finally {
+        setImagesLoading(false)
+      }
+    }
+
+    loadImages()
+  }, [slug])
 
   // M'LiteEv Product Data - New 7 Models
   const productData: Record<string, any> = {
@@ -174,19 +194,31 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Right - Product Image with Selected Color */}
             <div className="relative h-64 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
               <div className={`absolute inset-0 ${product.colors[selectedColor].code}/10 rounded-full blur-3xl`} />
-              {/* Scooter Silhouette SVG */}
-              <svg viewBox="0 0 200 200" className="w-[200px] sm:w-[300px] md:w-[400px] lg:w-[500px] relative z-10 transform hover:scale-110 transition-all duration-700 drop-shadow-2xl">
-                {/* Main Body */}
-                <rect x="40" y="80" width="120" height="40" rx="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Handlebars */}
-                <rect x="35" y="60" width="8" height="30" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                <rect x="30" y="58" width="20" height="6" rx="3" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Wheels */}
-                <circle cx="60" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                <circle cx="140" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Deck connecting wheels */}
-                <rect x="60" y="130" width="80" height="8" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-              </svg>
+              {/* Real Scooter Image or Fallback */}
+              {imagesLoading ? (
+                <div className="text-white text-lg animate-pulse">Loading...</div>
+              ) : (() => {
+                const selectedColorName = product.colors[selectedColor]?.name.toLowerCase()
+                const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
+                const imageData = getImageOrFallback(variantImage?.image_url || null)
+                
+                return imageData.type === 'image' ? (
+                  <div className="relative w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]">
+                    <Image
+                      src={imageData.value}
+                      alt={`${product.name} ${selectedColorName}`}
+                      fill
+                      className="object-contain drop-shadow-2xl transform hover:scale-110 transition-all duration-700"
+                      sizes="(max-width: 640px) 200px, (max-width: 768px) 300px, (max-width: 1024px) 400px, 500px"
+                      priority
+                    />
+                  </div>
+                ) : (
+                  <div className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[250px] drop-shadow-2xl">
+                    {imageData.value}
+                  </div>
+                )
+              })()}
             </div>
           </div>
         </div>
@@ -275,19 +307,28 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Right - Product Visualization with Color Change */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-gray-800/30 rounded-3xl border border-gray-700 overflow-hidden">
               <div className={`absolute inset-0 bg-gradient-to-br from-${product.colors[selectedColor].code.replace('bg-', '')}/10 to-transparent rounded-3xl transition-all duration-500`} />
-              {/* Animated Scooter Silhouette */}
-              <svg viewBox="0 0 200 200" className="w-[240px] sm:w-[320px] md:w-[400px] drop-shadow-2xl transform hover:scale-105 transition-all duration-500">
-                {/* Main Body */}
-                <rect x="40" y="80" width="120" height="40" rx="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Handlebars */}
-                <rect x="35" y="60" width="8" height="30" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                <rect x="30" y="58" width="20" height="6" rx="3" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Wheels */}
-                <circle cx="60" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                <circle cx="140" cy="140" r="20" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-                {/* Deck */}
-                <rect x="60" y="130" width="80" height="8" rx="4" className={`${product.colors[selectedColor].code} transition-all duration-500`} />
-              </svg>
+              {/* Real Scooter Image */}
+              {(() => {
+                const selectedColorName = product.colors[selectedColor]?.name.toLowerCase()
+                const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
+                const imageData = getImageOrFallback(variantImage?.image_url || null)
+                
+                return imageData.type === 'image' ? (
+                  <div className="relative w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]">
+                    <Image
+                      src={imageData.value}
+                      alt={`${product.name} ${selectedColorName}`}
+                      fill
+                      className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-500"
+                      sizes="(max-width: 640px) 240px, (max-width: 768px) 320px, 400px"
+                    />
+                  </div>
+                ) : (
+                  <div className="text-[120px] sm:text-[160px] md:text-[200px] drop-shadow-2xl">
+                    {imageData.value}
+                  </div>
+                )
+              })()}
               <div className="absolute bottom-8 left-0 right-0 text-center">
                 <div className="inline-block bg-gray-900/90 backdrop-blur-md px-6 py-3 rounded-full border border-gray-700">
                   <span className="text-white font-semibold">{product.colors[selectedColor].name}</span>

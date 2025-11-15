@@ -7,7 +7,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-primary-bg overflow-hidden w-full max-w-full">
       {/* Ultra-Premium Hero */}
-      <section className="relative bg-primary-bg pt-24 md:pt-32 pb-20 md:pb-28 overflow-hidden w-full max-w-full">
+      <section className="relative bg-primary-bg pt-0 pb-20 md:pb-28 overflow-hidden w-full max-w-full">
         {/* Sophisticated pattern */}
         <div className="absolute inset-0 opacity-[0.025]">
           <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>

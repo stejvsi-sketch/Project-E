@@ -1,13 +1,88 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Battery, Zap, Shield, ArrowRight, Gauge, Bike } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { ALL_MODELS } from '@/data/models'
+import { getModelVariantImages, getImageOrFallback, type ModelImage } from '@/lib/images'
+
+// Component to display product image with color selection
+function ProductImage({ 
+  modelSlug, 
+  variantImages, 
+  colors, 
+  selectedColorIndex,
+  isLoading 
+}: { 
+  modelSlug: string
+  variantImages: ModelImage[]
+  colors: Array<{ name: string, code: string, border: string }>
+  selectedColorIndex: number
+  isLoading: boolean
+}) {
+  // Get the image for the selected color
+  const selectedColor = colors[selectedColorIndex]?.name.toLowerCase()
+  const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColor)
+  const imageData = getImageOrFallback(variantImage?.image_url || null)
+
+  if (isLoading) {
+    return (
+      <div className="text-white text-lg animate-pulse">Loading images...</div>
+    )
+  }
+
+  return (
+    <div className="relative w-full h-full flex items-center justify-center">
+      {imageData.type === 'image' ? (
+        <div className="relative w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] md:w-[350px] md:h-[350px] lg:w-[450px] lg:h-[450px]">
+          <Image
+            src={imageData.value}
+            alt={`${modelSlug} ${selectedColor}`}
+            fill
+            className="object-contain drop-shadow-2xl transform hover:scale-110 transition-all duration-700 cursor-pointer"
+            sizes="(max-width: 640px) 200px, (max-width: 768px) 250px, (max-width: 1024px) 350px, 450px"
+            priority
+          />
+        </div>
+      ) : (
+        <div className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[300px] transform hover:scale-110 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
+          {imageData.value}
+        </div>
+      )}
+    </div>
+  )
+}
 
 export default function ModelsPage() {
   // Track which M'LiteEv model is currently in viewport
   const [activeSection, setActiveSection] = useState(0)
+  const [variantImages, setVariantImages] = useState<Record<string, ModelImage[]>>({})
+  const [imagesLoading, setImagesLoading] = useState(true)
+  const [selectedColors, setSelectedColors] = useState<Record<string, number>>({})
+
+  // Load variant images for all models
+  useEffect(() => {
+    async function loadVariantImages() {
+      try {
+        const images: Record<string, ModelImage[]> = {}
+        
+        // Load images for each model
+        for (const model of ALL_MODELS) {
+          const modelImages = await getModelVariantImages(model.id)
+          images[model.id] = modelImages
+        }
+        
+        setVariantImages(images)
+      } catch (error) {
+        console.error('Error loading variant images:', error)
+      } finally {
+        setImagesLoading(false)
+      }
+    }
+
+    loadVariantImages()
+  }, [])
 
   // M'LiteEv Model Navigation - Detect which product section is in view
   useEffect(() => {
@@ -177,7 +252,7 @@ export default function ModelsPage() {
   }
 
   return (
-    <div className="min-h-screen relative overflow-hidden w-full max-w-full">
+    <div className="min-h-screen relative overflow-hidden w-full max-w-full -mt-24 md:-mt-32">
       {/* Side Navigation Dots */}
       <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 hidden lg:flex flex-col gap-4">
         {productHeros.map((product, index) => (
@@ -205,7 +280,7 @@ export default function ModelsPage() {
       {productHeros.map((product, index) => (
         <section
           key={product.id}
-          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500 pt-16 md:pt-20 overflow-hidden`}
+          className={`product-section relative min-h-screen flex items-center bg-gradient-to-br ${product.bgColor} transition-all duration-500 ${index === 0 ? 'pt-28 md:pt-36' : 'pt-20 md:pt-24'} overflow-hidden`}
         >
           {/* Animated Background Pattern */}
           <div className="absolute inset-0 opacity-10">
@@ -217,9 +292,13 @@ export default function ModelsPage() {
               {/* Product Image with Glow Effect */}
               <div className="relative h-64 md:h-80 lg:h-[500px] flex items-center justify-center order-1 lg:order-1">
                 <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl" />
-                <div className="text-[120px] sm:text-[150px] md:text-[200px] lg:text-[300px] transform hover:scale-110 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
-                  🛴
-                </div>
+                <ProductImage 
+                  modelSlug={product.slug}
+                  variantImages={variantImages[product.slug] || []}
+                  colors={product.colors}
+                  selectedColorIndex={selectedColors[product.slug] ?? 0}
+                  isLoading={imagesLoading}
+                />
               </div>
 
               {/* Product Info */}
@@ -244,7 +323,7 @@ export default function ModelsPage() {
                 </p>
 
                 {/* Specs Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 md:gap-3 lg:gap-4 py-4 md:py-6">
+                <div className="grid grid-cols-2 gap-3 lg:gap-4 py-4 md:py-6">
                   {product.specs.map((spec, idx) => {
                     const Icon = spec.icon
                     return (
@@ -264,17 +343,27 @@ export default function ModelsPage() {
                 <div className="pt-2 md:pt-4">
                   <div className="text-xs md:text-sm font-semibold mb-2 md:mb-3 opacity-80 uppercase tracking-wide">Available Colors:</div>
                   <div className="flex gap-2 md:gap-3 justify-center lg:justify-start flex-wrap">
-                    {product.colors.map((color, idx) => (
-                      <div 
-                        key={idx} 
-                        className="group relative cursor-pointer"
-                      >
-                        <div className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full ${color.code} border-2 md:border-4 ${color.border} shadow-lg hover:scale-125 transition-all duration-300`} />
-                        <span className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] md:text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                          {color.name}
-                        </span>
-                      </div>
-                    ))}
+                    {product.colors.map((color, idx) => {
+                      const isSelected = (selectedColors[product.slug] ?? 0) === idx
+                      return (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() =>
+                            setSelectedColors(prev => ({ ...prev, [product.slug]: idx }))
+                          }
+                          className="group relative cursor-pointer focus:outline-none"
+                          aria-label={`${product.name} ${color.name}`}
+                        >
+                          <div
+                            className={`w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 rounded-full ${color.code} border-2 md:border-4 ${isSelected ? 'ring-4 ring-white' : color.border} shadow-lg hover:scale-125 transition-all duration-300`}
+                          />
+                          <span className={`absolute -bottom-5 left-1/2 -translate-x-1/2 text-[10px] md:text-xs font-semibold transition-opacity whitespace-nowrap ${isSelected ? 'opacity-100 text-white' : 'opacity-0 group-hover:opacity-100'}`}>
+                            {color.name}
+                          </span>
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
 

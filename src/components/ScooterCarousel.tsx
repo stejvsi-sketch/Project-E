@@ -2,25 +2,19 @@
 
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
+import { getAllHeroImages, getImageOrFallback, type ModelImage } from '@/lib/images'
+import { ALL_MODELS } from '@/data/models'
 
 interface Scooter {
   name: string
   category: string
-  emoji: string
+  slug: string
+  imageUrl: string | null
   range: string
   speed: string
   power: string
 }
-
-const scooters: Scooter[] = [
-  { name: 'S.L Pro', category: 'Standard Line', emoji: '🛴', range: '50+ KM', speed: '40-45 KM/H', power: '1000W' },
-  { name: 'D.L Pro', category: 'Deluxe Line', emoji: '🛴', range: '50+ KM', speed: '40-45 KM/H', power: '1000W' },
-  { name: 'CS Pro', category: 'City Sport', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
-  { name: 'CS Pro +', category: 'City Sport Plus', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
-  { name: 'Vespa Pro', category: 'Premium Classic', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
-  { name: 'Vespa Pro +', category: 'Premium Classic Plus', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
-  { name: 'CS 3', category: 'City Sport 3', emoji: '🛴', range: '60+ KM', speed: '50-55 KM/H', power: '1200W' },
-]
 
 interface ScooterCarouselProps {
   autoPlay?: boolean
@@ -30,16 +24,60 @@ interface ScooterCarouselProps {
 export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCarouselProps) {
   const [current, setCurrent] = useState(0)
   const [isHovered, setIsHovered] = useState(false)
+  const [scooters, setScooters] = useState<Scooter[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Fetch hero images on mount
+  useEffect(() => {
+    async function loadImages() {
+      try {
+        const heroImages = await getAllHeroImages()
+        
+        // Map models with their images
+        const scootersWithImages: Scooter[] = ALL_MODELS.map((model) => {
+          const heroImg = heroImages.find((img) => img.model_slug === model.id)
+          return {
+            name: model.name,
+            category: model.category,
+            slug: model.id,
+            imageUrl: heroImg?.image_url || null,
+            range: model.range,
+            speed: model.maxSpeed,
+            power: model.motorPower,
+          }
+        })
+
+        setScooters(scootersWithImages)
+      } catch (error) {
+        console.error('Error loading carousel images:', error)
+        // Fallback to models without images
+        const fallbackScooters: Scooter[] = ALL_MODELS.map((model) => ({
+          name: model.name,
+          category: model.category,
+          slug: model.id,
+          imageUrl: null,
+          range: model.range,
+          speed: model.maxSpeed,
+          power: model.motorPower,
+        }))
+        setScooters(fallbackScooters)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    loadImages()
+  }, [])
 
   useEffect(() => {
-    if (!autoPlay || isHovered) return
+    if (!autoPlay || isHovered || scooters.length === 0) return
 
     const timer = setInterval(() => {
       setCurrent((prev) => (prev + 1) % scooters.length)
     }, interval)
 
     return () => clearInterval(timer)
-  }, [autoPlay, interval, isHovered])
+  }, [autoPlay, interval, isHovered, scooters.length])
 
   const goToNext = () => {
     setCurrent((prev) => (prev + 1) % scooters.length)
@@ -65,6 +103,18 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
   ]
 
   const currentScheme = colorSchemes[current] || colorSchemes[0]
+  const currentScooter = scooters[current]
+  const imageData = currentScooter ? getImageOrFallback(currentScooter.imageUrl) : { type: 'emoji' as const, value: '🛴' }
+
+  if (isLoading || scooters.length === 0) {
+    return (
+      <div className="relative w-full max-w-4xl mx-auto overflow-hidden" style={{ maxWidth: '100%' }}>
+        <div className="relative h-[400px] sm:h-[500px] bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border border-gray-700 flex items-center justify-center">
+          <div className="text-white text-xl">Loading models...</div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div 
@@ -78,9 +128,22 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
         {/* Scooter Display */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="text-center space-y-4">
-            {/* Large Emoji/Image */}
-            <div className="text-[100px] sm:text-[120px] md:text-[200px] transition-all duration-500 transform hover:scale-110">
-              {scooters[current].emoji}
+            {/* Scooter Image or Emoji Fallback */}
+            <div className="relative w-[250px] h-[250px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] mx-auto transition-all duration-500 transform hover:scale-110">
+              {imageData.type === 'image' ? (
+                <Image
+                  src={imageData.value}
+                  alt={currentScooter.name}
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 640px) 250px, (max-width: 768px) 300px, 400px"
+                  priority={current === 0}
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-[100px] sm:text-[120px] md:text-[200px]">
+                  {imageData.value}
+                </div>
+              )}
             </div>
             
             {/* Info */}

@@ -4,6 +4,7 @@ import { Zap, Battery, Shield, Sparkles, ArrowRight, Award, TrendingUp, CheckCir
 import { Button } from '@/components/ui/Button'
 import { QuickConfigurator } from '@/components/QuickConfigurator'
 import { ScooterCarousel } from '@/components/ScooterCarousel'
+import { ColorShowcase } from '@/components/ColorShowcase'
 
 export default function Home() {
   return (
@@ -273,34 +274,7 @@ export default function Home() {
             <p className="text-lg md:text-xl text-text-heading/80 max-w-2xl mx-auto font-light">Classic elegance in three timeless finishes</p>
           </div>
           
-          <div className="max-w-5xl mx-auto">
-            {/* Premium color trio - Only Red, White, Black */}
-            <div className="grid grid-cols-3 gap-8 md:gap-16 mb-20">
-              {[
-                { name: 'Midnight Black', hex: '#000000', border: 'border-text-heading' },
-                { name: 'Pure White', hex: '#FFFFFF', border: 'border-text-heading' },
-                { name: 'Crimson Red', hex: '#DC2626', border: 'border-red-600' },
-              ].map((color, i) => (
-                <div key={i} className="text-center group cursor-pointer">
-                  <div className="relative mx-auto mb-6">
-                    {/* Premium frame */}
-                    <div className={`w-20 h-20 md:w-28 md:h-28 rounded-full border-4 ${color.border} group-hover:border-accent-gold transition-all duration-500 mx-auto p-1 bg-white shadow-xl group-hover:shadow-2xl`}>
-                      <div className="w-full h-full rounded-full" style={{ backgroundColor: color.hex }}></div>
-                    </div>
-                  </div>
-                  <p className="text-sm md:text-base tracking-[0.2em] uppercase text-text-heading font-semibold">{color.name}</p>
-                </div>
-              ))}
-            </div>
-            
-            {/* Premium scooter showcase */}
-            <div className="relative bg-gradient-to-br from-muted-bg to-primary-bg rounded-3xl p-12 md:p-20 border-2 border-accent-gold/20 shadow-2xl">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.05),transparent_70%)] rounded-3xl"></div>
-              <div className="relative flex items-center justify-center">
-                <div className="text-[150px] md:text-[250px] filter drop-shadow-2xl">🛴</div>
-              </div>
-            </div>
-          </div>
+          <ColorShowcase />
         </div>
       </section>
 
