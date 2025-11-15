@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Ultra-Luxury Hero */}
-      <section className="relative bg-primary-bg overflow-hidden min-h-screen w-full max-w-full flex items-center pt-28 md:pt-32">
+      <section className="relative bg-primary-bg overflow-hidden min-h-screen w-full max-w-full flex items-center pt-0">
         {/* Sophisticated pattern overlay */}
         <div className="absolute inset-0 opacity-[0.025]">
           <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>
