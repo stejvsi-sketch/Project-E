@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       {/* Ultra-Luxury Hero */}
-      <section className="relative bg-primary-bg overflow-hidden min-h-screen w-full max-w-full flex items-center pt-20 md:pt-24">
+      <section className="relative bg-primary-bg overflow-hidden min-h-screen w-full max-w-full flex items-center pt-28 md:pt-32">
         {/* Sophisticated pattern overlay */}
         <div className="absolute inset-0 opacity-[0.025]">
           <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>
@@ -38,8 +38,8 @@ export default function Home() {
             {/* Premium CTAs */}
             <div className="flex flex-col sm:flex-row gap-5 mb-10 md:mb-14 px-4">
               <Link href="/models" className="w-full sm:w-auto">
-                <button className="group relative w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 bg-text-heading text-primary-bg font-bold text-sm tracking-[0.25em] uppercase overflow-hidden transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
-                  <span className="relative z-10">Discover Collection</span>
+                <button className="group relative w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 bg-text-heading font-bold text-sm tracking-[0.25em] uppercase overflow-hidden transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
+                  <span className="relative z-10 text-white group-hover:text-white">Discover Collection</span>
                   <div className="absolute inset-0 bg-accent-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </button>
               </Link>
@@ -162,7 +162,7 @@ export default function Home() {
                 Engineered for
                 <span className="block font-bold italic text-accent-gold mt-3">Perfection</span>
               </h2>
-              <p className="text-xl md:text-2xl text-white leading-relaxed font-light max-w-4xl mx-auto">
+              <p className="text-xl md:text-2xl text-white font-normal leading-relaxed max-w-4xl mx-auto drop-shadow-lg">
                 Each M'LiteEv represents the pinnacle of electric mobility—where meticulous Italian craftsmanship meets cutting-edge innovation.
               </p>
             </div>
@@ -319,12 +319,12 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link href="/models" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-16 py-6 bg-text-heading text-primary-bg font-bold tracking-[0.25em] uppercase text-sm hover:bg-accent-gold hover:text-white transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
+              <button className="w-full sm:w-auto px-16 py-6 bg-text-heading text-white font-bold tracking-[0.25em] uppercase text-sm hover:bg-accent-gold hover:text-white transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
                 View Collection
               </button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-16 py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-primary-bg font-bold tracking-[0.25em] uppercase text-sm transition-all duration-500">
+              <button className="w-full sm:w-auto px-16 py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-white font-bold tracking-[0.25em] uppercase text-sm transition-all duration-500">
                 Private Consultation
               </button>
             </Link>

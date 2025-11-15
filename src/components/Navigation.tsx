@@ -52,31 +52,21 @@ export function Navigation() {
       {/* Main Navigation */}
       <div className="container-custom relative">
         <div className="relative flex items-center justify-between h-20 md:h-24 py-4 md:py-5">
-          {/* Ultra-Luxury Logo */}
-          <Link href="/" className="flex items-center gap-4 md:gap-6 group">
-            <div className="relative flex items-center">
-              {/* Premium logo frame */}
-              <div className="relative w-16 h-16 md:w-24 md:h-24">
-                {/* Outer glow */}
-                <div className="absolute inset-0 bg-accent-gold/5 blur-xl group-hover:bg-accent-gold/10 transition-all duration-500"></div>
-                {/* Main container */}
-                <div className="relative w-full h-full p-3 md:p-4 bg-white shadow-md group-hover:shadow-xl transition-all duration-500">
-                  {/* Inner gold accent border */}
-                  <div className="absolute inset-2 border border-accent-gold/30 group-hover:border-accent-gold/60 transition-all duration-500"></div>
-                  <Image
-                    src="/images/logo/logo.png"
-                    alt="M'LiteEv"
-                    width={400}
-                    height={140}
-                    priority
-                    className="relative z-10 h-full w-full object-contain"
-                    style={{
-                      maxWidth: '100%',
-                      height: 'auto',
-                    }}
-                  />
-                </div>
-              </div>
+          {/* Clean Standalone Logo */}
+          <Link href="/" className="flex items-center gap-4 md:gap-5 group">
+            <div className="relative w-12 h-12 md:w-16 md:h-16 transition-all duration-300 group-hover:scale-110">
+              <Image
+                src="/images/logo/logo.png"
+                alt="M'LiteEv"
+                width={400}
+                height={140}
+                priority
+                className="h-full w-full object-contain"
+                style={{
+                  maxWidth: '100%',
+                  height: 'auto',
+                }}
+              />
             </div>
             
             {/* Refined Brand Identity */}

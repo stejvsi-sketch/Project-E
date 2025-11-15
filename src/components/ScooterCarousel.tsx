@@ -106,20 +106,20 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
           </div>
         </div>
 
-        {/* Navigation Arrows */}
+        {/* Navigation Arrows - Smaller on Mobile */}
         <button
           onClick={goToPrev}
-          className="absolute left-4 top-1/2 -translate-y-1/2 bg-secondary-bg/90 hover:bg-secondary-bg p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-border-gray"
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-accent-gold/30"
           aria-label="Previous scooter"
         >
-          <ChevronLeft className="w-6 h-6 text-text-primary" />
+          <ChevronLeft className="w-4 h-4 sm:w-6 sm:h-6 text-text-heading" />
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-4 top-1/2 -translate-y-1/2 bg-secondary-bg/90 hover:bg-secondary-bg p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-border-gray"
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-2 sm:p-3 rounded-full shadow-lg transition-all hover:scale-110 border border-accent-gold/30"
           aria-label="Next scooter"
         >
-          <ChevronRight className="w-6 h-6 text-text-primary" />
+          <ChevronRight className="w-4 h-4 sm:w-6 sm:h-6 text-text-heading" />
         </button>
 
       </div>
