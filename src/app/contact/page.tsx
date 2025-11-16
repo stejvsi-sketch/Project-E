@@ -164,6 +164,15 @@ export default function ContactPage() {
                         <p className="text-sm text-text-heading font-semibold">{COMPANY_INFO.address.street}</p>
                         <p className="text-xs text-text-body">{`${COMPANY_INFO.address.city}, ${COMPANY_INFO.address.state}-${COMPANY_INFO.address.pincode}`}</p>
                         <p className="text-xs text-text-muted mt-0.5">Mon-Sun, 10AM-8PM</p>
+                        <a
+                          href={COMPANY_INFO.address.mapLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs text-accent-gold font-semibold mt-1 hover:underline"
+                        >
+                          View on Google Maps
+                          <ArrowUpRight className="w-3 h-3" />
+                        </a>
                       </div>
                     </div>
                   </div>
