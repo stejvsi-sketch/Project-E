@@ -106,18 +106,9 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
   const currentScooter = scooters[current]
   const imageData = currentScooter ? getImageOrFallback(currentScooter.imageUrl) : { type: 'emoji' as const, value: '🛴' }
 
+  // Don't render anything during initial load - prevents flash of loading state
   if (isLoading || scooters.length === 0) {
-    return (
-      <div className="relative w-full max-w-6xl mx-auto overflow-hidden" style={{ maxWidth: '100%' }}>
-        <div className="relative h-[450px] sm:h-[520px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-gray-800/60">
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.2),transparent_60%)]" />
-          <div className="flex flex-col items-center justify-center h-full gap-6">
-            <div className="w-40 sm:w-56 h-24 rounded-3xl bg-white/5 animate-pulse" />
-            <div className="w-52 sm:w-72 h-52 rounded-full bg-white/10 animate-pulse" />
-          </div>
-        </div>
-      </div>
-    )
+    return null
   }
 
   return (
@@ -153,7 +144,9 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
                   fill
                   className="object-contain drop-shadow-2xl"
                   sizes="280px"
-                  priority={current === 0}
+                  priority
+                  quality={95}
+                  loading="eager"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-[120px]">
@@ -187,7 +180,9 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
                   fill
                   className="object-contain drop-shadow-2xl"
                   sizes="(max-width: 1024px) 500px, 600px"
-                  priority={current === 0}
+                  priority
+                  quality={95}
+                  loading="eager"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-[250px]">

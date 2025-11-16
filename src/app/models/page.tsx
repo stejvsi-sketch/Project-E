@@ -37,10 +37,12 @@ function ProductImage({
             className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
             sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, (max-width: 1024px) 450px, 550px"
             priority
+            quality={95}
+            loading="eager"
           />
         </div>
       ) : (
-        <div className="text-[180px] sm:text-[220px] md:text-[280px] lg:text-[350px] transform hover:scale-105 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-2xl">
+        <div className="text-[180px] sm:text-[220px] md:text-[280px] lg:text-[350px] transform hover:scale-105 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-xl opacity-30">
           {imageData.value}
         </div>
       )}
