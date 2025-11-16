@@ -89,7 +89,7 @@ export async function POST(request: NextRequest) {
       .eq('key', 'owner_email')
       .single()
 
-    const ownerEmail = settings?.value || process.env.OWNER_EMAIL || 'info@mliteev.com'
+    const ownerEmail = settings?.value || process.env.OWNER_EMAIL || 'stejasvi817@gmail.com'
 
     // Send email to owner
     const timestamp = new Date().toLocaleString()
