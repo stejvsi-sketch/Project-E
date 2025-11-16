@@ -24,28 +24,36 @@ function ProductImage({
   // Get the image for the selected color
   const selectedColor = colors[selectedColorIndex]?.name.toLowerCase()
   const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColor)
-  const imageData = getImageOrFallback(variantImage?.image_url || null)
+
+  // While loading or if no variant image exists yet, don't show any emoji/placeholder
+  if (isLoading || !variantImage) {
+    return (
+      <div className="relative w-full h-full flex items-center justify-center" />
+    )
+  }
+
+  const imageData = getImageOrFallback(variantImage.image_url)
+
+  if (imageData.type !== 'image') {
+    return (
+      <div className="relative w-full h-full flex items-center justify-center" />
+    )
+  }
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      {imageData.type === 'image' ? (
-        <div className="relative w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]">
-          <Image
-            src={imageData.value}
-            alt={`${modelSlug} ${selectedColor}`}
-            fill
-            className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
-            sizes="(max-width: 640px) 360px, (max-width: 768px) 420px, (max-width: 1024px) 500px, 650px"
-            priority
-            quality={95}
-            loading="eager"
-          />
-        </div>
-      ) : (
-        <div className="hidden">
-          {imageData.value}
-        </div>
-      )}
+      <div className="relative w-[300px] h-[300px] sm:w-[360px] sm:h-[340px] md:w-[430px] md:h-[420px] lg:w-[520px] lg:h-[480px]">
+        <Image
+          src={imageData.value}
+          alt={`${modelSlug} ${selectedColor}`}
+          fill
+          className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
+          sizes="(max-width: 640px) 300px, (max-width: 768px) 360px, (max-width: 1024px) 430px, 520px"
+          priority
+          quality={95}
+          loading="eager"
+        />
+      </div>
     </div>
   )
 }
@@ -208,8 +216,8 @@ export default function ModelsPage() {
       bgColor: 'from-purple-700 to-purple-900',
       slug: 'vespa-pro-plus',
       colors: [
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
-        { name: 'Gold', code: 'bg-accent-gold', border: 'border-accent-gold-hover' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -228,8 +236,8 @@ export default function ModelsPage() {
       bgColor: 'from-blue-700 to-blue-900',
       slug: 'cs-3',
       colors: [
+        { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },
         { name: 'White', code: 'bg-secondary-bg', border: 'border-text-heading' },
-        { name: 'Gold', code: 'bg-accent-gold', border: 'border-accent-gold-hover' },
         { name: 'Black', code: 'bg-black', border: 'border-gray-500' }
       ],
       specs: [
@@ -285,8 +293,8 @@ export default function ModelsPage() {
 
           <div className="container-custom relative z-10 px-4">
             <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Product Image - Seamless Blend */}
-              <div className="relative h-80 md:h-96 lg:h-[600px] flex items-center justify-center order-1 lg:order-1">
+              {/* Product Image */}
+              <div className="relative h-64 md:h-80 lg:h-[500px] flex items-center justify-center order-1 lg:order-1">
                 <ProductImage 
                   modelSlug={product.slug}
                   variantImages={variantImages[product.slug] || []}

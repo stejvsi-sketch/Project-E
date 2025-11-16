@@ -99,7 +99,7 @@ export default function ContactPage() {
               <span className="block text-accent-gold mt-2">Electric Journey</span>
             </h1>
             <p className="text-lg md:text-xl text-text-body leading-relaxed max-w-xl mx-auto">
-              Connect with us and experience the future of urban mobility.
+              {COMPANY_INFO.description}
             </p>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function ContactPage() {
               
               {/* Contact Cards */}
               <div className="space-y-3">
-                <a href="tel:+919818649138" className="group block">
+                <a href={`tel:+${COMPANY_INFO.social.whatsapp}`} className="group block">
                   <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle hover:border-accent-gold hover:shadow-md transition-all">
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 bg-accent-gold rounded-lg flex items-center justify-center flex-shrink-0">
@@ -131,14 +131,14 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-semibold text-text-heading mb-0.5">Call Us</h3>
-                        <p className="text-base text-text-heading font-bold truncate">+91 98186 49138</p>
+                        <p className="text-base text-text-heading font-bold truncate">{COMPANY_INFO.contact.phoneFormatted}</p>
                         <p className="text-xs text-text-muted mt-0.5">Mon-Sat, 9AM-7PM</p>
                       </div>
                     </div>
                   </div>
                 </a>
 
-                <a href="mailto:mukulgarg65@gmail.com" className="group block">
+                <a href={`mailto:${COMPANY_INFO.contact.email}`} className="group block">
                   <div className="p-5 bg-white/70 backdrop-blur-sm rounded-xl border border-border-subtle hover:border-accent-gold hover:shadow-md transition-all">
                     <div className="flex items-center gap-3">
                       <div className="w-11 h-11 bg-accent-gold rounded-lg flex items-center justify-center flex-shrink-0">
@@ -146,7 +146,7 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-semibold text-text-heading mb-0.5">Email Us</h3>
-                        <p className="text-base text-text-heading font-bold truncate">mukulgarg65@gmail.com</p>
+                        <p className="text-base text-text-heading font-bold truncate">{COMPANY_INFO.contact.email}</p>
                         <p className="text-xs text-text-muted mt-0.5">24h response time</p>
                       </div>
                     </div>
@@ -161,8 +161,8 @@ export default function ContactPage() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <h3 className="text-sm font-semibold text-text-heading mb-0.5">Visit Us</h3>
-                        <p className="text-sm text-text-heading font-semibold">Near Atal Park, Sector-2</p>
-                        <p className="text-xs text-text-body">Faridabad, Haryana-121004</p>
+                        <p className="text-sm text-text-heading font-semibold">{COMPANY_INFO.address.street}</p>
+                        <p className="text-xs text-text-body">{`${COMPANY_INFO.address.city}, ${COMPANY_INFO.address.state}-${COMPANY_INFO.address.pincode}`}</p>
                         <p className="text-xs text-text-muted mt-0.5">Mon-Sun, 10AM-8PM</p>
                       </div>
                     </div>
@@ -219,6 +219,10 @@ export default function ContactPage() {
                     <h3 className="text-base font-bold text-text-heading">Our Services</h3>
                   </div>
                   <ul className="space-y-2 text-sm text-text-body">
+                    <li className="flex items-center">
+                      <span className="text-accent-gold mr-2 text-base">✓</span>
+                      Deals in: All Kind of Electrical Scooty &amp; Its Spare Parts
+                    </li>
                     <li className="flex items-center">
                       <span className="text-accent-gold mr-2 text-base">✓</span>
                       Electric Scooter Sales

@@ -119,15 +119,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
   const product = productData[slug] || productData['sl-pro']
   
-  // Set specifications based on model type
+  // Set specifications based on model type (exact values from brief)
   const is1000WModel = ['sl-pro', 'dl-pro'].includes(slug)
   const is1200WModel = ['cs-pro', 'cs-pro-plus', 'vespa-pro', 'vespa-pro-plus', 'cs-3'].includes(slug)
-  
+
   product.keySpecs = [
     { icon: Battery, value: is1000WModel ? '48V/60V/72V' : '60V/72V', label: 'Controller' },
-    { icon: Zap, value: is1000WModel ? '40-45 km/h' : '50-55 km/h', label: 'Top Speed' },
-    { icon: Gauge, value: is1000WModel ? '1000W' : '1200W', label: 'Motor Power' },
-    { icon: Shield, value: is1000WModel ? 'Disc/Drum' : 'Disc/Disc', label: 'Brake System' },
+    { icon: Zap, value: is1000WModel ? '40-45Km/H' : '50-55Km/h', label: 'Max Speed' },
+    { icon: Gauge, value: is1000WModel ? 'Motor Power 1000W' : 'Motor Power 1200W', label: 'Motor' },
+    { icon: Shield, value: is1000WModel ? 'Front Disc/Rear Drum' : 'Front Disc/Rear Disc', label: 'Brake System' },
   ]
   product.features = [
     {
@@ -191,15 +191,22 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Right - Product Image with Selected Color */}
             <div className="relative h-64 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')] opacity-20" />
-              {/* Real Scooter Image or Fallback */}
+              {/* Real Scooter Image only (no emoji fallback) */}
               {imagesLoading ? (
                 <div className="w-64 h-64 rounded-full bg-[#e4c8a1]/30 animate-pulse"></div>
               ) : (() => {
                 const selectedColorName = displayColors[selectedColor]?.name.toLowerCase()
                 const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
-                const imageData = getImageOrFallback(variantImage?.image_url || null)
+                if (!variantImage) {
+                  return <div className="w-64 h-64" />
+                }
+
+                const imageData = getImageOrFallback(variantImage.image_url)
+                if (imageData.type !== 'image') {
+                  return <div className="w-64 h-64" />
+                }
                 
-                return imageData.type === 'image' ? (
+                return (
                   <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px]">
                     <Image
                       src={imageData.value}
@@ -209,13 +216,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       sizes="(max-width: 640px) 280px, (max-width: 768px) 380px, (max-width: 1024px) 480px, 580px"
                       priority
                       quality={95}
-                      placeholder="blur"
-                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                     />
-                  </div>
-                ) : (
-                  <div className="text-[160px] sm:text-[200px] md:text-[260px] lg:text-[300px] drop-shadow-2xl opacity-20" style={{ filter: 'sepia(0.5) hue-rotate(20deg)' }}>
-                    {imageData.value}
                   </div>
                 )
               })()}
@@ -307,13 +308,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Right - Product Visualization with Color Change */}
             <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-white rounded-3xl border border-[#eadcc7] overflow-hidden shadow-inner">
               <div className="absolute inset-0 bg-gradient-to-br from-[#f3dfc4] to-transparent rounded-3xl transition-all duration-500" />
-              {/* Real Scooter Image */}
+              {/* Real Scooter Image only (no emoji fallback) */}
               {(() => {
                 const selectedColorName = displayColors[selectedColor]?.name.toLowerCase()
                 const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
-                const imageData = getImageOrFallback(variantImage?.image_url || null)
+                if (!variantImage) {
+                  return <div className="w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
+                }
+
+                const imageData = getImageOrFallback(variantImage.image_url)
+                if (imageData.type !== 'image') {
+                  return <div className="w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
+                }
                 
-                return imageData.type === 'image' ? (
+                return (
                   <div className="relative w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]">
                     <Image
                       src={imageData.value}
@@ -322,13 +330,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-500"
                       sizes="(max-width: 640px) 240px, (max-width: 768px) 320px, 400px"
                       quality={95}
-                      placeholder="blur"
-                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                     />
-                  </div>
-                ) : (
-                  <div className="text-[120px] sm:text-[160px] md:text-[200px] drop-shadow-xl opacity-20" style={{ filter: 'sepia(0.5) hue-rotate(20deg)' }}>
-                    {imageData.value}
                   </div>
                 )
               })()}
