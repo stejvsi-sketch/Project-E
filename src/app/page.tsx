@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Heritage Statement */}
-      <section className="py-40 md:py-48 bg-gradient-to-br from-[#111827] via-[#1f2937] to-[#020617] text-white overflow-hidden w-full max-w-full relative">
+      <section className="py-40 md:py-48 bg-gradient-to-br from-[#020617] via-[#020617] to-[#111827] text-white overflow-hidden w-full max-w-full relative">
         {/* Refined pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
@@ -164,7 +164,7 @@ export default function Home() {
                 Engineered for
                 <span className="block font-bold italic text-accent-gold mt-3">Perfection</span>
               </h2>
-              <p className="text-xl md:text-2xl text-white font-normal leading-relaxed max-w-4xl mx-auto drop-shadow-lg">
+              <p className="text-xl md:text-2xl text-gray-200 font-normal leading-relaxed max-w-4xl mx-auto">
                 Each M'LiteEv represents the pinnacle of electric mobility—where meticulous Italian craftsmanship meets cutting-edge innovation.
               </p>
             </div>
@@ -173,15 +173,15 @@ export default function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12 lg:gap-16 mb-20">
               <div className="text-center border-t-2 border-accent-gold/50 pt-8">
                 <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">100%</p>
-                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Electric</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-gray-300 font-medium">Electric</p>
               </div>
               <div className="text-center border-t-2 border-accent-gold/50 pt-8">
                 <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">Zero</p>
-                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Emissions</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-gray-300 font-medium">Emissions</p>
               </div>
               <div className="text-center border-t-2 border-accent-gold/50 pt-8">
                 <p className="text-5xl md:text-6xl font-display font-bold text-accent-gold mb-3">∞</p>
-                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-white font-medium">Innovation</p>
+                <p className="text-xs md:text-sm tracking-[0.3em] uppercase text-gray-300 font-medium">Innovation</p>
               </div>
             </div>
 
@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Signature Colors - Premium Edition */}
-      <section className="pt-32 md:pt-40 pb-16 md:pb-24 bg-secondary-bg overflow-hidden w-full max-w-full border-t border-accent-gold/10">
+      <section className="pt-32 md:pt-40 pb-16 md:pb-24 bg-primary-bg overflow-hidden w-full max-w-full border-t border-accent-gold/10">
         <div className="container-custom max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 md:mb-24">
             <div className="flex items-center justify-center gap-4 mb-8">

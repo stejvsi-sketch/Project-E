@@ -84,13 +84,13 @@
   h1, h2, h3 {
     font-family: var(--font-playfair), Georgia, serif;
     font-weight: 700;
-    color: #000000 !important;
+    color: #000000;
   }
   
-  /* Ensure body text is readable */
+  /* Ensure body text is readable by default, but allow utilities (e.g. text-white) to override */
   p {
     font-weight: 400;
-    color: #1A1A1A !important;
+    color: #1A1A1A;
   }
   
   span:not(.text-white):not(.text-accent-gold):not(.text-primary-bg) {
