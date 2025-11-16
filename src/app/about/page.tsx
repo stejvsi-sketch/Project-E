@@ -109,7 +109,7 @@ export default function AboutPage() {
       </section>
 
       {/* M'LiteEv Journey - From Vision to Reality */}
-      <section className="py-16 md:py-24 bg-gradient-to-b from-gray-800 to-gray-900 overflow-hidden w-full max-w-full">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-muted-bg to-secondary-bg overflow-hidden w-full max-w-full">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
             <div className="space-y-6 md:space-y-8 px-4 lg:px-0">
@@ -118,9 +118,9 @@ export default function AboutPage() {
                   <Lightbulb className="w-6 h-6 text-accent-gold" />
                   <span className="text-accent-gold text-sm font-bold uppercase tracking-widest">The Journey</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 font-display">The M'LiteEv Story</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-4 font-display">The M'LiteEv Story</h2>
               </div>
-              <div className="space-y-4 md:space-y-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
+              <div className="space-y-4 md:space-y-6 text-text-body text-sm sm:text-base md:text-lg leading-relaxed">
                 <p>
                   <span className="text-accent-gold font-semibold">M'LiteEv</span> was born from a simple observation: cities needed smarter, 
                   cleaner, and more efficient transportation solutions. Founded by passionate 
@@ -162,7 +162,7 @@ export default function AboutPage() {
       </section>
 
       {/* M'LiteEv Impact - Our Numbers */}
-      <section className="py-16 md:py-24 bg-text-charcoal text-primary-bg overflow-hidden w-full max-w-full relative">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-secondary-bg to-primary-bg text-text-heading overflow-hidden w-full max-w-full relative">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.1),transparent_70%)] pointer-events-none"></div>
         <div className="container-custom relative z-10">
           <div className="text-center mb-12 md:mb-16">
@@ -170,8 +170,8 @@ export default function AboutPage() {
               <TrendingUp className="w-6 h-6" />
               <span className="text-sm font-bold uppercase tracking-widest">Impact</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-display text-primary-bg">Our Impact</h2>
-            <p className="text-base md:text-lg font-semibold text-accent-champagne">Making a difference in urban mobility</p>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 font-display text-text-heading">Our Impact</h2>
+            <p className="text-base md:text-lg font-semibold text-text-body">Making a difference in urban mobility</p>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
             {[
@@ -182,7 +182,7 @@ export default function AboutPage() {
             ].map((stat, index) => (
               <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-accent-gold/10 backdrop-blur-sm border border-accent-gold/30 hover:bg-accent-gold/20 transition-all duration-300 hover:scale-105">
                 <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 text-accent-gold">{stat.value}{stat.suffix}</div>
-                <div className="text-sm md:text-base font-bold text-primary-bg">{stat.label}</div>
+                <div className="text-sm md:text-base font-bold text-text-heading">{stat.label}</div>
               </div>
             ))}
           </div>

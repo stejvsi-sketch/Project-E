@@ -191,6 +191,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             {/* Right - Product Image with Selected Color */}
             <div className="relative h-64 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')] opacity-20" />
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
+                <div className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] lg:w-[560px] lg:h-[560px] rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.9),rgba(244,225,200,0.6),transparent_70%)] opacity-80" />
+              </div>
               {/* Real Scooter Image only (no emoji fallback) */}
               {imagesLoading ? (
                 <div className="w-64 h-64 rounded-full bg-[#e4c8a1]/30 animate-pulse"></div>
@@ -207,7 +210,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 }
                 
                 return (
-                  <div className="relative w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px]">
+                  <div className="relative z-10 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px]">
                     <Image
                       src={imageData.value}
                       alt={`${product.name} ${selectedColorName}`}

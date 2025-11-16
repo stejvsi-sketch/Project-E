@@ -61,7 +61,7 @@ export function ColorShowcase() {
             onClick={() => setSelectedColorIndex(i)}
           >
             <div className="relative mx-auto mb-4">
-              <div className={`w-24 h-24 md:w-32 md:h-32 rounded-full border-4 ${selectedColorIndex === i ? 'border-accent-gold scale-110' : color.border} transition-all duration-500 mx-auto p-1.5 bg-white shadow-xl group-hover:shadow-2xl group-hover:border-accent-gold`}>
+              <div className={`w-20 h-20 md:w-28 md:h-28 rounded-full border-[3px] ${selectedColorIndex === i ? 'border-accent-gold scale-110' : color.border} transition-all duration-500 mx-auto p-1 bg-white shadow-xl group-hover:shadow-2xl group-hover:border-accent-gold`}>
                 <div className="w-full h-full rounded-full" style={{ backgroundColor: color.hex }}></div>
               </div>
               {selectedColorIndex === i && (
@@ -76,7 +76,7 @@ export function ColorShowcase() {
       </div>
       
       {/* Premium scooter showcase with feature callouts */}
-      <div className="relative bg-gradient-to-br from-muted-bg via-secondary-bg to-primary-bg rounded-3xl p-8 md:p-16 border-2 border-accent-gold/30 shadow-2xl overflow-hidden">
+      <div className="relative bg-gradient-to-br from-muted-bg via-secondary-bg to-primary-bg rounded-3xl p-8 md:p-16 border border-accent-gold/20 shadow-xl overflow-hidden">
         {/* Decorative background elements */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.08),transparent_70%)] rounded-3xl"></div>
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-gold/5 rounded-full blur-3xl"></div>

@@ -38,24 +38,24 @@ export default function SupportPage() {
   return (
     <div className="min-h-screen bg-primary-bg overflow-x-hidden -mt-24 md:-mt-32">
       {/* M'LiteEv Support Center Hero */}
-      <section className="bg-gradient-to-br from-primary-bg via-secondary-bg to-neutral-dark pb-6 md:pb-8 pt-24 md:pt-32">
+      <section className="bg-gradient-to-br from-primary-bg via-muted-bg to-secondary-bg pb-6 md:pb-8 pt-24 md:pt-32">
         <div className="container-custom text-center px-4">
           <div className="inline-block mb-4 md:mb-6">
             <span className="text-xs md:text-sm font-semibold text-accent-teal uppercase tracking-wider px-4 py-2 rounded-full bg-accent-teal/10 border border-accent-teal/30">
               Support Center
             </span>
           </div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-heading mb-4 md:mb-6">
             Support Center
           </h1>
-          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-text-body leading-relaxed max-w-3xl mx-auto">
             Get answers, support, and expert guidance for your M&rsquo;LiteEv electric scooter
           </p>
         </div>
       </section>
 
       {/* M'LiteEv Support Categories */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-secondary-bg">
         <div className="container-custom">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
@@ -96,18 +96,18 @@ export default function SupportPage() {
       </section>
 
       {/* M'LiteEv FAQ - Customer Questions Answered */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-primary-bg">
         <div className="container-custom">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-text-primary mb-8">How Can We Help?</h2>
-            <p className="text-text-secondary max-w-2xl mx-auto">Quick answers to common M'LiteEv questions</p>
+            <h2 className="text-3xl font-bold text-text-heading mb-8">How Can We Help?</h2>
+            <p className="text-text-body max-w-2xl mx-auto">Quick answers to common M'LiteEv questions</p>
           </div>
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="group bg-gray-900/70 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 border border-gray-700 hover:border-accent-gold/50">
-                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
-                <p className="text-gray-300">{faq.answer}</p>
+              <div key={index} className="group bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 border border-border-gray hover:border-accent-gold/50">
+                <h3 className="text-xl font-bold text-text-heading mb-3">{faq.question}</h3>
+                <p className="text-text-body">{faq.answer}</p>
               </div>
             ))}
           </div>
@@ -115,7 +115,7 @@ export default function SupportPage() {
       </section>
 
       {/* M'LiteEv Battery Care Guide */}
-      <section className="py-20 bg-gray-800">
+      <section className="py-20 bg-muted-bg">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
@@ -151,10 +151,10 @@ export default function SupportPage() {
       </section>
 
       {/* M'LiteEv Support Contact CTA */}
-      <section className="py-20 bg-gray-900">
+      <section className="py-20 bg-secondary-bg">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Still Have Questions?</h2>
-          <p className="text-lg md:text-xl text-gray-300 mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-6">Still Have Questions?</h2>
+          <p className="text-lg md:text-xl text-text-body mb-8">
             Our M'LiteEv support team is ready to assist you with any queries
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

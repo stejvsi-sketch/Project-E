@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Heritage Statement */}
-      <section className="py-40 md:py-48 bg-text-charcoal overflow-hidden w-full max-w-full relative">
+      <section className="py-40 md:py-48 bg-gradient-to-br from-[#141414] via-[#111827] to-[#020617] text-primary-bg overflow-hidden w-full max-w-full relative">
         {/* Refined pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Signature Colors - Premium Edition */}
-      <section className="py-32 md:py-40 bg-secondary-bg overflow-hidden w-full max-w-full border-t-2 border-accent-gold/20">
+      <section className="py-32 md:py-40 bg-secondary-bg overflow-hidden w-full max-w-full border-t border-accent-gold/10">
         <div className="container-custom max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 md:mb-24">
             <div className="flex items-center justify-center gap-4 mb-8">
