@@ -3,11 +3,11 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Battery, Zap, Shield, ArrowRight, Gauge, Bike } from 'lucide-react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { ALL_MODELS } from '@/data/models'
 import { getModelVariantImages, getImageOrFallback, type ModelImage } from '@/lib/images'
 
-// Component to display product image with color selection
+// Component to display product image with color selection and parallax effect
 function ProductImage({ 
   modelSlug, 
   variantImages, 
@@ -21,9 +21,38 @@ function ProductImage({
   selectedColorIndex: number
   isLoading: boolean
 }) {
+  const imageRef = useRef<HTMLDivElement>(null)
+  const [parallaxOffset, setParallaxOffset] = useState(0)
+
   // Get the image for the selected color
   const selectedColor = colors[selectedColorIndex]?.name.toLowerCase()
   const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColor)
+
+  // Parallax scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!imageRef.current) return
+      
+      const rect = imageRef.current.getBoundingClientRect()
+      const windowHeight = window.innerHeight
+      
+      // Calculate how much of the element is visible in viewport (0 to 1)
+      const elementCenter = rect.top + rect.height / 2
+      const viewportCenter = windowHeight / 2
+      const distanceFromCenter = (viewportCenter - elementCenter) / windowHeight
+      
+      // Apply subtle parallax (max 30px movement)
+      const offset = distanceFromCenter * 30
+      setParallaxOffset(offset)
+    }
+
+    // Initial calculation
+    handleScroll()
+    
+    // Add scroll listener with passive flag for better performance
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [isLoading, variantImage])
 
   // While loading or if no variant image exists yet, don't show any emoji/placeholder
   if (isLoading || !variantImage) {
@@ -41,8 +70,14 @@ function ProductImage({
   }
 
   return (
-    <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-[380px] h-[380px] sm:w-[460px] sm:h-[440px] md:w-[560px] md:h-[540px] lg:w-[700px] lg:h-[660px] xl:w-[780px] xl:h-[740px]">
+    <div ref={imageRef} className="relative w-full h-full flex items-center justify-center">
+      <div 
+        className="relative w-[380px] h-[380px] sm:w-[460px] sm:h-[440px] md:w-[560px] md:h-[540px] lg:w-[700px] lg:h-[660px] xl:w-[780px] xl:h-[740px] transition-transform duration-100 ease-out"
+        style={{
+          transform: `translateY(${parallaxOffset}px)`,
+          willChange: 'transform'
+        }}
+      >
         <Image
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
