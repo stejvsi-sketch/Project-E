@@ -29,20 +29,20 @@ function ProductImage({
   return (
     <div className="relative w-full h-full flex items-center justify-center">
       {imageData.type === 'image' ? (
-        <div className="relative w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[450px] md:h-[450px] lg:w-[550px] lg:h-[550px]">
+        <div className="relative w-[360px] h-[360px] sm:w-[420px] sm:h-[420px] md:w-[500px] md:h-[500px] lg:w-[650px] lg:h-[650px]">
           <Image
             src={imageData.value}
             alt={`${modelSlug} ${selectedColor}`}
             fill
             className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
-            sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, (max-width: 1024px) 450px, 550px"
+            sizes="(max-width: 640px) 360px, (max-width: 768px) 420px, (max-width: 1024px) 500px, 650px"
             priority
             quality={95}
             loading="eager"
           />
         </div>
       ) : (
-        <div className="text-[180px] sm:text-[220px] md:text-[280px] lg:text-[350px] transform hover:scale-105 transition-all duration-700 cursor-pointer relative z-10 drop-shadow-xl opacity-30">
+        <div className="hidden">
           {imageData.value}
         </div>
       )}
@@ -285,9 +285,8 @@ export default function ModelsPage() {
 
           <div className="container-custom relative z-10 px-4">
             <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
-              {/* Product Image with Glow Effect */}
-              <div className="relative h-64 md:h-80 lg:h-[500px] flex items-center justify-center order-1 lg:order-1">
-                <div className="absolute inset-0 bg-white/10 rounded-full blur-3xl" />
+              {/* Product Image - Seamless Blend */}
+              <div className="relative h-80 md:h-96 lg:h-[600px] flex items-center justify-center order-1 lg:order-1">
                 <ProductImage 
                   modelSlug={product.slug}
                   variantImages={variantImages[product.slug] || []}
