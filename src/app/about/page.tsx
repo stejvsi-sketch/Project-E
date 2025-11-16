@@ -141,11 +141,11 @@ export default function AboutPage() {
             </div>
             <div className="relative px-4 lg:px-0">
               <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-accent-gold via-accent-gold-hover to-accent-teal p-1">
-                <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-8 md:p-12">
+                <div className="bg-gradient-to-br from-[#fdf7f0] via-[#f4e1c8] to-[#f0d5b2] rounded-3xl p-8 md:p-12">
                   <div className="text-center">
                     <div className="text-6xl md:text-8xl mb-6">⚡</div>
                     <h3 className="text-2xl md:text-3xl font-black text-accent-gold mb-4 font-display">Energise Your Ride</h3>
-                    <p className="text-sm md:text-base text-gray-100 leading-relaxed">
+                    <p className="text-sm md:text-base text-text-heading/80 leading-relaxed">
                       Join the electric revolution and experience the future of urban mobility
                     </p>
                     <Link href="/contact" className="inline-block mt-6">
@@ -180,7 +180,7 @@ export default function AboutPage() {
               { value: '60', label: 'KM Range', suffix: '+' },
               { value: '100', label: 'Eco-Friendly', suffix: '%' },
             ].map((stat, index) => (
-              <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-accent-gold/10 backdrop-blur-sm border border-accent-gold/30 hover:bg-accent-gold/20 transition-all duration-300 hover:scale-105">
+              <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-accent-gold/10 backdrop-blur-sm border border-accent-gold/30 hover:bg-accent-gold/20 transition-all duration-300 hover:-translate-y-1">
                 <div className="text-4xl sm:text-5xl md:text-6xl font-black mb-2 text-accent-gold">{stat.value}{stat.suffix}</div>
                 <div className="text-sm md:text-base font-bold text-text-heading">{stat.label}</div>
               </div>
