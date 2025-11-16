@@ -135,7 +135,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Main Display */}
-      <div className={`relative h-[540px] sm:h-[560px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
+      <div className={`relative h-[480px] sm:h-[520px] md:h-[650px] bg-gradient-to-br ${currentScheme.bg} rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl border ${currentScheme.border} transition-all duration-700`}>
         {/* Mobile Premium Card Layout */}
         <div className="md:hidden absolute inset-0 flex flex-col justify-between py-6">
           {/* Top: Category Badge & Model Name */}

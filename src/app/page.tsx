@@ -31,7 +31,7 @@ export default function Home() {
             </div>
 
             {/* Carousel showcase */}
-            <div className="w-full max-w-7xl mb-12 md:mb-16 px-4">
+            <div className="w-full max-w-7xl mb-12 md:mb-16 px-2 sm:px-4">
               <ScooterCarousel autoPlay={true} interval={5000} />
             </div>
 
