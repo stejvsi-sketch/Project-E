@@ -42,13 +42,13 @@ function ProductImage({
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-full max-w-[320px] h-[260px] sm:max-w-[380px] sm:h-[320px] md:max-w-[520px] md:h-[500px] lg:max-w-[680px] lg:h-[620px]">
+      <div className="relative w-full max-w-[90vw] h-[300px] sm:max-w-[420px] sm:h-[340px] md:max-w-[520px] md:h-[500px] lg:max-w-[680px] lg:h-[620px]">
         <Image
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
           fill
           className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
-          sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, (max-width: 1024px) 520px, 680px"
+          sizes="(max-width: 640px) 90vw, (max-width: 768px) 420px, (max-width: 1024px) 520px, 680px"
           priority
           quality={95}
           loading="eager"
