@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { z } from 'zod'
 import { createServerClient } from '@/lib/supabase/server'
 import { sendEmail, generateLeadEmail, generateConfirmationEmail } from '@/lib/email'
+import { ALL_MODELS } from '@/data/models'
 
 const leadSchema = z.object({
   email: z.string().email(),
@@ -10,6 +11,27 @@ const leadSchema = z.object({
   pageUrl: z.string().url(),
   userAgent: z.string().optional(),
 })
+
+function getModelAndColorFromIds(scooterId: string, variantId: string) {
+  // scooterId is a simple index string: "1", "2", ..., matching ALL_MODELS order
+  const modelIndex = Number.parseInt(scooterId, 10) - 1
+  const model = ALL_MODELS[Number.isNaN(modelIndex) ? -1 : modelIndex]
+
+  let colorName: string | undefined
+  if (model && variantId.length >= 2) {
+    // variantId format: "1a", "1b", ... -> second char is color index letter
+    const colorLetter = variantId.slice(1, 2)
+    const colorIndex = colorLetter.toLowerCase().charCodeAt(0) - 97 // 'a' => 0
+    if (colorIndex >= 0 && colorIndex < model.colors.length) {
+      colorName = model.colors[colorIndex]
+    }
+  }
+
+  return {
+    modelName: model?.name,
+    colorName,
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,6 +47,8 @@ export async function POST(request: NextRequest) {
 
     const { email, scooterId, variantId, pageUrl, userAgent } = validation.data
 
+    const { modelName, colorName } = getModelAndColorFromIds(scooterId, variantId)
+
     // Get IP address
     const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown'
 
@@ -36,25 +60,10 @@ export async function POST(request: NextRequest) {
 
     // Save to Supabase
     const supabase = await createServerClient()
-    
-    // Get scooter and variant details
-    const { data: scooter } = await supabase
-      .from('scooters')
-      .select('name')
-      .eq('id', scooterId)
-      .single()
 
-    const { data: variant } = await supabase
-      .from('variants')
-      .select('color_name')
-      .eq('id', variantId)
-      .single()
-
-    // Insert lead
+    // Insert lead - store model/color information in notes instead of relying on UUID
     const { error: insertError } = await supabase.from('leads').insert({
       email,
-      scooter_id: scooterId,
-      variant_id: variantId,
       page_url: pageUrl,
       utm_source,
       utm_medium,
@@ -62,6 +71,7 @@ export async function POST(request: NextRequest) {
       ip,
       user_agent: userAgent,
       status: 'new',
+      notes: `Model: ${modelName || 'Unknown'} (form id: ${scooterId}), Color: ${colorName || 'Unknown'} (form id: ${variantId})`,
     })
 
     if (insertError) {
@@ -83,13 +93,16 @@ export async function POST(request: NextRequest) {
 
     // Send email to owner
     const timestamp = new Date().toLocaleString()
+    const modelLabel = modelName || 'Unknown Model'
+    const colorLabel = colorName || 'Unknown Color'
+
     await sendEmail({
       to: ownerEmail,
-      subject: `New Lead - ${scooter?.name || 'Unknown Model'} (${variant?.color_name || 'Unknown Color'})`,
+      subject: `New Lead - ${modelLabel} (${colorLabel})`,
       html: generateLeadEmail({
         email,
-        model: scooter?.name || 'Unknown Model',
-        color: variant?.color_name || 'Unknown Color',
+        model: modelLabel,
+        color: colorLabel,
         pageUrl,
         timestamp,
       }),
@@ -99,7 +112,7 @@ export async function POST(request: NextRequest) {
     await sendEmail({
       to: email,
       subject: "Thank you for your interest in M'LiteEv",
-      html: generateConfirmationEmail('Customer', scooter?.name || 'our scooters'),
+      html: generateConfirmationEmail('Customer', modelName || 'our scooters'),
     })
 
     return NextResponse.json({
