@@ -42,13 +42,13 @@ function ProductImage({
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-[300px] h-[300px] sm:w-[360px] sm:h-[340px] md:w-[430px] md:h-[420px] lg:w-[520px] lg:h-[480px]">
+      <div className="relative w-[340px] h-[340px] sm:w-[400px] sm:h-[380px] md:w-[480px] md:h-[460px] lg:w-[600px] lg:h-[560px]">
         <Image
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
           fill
           className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
-          sizes="(max-width: 640px) 300px, (max-width: 768px) 360px, (max-width: 1024px) 430px, 520px"
+          sizes="(max-width: 640px) 340px, (max-width: 768px) 400px, (max-width: 1024px) 480px, 600px"
           priority
           quality={95}
           loading="eager"
@@ -294,7 +294,7 @@ export default function ModelsPage() {
           <div className="container-custom relative z-10 px-4">
             <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
               {/* Product Image */}
-              <div className="relative h-64 md:h-80 lg:h-[500px] flex items-center justify-center order-1 lg:order-1">
+              <div className="relative h-[360px] md:h-[480px] lg:h-[600px] flex items-center justify-center order-1 lg:order-1">
                 <ProductImage 
                   modelSlug={product.slug}
                   variantImages={variantImages[product.slug] || []}
