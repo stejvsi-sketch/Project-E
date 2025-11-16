@@ -129,7 +129,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
 
   return (
     <div 
-      className="relative w-full max-w-6xl mx-auto overflow-hidden"
+      className="relative w-[calc(100vw-0.5rem)] sm:w-full max-w-6xl mx-auto overflow-hidden"
       style={{ maxWidth: '100%' }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

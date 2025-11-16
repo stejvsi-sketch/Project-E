@@ -16,7 +16,7 @@ export default function Home() {
           <div className="absolute inset-0" style={{backgroundImage: 'linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(30deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37), linear-gradient(150deg, #D4AF37 12%, transparent 12.5%, transparent 87%, #D4AF37 87.5%, #D4AF37)', backgroundSize: '80px 140px', backgroundPosition: '0 0, 0 0, 40px 70px, 40px 70px'}}></div>
         </div>
 
-        <div className="container-custom relative z-10 max-w-7xl mx-auto px-6 md:px-12">
+        <div className="container-custom relative z-10 max-w-7xl mx-auto px-0 sm:px-6 md:px-12">
           <div className="flex flex-col items-center justify-center py-12 md:py-16 w-full">
 
             {/* Ultra-luxury headline */}
@@ -31,7 +31,7 @@ export default function Home() {
             </div>
 
             {/* Carousel showcase */}
-            <div className="w-full max-w-7xl mb-12 md:mb-16 px-2 sm:px-4">
+            <div className="w-full max-w-7xl mb-12 md:mb-16 px-0 sm:px-4">
               <ScooterCarousel autoPlay={true} interval={5000} />
             </div>
 
