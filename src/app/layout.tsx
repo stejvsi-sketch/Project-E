@@ -4,7 +4,6 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
-import { ImagePreloader } from "@/components/ImagePreloader";
 
 // Geometric Sans for UI/Body
 const inter = Inter({
@@ -29,6 +28,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mliteev.com'),
   title: "M'LiteEv - Energise Your Ride | Premium Electric Scooters",
   description: "Discover premium electric scooters by M'LiteEv. Revolutionizing urban mobility with cutting-edge technology, eco-friendly design, and superior performance.",
   keywords: "electric scooters, ev scooters, electric mobility, eco-friendly transport, M'LiteEv",
@@ -48,12 +48,16 @@ export const metadata: Metadata = {
     apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "M'LiteEv - Energise Your Ride",
     description: "Premium electric scooters for the modern city",
     type: "website",
     locale: "en_US",
     siteName: "M'LiteEv",
+    url: 'https://mliteev.com',
   },
   twitter: {
     card: "summary_large_image",
@@ -70,7 +74,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
-        <ImagePreloader />
         <Navigation />
         <main className="min-h-screen pt-24 md:pt-32">
           {children}
