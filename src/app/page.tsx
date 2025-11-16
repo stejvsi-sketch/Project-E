@@ -25,7 +25,6 @@ export default function Home() {
                 <span className="block font-light">Elevate</span>
                 <span className="block font-black italic text-accent-gold mt-1 md:mt-2">Every Journey</span>
               </h1>
-              <div className="w-16 h-[2px] bg-accent-gold mx-auto mb-6 md:mb-8"></div>
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-text-heading leading-relaxed max-w-4xl mx-auto font-light tracking-wide px-4">
                 Italian elegance meets electric innovation
               </p>
@@ -37,7 +36,7 @@ export default function Home() {
             </div>
 
             {/* Premium CTAs */}
-            <div className="flex flex-col sm:flex-row gap-5 mb-10 md:mb-14 px-4">
+            <div className="flex flex-col sm:flex-row gap-5 mb-6 md:mb-10 px-4">
               <Link href="/models" className="w-full sm:w-auto">
                 <button className="group relative w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 bg-text-heading font-bold text-sm tracking-[0.25em] uppercase overflow-hidden transition-all duration-500 shadow-xl hover:shadow-2xl hover:scale-105 transform">
                   <span className="relative z-10 text-white group-hover:text-white">Discover Collection</span>
@@ -45,11 +44,13 @@ export default function Home() {
                 </button>
               </Link>
               <Link href="/contact" className="w-full sm:w-auto">
-                <button className="w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-primary-bg font-bold text-sm tracking-[0.25em] uppercase transition-all duration-500">
+                <button className="w-full sm:w-auto px-12 md:px-16 py-5 md:py-6 border-2 border-text-heading text-text-heading bg-transparent hover:bg-accent-gold hover:border-accent-gold hover:text-white font-bold text-sm tracking-[0.25em] uppercase transition-all duration-500">
                   Private Consultation
                 </button>
               </Link>
             </div>
+
+            <div className="w-16 h-[2px] bg-accent-gold mx-auto mb-10 md:mb-14"></div>
 
           </div>
         </div>
