@@ -152,18 +152,15 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
     },
   ]
 
+  // Filter to show only 3 main colors (red, white, black)
+  const displayColors = product.colors.filter((color: any) => 
+    ['red', 'white', 'black'].includes(color.name.toLowerCase())
+  )
+
   return (
     <div className="min-h-screen bg-[#f8f4ec] text-[#2f1f15] -mt-24 md:-mt-32">
-      {/* Back Button */}
-      <div className="container-custom pt-32 md:pt-40 pb-4">
-        <Link href="/models" className="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-[#e0c7a5] bg-white/80 text-[#2f1f15] shadow-sm transition-all hover:border-[#c98545] hover:text-[#a65a2c]">
-          <ChevronLeft className="w-5 h-5" />
-          <span>Back to Models</span>
-        </Link>
-      </div>
-
       {/* Hero Section with Product Image */}
-      <section className="pb-8 md:pb-12 pt-0 bg-gradient-to-br from-[#fdf7f0] via-[#f4e1c8] to-[#e4c8a1]">
+      <section className="pb-8 md:pb-12 pt-24 md:pt-32 bg-gradient-to-br from-[#fdf7f0] via-[#f4e1c8] to-[#e4c8a1]">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Product Info */}
@@ -196,9 +193,9 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')] opacity-20" />
               {/* Real Scooter Image or Fallback */}
               {imagesLoading ? (
-                <div className="text-white text-lg animate-pulse">Loading...</div>
+                <div className="w-64 h-64 rounded-full bg-[#e4c8a1]/30 animate-pulse"></div>
               ) : (() => {
-                const selectedColorName = product.colors[selectedColor]?.name.toLowerCase()
+                const selectedColorName = displayColors[selectedColor]?.name.toLowerCase()
                 const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
                 const imageData = getImageOrFallback(variantImage?.image_url || null)
                 
@@ -211,10 +208,13 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700"
                       sizes="(max-width: 640px) 280px, (max-width: 768px) 380px, (max-width: 1024px) 480px, 580px"
                       priority
+                      quality={95}
+                      placeholder="blur"
+                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                     />
                   </div>
                 ) : (
-                  <div className="text-[160px] sm:text-[200px] md:text-[260px] lg:text-[300px] drop-shadow-2xl">
+                  <div className="text-[160px] sm:text-[200px] md:text-[260px] lg:text-[300px] drop-shadow-2xl opacity-20" style={{ filter: 'sepia(0.5) hue-rotate(20deg)' }}>
                     {imageData.value}
                   </div>
                 )
@@ -275,12 +275,12 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2a1c12] mb-4">
               Choose Your Color
             </h2>
-            <p className="text-base sm:text-lg text-[#6d5544]">Available in 3 stunning colors</p>
+            <p className="text-base sm:text-lg text-[#6d5544]">Available in 3 stunning colors (White & Blue also available)</p>
           </div>
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left - Interactive Color Selector */}
             <div className="space-y-4 max-w-lg mx-auto lg:mx-0">
-              {product.colors.map((color: any, index: number) => (
+              {displayColors.map((color: any, index: number) => (
                 <button
                   key={index}
                   onClick={() => setSelectedColor(index)}
@@ -309,7 +309,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
               <div className="absolute inset-0 bg-gradient-to-br from-[#f3dfc4] to-transparent rounded-3xl transition-all duration-500" />
               {/* Real Scooter Image */}
               {(() => {
-                const selectedColorName = product.colors[selectedColor]?.name.toLowerCase()
+                const selectedColorName = displayColors[selectedColor]?.name.toLowerCase()
                 const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
                 const imageData = getImageOrFallback(variantImage?.image_url || null)
                 
@@ -321,17 +321,20 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                       fill
                       className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-500"
                       sizes="(max-width: 640px) 240px, (max-width: 768px) 320px, 400px"
+                      quality={95}
+                      placeholder="blur"
+                      blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzAwIiBoZWlnaHQ9IjQ3NSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
                     />
                   </div>
                 ) : (
-                  <div className="text-[120px] sm:text-[160px] md:text-[200px] drop-shadow-2xl">
+                  <div className="text-[120px] sm:text-[160px] md:text-[200px] drop-shadow-xl opacity-20" style={{ filter: 'sepia(0.5) hue-rotate(20deg)' }}>
                     {imageData.value}
                   </div>
                 )
               })()}
               <div className="absolute bottom-8 left-0 right-0 text-center">
                 <div className="inline-block bg-white/90 backdrop-blur-md px-6 py-3 rounded-full border border-[#eadcc7]">
-                  <span className="text-[#2a1c12] font-semibold">{product.colors[selectedColor].name}</span>
+                  <span className="text-[#2a1c12] font-semibold">{displayColors[selectedColor].name}</span>
                 </div>
               </div>
             </div>
@@ -375,7 +378,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 </div>
                 <div>
                   <div className="text-sm font-semibold mb-2 text-[#b8672f] uppercase tracking-wide">Colours Available</div>
-                  <div className="text-lg font-bold">Red, White, Black + Blue, Grey</div>
+                  <div className="text-lg font-bold">Red, White, Black (+ White & Blue variants)</div>
                 </div>
               </div>
             </div>
