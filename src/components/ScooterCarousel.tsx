@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
-import { getAllHeroImages, getImageOrFallback, type ModelImage } from '@/lib/images'
+import { getAllHeroImages, getAllVariantImages, getImageOrFallback, type ModelImage } from '@/lib/images'
 import { ALL_MODELS } from '@/data/models'
 
 interface Scooter {
@@ -27,13 +27,16 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
   const [scooters, setScooters] = useState<Scooter[]>([])
   const [isLoading, setIsLoading] = useState(true)
 
-  // Fetch hero images on mount
+  // Fetch hero images on mount and preload variant images for other pages
   useEffect(() => {
     async function loadImages() {
       try {
-        const heroImages = await getAllHeroImages()
-        
-        // Map models with their images
+        const [heroImages, allVariants] = await Promise.all([
+          getAllHeroImages(),
+          getAllVariantImages(),
+        ])
+
+        // Map models with their hero images
         const scootersWithImages: Scooter[] = ALL_MODELS.map((model) => {
           const heroImg = heroImages.find((img) => img.model_slug === model.id)
           return {
@@ -48,6 +51,19 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
         })
 
         setScooters(scootersWithImages)
+
+        // Preload all variant image URLs into the browser cache so models/spec pages feel instant
+        const variantUrls = Object.values(allVariants)
+          .flat()
+          .map((img) => img.image_url)
+          .filter((url): url is string => !!url && url.trim() !== '')
+
+        if (typeof window !== 'undefined') {
+          variantUrls.forEach((url) => {
+            const preImg = new window.Image()
+            preImg.src = url
+          })
+        }
       } catch (error) {
         console.error('Error loading carousel images:', error)
         // Fallback to models without images
