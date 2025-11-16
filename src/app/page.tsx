@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Heritage Statement */}
-      <section className="py-40 md:py-48 bg-gradient-to-br from-[#020617] via-[#020617] to-[#111827] text-white overflow-hidden w-full max-w-full relative">
+      <section className="py-40 md:py-48 bg-gradient-to-br from-[#111827] via-[#1f2937] to-[#334155] text-white overflow-hidden w-full max-w-full relative">
         {/* Refined pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
