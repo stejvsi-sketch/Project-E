@@ -45,10 +45,10 @@ export default function SupportPage() {
               Support Center
             </span>
           </div>
-          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-text-primary mb-4 md:mb-6">
+          <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6">
             Support Center
           </h1>
-          <p className="text-xl text-text-secondary leading-relaxed max-w-3xl mx-auto">
+          <p className="text-xl text-gray-200 leading-relaxed max-w-3xl mx-auto">
             Get answers, support, and expert guidance for your M&rsquo;LiteEv electric scooter
           </p>
         </div>
@@ -82,13 +82,13 @@ export default function SupportPage() {
             ].map((category, index) => (
               <div
                 key={index}
-                className="group bg-secondary-bg backdrop-blur-sm p-6 rounded-2xl hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 text-center border border-border-gray hover:border-accent-gold/50 hover:scale-105"
+                className="group bg-gray-900/70 backdrop-blur-sm p-6 rounded-2xl hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 text-center border border-gray-700 hover:border-accent-gold/50 hover:scale-105"
               >
                 <div className="text-accent-gold mb-4 group-hover:scale-110 group-hover:text-accent-gold-hover transition-all">
                   {category.icon}
                 </div>
-                <h3 className="text-xl font-bold text-text-primary mb-2">{category.title}</h3>
-                <p className="text-text-secondary">{category.description}</p>
+                <h3 className="text-xl font-bold text-white mb-2">{category.title}</h3>
+                <p className="text-gray-300">{category.description}</p>
               </div>
             ))}
           </div>
@@ -105,9 +105,9 @@ export default function SupportPage() {
           
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <div key={index} className="group bg-secondary-bg backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 border border-border-gray hover:border-accent-gold/50">
-                <h3 className="text-xl font-bold text-text-primary mb-3">{faq.question}</h3>
-                <p className="text-text-secondary">{faq.answer}</p>
+              <div key={index} className="group bg-gray-900/70 backdrop-blur-sm rounded-2xl p-6 shadow-md hover:shadow-xl hover:shadow-accent-gold/10 transition-all duration-300 border border-gray-700 hover:border-accent-gold/50">
+                <h3 className="text-xl font-bold text-white mb-3">{faq.question}</h3>
+                <p className="text-gray-300">{faq.answer}</p>
               </div>
             ))}
           </div>

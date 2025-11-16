@@ -42,13 +42,13 @@ function ProductImage({
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-[260px] h-[260px] sm:w-[340px] sm:h-[320px] md:w-[520px] md:h-[500px] lg:w-[680px] lg:h-[620px]">
+      <div className="relative w-full max-w-[320px] h-[260px] sm:max-w-[380px] sm:h-[320px] md:max-w-[520px] md:h-[500px] lg:max-w-[680px] lg:h-[620px]">
         <Image
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
           fill
           className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
-          sizes="(max-width: 640px) 260px, (max-width: 768px) 340px, (max-width: 1024px) 520px, 680px"
+          sizes="(max-width: 640px) 320px, (max-width: 768px) 380px, (max-width: 1024px) 520px, 680px"
           priority
           quality={95}
           loading="eager"
@@ -133,7 +133,7 @@ export default function ModelsPage() {
       name: 'D.L Pro',
       tagline: 'Deluxe Line Performance',
       description: 'The D.L Pro offers enhanced deluxe features with 1000W motor power and versatile controller options. Superior comfort and style for discerning riders.',
-      bgColor: 'from-slate-700 to-slate-900',
+      bgColor: 'from-amber-700 to-amber-900',
       slug: 'dl-pro',
       colors: [
         { name: 'Red', code: 'bg-red-600', border: 'border-red-400' },

@@ -345,7 +345,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
       </section>
 
       {/* Specifications */}
-      <section className="py-20 bg-[#f0e2cf]">
+      <section className="py-20 bg-gradient-to-b from-[#f4e1c8] to-[#f0e2cf]">
         <div className="container-custom">
           <div className="text-center mb-12">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#2a1c12] mb-4">
@@ -356,7 +356,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
 
           <div className="max-w-4xl mx-auto">
             {/* Complete Specifications */}
-            <div className="bg-white rounded-2xl p-4 sm:p-6 md:p-8 border border-[#eadcc7] shadow-md">
+            <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-4 sm:p-6 md:p-8 border border-[#eadcc7]/80 shadow-sm">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-[#2a1c12]">
                 <div>
                   <div className="text-sm font-semibold mb-2 text-[#b8672f] uppercase tracking-wide">Controller</div>

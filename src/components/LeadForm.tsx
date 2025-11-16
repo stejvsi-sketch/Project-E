@@ -137,7 +137,11 @@ export function LeadForm({ scooters }: LeadFormProps) {
         <p className="text-red-600 text-sm">{errors.submit}</p>
       )}
 
-      <Button type="submit" isLoading={isSubmitting} className="w-full">
+      <Button
+        type="submit"
+        isLoading={isSubmitting}
+        className="w-full md:w-auto px-8 py-3 text-sm md:text-base"
+      >
         Send Enquiry
       </Button>
     </form>

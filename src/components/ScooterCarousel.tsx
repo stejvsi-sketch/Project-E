@@ -110,7 +110,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
   // Premium dark color schemes for each scooter
   const colorSchemes = [
     { bg: 'from-orange-900 via-red-900 to-orange-800', border: 'border-orange-700/30' }, // Urban Elite - Deep Orange
-    { bg: 'from-slate-900 via-gray-900 to-slate-800', border: 'border-slate-700/30' }, // City Pro - Deep Gray
+    { bg: 'from-amber-900 via-orange-900 to-amber-800', border: 'border-amber-700/30' }, // Deluxe Line - Deep Amber
     { bg: 'from-emerald-900 via-green-900 to-emerald-800', border: 'border-emerald-700/30' }, // Metro X - Forest Green
     { bg: 'from-teal-900 via-cyan-900 to-teal-800', border: 'border-teal-700/30' }, // Eco Plus - Deep Teal
     { bg: 'from-red-900 via-rose-900 to-red-800', border: 'border-red-700/30' }, // Sport - Deep Red

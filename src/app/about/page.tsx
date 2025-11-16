@@ -118,9 +118,9 @@ export default function AboutPage() {
                   <Lightbulb className="w-6 h-6 text-accent-gold" />
                   <span className="text-accent-gold text-sm font-bold uppercase tracking-widest">The Journey</span>
                 </div>
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-text-heading mb-4 font-display">The M'LiteEv Story</h2>
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 font-display">The M'LiteEv Story</h2>
               </div>
-              <div className="space-y-4 md:space-y-6 text-text-body text-sm sm:text-base md:text-lg leading-relaxed">
+              <div className="space-y-4 md:space-y-6 text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed">
                 <p>
                   <span className="text-accent-gold font-semibold">M'LiteEv</span> was born from a simple observation: cities needed smarter, 
                   cleaner, and more efficient transportation solutions. Founded by passionate 
@@ -145,7 +145,7 @@ export default function AboutPage() {
                   <div className="text-center">
                     <div className="text-6xl md:text-8xl mb-6">⚡</div>
                     <h3 className="text-2xl md:text-3xl font-black text-accent-gold mb-4 font-display">Energise Your Ride</h3>
-                    <p className="text-sm md:text-base text-text-body leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
                       Join the electric revolution and experience the future of urban mobility
                     </p>
                     <Link href="/contact" className="inline-block mt-6">
