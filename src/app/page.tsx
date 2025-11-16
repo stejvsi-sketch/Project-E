@@ -64,7 +64,7 @@ export default function Home() {
                 <p className="text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-text-heading font-medium">Models</p>
               </div>
               <div className="text-center border-x border-accent-gold/20">
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent-gold mb-1 md:mb-2">1200W</p>
+                <p className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-accent-gold mb-1 md:mb-2">1200W</p>
                 <p className="text-[10px] sm:text-xs tracking-[0.2em] md:tracking-[0.3em] uppercase text-text-heading font-medium">Power</p>
               </div>
               <div className="text-center">
@@ -146,7 +146,7 @@ export default function Home() {
       </section>
 
       {/* Heritage Statement */}
-      <section className="py-40 md:py-48 bg-gradient-to-br from-[#141414] via-[#111827] to-[#020617] text-primary-bg overflow-hidden w-full max-w-full relative">
+      <section className="py-40 md:py-48 bg-gradient-to-br from-[#111827] via-[#1f2937] to-[#020617] text-white overflow-hidden w-full max-w-full relative">
         {/* Refined pattern */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 1px 1px, #D4AF37 1px, transparent 1px)', backgroundSize: '50px 50px'}}></div>
@@ -260,7 +260,7 @@ export default function Home() {
       </section>
 
       {/* Signature Colors - Premium Edition */}
-      <section className="py-32 md:py-40 bg-secondary-bg overflow-hidden w-full max-w-full border-t border-accent-gold/10">
+      <section className="pt-32 md:pt-40 pb-16 md:pb-24 bg-secondary-bg overflow-hidden w-full max-w-full border-t border-accent-gold/10">
         <div className="container-custom max-w-7xl mx-auto px-6">
           <div className="text-center mb-20 md:mb-24">
             <div className="flex items-center justify-center gap-4 mb-8">

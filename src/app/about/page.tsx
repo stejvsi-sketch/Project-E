@@ -145,7 +145,7 @@ export default function AboutPage() {
                   <div className="text-center">
                     <div className="text-6xl md:text-8xl mb-6">⚡</div>
                     <h3 className="text-2xl md:text-3xl font-black text-accent-gold mb-4 font-display">Energise Your Ride</h3>
-                    <p className="text-sm md:text-base text-gray-300 leading-relaxed">
+                    <p className="text-sm md:text-base text-gray-100 leading-relaxed">
                       Join the electric revolution and experience the future of urban mobility
                     </p>
                     <Link href="/contact" className="inline-block mt-6">
