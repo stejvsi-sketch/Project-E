@@ -337,11 +337,6 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                   </div>
                 )
               })()}
-              <div className="absolute bottom-8 left-0 right-0 text-center">
-                <div className="inline-block bg-white/90 backdrop-blur-md px-6 py-3 rounded-full border border-[#eadcc7]">
-                  <span className="text-[#2a1c12] font-semibold">{displayColors[selectedColor].name}</span>
-                </div>
-              </div>
             </div>
           </div>
         </div>
