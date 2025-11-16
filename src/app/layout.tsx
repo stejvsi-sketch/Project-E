@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { ImagePreloader } from "@/components/ImagePreloader";
 
 // Geometric Sans for UI/Body
 const inter = Inter({
@@ -69,6 +70,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.variable} ${playfair.variable} antialiased`}>
+        <ImagePreloader />
         <Navigation />
         <main className="min-h-screen pt-24 md:pt-32">
           {children}
