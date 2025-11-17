@@ -175,25 +175,6 @@
     }
   }
 
-  /* Scooter hero subtle floating animation */
-  @keyframes scooterRide {
-    0% {
-      transform: translate3d(0, 0, 0) rotate(-0.5deg);
-    }
-    50% {
-      transform: translate3d(8px, -6px, 0) rotate(0.5deg);
-    }
-    100% {
-      transform: translate3d(0, 0, 0) rotate(-0.5deg);
-    }
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .animate-scooter-ride {
-      animation: scooterRide 6s ease-in-out infinite;
-    }
-  }
-
   /* Shine animation for buttons */
   @keyframes shine {
     0% {

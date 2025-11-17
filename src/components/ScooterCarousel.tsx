@@ -152,7 +152,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
           
           {/* Center: Scooter Image - Premium Full Size */}
           <div className="flex items-center justify-center px-2 -my-4">
-            <div className="relative w-[340px] h-[260px] animate-scooter-ride">
+            <div className="relative w-[340px] h-[260px]">
               {imageData.type === 'image' ? (
                 <Image
                   src={imageData.value}
@@ -189,24 +189,22 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
           {/* Scooter Image */}
           <div className="relative w-1/2 h-[500px] lg:h-[550px] flex items-center justify-center">
             <div className="relative w-full h-full max-w-none transition-all duration-500 transform hover:scale-105">
-              <div className="relative w-full h-full animate-scooter-ride">
-                {imageData.type === 'image' ? (
-                  <Image
-                    src={imageData.value}
-                    alt={currentScooter.name}
-                    fill
-                    className="object-contain drop-shadow-2xl"
-                    sizes="(max-width: 1024px) 500px, 600px"
-                    priority
-                    quality={95}
-                    loading="eager"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center text-[250px]">
-                    {imageData.value}
-                  </div>
-                )}
-              </div>
+              {imageData.type === 'image' ? (
+                <Image
+                  src={imageData.value}
+                  alt={currentScooter.name}
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  sizes="(max-width: 1024px) 500px, 600px"
+                  priority
+                  quality={95}
+                  loading="eager"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center text-[250px]">
+                  {imageData.value}
+                </div>
+              )}
             </div>
           </div>
           
