@@ -299,7 +299,7 @@ export default function Home() {
               </button>
             </Link>
             <Link href="/contact" className="w-full sm:w-auto">
-              <button className="w-full sm:w-auto px-16 py-6 border-2 border-text-heading text-text-heading hover:bg-text-heading hover:text-white font-bold tracking-[0.25em] uppercase text-sm transition-all duration-500">
+              <button className="w-full sm:w-auto px-16 py-6 border-2 border-black text-black hover:bg-black hover:text-white font-bold tracking-[0.25em] uppercase text-sm transition-all duration-500">
                 Private Consultation
               </button>
             </Link>

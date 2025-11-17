@@ -126,9 +126,9 @@ export default function SupportPage() {
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-teal-900/30 border-2 border-teal-500 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-teal-400 mb-4">✓ DO</h3>
-              <ul className="space-y-3 text-gray-300">
+            <div className="bg-white border-2 border-teal-500 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-teal-700 mb-4">✓ DO</h3>
+              <ul className="space-y-3 text-text-body">
                 <li>• Charge regularly, even if not fully depleted</li>
                 <li>• Store in a cool, dry place</li>
                 <li>• Use the original charger</li>
@@ -137,9 +137,9 @@ export default function SupportPage() {
               </ul>
             </div>
 
-            <div className="bg-red-900/30 border-2 border-red-500 rounded-xl p-6">
-              <h3 className="text-xl font-bold text-red-400 mb-4">✗ DON&apos;T</h3>
-              <ul className="space-y-3 text-gray-300">
+            <div className="bg-white border-2 border-red-500 rounded-xl p-6">
+              <h3 className="text-xl font-bold text-red-700 mb-4">✗ DON&apos;T</h3>
+              <ul className="space-y-3 text-text-body">
                 <li>• Leave battery completely discharged for long periods</li>
                 <li>• Expose to extreme temperatures</li>
                 <li>• Use third-party chargers</li>
