@@ -62,16 +62,27 @@ export default function ImageAdminPage() {
       // Determine folder and filename
       let folder = ''
       let filename = ''
+      const mimeType = file.type || ''
+      const lowerName = file.name.toLowerCase()
+
+      let extension = '.png'
+      if (mimeType === 'image/webp' || lowerName.endsWith('.webp')) {
+        extension = '.webp'
+      } else if (mimeType === 'image/jpeg' || lowerName.endsWith('.jpg') || lowerName.endsWith('.jpeg')) {
+        extension = '.jpg'
+      } else if (mimeType === 'image/png' || lowerName.endsWith('.png')) {
+        extension = '.png'
+      }
       
       if (imageType === 'hero') {
         folder = 'heroes'
-        filename = `${modelSlug}-hero.png`
+        filename = `${modelSlug}-hero${extension}`
       } else if (imageType === 'showcase') {
         folder = 'showcase'
-        filename = `showcase-${color}.png`
+        filename = `showcase-${color}${extension}`
       } else {
         folder = 'models'
-        filename = `${modelSlug}-${color}.png`
+        filename = `${modelSlug}-${color}${extension}`
       }
 
       const filePath = `${folder}/${filename}`

@@ -158,7 +158,7 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
                   src={imageData.value}
                   alt={currentScooter.name}
                   fill
-                  className="object-contain drop-shadow-2xl"
+                  className="object-contain drop-shadow-2xl transform scale-110 sm:scale-100 hover:scale-125 transition-transform duration-500"
                   sizes="360px"
                   priority
                   quality={95}

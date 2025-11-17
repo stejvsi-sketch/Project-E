@@ -47,7 +47,7 @@ function ProductImage({
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
           fill
-          className="object-contain drop-shadow-2xl transform hover:scale-105 transition-all duration-700 cursor-pointer"
+          className="object-contain drop-shadow-2xl transform scale-125 md:scale-100 hover:scale-135 transition-all duration-700 cursor-pointer"
           sizes="(max-width: 640px) 95vw, (max-width: 768px) 420px, (max-width: 1024px) 520px, 680px"
           priority
           quality={95}

@@ -123,7 +123,7 @@ export function ColorShowcase() {
                   src={imageData.value}
                   alt={`${currentColor.name} scooter`}
                   fill
-                  className="object-contain drop-shadow-2xl transition-all duration-700 hover:scale-105"
+                  className="object-contain drop-shadow-2xl transform scale-125 md:scale-100 transition-all duration-700 hover:scale-135"
                   sizes="(max-width: 768px) 320px, 400px"
                   priority
                 />
