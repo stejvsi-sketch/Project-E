@@ -128,7 +128,7 @@ export function ColorShowcase() {
                   priority
                 />
                 {/* Floating badge */}
-                <div className="absolute top-4 left-1/2 -translate-x-1/2 bg-accent-gold text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
+                <div className="absolute -top-2 md:top-4 left-1/2 -translate-x-1/2 bg-accent-gold text-white px-4 py-2 rounded-full text-xs font-bold shadow-lg">
                   {currentColor.name}
                 </div>
               </div>
