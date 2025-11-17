@@ -129,6 +129,41 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                if (typeof document === 'undefined') return;
+
+                function isFormField(el) {
+                  if (!el || typeof el.closest !== 'function') return false;
+                  return !!el.closest('input, textarea, select');
+                }
+
+                // Disable context menu everywhere except form fields
+                document.addEventListener('contextmenu', function (e) {
+                  var el = e.target;
+                  // @ts-ignore - runtime guard
+                  if (isFormField(el)) return;
+                  e.preventDefault();
+                }, { capture: true });
+
+                // Extra guard for text selection outside inputs
+                document.addEventListener('selectstart', function (e) {
+                  var el = e.target;
+                  // @ts-ignore - runtime guard
+                  if (isFormField(el)) return;
+                  e.preventDefault();
+                }, { capture: true });
+
+                // Prevent drag (e.g. dragging images to download)
+                document.addEventListener('dragstart', function (e) {
+                  e.preventDefault();
+                }, { capture: true });
+              })();
+            `,
+          }}
+        />
         <Navigation />
         <main className="min-h-screen pt-24 md:pt-32">
           {children}
