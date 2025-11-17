@@ -191,12 +191,6 @@ export function Navigation() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -skew-x-12 group-hover:animate-shine"></div>
                   <span className="relative z-10">Enquire Now</span>
                 </Link>
-                
-                {/* Contact info */}
-                <div className="mt-6 text-center space-y-2">
-                  <p className="text-sm text-text-body">Call us now</p>
-                  <a href="tel:9818649138" className="text-accent-gold font-bold text-lg hover:text-accent-gold-hover transition-colors">9818649138</a>
-                </div>
               </div>
             </div>
             </div>
