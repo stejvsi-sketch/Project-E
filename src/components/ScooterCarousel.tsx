@@ -152,14 +152,14 @@ export function ScooterCarousel({ autoPlay = true, interval = 3000 }: ScooterCar
           
           {/* Center: Scooter Image - Premium Full Size */}
           <div className="flex items-center justify-center px-2 -my-4">
-            <div className="relative w-[340px] h-[260px]">
+            <div className="relative w-[360px] h-[280px]">
               {imageData.type === 'image' ? (
                 <Image
                   src={imageData.value}
                   alt={currentScooter.name}
                   fill
                   className="object-contain drop-shadow-2xl"
-                  sizes="340px"
+                  sizes="360px"
                   priority
                   quality={95}
                   loading="eager"

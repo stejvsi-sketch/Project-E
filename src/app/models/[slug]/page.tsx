@@ -189,7 +189,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Right - Product Image with Selected Color */}
-            <div className="relative h-64 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
+            <div className="relative h-80 sm:h-80 lg:h-[600px] flex items-center justify-center overflow-hidden">
               <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/old-mathematics.png')] opacity-20" />
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                 <div className="w-[360px] h-[360px] sm:w-[440px] sm:h-[440px] lg:w-[560px] lg:h-[560px] rounded-full bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.9),rgba(244,225,200,0.6),transparent_70%)] opacity-80" />
@@ -210,7 +210,7 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
                 }
                 
                 return (
-                  <div className="relative z-10 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px]">
+                  <div className="relative z-10 w-[320px] h-[320px] sm:w-[380px] sm:h-[380px] md:w-[480px] md:h-[480px] lg:w-[580px] lg:h-[580px]">
                     <Image
                       src={imageData.value}
                       alt={`${product.name} ${selectedColorName}`}
@@ -309,23 +309,23 @@ export default function ProductDetailPage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Right - Product Visualization with Color Change */}
-            <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-white rounded-3xl border border-[#eadcc7] overflow-hidden shadow-inner">
+            <div className="relative h-[340px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-white rounded-3xl border border-[#eadcc7] overflow-hidden shadow-inner">
               <div className="absolute inset-0 bg-gradient-to-br from-[#f3dfc4] to-transparent rounded-3xl transition-all duration-500" />
               {/* Real Scooter Image only (no emoji fallback) */}
               {(() => {
                 const selectedColorName = displayColors[selectedColor]?.name.toLowerCase()
                 const variantImage = variantImages.find(img => img.color.toLowerCase() === selectedColorName)
                 if (!variantImage) {
-                  return <div className="w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
+                  return <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
                 }
 
                 const imageData = getImageOrFallback(variantImage.image_url)
                 if (imageData.type !== 'image') {
-                  return <div className="w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
+                  return <div className="w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]" />
                 }
                 
                 return (
-                  <div className="relative w-[240px] h-[240px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]">
+                  <div className="relative w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[400px] md:h-[400px]">
                     <Image
                       src={imageData.value}
                       alt={`${product.name} ${selectedColorName}`}

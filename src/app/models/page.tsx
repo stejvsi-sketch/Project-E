@@ -42,7 +42,7 @@ function ProductImage({
 
   return (
     <div className="relative w-full h-full flex items-center justify-center">
-      <div className="relative w-full max-w-[95vw] h-[340px] sm:max-w-[420px] sm:h-[340px] md:max-w-[520px] md:h-[500px] lg:max-w-[680px] lg:h-[620px]">
+      <div className="relative w-full max-w-[95vw] h-[380px] sm:max-w-[420px] sm:h-[340px] md:max-w-[520px] md:h-[500px] lg:max-w-[680px] lg:h-[620px]">
         <Image
           src={imageData.value}
           alt={`${modelSlug} ${selectedColor}`}
