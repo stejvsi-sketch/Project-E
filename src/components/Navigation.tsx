@@ -131,7 +131,7 @@ export function Navigation() {
           {/* Ultra Premium Sliding Menu Panel */}
           <div
             className={cn(
-              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-y-auto bg-secondary-bg border-l-2 border-accent-gold/30',
+              'absolute right-0 top-0 bottom-0 w-80 max-w-[85vw] shadow-2xl transition-all duration-500 ease-out overflow-y-hidden bg-secondary-bg border-l-2 border-accent-gold/30',
               isMenuOpen ? 'translate-x-0' : 'translate-x-full'
             )}
             style={{ 
