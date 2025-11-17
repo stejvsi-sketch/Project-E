@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display, Geist } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
@@ -33,12 +33,6 @@ export const metadata: Metadata = {
   description: "Discover premium electric scooters by M'LiteEv. Revolutionizing urban mobility with cutting-edge technology, eco-friendly design, and superior performance.",
   keywords: "electric scooters, ev scooters, electric mobility, eco-friendly transport, M'LiteEv",
   authors: [{ name: "M'LiteEv" }],
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -64,6 +58,13 @@ export const metadata: Metadata = {
     title: "M'LiteEv - Energise Your Ride",
     description: "Premium electric scooters for the modern city",
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
