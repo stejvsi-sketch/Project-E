@@ -182,7 +182,7 @@ export default function AboutPage() {
             ].map((stat, index) => (
               <div key={index} className="text-center p-6 md:p-8 rounded-2xl bg-accent-gold/10 backdrop-blur-sm border border-accent-gold/30 hover:bg-accent-gold/20 transition-all duration-300 hover:-translate-y-1">
                 <div
-                  className={`${stat.value === '1000' ? 'text-3xl' : 'text-4xl'} sm:text-5xl md:text-6xl font-black mb-2 text-accent-gold`}
+                  className={`${stat.value === '1000' ? 'text-2xl' : 'text-4xl'} sm:text-5xl md:text-6xl font-black mb-2 text-accent-gold`}
                 >
                   {stat.value}{stat.suffix}
                 </div>
