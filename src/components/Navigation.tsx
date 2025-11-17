@@ -139,9 +139,9 @@ export function Navigation() {
               height: '100vh'
             }}
           >
-            <div className="flex flex-col h-full p-8">
+            <div className="flex flex-col h-full px-6 pt-4 pb-6">
               {/* Premium Header with Close */}
-              <div className="flex items-center justify-between mb-8 pb-6 border-b border-accent-gold/20">
+              <div className="flex items-center justify-between mb-6 pb-4 border-b border-accent-gold/20">
                 <div>
                   <h2 className="text-2xl font-bold bg-gradient-to-r from-accent-gold via-accent-gold-hover to-accent-teal bg-clip-text text-transparent">Menu</h2>
                   <p className="text-xs text-text-secondary mt-1 tracking-widest uppercase">Navigation</p>
@@ -181,7 +181,7 @@ export function Navigation() {
               ))}
               
               {/* Ultra Premium Mobile CTA */}
-              <div className="mt-auto pt-8 border-t border-border-subtle">
+              <div className="mt-auto pt-4 border-t border-border-subtle">
                 <Link 
                   href="/contact" 
                   onClick={() => setIsMenuOpen(false)}
