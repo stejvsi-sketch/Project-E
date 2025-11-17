@@ -1,6 +1,7 @@
 import { HelpCircle, Battery, Wrench, Shield, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import Link from 'next/link'
+import { COMPANY_INFO } from '@/data/models'
 
 export default function SupportPage() {
   // M'LiteEv Frequently Asked Questions - Common queries from our customers
@@ -118,10 +119,10 @@ export default function SupportPage() {
       <section className="py-20 bg-muted-bg">
         <div className="container-custom max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-text-heading mb-4">
               Battery Care Tips
             </h2>
-            <p className="text-gray-400">Maximize your M'LiteEv battery life with these tips</p>
+            <p className="text-text-body">Maximize your M'LiteEv battery life with these tips</p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -163,7 +164,7 @@ export default function SupportPage() {
                 Contact Support
               </Button>
             </Link>
-            <a href="tel:+919876543210" className="w-full sm:w-auto inline-block">
+            <a href={`tel:+91${COMPANY_INFO.contact.phone}`} className="w-full sm:w-auto inline-block">
               <Button size="lg" variant="secondary" className="w-full sm:w-auto border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white">
                 Call Us Now
               </Button>

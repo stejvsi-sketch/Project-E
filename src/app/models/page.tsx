@@ -192,7 +192,7 @@ export default function ModelsPage() {
       id: 5,
       name: 'Vespa Pro',
       tagline: 'Premium Classic Style',
-      description: 'The Vespa Pro combines classic Italian design with modern electric performance. 1200W motor with premium features for sophisticated riders.',
+      description: 'The Vespa Pro combines classic Indian design with modern electric performance. 1200W motor with premium features for sophisticated riders.',
       bgColor: 'from-indigo-700 to-indigo-900',
       slug: 'vespa-pro',
       colors: [

@@ -26,7 +26,7 @@ export default function Home() {
                 <span className="block font-black italic text-accent-gold mt-1 md:mt-2">Every Journey</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-text-heading leading-relaxed max-w-4xl mx-auto font-light tracking-wide px-4">
-                Italian elegance meets electric innovation
+                Indian elegance meets electric innovation
               </p>
             </div>
 
@@ -165,7 +165,7 @@ export default function Home() {
                 <span className="block font-bold italic text-accent-gold mt-3">Perfection</span>
               </h2>
               <p className="text-xl md:text-2xl text-gray-200 font-normal leading-relaxed max-w-4xl mx-auto">
-                Each M'LiteEv represents the pinnacle of electric mobility—where meticulous Italian craftsmanship meets cutting-edge innovation.
+                Each M'LiteEv represents the pinnacle of electric mobility—where meticulous Indian craftsmanship meets cutting-edge innovation.
               </p>
             </div>
 
